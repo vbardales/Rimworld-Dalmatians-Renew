@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs> 
+
+
+<ThingDef ParentName="LeatherBase">
+    <defName>Leather_Dalmatian</defName>
+    <label>dalmatian leather</label>
+    <description>Leather from cute dalmatians. You monster.</description>
+    <graphicData>
+      <color>(220,220,220)</color>
+    </graphicData>
+    <statBases>
+      <MarketValue>2.0</MarketValue>
+      <StuffPower_Insulation_Cold>14</StuffPower_Insulation_Cold>
+    </statBases>
+    <stuffProps>
+      <color>(220,220,220)</color>
+      <commonality>0.075</commonality>
+    </stuffProps>
+  </ThingDef>
+
+</Defs>

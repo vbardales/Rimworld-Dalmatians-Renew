@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- EN: dalmatian -->
+  <CCPDalmatian.label>dalmatien</CCPDalmatian.label>
+  <!-- EN: A very muscular, medium-sized dog. Originally bred to retrieve prey, guard carriages and aid firefighters, the dalmatian is famous for its distinct spotty pattern and a well-loved domestic companion with a sweet nature. -->
+  <CCPDalmatian.description>Chien musculeux de taille moyenne. Élevé à l'origine pour rapporter le gibier, escorter les attelages et seconder les pompiers, le dalmatien est célèbre pour sa robe tachetée et reste un compagnon très apprécié, au tempérament doux.</CCPDalmatian.description>
+
+  <!-- EN: left claw -->
+  <CCPDalmatian.tools.left_claw.label>griffe gauche</CCPDalmatian.tools.left_claw.label>
+  <!-- EN: right claw -->
+  <CCPDalmatian.tools.right_claw.label>griffe droite</CCPDalmatian.tools.right_claw.label>
+  <!-- EN: head -->
+  <CCPDalmatian.tools.head.label>tête</CCPDalmatian.tools.head.label>
+
+</LanguageData>

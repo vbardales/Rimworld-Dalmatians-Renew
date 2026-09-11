@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- EN: dalmatian -->
+  <CCPDalmatian.label>dalmatien</CCPDalmatian.label>
+  <CCPDalmatian.labelMale>dalmatien</CCPDalmatian.labelMale>
+  <CCPDalmatian.labelMalePlural>dalmatiens</CCPDalmatian.labelMalePlural>
+  <CCPDalmatian.labelPlural>dalmatiens</CCPDalmatian.labelPlural>
+
+  <!-- EN: dalmatian puppy -->
+  <CCPDalmatian.lifeStages.dalmatian_puppy.label>chiot dalmatien</CCPDalmatian.lifeStages.dalmatian_puppy.label>
+  <CCPDalmatian.lifeStages.dalmatian_puppy.labelMale>chiot dalmatien</CCPDalmatian.lifeStages.dalmatian_puppy.labelMale>
+  <CCPDalmatian.lifeStages.dalmatian_puppy.labelMalePlural>chiots dalmatiens</CCPDalmatian.lifeStages.dalmatian_puppy.labelMalePlural>
+  <!-- EN: dalmatian puppies -->
+  <CCPDalmatian.lifeStages.dalmatian_puppy.labelPlural>chiots dalmatiens</CCPDalmatian.lifeStages.dalmatian_puppy.labelPlural>
+
+  <!-- The juvenile and adult stages carry no label of their own, in this mod as in vanilla's
+       husky, so they fall back to the kind's label above. Nothing to inject for them. -->
+
+</LanguageData>

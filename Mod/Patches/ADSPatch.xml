@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<!-- Enrols the dalmatian in A Dog Said... Animal Prosthetics 2.
+
+	     ADS 2 does not name recipes one by one any more. It keeps three abstract RecipeDefs,
+	     ADS_Cat1 (medieval replacements), ADS_Cat2 (+ simple prosthetics) and ADS_Cat3
+	     (+ bionics), and its own last patch - Patches/z_Category_Patches.xml, named z_ so it
+	     sorts after everything else in the mod - copies their recipeUsers onto the real
+	     surgery bases with PatchOperationAddOrMergeCopy. Adding an animal therefore means
+	     adding one <li> to those three lists, which is what every ModCompat file in ADS 2
+	     does. See 1.6/ModCompat/Dinosauria/Patches/Category_Patches_Dinosauria.xml.
+
+	     All three, because a dalmatian is a trainable pet: ADS 2's own settings text puts
+	     "pack animals and trainable pets" in category 3, and the lists are cumulative, so a
+	     category-3 animal appears in all of them. That is where vanilla's Husky,
+	     LabradorRetriever and YorkshireTerrier are.
+
+	     The guard is PatchOperationConditional on ADS_Cat1. Without ADS 2 the xpath selects
+	     nothing, no <nomatch> is declared, and the operation simply reports success - no error
+	     line, nothing logged. It replaces the PatchOperationSequence + PatchOperationTest +
+	     <success>Always</success> form, which was also correct but needed three operations and
+	     the Always to stay quiet.
+
+	     NOT MayRequire. MayRequire on an <Operation> is read by nothing: Verse.PatchOperation
+	     has no such field, and ModContentPack.LoadPatches - which builds the operations - never
+	     reads the attribute. The operation would apply whether ADS 2 is loaded or not. The
+	     attribute IS honoured on a def node, on a <li> and on any ordinary field element, which
+	     is what makes the wrong form look exactly like the right one; live 1.6 mods ship it.
+	     There is no native way to gate an operation on a packageId, so this tests for what the
+	     mod declares instead. PatchOperationFindMod is the other option and compares a display
+	     name, which is a different string again.
+
+	     Every branch of the predicate repeats @Name=. The form [@Name="A" or "B"] is not the
+	     test it looks like: XPath converts each operand of `or` to a boolean and a non-empty
+	     string literal is true, so that predicate is true for every RecipeDef in the document.
+	     That is the bug this file was rewritten to remove. -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/RecipeDef[@Name="ADS_Cat1"]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/RecipeDef[
+				@Name="ADS_Cat3" or
+				@Name="ADS_Cat2" or
+				@Name="ADS_Cat1"
+			]/recipeUsers</xpath>
+			<value>
+				<li>CCPDalmatian</li>
+			</value>
+		</match>
+	</Operation>
+
+</Patch>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <packageId>nelim.dalmatians</packageId>
+  <name>Dalmatians 1.6</name>
+  <author>cucumpear, lavie2k - 1.6 port: nelim</author>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <url>https://github.com/vbardales/Rimworld-Dalmatians-Renew</url>
+  <loadBefore>
+    <li>SamBucher.ADogSaidAnimalProsthetics2</li>
+  </loadBefore>
+  <incompatibleWith>
+    <li>cucumpear.dalmatians</li>
+  </incompatibleWith>
+  <description>One dog. A dalmatian: a medium-sized, spotted, sweet-natured pet that nuzzles, trains to Advanced, tames easily, and is bought and sold like a husky.
+
+No DLC, no dependencies, no assembly. Three defs, four textures and one optional patch.
+
+I am not the author of this mod. The animal, its artwork and its stats are cucumpear's and lavie2k's - all I did was bring it forward to 1.6, repair what the port turned up, and write the French. Credit goes to them; mistakes in the port are mine.
+
+Original mod: https://steamcommunity.com/sharedfiles/filedetails/?id=1513691963 - declares 1.0 to 1.4 and nothing further.
+
+WHAT'S IN IT
+
+- The dalmatian. Body size 0.70, market value 250, comfortable down to -30C, omnivore, Advanced trainability, wildness 0, gestation 25 days, litters of one to three, lives about 12 years. It nuzzles, it takes a name the moment it is tamed, and it never turns manhunter.
+- Dalmatian leather, an almost white leather of its own. It insulates a little less against cold than plain leather does, 14 against 16, and is worth a shade less.
+- Support for A Dog Said... Animal Prosthetics 2, if you use it: the dalmatian is offered the same animal surgeries as vanilla's huskies and labradors. Inert if the mod is absent. It must load before A Dog Said 2, which the mod's metadata declares - A Dog Said 2 copies its three animal categories onto the real surgery recipes with its own last patch, so an animal added to those categories afterwards lands in a list nothing reads any more.
+
+WHAT CHANGED
+
+Two things, and the second is the one that was actually broken.
+
+Wildness stopped being a property of the animal and became a stat. The def declared it the old way; in 1.6 that element matches no field, so the game logs one line and loads the animal without it. Here the damage is small, because a dalmatian's wildness was zero to begin with and the stat's floor is zero too - but the value was gone from the animal's information card, and any animal in the same position with a wildness that was not zero would have quietly become as tame as a rat. It is now a stat, written the way vanilla's own dogs write it.
+
+The A Dog Said patch had stopped working. It looked for recipes called "OldWoundsAnimal", "InstallBionicLegAnimal" and so on - the names A Dog Said used up to 2023. A Dog Said... Animal Prosthetics 2 replaced all of them with three categories, ADS_Cat1 to ADS_Cat3, so the patch found nothing and did nothing: no prosthetics, no old-wound treatment, and no error to say so. It now adds the dalmatian to the three categories, which is where vanilla's huskies, labradors and yorkshire terriers already are.
+
+The patch also had a fault of its own that was worth fixing before it could ever fire. Its condition was written [@Name = "A" or "B" or "C"], which is not the test it looks like: in XPath a bare non-empty string is simply true, so the condition matched every recipe in the game. Had the old names still existed, the dalmatian would have been added as a user of every recipe in every mod loaded. Each name is now compared properly.
+
+Otherwise nothing moved: the stats, the tools, the litter sizes, the sounds, the trade tags, the leather and the four textures are as cucumpear and lavie2k left them. One field was added, animalType, which every dog in 1.6 carries and which did not exist when this mod was written.
+
+French was added. The defName is unchanged, so a save moves between the two mods without losing a dog.
+
+CREDIT AND REMOVAL
+
+cucumpear and lavie2k declared no licence: no file in the mod, nothing in its About.xml, no linked repository, and nothing in the body of the description on its Steam page. It is republished here under the usual convention for abandoned mods - full credit, a link to the original, and removal on request. If either author would rather this port did not exist, say so and it comes down: no argument, no delay.
+
+The two mods cannot run together - the original is declared incompatible above. Run one or the other.
+
+Content mod: removing it mid-save destroys any dalmatian already in the colony.
+
+Source, changelog and attribution: https://github.com/vbardales/Rimworld-Dalmatians-Renew
+
+The port work was done with the help of an AI assistant (Claude, by Anthropic), under human direction and in-game testing. Thanks to cucumpear and lavie2k for the dog.
+
+If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.</description>
+</ModMetaData>

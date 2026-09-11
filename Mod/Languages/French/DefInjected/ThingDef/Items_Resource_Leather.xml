@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- EN: dalmatian leather -->
+  <!-- "fourrure de" rather than "cuir de": that is how the game already names dog leather in
+       French, Leather_Dog being "fourrure de chien". -->
+  <Leather_Dalmatian.label>fourrure de dalmatien</Leather_Dalmatian.label>
+  <!-- EN: Leather from cute dalmatians. You monster. -->
+  <Leather_Dalmatian.description>Fourrure prise sur de mignons dalmatiens. Vous êtes un monstre.</Leather_Dalmatian.description>
+  <!-- The English def declares no stuffAdjective and falls back to the label, which reads
+       correctly there. French needs the short form, exactly as vanilla injects one for every
+       leather it ships. -->
+  <Leather_Dalmatian.stuffProps.stuffAdjective>fourrure de dalmatien</Leather_Dalmatian.stuffProps.stuffAdjective>
+
+</LanguageData>
