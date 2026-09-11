@@ -1,28 +1,19 @@
-# This mod ships no assembly and has nothing to build, so the compilation rules below are
-# inherited convention rather than a live need. The entry that earns its place here is
-# .claude/: a session worktree is a full copy of the monorepo, hundreds of megabytes, and it
-# has already landed inside a mod folder once.
+# This mod ships no assembly and has nothing to build, so this file is short. Two separate
+# reasons to have it, and only the first is about git:
 #
-# Two separate reasons to have this file, and only the first is about git:
-#
-#   - The monorepo's own .gitignore covers all of this, but `git subtree split` exports this
-#     folder alone. The root's rules do not travel with it.
-#   - Steam does not read .gitignore at all. SteamUGC.SetItemContent takes the junction's
-#     target directory as it stands on disk, with no filtering, so anything sitting in the
-#     published folder is published. That is what `Mod/` is for: the junction points there,
-#     and everything else in this folder - Art/, the docs, this file - stays out of reach by
-#     construction.
+#   - Until 2026-09-11 this folder sat in a monorepo whose .gitignore covered all of this. That
+#     file did not travel with the folder, and now there is nothing above this one to inherit
+#     from at all.
+#   - Steam does not read .gitignore at all. SteamUGC.SetItemContent takes the junction's target
+#     directory as it stands on disk, with no filtering, so anything sitting in the published
+#     folder is published. That is what Mod/ is for: the junction points there, and everything
+#     else in this folder - Art/, the docs, this file - stays out of reach by construction.
 
-# Build intermediates.
-.build/
-Source/obj/
-Source/bin/
-
-# Claude Code session worktrees and local settings: each worktree is a full copy of the
-# monorepo, and they are never shared.
+# Claude Code session worktrees and local settings. A session creates its worktree in the current
+# directory, so sometimes inside this one, and each is a full copy of the repository.
 .claude/
 
-# Showcase notes: French working notes, deleted once Preview.png and ModIcon.png are done.
+# Showcase notes: French working notes, deleted once Preview.png is done.
 PROMPT_*.md
 
 # Development environments.

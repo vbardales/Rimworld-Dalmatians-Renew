@@ -63,7 +63,12 @@ First release. Port of cucumpear's and lavie2k's **Dalmatians** to RimWorld 1.6.
   `RegisterObjectWantsCrossRef` at 1525 — the def-reference-in-a-field path, not the root node. The
   attribute is honoured on a def node, on a `<li>` and on any field element, which is why the wrong
   form reads as correct; A Dog Said 2 uses it properly on the `<li>`s of those very lists.
-- `packageId` changed from `cucumpear.dalmatians` to `nelim.dalmatians`.
+- `packageId` changed from `cucumpear.dalmatians` to `nelim.dalmatiansrenew`.
+  `<incompatibleWith>` keeps cucumpear's and lavie2k's, which is what that field is for: the two
+  mods define the same animal, and only one of them may.
+- `<name>` changed from `Dalmatians` to `Dalmatians Renew`. Nothing was ever published under the
+  earlier form of the name, which said 1.6 where the repository said Renew, so this replaces it
+  rather than succeeding it. The directory and the `packageId` follow the displayed name.
 - `<supportedVersions>` set to 1.6.
 - `About/PublishedFileId.txt` dropped: it names cucumpear's and lavie2k's Workshop item.
 

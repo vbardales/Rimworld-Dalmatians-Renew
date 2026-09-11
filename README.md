@@ -1,4 +1,4 @@
-# Dalmatians 1.6
+# Dalmatians Renew
 
 Port of **cucumpear's and lavie2k's Dalmatians** to RimWorld 1.6.
 
@@ -132,7 +132,7 @@ kind of name another dog mod would want, so it was checked rather than assumed:
 - **Core and every DLC** — nothing.
 - **All 10 353 subscribed Workshop mods** — the only files among them that name either def are
   the source mod's own three.
-- **Every other mod in this repository** — nothing.
+- **Every other mod I maintain** — nothing.
 
 No collision, so no rename. A rename is permanent in a way a port is not: it would take every
 dalmatian already tamed out of every existing save.
@@ -156,7 +156,7 @@ same reason: same defName, same collision.
 ## Repository layout
 
 ```
-Dalmatians/
+DalmatiansRenew/
   Mod/     <- what goes on the Workshop; the NTFS junction into RimWorld/Mods points here
   Art/     <- files the game never loads, never published
 ```
@@ -167,12 +167,14 @@ ships without one. The script is kept.
 
 ## Verification
 
-Checked with the repository's static checks, against RimWorld 1.6 alone:
+Checked with the static checks that live in my mod monorepo, against RimWorld 1.6 alone. They
+are tooling, not mod content, so they are not carried here; run from that monorepo, with this
+folder sitting beside it, the commands are:
 
 ```bash
-pwsh -File scripts/Check-XmlFields.ps1   -ModPath Dalmatians/Mod
-pwsh -File scripts/Check-DefRefs.ps1     -ModPath Dalmatians/Mod -Brief
-pwsh -File scripts/Check-DefInjected.ps1 -TransMod Dalmatians/Mod
+pwsh -File scripts/Check-XmlFields.ps1   -ModPath DalmatiansRenew/Mod
+pwsh -File scripts/Check-DefRefs.ps1     -ModPath DalmatiansRenew/Mod -Brief
+pwsh -File scripts/Check-DefInjected.ps1 -TransMod DalmatiansRenew/Mod
 ```
 
 Every element maps to a 1.6 field, every def reference and `ParentName` resolves, and all 16

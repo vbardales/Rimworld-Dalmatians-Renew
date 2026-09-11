@@ -156,7 +156,7 @@ name that collides — no author prefix, and every animal mod that adds a dog wa
 - **Core and every DLC** — nothing.
 - **Every subscribed Workshop mod**, 10 353 of them. The only files in all of them that name
   `CCPDalmatian` or `Leather_Dalmatian` are the source mod's own three.
-- **This repository** — nothing, once the Animal Ark copy was removed.
+- **Every other mod I maintain** — nothing, once the Animal Ark copy was removed.
 
 No collision, so no rename. That is the right way round to decide it: a rename is permanent in a
 way a port is not, and it would take every dalmatian already tamed out of every existing save.

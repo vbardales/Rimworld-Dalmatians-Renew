@@ -1,6 +1,6 @@
 # Normalise line endings in this repository, while each machine keeps its own.
-# The monorepo has its own copy; `git subtree split` does not export it, so this
-# one exists for the repository this mod is split into.
+# This file is the repository's own: it sat in a monorepo until 2026-09-11, whose copy never
+# travelled with the exported folder, and now there is nothing above it to inherit from at all.
 
 * text=auto
 
