@@ -85,8 +85,10 @@ First release. Port of cucumpear's and lavie2k's **Dalmatians** to RimWorld 1.6.
   the two mods cannot load together.
 - `About/Preview.png` and `About/ModIcon.png`, made for this port on 2026-09-11 and replacing the
   showcase and the icon that came from the source mod. The showcase is a dalmatian asleep in a
-  lamp pool, drawn to the collection's own showcase rules; the icon is the collection's mascot
-  wearing the dog's markings. Full-resolution sources under `Art/`, which the mod does not ship.
+  lamp pool with the mod name and a summary line engraved over the calm left of the frame, drawn
+  to the collection's own showcase rules; the icon is the collection's mascot wearing the dog's
+  markings. Full-resolution sources under `Art/`, with the page that engraves the text under
+  `_tools/preview/`; the mod ships neither.
 
 ### Unchanged
 

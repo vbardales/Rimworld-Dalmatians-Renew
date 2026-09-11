@@ -159,7 +159,7 @@ same reason: same defName, same collision.
 DalmatiansRenew/
   Mod/     <- what goes on the Workshop; the NTFS junction into RimWorld/Mods points here
   Art/     <- the full-resolution sources of the two pictures, never published
-  _tools/  <- the test suite, never published
+  _tools/  <- the test suite and the page that engraves the showcase, never published
 ```
 
 `Art/` holds the full-resolution sources of the two pictures, `Preview-source.png` and

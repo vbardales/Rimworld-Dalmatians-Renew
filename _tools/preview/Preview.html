@@ -1,0 +1,81 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Dalmatians Renew — showcase</title>
+<!--
+  Engraves the mod name and its summary line onto the showcase, to the repository
+  standard in STYLE_RIMWORLD.md: 896x504, title over the calm upper-left third,
+  58x3 amber rule, 21 px summary on 430 px.
+
+  Rendered by Chrome headless at the final size, so the glyphs are never
+  resampled. The background is Art/Preview-source.png, the full-resolution
+  render, never the reduced Preview.png.
+
+    chrome --headless --disable-gpu --hide-scrollbars \
+      --window-size=896,504 --force-device-scale-factor=1 \
+      "--screenshot=C:\...\DalmatiansRenew\Mod\About\Preview.png" \
+      "file:///C:/.../DalmatiansRenew/_tools/preview/Preview.html"
+
+  Both paths absolute, and the page as a file:// URL. A bare `Preview.html` is
+  read as a hostname and headless Chrome screenshots its own DNS error page
+  without failing; a relative --screenshot path is refused outright. Neither
+  says anything useful, and the first one silently overwrites the showcase.
+
+  The source is 1374x1145, which is not 16:9, so the crop happens here rather
+  than with `cover`: `cover` would centre the crop vertically and cut the bottom
+  of the dog's bed. Scale is 896/1374 = 0.65211, and the crop starts at y=300 in
+  the source, hence the -195.6 px offset. The top of the render, where a settler
+  walks away, is what is being dropped; the dog, its bowl, its bed and the lamp
+  all stay whole.
+
+  Geometry: rule at (50,133), cap-top of the title at y=64, summary from y=157
+  with a 29 px leading.
+-->
+<style>
+  html, body { margin: 0; padding: 0; }
+  body { width: 896px; height: 504px; position: relative; overflow: hidden; }
+
+  .scene {
+    position: absolute; inset: 0;
+    background-image: url('../../Art/Preview-source.png');
+    background-repeat: no-repeat;
+    background-size: 896px 746.7px;
+    background-position: 0 -195.6px;
+  }
+
+  /* Darkens the upper-left third so the text reads, and leaves the dog alone. */
+  .veil {
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at top left,
+                rgba(6, 5, 4, .86) 0%, rgba(6, 5, 4, 0) 74%);
+  }
+
+  .plate {
+    position: absolute; left: 50px; top: 54px;
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  }
+
+  .name {
+    margin: 0; font-size: 58px; font-weight: 700; line-height: 1;
+    color: #FBF7EF; letter-spacing: -1.1px;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, .55);
+  }
+
+  .rule {
+    width: 58px; height: 3px; margin: 19px 0 0; background: #D68F2C;
+  }
+
+  .line {
+    margin: 14px 0 0; width: 430px;
+    font-size: 21px; line-height: 29px; font-weight: 400;
+    color: rgba(251, 247, 239, .88);
+    text-shadow: 0 1px 12px rgba(0, 0, 0, .6);
+  }
+</style>
+
+<div class="scene"></div>
+<div class="veil"></div>
+<div class="plate">
+  <p class="name">Dalmatians Renew</p>
+  <div class="rule"></div>
+  <p class="line">One dog, spotted and sweet-natured, brought forward to 1.6.</p>
+</div>
