@@ -35,18 +35,19 @@ DLC, no research.
 | `Leather_Dalmatian` | `ThingDef` | its leather, on `LeatherBase` |
 
 Its stats, tools, litter curve, life stages, sounds, trade tags and draw sizes are cucumpear's
-and lavie2k's, unchanged. So are the four textures, byte for byte, and `About/Preview.png`,
-which is their own in-game showcase.
+and lavie2k's, unchanged. So are the four textures, byte for byte.
 
-**The mod ships no `About/ModIcon.png`.** One existed for a few days: a 52×52 square of their own
-south-facing sprite, scaled to 128 px, because the full 44×93 sprite reads as a thin vertical
-smudge at the ~32 px the mod list actually draws.
+**The two pictures are the port's own, and are not theirs.** `About/Preview.png` and
+`About/ModIcon.png` were made for this port on 2026-09-11 and fall under the MIT grant above,
+with their full-resolution sources kept under `Art/`.
 
-It was removed on 2026-09-11. An icon cut from the source mod's art makes the upstream author's
-work carry the port's identity, and the icon is the one file of a port that is supposed to speak
-for the port rather than for the mod it carries. RimWorld loads a mod that has none.
-`Art/Make-ModIcon.ps1` is kept: the script is port work and falls under the MIT grant, the art it
-crops does not.
+Both replaced something cut from the source mod, and for the same reason. The showcase was
+cucumpear's and lavie2k's own in-game screenshot, and the icon was a 52×52 square of their
+south-facing sprite scaled to 128 px, because the full 44×93 sprite reads as a thin vertical
+smudge at the ~32 px the mod list actually draws. Art taken from the source makes the upstream
+author's work carry the port's identity, and those two files are the ones a port is supposed to
+speak for itself with. `Art/Make-ModIcon.ps1`, which made the old icon, is kept: the script is
+port work and falls under the MIT grant, the art it cropped does not.
 
 ## What changed in the port
 

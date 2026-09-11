@@ -40,11 +40,11 @@ First release. Port of cucumpear's and lavie2k's **Dalmatians** to RimWorld 1.6.
 
 ### Removed
 
-- `About/ModIcon.png`, a 52×52 crop of the mod's own south-facing sprite scaled to 128 px, added
-  earlier in this same unreleased version. An icon cut from the source mod's art makes the
-  upstream author's work carry the port's identity, and the icon is the one file of a port that is
-  supposed to speak for the port rather than for the mod it carries. The mod ships without one;
-  RimWorld does not require it. `Art/Make-ModIcon.ps1` is kept.
+- `About/ModIcon.png` as a 52×52 crop of the mod's own south-facing sprite scaled to 128 px, and
+  `About/Preview.png` as cucumpear's and lavie2k's in-game screenshot. Art taken from the source
+  makes the upstream author's work carry the port's identity, and those two files are the ones a
+  port is supposed to speak for itself with. Both were replaced on 2026-09-11 by pictures made for
+  this port, listed under Added. `Art/Make-ModIcon.ps1` is kept.
 
 ### Changed
 
@@ -83,6 +83,10 @@ First release. Port of cucumpear's and lavie2k's **Dalmatians** to RimWorld 1.6.
   English def does not declare and does not need.
 - `<incompatibleWith>cucumpear.dalmatians</incompatibleWith>`: the `defName`s are unchanged, so
   the two mods cannot load together.
+- `About/Preview.png` and `About/ModIcon.png`, made for this port on 2026-09-11 and replacing the
+  showcase and the icon that came from the source mod. The showcase is a dalmatian asleep in a
+  lamp pool, drawn to the collection's own showcase rules; the icon is the collection's mascot
+  wearing the dog's markings. Full-resolution sources under `Art/`, which the mod does not ship.
 
 ### Unchanged
 
@@ -90,8 +94,7 @@ First release. Port of cucumpear's and lavie2k's **Dalmatians** to RimWorld 1.6.
   colour and insulation, and the four textures.
 - The two `defName`s — `CCPDalmatian` and `Leather_Dalmatian` — so a save moves between the two
   mods without losing a dog. Checked against Core, every DLC, all 10 353 subscribed Workshop mods
-  and this repository: nothing else defines either.
-- `About/Preview.png`, cucumpear's and lavie2k's own.
+  and every other mod I maintain: nothing else defines either.
 - The dessicated corpse still ships only its east texture. `Graphic_Multi` rotates that one for
   the other facings, as it has since 2018; supplying the missing two would be drawing art rather
   than porting a mod.

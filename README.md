@@ -158,18 +158,32 @@ same reason: same defName, same collision.
 ```
 DalmatiansRenew/
   Mod/     <- what goes on the Workshop; the NTFS junction into RimWorld/Mods points here
-  Art/     <- files the game never loads, never published
+  Art/     <- the full-resolution sources of the two pictures, never published
+  _tools/  <- the test suite, never published
 ```
 
-`Art/Make-ModIcon.ps1` cut an `About/ModIcon.png` out of the mod's own sprite. That icon was
-removed on 2026-09-11 - a port does not take its identity from the art it carries - and the mod
-ships without one. The script is kept.
+`Art/` holds the full-resolution sources of the two pictures, `Preview-source.png` and
+`ModIcon-source.png`, which are cropped and scaled down into `Mod/About/`. It also keeps
+`Make-ModIcon.ps1`, the script that cut the first icon out of the mod's own sprite. That icon is
+gone: a port does not take its identity from the art it carries, and both pictures are now the
+port's own work.
 
 ## Verification
 
-Checked with the static checks that live in my mod monorepo, against RimWorld 1.6 alone. They
-are tooling, not mod content, so they are not carried here; run from that monorepo, with this
-folder sitting beside it, the commands are:
+Two levels, neither of which needs the game.
+
+`_tools/Run-Tests.ps1` is the mod's own suite: 28 tests, a few seconds, no RimWorld. It reads the
+game's classes by reflection and A Dog Said 2 off disk, so the sentences these documents state as
+fact are computed rather than trusted - the XPath quirk is reproduced rather than described, the
+`Wildness` clamp is read off the stat, and the leather's margin is walked up `LeatherBase`.
+
+```bash
+powershell -NoProfile -ExecutionPolicy Bypass -File _tools/Run-Tests.ps1
+```
+
+The static checks that live in my mod monorepo are the deeper instruments. They are tooling, not
+mod content, so they are not carried here; run from that monorepo, with this folder beside it, the
+commands are:
 
 ```bash
 pwsh -File scripts/Check-XmlFields.ps1   -ModPath DalmatiansRenew/Mod
@@ -179,6 +193,9 @@ pwsh -File scripts/Check-DefInjected.ps1 -TransMod DalmatiansRenew/Mod
 
 Every element maps to a 1.6 field, every def reference and `ParentName` resolves, and all 16
 translation keys land on something the injector can reach.
+
+What none of that can settle is in [TESTING.md](TESTING.md): the patch's effect lives in a list
+another mod builds at load time, and the failure mode is silence.
 
 ## Credits
 
