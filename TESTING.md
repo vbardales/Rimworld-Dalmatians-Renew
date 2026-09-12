@@ -158,7 +158,7 @@ Four files: three rotations of the living animal, one of the dessicated corpse.
 
 ## L — the mod list entry
 
-- The name reads `Dalmatians Renew`.
+- The name reads `Dalmatians Renew (unofficial)`.
 - The icon is drawn at about 32 px there.
 - The Workshop banner is `About/Preview.png`, 896 x 504.
 

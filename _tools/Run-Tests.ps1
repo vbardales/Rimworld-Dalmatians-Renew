@@ -501,7 +501,7 @@ It 'the identity is the one the repository and the Workshop know' {
     $r = $aboutDoc.DocumentElement
     $want = @{
         packageId = 'nelim.dalmatiansrenew'
-        name      = 'Dalmatians Renew'
+        name      = 'Dalmatians Renew (unofficial)'
         url       = 'https://github.com/vbardales/Rimworld-Dalmatians-Renew'
     }
     foreach ($k in $want.Keys) {

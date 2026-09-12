@@ -1,4 +1,6 @@
-# Dalmatians Renew
+# Dalmatians Renew (unofficial)
+
+UNOFFICIAL. This mod is published without the original author's explicit consent. If the original author contacts me to request its removal, I undertake to take it down promptly.
 
 Port of **cucumpear's and lavie2k's Dalmatians** to RimWorld 1.6.
 
@@ -181,18 +183,7 @@ fact are computed rather than trusted - the XPath quirk is reproduced rather tha
 powershell -NoProfile -ExecutionPolicy Bypass -File _tools/Run-Tests.ps1
 ```
 
-The static checks that live in my mod monorepo are the deeper instruments. They are tooling, not
-mod content, so they are not carried here; run from that monorepo, with this folder beside it, the
-commands are:
-
-```bash
-pwsh -File scripts/Check-XmlFields.ps1   -ModPath DalmatiansRenew/Mod
-pwsh -File scripts/Check-DefRefs.ps1     -ModPath DalmatiansRenew/Mod -Brief
-pwsh -File scripts/Check-DefInjected.ps1 -TransMod DalmatiansRenew/Mod
-```
-
-Every element maps to a 1.6 field, every def reference and `ParentName` resolves, and all 16
-translation keys land on something the injector can reach.
+The local suite includes XML field validation against RimWorld 1.6, parent and def reference resolution, patch XPath checks, and French translation checks. It requires the installed game data and assemblies; the ADS checks also require A Dog Said 2. Paths can be supplied through the script parameters. No monorepo checkout is required.
 
 What none of that can settle is in [TESTING.md](TESTING.md): the patch's effect lives in a list
 another mod builds at load time, and the failure mode is silence.

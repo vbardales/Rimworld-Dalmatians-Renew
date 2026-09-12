@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <packageId>nelim.dalmatiansrenew</packageId>
-  <name>Dalmatians Renew</name>
+  <name>Dalmatians Renew (unofficial)</name>
   <author>cucumpear, lavie2k - 1.6 port: nelim</author>
   <supportedVersions>
     <li>1.6</li>
@@ -13,7 +13,9 @@
   <incompatibleWith>
     <li>cucumpear.dalmatians</li>
   </incompatibleWith>
-  <description>One dog. A dalmatian: a medium-sized, spotted, sweet-natured pet that nuzzles, trains to Advanced, tames easily, and is bought and sold like a husky.
+  <description>UNOFFICIAL. This mod is published without the original author's explicit consent. If the original author contacts me to request its removal, I undertake to take it down promptly.
+
+One dog. A dalmatian: a medium-sized, spotted, sweet-natured pet that nuzzles, trains to Advanced, tames easily, and is bought and sold like a husky.
 
 No DLC, no dependencies, no assembly. Three defs, four textures and one optional patch.
 
@@ -51,7 +53,7 @@ Content mod: removing it mid-save destroys any dalmatian already in the colony.
 
 Source, changelog and attribution: https://github.com/vbardales/Rimworld-Dalmatians-Renew
 
-The port work was done with the help of an AI assistant (Claude, by Anthropic), under human direction and in-game testing. Thanks to cucumpear and lavie2k for the dog.
+The port work was done with the help of an AI assistant (Claude, by Anthropic), under human direction. In-game verification is still pending. Thanks to cucumpear and lavie2k for the dog.
 
 If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.</description>
 </ModMetaData>
