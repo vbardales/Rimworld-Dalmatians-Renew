@@ -181,3 +181,17 @@ item.
 
 If I do not answer within a reasonable time after being contacted, anyone may freely update this
 or any other of my mods, including publishing a continuation of it. All credit must be preserved.
+
+## Optional WhaleysDogs interoperability (2026-09-13)
+
+WhaleysDogs (Continued), by Whaley and maintained by Mlie, is inspected from its installed
+Workshop item 2274606936 (package Mlie.WhaleysDogs). Its own dalmatian definitions, statistics
+and asset bundle remain in that mod; no WhaleysDogs code, textures or definitions are copied
+into this repository. The optional patch targets its existing WD_Dalmatian identifiers and
+adds this port's own textures, leather reference and original French translations at load time.
+This does not extend our MIT grant to WhaleysDogs or change the upstream material's licence.
+
+Native RimWorld 1.6 PawnKindDef/AlternateGraphic/PawnGraphicUtils and patch-operation behaviour
+were inspected to choose supported XML fields and test the integration. Decompiled game files
+are temporary local build evidence, not distributed mod sources. The interoperability patch
+and tests are new port work. See WHALEYSDOGS.md for retained ownership and save limits.

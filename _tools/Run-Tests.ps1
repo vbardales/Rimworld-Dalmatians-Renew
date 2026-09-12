@@ -86,7 +86,8 @@ param(
     [string]$ModRoot  = (Split-Path -Parent $PSScriptRoot),
     [string]$GameData = 'C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Data',
     [string]$Managed  = 'C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed',
-    [string]$AdsRoot  = 'C:\Program Files (x86)\Steam\steamapps\workshop\content\294100\3238353862'
+    [string]$AdsRoot  = 'C:\Program Files (x86)\Steam\steamapps\workshop\content\294100\3238353862',
+    [string]$WhaleysRoot = 'C:\Program Files (x86)\Steam\steamapps\workshop\content\294100\2274606936'
 )
 
 $ErrorActionPreference = 'Stop'
@@ -957,5 +958,6 @@ It 'the translation covers the labels and descriptions the mod writes' {
 # ---------------------------------------------------------------------------------------------
 
 Write-Output ''
+. (Join-Path $PSScriptRoot 'WhaleysDogs.Tests.ps1')
 Write-Output ("{0} test(s), {1} failed, {2} skipped" -f $script:ran, $script:failed, $script:skipped)
 exit $(if ($script:failed -gt 0) { 1 } else { 0 })

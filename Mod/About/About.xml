@@ -7,6 +7,9 @@
     <li>1.6</li>
   </supportedVersions>
   <url>https://github.com/vbardales/Rimworld-Dalmatians-Renew</url>
+  <loadAfter>
+    <li>Mlie.WhaleysDogs</li>
+  </loadAfter>
   <loadBefore>
     <li>SamBucher.ADogSaidAnimalProsthetics2</li>
   </loadBefore>
@@ -17,7 +20,7 @@
 
 One dog. A dalmatian: a medium-sized, spotted, sweet-natured pet that nuzzles, trains to Advanced, tames easily, and is bought and sold like a husky.
 
-No DLC, no dependencies, no assembly. Three defs, four textures and one optional patch.
+No DLC, no dependencies, no assembly. Three defs, four textures and two optional patches.
 
 I am not the author of this mod. The animal, its artwork and its stats are cucumpear's and lavie2k's - all I did was bring it forward to 1.6, repair what the port turned up, and write the French. Credit goes to them; mistakes in the port are mine.
 
@@ -28,6 +31,12 @@ WHAT'S IN IT
 - The dalmatian. Body size 0.70, market value 250, comfortable down to -30C, omnivore, Advanced trainability, wildness 0, gestation 25 days, litters of one to three, lives about 12 years. It nuzzles, it takes a name the moment it is tamed, and it never turns manhunter.
 - Dalmatian leather, an almost white leather of its own. It insulates a little less against cold than plain leather does, 14 against 16, and is worth a shade less.
 - Support for A Dog Said... Animal Prosthetics 2, if you use it: the dalmatian is offered the same animal surgeries as vanilla's huskies and labradors. Inert if the mod is absent. It must load before A Dog Said 2, which the mod's metadata declares - A Dog Said 2 copies its three animal categories onto the real surgery recipes with its own last patch, so an animal added to those categories afterwards lands in a list nothing reads any more.
+
+WITH WHALEYSDOGS (CONTINUED)
+
+WhaleysDogs supplies the main dalmatian and its balance when both mods are enabled. This port adds an alternate spotted coat, French labels, dedicated leather and ADS 2 support. Its original coat and complete corpse graphics remain. Load WhaleysDogs first, this mod next, then ADS 2 if used.
+
+Existing dogs from this port remain and can still be sold; their ordinary random acquisition is disabled while WhaleysDogs is active. Old dogs can still reproduce, and explicit spawning remains possible. No saved animal is converted or deleted. Without WhaleysDogs, standalone behaviour is unchanged.
 
 WHAT CHANGED
 

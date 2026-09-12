@@ -28,3 +28,9 @@ PROMPT_*.md
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# Local build and inspection artifacts.
+.build/
+
+# Temporary validation and decompilation evidence.
+.build/

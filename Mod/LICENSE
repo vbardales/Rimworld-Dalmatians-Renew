@@ -31,6 +31,7 @@ The MIT licence above covers only what the 1.6 port added:
   - the rewritten A Dog Said patch, which targets A Dog Said 2's three recipe
     categories instead of recipe names that no longer exist, and compares each
     name properly instead of matching every recipe in the game
+  - the optional WhaleysDogs interoperability patch and its tests
   - the French translation
   - the packaging and the documentation
   - the new Preview.png and ModIcon.png artwork made for this port

@@ -162,7 +162,16 @@ Four files: three rotations of the living animal, one of the dessicated corpse.
 - The icon is drawn at about 32 px there.
 - The Workshop banner is `About/Preview.png`, 896 x 504.
 
-## M — French
+## M — English and French translations
+
+Run this scenario in English and French, first without WhaleysDogs, then with
+`Mlie.WhaleysDogs` enabled before this mod. Restart after changing the configuration.
+Inspect adults and puppies, animal descriptions and attack labels, leather descriptions,
+and the material name on a crafted garment. Include both saved `CCPDalmatian` animals
+and `WD_Dalmatian` animals in the integration configuration. Check singular/plural
+labels in lists, raw keys, unexpected English fallback in French and clipped text.
+English uses the source Def text; French uses the injections inventoried in STATUS.md.
+Record each language/configuration result separately; offline checks do not pass this scenario.
 
 - Switch the game to French and reload.
 - The animal is *dalmatien*, the puppy life stage is *chiot dalmatien*, and the leather is
@@ -170,6 +179,8 @@ Four files: three rotations of the living animal, one of the dessicated corpse.
 - The puppy stage is keyed `lifeStages.dalmatian_puppy`, by label and not by index. A puppy that
   stays in English while the adult translates means that key stopped matching, which happens if the
   English label is ever edited.
+- WhaleysDogs uses `lifeStages.Young_Dalmation`, preserving the exact spelling and case
+  of its English source handle. Its French puppy label is also *chiot dalmatien*.
 
 ## What cannot be tested offline
 
@@ -177,3 +188,41 @@ Scenarios C and D are the pair that matters, and neither can be settled without 
 patch's effect lives in a list built at load time by another mod, and the failure mode of both is
 silence. Everything else in this file has a counterpart in `_tools/Run-Tests.ps1`, which is why
 that suite exists.
+
+## N — WhaleysDogs, two coats and one ordinary acquisition pool
+
+Use a disposable save. Enable WhaleysDogs, this mod, then ADS 2 if testing it. Spawn at least
+30 WD_Dalmatian pawns, including males and females. Expect both the original and the alternate
+coat, roughly half each (not an exact quota). Check all directions and all three ages; compare
+silhouette size, clipping, shadows and female graphics. Save/reload: each pawn retains its coat.
+Check fresh, rotting and dessicated corpses; both coats keep WhaleysDogs' complete corpse fallback.
+Generate ordinary trader stock and random starting pets: only WD_Dalmatian should be newly offered
+as a dalmatian. CCPDalmatian remains available for explicit debug/scenario selection by design.
+
+## O — WhaleysDogs balance, French, leather and ADS
+
+Compare WD_Dalmatian with WhaleysDogs alone: all stats, diet, sounds and ages remain unchanged.
+With this port enabled, leather becomes Leather_Dalmatian and animalType is Canine. Butcher an
+animal and verify the leather label and item. Switch to French; verify animal, puppy and tool
+labels without unresolved translation errors. With ADS 2 enabled, compare both saved races with
+the husky's surgery list. Repeat without ADS 2: no patch error and no added ADS surgeries.
+
+## P — Existing animals and legacy reproduction
+
+On a COPY of an existing standalone save containing named/trained CCPDalmatian dogs and leather,
+enable WhaleysDogs plus this port. Every old dog, its name, training and health must survive.
+Verify an appropriate animal trader still buys an old dog. Old dogs can still reproduce and
+explicit scenarios can request them: no conversion or crossbreeding is promised. On a copy of
+a WhaleysDogs save, enable this port and verify old WD_Dalmatian animals survive as well.
+
+## Q — Optional content and load-order warning
+
+With only Core and this port, no WD_Dalmatian translation or integration patch should load.
+Verify the original dog balance, traders, textures and leather still work. With WhaleysDogs,
+check the mod list requests WhaleysDogs -> this port -> ADS 2. A reversed order is unsupported;
+restore it before checking surgeries. Disabling WhaleysDogs restores our standalone definitions,
+but a save containing WD_Dalmatian still requires WhaleysDogs. Do not remove content mods from
+the primary save to perform this check; use disposable copies.
+
+Record date, game build, load order, scenario ID, pass/fail and relevant log lines for N-Q.
+These four scenarios are documented but have not yet been executed in game.

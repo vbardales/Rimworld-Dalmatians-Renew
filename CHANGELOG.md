@@ -2,6 +2,12 @@
 
 All notable changes to this mod are documented here.
 
+## Unreleased - 2026-09-13
+
+- Add optional WhaleysDogs consolidation: keep WD_Dalmatian balance and add our coat variant, leather, French labels and ADS 2 membership.
+- Retain legacy saved dogs while retiring their ordinary random acquisition when WhaleysDogs is active.
+- Add nine integration tests using the installed Verse patch classes; in-game scenarios N-Q remain pending.
+
 ## [1.0.0] — 2026-09-05
 
 First release. Port of cucumpear's and lavie2k's **Dalmatians** to RimWorld 1.6.

@@ -13,7 +13,7 @@ through 1.4 and nothing further. The page is still online; the mod is abandoned,
 
 ## What the mod does
 
-One dog. Three defs, four textures, one optional patch — no assembly, no dependency, no DLC, no
+One dog. Three defs, four textures, two optional patches — no assembly, no dependency, no DLC, no
 research.
 
 | | |
@@ -155,6 +155,19 @@ tamed.
 This mod also spent a week inside **Nelim's Animal Ark** and has been taken out of it, for the
 same reason: same defName, same collision.
 
+## With WhaleysDogs (Continued)
+
+When both are enabled, WhaleysDogs supplies the main dalmatian breed and its balance. This port
+adds a stable alternate coat using our sprites (50% with the standard WhaleysDogs data), French
+labels, dalmatian leather and ADS 2 support. Its original coat and complete corpse graphics stay.
+Load this mod after WhaleysDogs and before ADS 2; the mod list declares that order.
+
+Existing CCPDalmatian dogs are retained and remain sellable. Their ordinary trader, random
+starting-pet and wild generation is retired while WhaleysDogs is enabled. Explicit spawning
+and descendants of old dogs remain possible; there is no destructive save conversion.
+Without WhaleysDogs, this mod works as before. See [WHALEYSDOGS.md](WHALEYSDOGS.md) for exact
+ownership, save limitations and tests. Runtime verification is still pending.
+
 ## Repository layout
 
 ```
@@ -174,7 +187,7 @@ port's own work.
 
 Two levels, neither of which needs the game.
 
-`_tools/Run-Tests.ps1` is the mod's own suite: 28 tests, a few seconds, no RimWorld. It reads the
+`_tools/Run-Tests.ps1` is the mod's own suite: 37 tests, a few seconds, no RimWorld. It reads the
 game's classes by reflection and A Dog Said 2 off disk, so the sentences these documents state as
 fact are computed rather than trusted - the XPath quirk is reproduced rather than described, the
 `Wildness` clamp is read off the stat, and the leather's margin is walked up `LeatherBase`.

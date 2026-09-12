@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Loaded only with Mlie.WhaleysDogs. Preserve both saved identities; retire ordinary
+     generation of the legacy breed. Native alternateGraphics keeps the coat stable per pawn.
+     Keep WhaleysDogs balance and corpse graphics; never copy its assets. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/PawnKindDef[defName="WD_Dalmatian"][race="WD_Dalmatian"]</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationConditional">
+          <xpath>/Defs/ThingDef[defName="WD_Dalmatian"]/race/leatherDef</xpath>
+          <match Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName="WD_Dalmatian"]/race/leatherDef</xpath>
+            <value>
+              <leatherDef>Leather_Dalmatian</leatherDef>
+            </value>
+          </match>
+          <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="WD_Dalmatian"]/race</xpath>
+            <value>
+              <leatherDef>Leather_Dalmatian</leatherDef>
+            </value>
+          </nomatch>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>/Defs/ThingDef[defName="WD_Dalmatian"]/race/animalType</xpath>
+          <match Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName="WD_Dalmatian"]/race/animalType</xpath>
+            <value>
+              <animalType>Canine</animalType>
+            </value>
+          </match>
+          <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="WD_Dalmatian"]/race</xpath>
+            <value>
+              <animalType>Canine</animalType>
+            </value>
+          </nomatch>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>/Defs/ThingDef[defName="CCPDalmatian"]/tradeability</xpath>
+          <match Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName="CCPDalmatian"]/tradeability</xpath>
+            <value>
+              <tradeability>Sellable</tradeability>
+            </value>
+          </match>
+          <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="CCPDalmatian"]</xpath>
+            <value>
+              <tradeability>Sellable</tradeability>
+            </value>
+          </nomatch>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>/Defs/ThingDef[defName="CCPDalmatian"]/race/petness</xpath>
+          <match Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName="CCPDalmatian"]/race/petness</xpath>
+            <value>
+              <petness>0</petness>
+            </value>
+          </match>
+          <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="CCPDalmatian"]/race</xpath>
+            <value>
+              <petness>0</petness>
+            </value>
+          </nomatch>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>/Defs/ThingDef[defName="CCPDalmatian"]/race/wildBiomes</xpath>
+          <match Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName="CCPDalmatian"]/race/wildBiomes</xpath>
+            <value>
+              <wildBiomes></wildBiomes>
+            </value>
+          </match>
+          <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="CCPDalmatian"]/race</xpath>
+            <value>
+              <wildBiomes></wildBiomes>
+            </value>
+          </nomatch>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>/Defs/PawnKindDef[defName="CCPDalmatian"]/canArriveManhunter</xpath>
+          <match Class="PatchOperationReplace">
+            <xpath>/Defs/PawnKindDef[defName="CCPDalmatian"]/canArriveManhunter</xpath>
+            <value>
+              <canArriveManhunter>false</canArriveManhunter>
+            </value>
+          </match>
+          <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/PawnKindDef[defName="CCPDalmatian"]</xpath>
+            <value>
+              <canArriveManhunter>false</canArriveManhunter>
+            </value>
+          </nomatch>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>/Defs/PawnKindDef[defName="CCPDalmatian"]/canBeScattered</xpath>
+          <match Class="PatchOperationReplace">
+            <xpath>/Defs/PawnKindDef[defName="CCPDalmatian"]/canBeScattered</xpath>
+            <value>
+              <canBeScattered>false</canBeScattered>
+            </value>
+          </match>
+          <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/PawnKindDef[defName="CCPDalmatian"]</xpath>
+            <value>
+              <canBeScattered>false</canBeScattered>
+            </value>
+          </nomatch>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>/Defs/PawnKindDef[defName="CCPDalmatian"]/appearsRandomlyInCombatGroups</xpath>
+          <match Class="PatchOperationReplace">
+            <xpath>/Defs/PawnKindDef[defName="CCPDalmatian"]/appearsRandomlyInCombatGroups</xpath>
+            <value>
+              <appearsRandomlyInCombatGroups>false</appearsRandomlyInCombatGroups>
+            </value>
+          </match>
+          <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/PawnKindDef[defName="CCPDalmatian"]</xpath>
+            <value>
+              <appearsRandomlyInCombatGroups>false</appearsRandomlyInCombatGroups>
+            </value>
+          </nomatch>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>/Defs/PawnKindDef[defName="CCPDalmatian"]/ecoSystemWeight</xpath>
+          <match Class="PatchOperationReplace">
+            <xpath>/Defs/PawnKindDef[defName="CCPDalmatian"]/ecoSystemWeight</xpath>
+            <value>
+              <ecoSystemWeight>0</ecoSystemWeight>
+            </value>
+          </match>
+          <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/PawnKindDef[defName="CCPDalmatian"]</xpath>
+            <value>
+              <ecoSystemWeight>0</ecoSystemWeight>
+            </value>
+          </nomatch>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>/Defs/PawnKindDef[defName="WD_Dalmatian"]/alternateGraphics</xpath>
+          <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/PawnKindDef[defName="WD_Dalmatian"]</xpath>
+            <value>
+              <alternateGraphics />
+            </value>
+          </nomatch>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>/Defs/PawnKindDef[defName="WD_Dalmatian"]/alternateGraphicChance</xpath>
+          <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/PawnKindDef[defName="WD_Dalmatian"]</xpath>
+            <value>
+              <alternateGraphicChance>0.5</alternateGraphicChance>
+            </value>
+          </nomatch>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>/Defs/PawnKindDef[defName="WD_Dalmatian"]/alternateGraphics/li[texPath="Things/Pawn/Animal/Dalmatian/Dalmatian"]</xpath>
+          <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/PawnKindDef[defName="WD_Dalmatian"]/alternateGraphics</xpath>
+            <value>
+              <li>
+                <texPath>Things/Pawn/Animal/Dalmatian/Dalmatian</texPath>
+                <weight>1</weight>
+              </li>
+            </value>
+          </nomatch>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>/Defs/RecipeDef[@Name="ADS_Cat1"]/recipeUsers</xpath>
+          <match Class="PatchOperationConditional">
+            <xpath>/Defs/RecipeDef[@Name="ADS_Cat1"]/recipeUsers/li[text()="WD_Dalmatian"]</xpath>
+            <nomatch Class="PatchOperationAdd">
+              <xpath>/Defs/RecipeDef[@Name="ADS_Cat1"]/recipeUsers</xpath>
+              <value>
+                <li>WD_Dalmatian</li>
+              </value>
+            </nomatch>
+          </match>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>/Defs/RecipeDef[@Name="ADS_Cat2"]/recipeUsers</xpath>
+          <match Class="PatchOperationConditional">
+            <xpath>/Defs/RecipeDef[@Name="ADS_Cat2"]/recipeUsers/li[text()="WD_Dalmatian"]</xpath>
+            <nomatch Class="PatchOperationAdd">
+              <xpath>/Defs/RecipeDef[@Name="ADS_Cat2"]/recipeUsers</xpath>
+              <value>
+                <li>WD_Dalmatian</li>
+              </value>
+            </nomatch>
+          </match>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>/Defs/RecipeDef[@Name="ADS_Cat3"]/recipeUsers</xpath>
+          <match Class="PatchOperationConditional">
+            <xpath>/Defs/RecipeDef[@Name="ADS_Cat3"]/recipeUsers/li[text()="WD_Dalmatian"]</xpath>
+            <nomatch Class="PatchOperationAdd">
+              <xpath>/Defs/RecipeDef[@Name="ADS_Cat3"]/recipeUsers</xpath>
+              <value>
+                <li>WD_Dalmatian</li>
+              </value>
+            </nomatch>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>
