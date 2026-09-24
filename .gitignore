@@ -29,8 +29,16 @@ Thumbs.db
 desktop.ini
 .DS_Store
 
-# Local build and inspection artifacts.
+# Local build and inspection artifacts, and temporary validation and decompilation evidence.
 .build/
 
-# Temporary validation and decompilation evidence.
-.build/
+# DDS textures the game wrote next to the PNGs during the 0.1.0 upload (2026-09-23). Every upload is
+# expected to write them again, and Steam reads the folder on disk
+# rather than git, so ignoring them changes nothing that ships.
+*.dds
+
+# In-game test evidence (Pickle reports, captures, Player.log). Kept on disk only, never in git:
+# screenshots and logs grow without limit. What is worth versioning is a short text summary under
+# docs/runs/, one line per run. TESTING.md says which files are worth keeping.
+Tests/Pickle/Evidence/
+evidence/
