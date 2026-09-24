@@ -174,8 +174,9 @@ recorded here instead.
 
 ## What was dropped from the published folder
 
-`About/PublishedFileId.txt`, for the obvious reason: it names cucumpear's and lavie2k's Workshop
-item.
+`About/PublishedFileId.txt` as it came: it named cucumpear's and lavie2k's Workshop item, and a
+port does not publish over someone else's item. The file that ships now holds the ID of this
+port's own item, `3806709979`, created by the 0.1.0 upload of 2026-09-23.
 
 ## Adoption
 
