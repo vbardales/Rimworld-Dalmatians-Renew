@@ -171,9 +171,28 @@ namespace DalmatiansRenew.PickleSteps
             var animal = Scene.Named(ctx, alias);
             var at = animal.Dead && animal.Corpse != null ? animal.Corpse.Position : animal.Position;
             Find.Selector.ClearSelection();
-            Find.CameraDriver.JumpToCurrentMapLoc(at);
-            Find.CameraDriver.SetRootSize(8f);
-            await ctx.WaitFrames(3);
+            // Close enough for a person to judge a texture: the first run's captures showed a dog a few
+            // pixels wide, because a plain SetRootSize only aims for the size and the camera had not
+            // got there after three frames.
+            Find.CameraDriver.SetRootPosAndSize(new Vector2(at.x + 0.5f, at.z + 0.5f), 6f);
+            await ctx.WaitFrames(5);
+        }
+
+        [Given("Dalmatians Renew spawns the player animal {string} as {string} beside {string}")]
+        public void SpawnBeside(PickleContext ctx, string alias, string kindName, string other)
+        {
+            var kind = DefDatabase<PawnKindDef>.GetNamedSilentFail(kindName);
+            ctx.Require(kind != null, $"no PawnKindDef named '{kindName}' is loaded in this pass");
+            var neighbour = Scene.Named(ctx, other);
+            var map = Scene.Map(ctx);
+            IntVec3 cell;
+            var found = CellFinder.TryFindRandomCellNear(neighbour.Position, map, 3,
+                c => c.Standable(map) && c.GetEdifice(map) == null && c.GetFirstPawn(map) == null, out cell);
+            ctx.Require(found, $"no free standable cell was found beside {other} at {neighbour.Position}");
+            var pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(
+                kind, Faction.OfPlayer, forceGenerateNewPawn: true, fixedBiologicalAge: 3f));
+            GenSpawn.Spawn(pawn, cell, map);
+            Scene.Remember(alias, pawn);
         }
 
         // The coat is a function of thingIDNumber, so the only way to ask for one is to generate

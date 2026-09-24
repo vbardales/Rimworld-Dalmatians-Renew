@@ -108,7 +108,7 @@ Feature: The dalmatian on its own
     Given the save "test-colony" is loaded
     And I close all dialogs
     And Dalmatians Renew spawns the player puppy "Pup" as "CCPDalmatian"
-    And Dalmatians Renew spawns the player animal "Rex" as "CCPDalmatian"
+    And Dalmatians Renew spawns the player animal "Rex" as "CCPDalmatian" beside "Pup"
     When Dalmatians Renew centres the camera on "Pup"
     And Dalmatians Renew shows "Pup" facing south
     And Dalmatians Renew shows "Rex" facing south
