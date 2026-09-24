@@ -10,27 +10,221 @@ local_path:   C:\Users\nelim\Documents\rimworld\DalmatiansRenew
 visibility:   public
 upstream_visibility: public (Steam API visibility=0; banned=0; checked 2026-09-12)
 detached:     yes
-maintainer:   Codex, this local repository task
-stage:        awaiting in-game verification
+maintainer:   Claude Code (the session named for this mod); Codex worked on it earlier
+stage:        preTest
 licence:      silent
 licence_port: MIT, limited to the port contributions
 licence_at:   LICENSE; Mod/LICENSE; ATTRIBUTION.md
 dependencies: none
 showcase:     complete
+settings_audit: not_applicable
+xml_tests:    passed
+functional_tests: unverified
+pickle_tests: not_written
+audit_revision: 8b734cab75a0579ec33a19db19023c074628af1a (this card is committed on top of it)
 tested_on:
-automated:    37 passed, 0 failed, 0 skipped on 2026-09-13
+automated:    33 ran, 0 failed, 4 skipped on 2026-09-24 (A Dog Said 2 not installed); 37 passed, 0 failed, 0 skipped on 2026-09-13
 manual:       17 scenarios documented in TESTING.md; execution pending
-workshop:
+workshop:     3806709979 (item created private by the 0.1.0 prepublication of 2026-09-23; not the prepublished state)
 remaining:
+  - unverified: no Pickle (Gherkin) suite is written, and TESTING.md does not yet declare the passes or justify what stays in Gherkin; preTest -> done
+  - unverified: four automated tests skipped for lack of A Dog Said 2 (Workshop 3238353862, not installed); reinstall it and rerun to get 37 of 37; preTest -> done
+  - unverified: done -> tested needs no @wip scenario, every conditional scenario played (@requires Mlie.WhaleysDogs and SamBucher.ADogSaidAnimalProsthetics2, each on a map that mounts it), and no manual scenario left (A-Q automated and green, or listed not applicable with the reason)
   - unverified: English and French runtime translation checks, with and without WhaleysDogs; TESTING.md scenario M
-  - unverified: all seventeen manual scenarios A-Q; no in-game run recorded
   - unverified: ADS 2 surgery availability and load order, scenarios C and D
-  - defect: inherited dessicated corpse has only its east texture
+  - defect: the description shipped by 0.1.0 has no IF I GO QUIET, AI-GENERATED or THANKS section and no final Source code on GitHub BBCode link, and names Claude but not Codex; SetItemDescription runs only at creation, so the Steam page is corrected by hand and About.xml aligned; required for prepublished, not for done or tested
 session:      local_e7fdeacc-7649-4702-9f00-45be2663ced1
-updated:      2026-09-13
+updated:      2026-09-24
 ---
 
 # Dalmatians Renew — status
+
+## Workflow audit — 2026-09-24
+
+**Decision: done -> preTest.** The 2026-09-13 audit below set `done`. Two criteria of
+preTest -> done are not established today, and the session title follows the stage: `Dalmatians
+Renew / preTest`. Neither is a defect of the mod; both are checks that have not been made.
+This section supersedes the 2026-09-13 one on the stage and on the test counts. The stage code
+is the workflow state itself, with no translation between the two.
+
+Audited revision: `8b734cab75a0579ec33a19db19023c074628af1a`, with the five commits made in
+this session on top of `9838310`. Local changes before the audit: `STATUS.md` (the 2026-09-13
+audit, uncommitted), and untracked `Mod/About/PublishedFileId.txt` and four `.dds` files, all
+written by the 0.1.0 upload of 2026-09-23. The distributed root is `Mod/`, 20 tracked files.
+Nothing was published, no image was generated, and no RimWorld was launched: no Pickle suite
+exists, so there was nothing to queue and no watcher to start.
+
+### Ordered transition results
+
+| Transition | Result | Evidence |
+| --- | --- | --- |
+| dansMonoRepo -> horsMonoRepo | Validated | Own `.git`, `origin` fetches, and `origin/main` equalled the local HEAD `9838310` before this session's commits. README, ATTRIBUTION, LICENSE and CHANGELOG exist; LICENSE and ATTRIBUTION are byte-identical to their copies in `Mod/` (`cmp`). Visibility `PUBLIC` is retained from 2026-09-13 and was not queried again. |
+| horsMonoRepo -> ModIcon generated | Validated, build not applicable | No C# and no assembly. `git log` shows no change to `Mod/About/ModIcon.png` or `Art/` since the revision audited on 2026-09-13, where the 128 x 128 icon was inspected. Not re-inspected today. No icon was generated. |
+| ModIcon generated -> Preview generated | Validated | Same: `Preview.png` is unchanged since it was inspected on 2026-09-13 (896 x 504, 514087 bytes). |
+| Preview generated -> preOptions | Validated | `About.xml` name is `Dalmatians Renew (unofficial)` and the description is in English. Only the author line changed since 2026-09-13, to `1.6 adapted by Nelim`. |
+| preOptions -> options | Not applicable, justified | No `.dll`, no `.cs`, and no `MainButtonDef`, `ModSettings` or settings dialog anywhere in `Mod/`, so no empty page and no shortcut. |
+| options -> l10n | Validated offline | `Check-DefInjected.ps1` rerun today: 31 patch operations, 11598 defs indexed, 25 keys, 0 errors. English lives in the source defs. |
+| l10n -> preTest | Validated | About declares `loadAfter` Mlie.WhaleysDogs, `loadBefore` SamBucher.ADogSaidAnimalProsthetics2 and `incompatibleWith` cucumpear.dalmatians, and the suite's load-order test passes. WhaleysDogs is installed (Workshop 2274606936). ADS 2 is not installed here, so its package ID was not re-read from disk today; the 2026-09-13 check stands. |
+| preTest -> done | **Not established** | (1) Scenarios A-Q are written in TESTING.md, with preconditions, actions and expected results. (2) The suite is green where it runs, but 4 of 37 tests were skipped today for lack of A Dog Said 2: 33 ran, 0 failed. A skipped test is not a green test. (3) No Pickle (Gherkin) suite is written, and TESTING.md neither declares the passes nor justifies what stays in Gherkin. No in-game run is required for `done`. |
+| done -> tested | Not reached | See the criteria under next work. No scenario has been played. |
+
+### Checks run
+
+- `_tools/Run-Tests.ps1`: first run 33 ran, 1 failed, 4 skipped. The failure was the test that
+  asserted `About/PublishedFileId.txt` is absent, which the prepublication made false; it now
+  asserts the file is present, numeric and not the original authors' item (commit `8c391e1`).
+  Second run: **33 ran, 0 failed, 4 skipped**. Skipped: the predicate test, the absent-ADS guard,
+  the category test, and WhaleysDogs plus ADS. Reason given by the suite: A Dog Said 2 not found at
+  the Workshop path `3238353862`; searched the Workshop and Mods folders, it is not installed.
+- `Check-DefInjected.ps1`: 25 keys, 0 errors.
+- `git diff 2e820f8 9838310`: only the licence and name text, the author line and the two
+  ATTRIBUTION copies changed since the previous audit.
+- Evidence: no tracked evidence, no `.feature` file, no `Tests/` folder, and no run naming this
+  mod in `pickle-reports-archive/`. Nothing was deleted; there was nothing to delete.
+
+### Housekeeping done in this session
+
+- `*.dds`, `Tests/Pickle/Evidence/` and `evidence/` are in `.gitignore`. No `.dds` was ever
+  tracked, so none had to leave the index. The duplicate `.build/` entry was folded into one.
+- The Workshop ID `3806709979` is committed (`8c391e1`, `Add published Workshop file ID for 0.1.0`).
+- `CHANGELOG.md` opens with `## [0.1.0]`, the upload that created the item, and keeps 1.0.0 as
+  `unreleased` above it.
+- `ATTRIBUTION.md` and its copy in `Mod/` no longer say the ID file was simply dropped.
+- `TESTING.md` says which evidence is worth keeping, and what is deleted and when.
+
+### Strictly necessary next work
+
+For `done`: write the Pickle suites and justify their scope (only what a running game can show:
+the information card, the three rotations and the single-texture corpse, the two coats, the
+operations tab), declare in TESTING.md how many passes there are and what each covers, and reinstall
+A Dog Said 2 so the four skipped tests run. No in-game run is needed for `done`.
+
+For `done -> tested`, once that exists: no scenario left in `@wip`; every conditional scenario
+played on a map that mounts its mod, with the report read (`setName`, suite and scenario names,
+`exitReason` before the numbers, scenarios played against features discovered); the passes without
+the optional mods, with WhaleysDogs and ADS 2, and one for the declared incompatibility with
+`cucumpear.dalmatians`; English and French, each in developer mode; the `@review` captures opened;
+the logs read; a new game and disposable copies of an existing save; and no manual scenario left,
+each of A-Q either automated and green or listed as not applicable with its reason.
+
+### Optional, not blocking
+
+- TESTING.md's opening line still says one patch, and its log table says two patch classes,
+  though the WhaleysDogs integration exists. It is a wording fix.
+- Scenario D, the wrong load order, may exercise the game's own ordering rather than what this mod
+  declares. If so it is the kind of scenario the audit says not to write. Decide when the suites
+  are written.
+- The inherited standalone dessicated corpse still has only its east texture. Accepted and
+  documented; its in-game fallback rendering is unverified.
+
+## Workflow audit — 2026-09-13
+
+*Superseded on the stage and on the test counts by the 2026-09-24 audit above. Kept as history.*
+
+**Decision: awaiting in-game verification -> done.** `done` is the literal workflow
+state: ready for final functional validation in game. It does not mean `tested`.
+This section supersedes conflicting current conclusions in the historical entries below;
+historical results and implementation notes are preserved.
+
+Audited revision: `2e820f86eae81f816c42ac53886587ef10def825`. The working tree and index
+were clean before the audit. Only STATUS.md is changed by this audit; shipped content,
+images, tests and historical QA artifacts are unchanged. The distributed root is
+`C:\Users\nelim\Documents\rimworld\DalmatiansRenew\Mod` (19 files), not the repository root.
+Read the parent AGENTS.md, PUBLISHING.md, STYLE_RIMWORLD.md, MOD_SETTINGS.md and
+TRANSLATIONS.md, applying the user's overriding workflow and interpretation rules.
+
+### Ordered transition results
+
+| Transition | Result | Evidence |
+| --- | --- | --- |
+| dansMonoRepo -> horsMonoRepo | Validated | Own .git directory and Git root, no superproject; origin configured; live GitHub check returns PUBLIC and remote HEAD equals audited commit. Identity is coherent across folder, repository, packageId and display name. English README, attribution, licence and changelog exist. Distributed licence and attribution are byte-identical to root copies (SHA256). |
+| horsMonoRepo -> ModIcon generated | Validated; build not applicable | Content implementation is present, including optional WhaleysDogs integration. No C# source, project or shipped assembly requiring compilation. Tests passed. Directly inspected installed PNG icon: 128 x 128, 21682 bytes, outlined spotted mascot. |
+| ModIcon generated -> Preview generated | Validated | Direct inspection of shipped 896 x 504 PNG, 514087 bytes, and existing 268 px thumbnail. Subject, high overhead camera, restrained colour families and text placement conform; no concrete camera concern. No historical generation report or screenshot comparison required. |
+| Preview generated -> preOptions | Validated | English description and preview summary; Renew rendered at 65 percent in secondary blue; exact unofficial tag on its own line; no linking words requiring treatment. Amber rule/badge clearly separate from blue secondary text. Palette and composition retained in Art. |
+| preOptions -> options | Not applicable justified; gate passed | Settings inventory below establishes no relevant settings and no empty page or MainButtons shortcut. |
+| options -> l10n | Validated offline | All five French resources reviewed against owned and optional source text; 25 populated entries, native English source fallback. Shared injection checker: 25 keys, 0 errors, no unresolved targets. |
+| l10n -> preTest | Validated | Core supplies base classes, inherited definitions and generic text. No DLC or required third-party dependency. WhaleysDogs and ADS 2 are optional; package IDs verified against installed About files supporting 1.6. Load order and conditional patch/root behaviour pass the suite. |
+| preTest -> done | Validated | Existing automated/XML suite executed against delivered content: 37 passed, 0 failed, 0 skipped. TESTING.md A-Q supplies functional actions and expected results with relevant load configurations and save preconditions. |
+| done -> tested | Unverified | No in-game scenario execution, FR/EN interface check or attributable runtime log review performed. New-game and existing-save coverage remains pending. |
+
+### Settings audit
+
+Inventory covered both base definitions, leather, both patches, every loaded folder,
+README.md and WHALEYSDOGS.md. The animal's stats, training, leather and graphics are fixed
+content/balance, not an existing user configuration contract. Optional integrations follow
+the enabled mod list on load. The alternate coat is native per-pawn variation, with a default
+0.5 chance (an existing third-party chance is preserved); legacy acquisition restrictions
+implement the documented combined-mode behaviour while retaining saved identities.
+There is no documented player need requiring an additional control for this content port,
+and no supported setting currently requiring manual XML editing. Exposing all balance
+constants or introducing an integration toggle would be new development, not necessary
+settings work for this audit.
+
+The complete distributed inventory contains XML, textures, metadata and legal documents;
+no settings class/assembly, MainButtonDef, configuration page or shortcut is supplied.
+Source search for settings/configuration/UI access confirms the only settings references
+refer to ADS documentation. Therefore `settings_audit: not_applicable` is justified.
+Input limits, reset, settings persistence and shortcut interactions are not applicable.
+RIMMSQOL and other customization tools were not tested and no compatibility claim is made.
+Per the user's explicit override, in-game verification is not needed to pass this absent-settings gate.
+
+### Executed checks and scope
+
+- `git status --porcelain=v1`, `git rev-parse --show-toplevel --show-superproject-working-tree`,
+  `git remote -v`, `git log -1`: clean initial revision and independent repository established.
+- `gh repo view vbardales/Rimworld-Dalmatians-Renew --json name,visibility,url` and
+  `git ls-remote origin HEAD`: succeeded on read-only retry outside sandbox restrictions;
+  PUBLIC and `2e820f86eae81f816c42ac53886587ef10def825` respectively.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File _tools/Run-Tests.ps1`: exit 0,
+  **37 tests, 0 failed, 0 skipped**. Uses installed RimWorld 1.6 data/assemblies, ADS 2
+  (installed metadata version 1.3.7) and WhaleysDogs 1.6 data. Covers XML fields/classes,
+  inheritance/references, textures, metadata, base patch predicates/absence guard and
+  actual Verse patch operations for combined-mode fixtures, saved IDs, coat data,
+  idempotence and third-party variant preservation. This is offline integration testing.
+- `& ..\scripts\Check-DefInjected.ps1 -TransMod (Join-Path $PWD 'Mod') -Targets @((Join-Path $PWD 'Mod'), 'C:\Program Files (x86)\Steam\steamapps\workshop\content\294100\2274606936\1.6')`:
+  exit 0, 31 patch operations applied, 11598 definitions indexed, **25 keys, 0 errors**.
+- Reviewed all displayed text in definitions and five French files: labels, descriptions,
+  named tools, puppy/plural forms and material adjective. Patches add data/references, not
+  UI sentences. No custom Keyed UI, grammar or formatting parameters exist. English source
+  values provide native coverage; unnamed/inherited game text uses Core resources.
+- Direct image inspection performed on Mod/About/Preview.png, Mod/About/ModIcon.png and
+  Art/preview-268.png. Existing Art/preview-qa.json font/contrast figures were read as
+  historical measurements, not represented as freshly rerendered measurements.
+
+### Findings outside the next transition
+
+**Publication defect:** PUBLISHING.md requires a final
+`[url=https://github.com/vbardales/Rimworld-Dalmatians-Renew]Source code on GitHub[/url]`
+link after credits. About.xml instead has a bare repository URL before its final paragraphs.
+Correct this before publication. It does not invalidate the user's explicit preOptions
+criteria (English description and naming), offline tests or readiness for in-game testing.
+No description was edited and nothing was published by this audit.
+
+**Nonblocking documentation cleanup:** TESTING.md's opening still says one patch and its
+log table says two patch classes, despite the implemented integration. Its early Animal Ark
+warning is broader than its later scenario J, which specifies older versions. Use the current
+inventory and the scenario's version qualification; optional editorial updates should reconcile
+these statements. Existing scenarios remain usable with the stated base/combined configurations.
+
+**Accepted limitation, not a required correction:** the inherited standalone dessicated corpse
+has only an east texture. This is deliberate and documented in TESTING.md I and attribution;
+it is no longer classified as a blocking defect in remaining. Actual in-game fallback rendering
+is still unverified. The combined mode preserves WhaleysDogs corpse graphics.
+
+The upstream `silent` classification and retirement evidence are retained from the documented
+2026-09-12 review; no new upstream permission is claimed. The MIT grant is explicitly limited
+to port contributions and excludes original definitions/textures. Publication convention and
+public visibility do not grant rights to upstream material. This audit did not repeat the
+historical Steam description/comment search or change legal/visibility policy.
+
+### Strictly necessary next work
+
+Execute and record applicable TESTING.md A-Q scenarios in RimWorld 1.6, including English
+and French, standalone and WhaleysDogs/ADS configurations, new games and disposable copies
+of existing saves. Verify actual surgeries, coat rendering and save retention; review related
+logs and rerun affected regressions after any fix. Record game build, load order, date and
+per-scenario result. Settings and MainButtons tests remain not applicable unless that content
+changes. No new feature, image generation or publication is required for `done -> tested`.
 
 ## Translation audit — 2026-09-13
 
