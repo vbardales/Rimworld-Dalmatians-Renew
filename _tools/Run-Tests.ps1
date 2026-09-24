@@ -52,7 +52,7 @@
   introduced into copies of the mod in a scratch directory, never into the real files, in twelve
   batches whose members target disjoint tests:
 
-    packageId, loadBefore, a PublishedFileId.txt, a miscased texPath,
+    packageId, loadBefore, the upstream ID in PublishedFileId.txt, a miscased texPath,
     a Dessicated _north added                     -> the five About and image tests
     an element that is no field, a bad ParentName,
     a leatherDef pointing nowhere                 -> field walk, parent, reference
@@ -528,9 +528,12 @@ It 'the load order and the incompatibility are declared' {
     }
 }
 
-It 'no PublishedFileId.txt travels with the port' {
+It 'About/PublishedFileId.txt names this port''s own Workshop item, not the original''s' {
     $p = Join-Path $modDir 'About\PublishedFileId.txt'
-    if (Test-Path $p) { 'About/PublishedFileId.txt is present; it names the original authors Workshop item' }
+    if (-not (Test-Path $p)) { 'About/PublishedFileId.txt is missing: the next upload would create a second item'; return }
+    $id = (Get-Content $p -Raw).Trim()
+    if ($id -notmatch '^\d+$') { "PublishedFileId.txt holds '$id', which is not a numeric Workshop ID"; return }
+    if ($id -eq '1513691963') { 'PublishedFileId.txt names cucumpear''s and lavie2k''s item; it must name this port''s own' }
 }
 
 It 'Preview.png is 896 x 504 and under 900 KB' {
