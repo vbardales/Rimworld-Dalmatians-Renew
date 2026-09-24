@@ -7,7 +7,7 @@
 @requires:Mlie.WhaleysDogs @requires:SamBucher.ADogSaidAnimalProsthetics2
 Feature: The dalmatian beside WhaleysDogs and A Dog Said 2
 
-  Scenario: the load order is WhaleysDogs, this mod, then A Dog Said 2
+  Scenario: the load order is WhaleysDogs then this mod then A Dog Said 2
     Then mod "Mlie.WhaleysDogs" loads before "nelim.dalmatiansrenew"
     And mod "nelim.dalmatiansrenew" loads before "SamBucher.ADogSaidAnimalProsthetics2"
 

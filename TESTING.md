@@ -62,8 +62,9 @@ The first of the two repairs, and the only place it shows.
 - Open the tamed dalmatian's information card, Stats.
 - **Wildness is listed, at 0%.** Listed is the point: `Wildness` declares `showIfUndefined` false,
   so the old broken form did not print a wrong number, it printed no line at all.
-- Compare with a husky, which is 0.75. A dalmatian that reads 75% means the `<Wildness>` stat base
-  is being ignored and the parent template's value is showing through.
+- Compare with a hare, which declares 0.75. A card that lists every animal at 0% would not tell a
+  stat that is read from one that is missing. The husky is no control in 1.6: it declares 0 as well,
+  which the first Pickle run of 2026-09-24 found out by reading its card at 0%.
 - Search the log for `doesn't correspond to any field`. No line may name `wildness`.
 
 ## C — A Dog Said 2, with the load order correct
@@ -239,7 +240,7 @@ as the plain-language statement of what each scenario means; this table says whe
 | Scenario | Where it is checked | What is left out, and why |
 | --- | --- | --- |
 | A. the animal exists, and tames | Pickle `01`: defs owned by the mod, race values, naming on taming | That Obedience, Release, Rescue and Haul are offered: the game's reaction to `trainability`, whose value is asserted |
-| B. Wildness on the card | Pickle `01`: card lists Wildness at 0%, the husky at 75%, with a capture | The log search for `wildness`: warnings the game writes while it loads its defs may come before Pickle starts capturing the log, so `no warnings from mod` cannot be relied on for them. `_tools/Run-Tests.ps1` proves offline that no `<wildness>` is left under `<race>` |
+| B. Wildness on the card | Pickle `01`: card lists Wildness at 0%, a hare at 75%, with a capture | The log search for `wildness`: warnings the game writes while it loads its defs may come before Pickle starts capturing the log, so `no warnings from mod` cannot be relied on for them. `_tools/Run-Tests.ps1` proves offline that no `<wildness>` is left under `<race>` |
 | C. A Dog Said 2, correct order | Pickle `03` and `04`: same operations as the husky, more than a plain animal | The look of the Health tab: vanilla's interface |
 | D. A Dog Said 2, wrong order | Pickle `05`, the symptom asserted as green | Nothing. It is the one supported-order exception, and it runs when A Dog Said 2 changes |
 | E. A Dog Said 2 absent | Pickle `01` and `02`: same operations as a rat, no error, no warning | |

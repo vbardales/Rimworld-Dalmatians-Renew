@@ -1,8 +1,9 @@
 # Dalmatians Renew Pickle suite
 
 Development only. Nothing under `Tests/` is part of the Workshop payload. The suite is written for the
-shared WSL runner. **It has never been run**: what is stated here is what was checked offline, and no
-in-game result is claimed by the presence of these files.
+shared WSL runner. **Pass 1 in English has been played once, on 2026-09-24, and 5 of its 14 scenarios failed**
+on causes the offline check could not see (see below). Every other pass has never been run. Nothing here claims
+an in-game result that the reports do not show.
 
 ## Scope
 
@@ -59,10 +60,9 @@ Do not run the Windows game, do not stage by hand, and do not switch language in
 
 ### Preconditions that are not in this repository
 
-- **A Dog Said... Animal Prosthetics 2** (Workshop `3238353862`) is not installed on this machine, in
-  the Windows Workshop folder or in the WSL cache. Passes 3, 4 and 5 stop at the staging step until it
-  is: `scripts/stage-pickle-wsl.sh` fails on a mod present in none of its folders rather than skip it.
-  Subscribe to it, or fill the WSL cache with `scripts/download-workshop-wsl.sh`.
+- **A Dog Said... Animal Prosthetics 2** (Workshop `3238353862`) reached the Windows Workshop folder on
+  2026-09-24, so passes 3, 4 and 5 can be staged. Before that they could not: `scripts/stage-pickle-wsl.sh`
+  stops on a mod present in none of its folders rather than skip it.
 - WhaleysDogs (`2274606936`) and cucumpear's original (`1513691963`) are in the Windows Workshop folder.
 - The scenarios use the `test-colony` fixture that ships with Pickle, and need at least one free colonist.
 
@@ -73,8 +73,8 @@ Do not run the Windows game, do not stage by hand, and do not switch language in
 - `@review` marks a scenario whose only claim is the captures it attaches. Its green says the path ran, not
   that the picture is right. Each capture is opened and read before the pass counts.
 - `@english` and `@french` are written against the language the pass was launched in. The filter excludes
-  the other one, and each carries a `the language is ...` assertion so that a pass which silently fell back
-  to English cannot pass as French.
+  the other one, and each carries a `this pass runs in ...` assertion so that a pass which silently fell back
+  to English cannot pass as French. It is a local step: the staged Pickle has no step for the language.
 
 ## Offline validation
 
@@ -85,16 +85,24 @@ powershell -NoProfile -ExecutionPolicy Bypass -File Tests/Pickle/Check-Steps.ps1
 
 The build writes `Tests/Pickle/Mod/Pickle/Assemblies/DalmatiansRenew.PickleSteps.dll`, against RimWorld 1.6
 and Pickle 4. `Check-Steps.ps1` parses every feature with Pickle's own Gherkin parser, and checks that every
-step line matches exactly one pattern among this suite's, Pickle's and the staged tools', that no local
-pattern is unused, that every `@requires` names a package some map stages, and that every map line points at
+step line matches exactly one pattern among this suite's, the staged Pickle's and the staged tools', that no
+local pattern is unused, that no Pickle `def` step names a defName shared by two def types, that every `@requires` names a package some map stages, and that every map line points at
 a folder whose `About.xml` carries the packageId the line names. A step Pickle's engine plays itself, the
 fixture load and the save and reload, is accepted when Pickle's own features use the same words, and listed.
 
 What it cannot prove is that a step does what its sentence says, and that Pickle's runtime accepts what it
-parses. Three things are worth reading first when a first run fails:
+parses. The first run found three causes it had missed, and each is now checked or fixed:
+
+- It read Pickle's steps from a newer development build. The WSL stages the Workshop build, which has no
+  `the language is` step. The check reads the Workshop build now.
+- Pickle's `def` steps refuse a defName that two def types share, and `CCPDalmatian` is a ThingDef and a
+  PawnKindDef. Three scenarios failed on it. The check now flags it, and local steps say the type.
+- The husky declares Wildness 0 in 1.6, not 0.75. The control is a hare.
+
+Three things are worth reading first when a run fails:
 
 - `Dalmatians Renew ... lists the stat "Wildness"` reads the information card's entries through
-  `StatsReportUtility.StatsToDraw`, and compares the displayed text, `0%` and `75%`.
+  `StatsReportUtility.StatsToDraw`, and compares the displayed text, `0%` for the dalmatian and `75%` for a hare.
 - `Dalmatians Renew tames` calls `InteractionWorker_RecruitAttempt.DoRecruit`, and expects a name to come
   with it. If naming on taming lives elsewhere in the game, the step is where to look.
 - Pass 6 asserts that the definition loaded last wins, as TESTING.md scenario J documents it. It is the one

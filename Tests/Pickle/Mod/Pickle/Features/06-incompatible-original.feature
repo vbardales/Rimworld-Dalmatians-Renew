@@ -10,10 +10,11 @@
 @requires:cucumpear.dalmatians
 Feature: The dalmatian beside the original mod it replaces
 
-  Scenario: both mods are loaded, the original first
+  Scenario: both mods are loaded and the original first
     Then mod "cucumpear.dalmatians" is loaded
     And mod "cucumpear.dalmatians" loads before "nelim.dalmatiansrenew"
 
   Scenario: the definition loaded last wins
-    Then def "CCPDalmatian" is defined by mod "nelim.dalmatiansrenew"
+    Then Dalmatians Renew the thing "CCPDalmatian" comes from the mod "nelim.dalmatiansrenew"
+    And Dalmatians Renew the pawn kind "CCPDalmatian" comes from the mod "nelim.dalmatiansrenew"
     And def "Leather_Dalmatian" is defined by mod "nelim.dalmatiansrenew"

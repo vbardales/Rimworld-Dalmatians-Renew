@@ -11,7 +11,7 @@
 @requires:SamBucher.ADogSaidAnimalProsthetics2
 Feature: The dalmatian beside A Dog Said 2, in the declared load order
 
-  Scenario: the load order is the one the mod declares, and WhaleysDogs is absent
+  Scenario: the load order is the one the mod declares and WhaleysDogs is absent
     Then mod "SamBucher.ADogSaidAnimalProsthetics2" is loaded
     And mod "nelim.dalmatiansrenew" loads before "SamBucher.ADogSaidAnimalProsthetics2"
     And mod "Mlie.WhaleysDogs" is not loaded

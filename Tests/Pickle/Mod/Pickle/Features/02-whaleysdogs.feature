@@ -11,10 +11,9 @@ Feature: The dalmatian beside WhaleysDogs
   Scenario: the integration loads after WhaleysDogs and patches its dalmatian
     Then mod "Mlie.WhaleysDogs" is loaded
     And mod "Mlie.WhaleysDogs" loads before "nelim.dalmatiansrenew"
-    And def "WD_Dalmatian" was patched by mod "nelim.dalmatiansrenew"
     And mod "SamBucher.ADogSaidAnimalProsthetics2" is not loaded
-    And def "WD_Dalmatian" field "race.leatherDef" is "Leather_Dalmatian"
-    And def "WD_Dalmatian" field "race.animalType" is "Canine"
+    And Dalmatians Renew the race of "WD_Dalmatian" reads "leatherDef" as "Leather_Dalmatian"
+    And Dalmatians Renew the race of "WD_Dalmatian" reads "animalType" as "Canine"
 
   # N. Native per-pawn coats: roughly half each, not an exact quota. The coat is a function of the
   #    animal's thingIDNumber, so forty animals all sharing one coat would be a fault of the patch.
@@ -42,7 +41,7 @@ Feature: The dalmatian beside WhaleysDogs
     And no warnings from mod "nelim.dalmatiansrenew"
 
   # N. Only WD_Dalmatian is newly offered by traders. P. An old dog can still be sold to them.
-  Scenario: traders stock only the canonical breed, and the legacy breed stays sellable
+  Scenario: traders stock only the canonical breed and the legacy breed stays sellable
     Then Dalmatians Renew some trader kind stocks "WD_Dalmatian"
     And Dalmatians Renew no trader kind stocks "CCPDalmatian"
     And Dalmatians Renew the player can sell "CCPDalmatian"
@@ -107,14 +106,14 @@ Feature: The dalmatian beside WhaleysDogs
   #    text, typos included: the puppy stage really is spelled "Young Dalmation" upstream.
   @english
   Scenario: the canonical dalmatian reads in English
-    Then the language is "English"
+    Then Dalmatians Renew this pass runs in English
     And Dalmatians Renew the pawn kind "WD_Dalmatian" is labelled "Dalmatian" and pluralised "Dalmatians"
     And Dalmatians Renew the first life stage of pawn kind "WD_Dalmatian" is labelled "Young Dalmation" and pluralised "Young Dalmatians"
     And Dalmatians Renew the thing "WD_Dalmatian" has the attack labels "left claw, right claw, head"
 
   @french
   Scenario: the canonical dalmatian reads in French
-    Then the language is "French"
+    Then Dalmatians Renew this pass runs in French
     And Dalmatians Renew the thing "WD_Dalmatian" is labelled "dalmatien"
     And Dalmatians Renew the thing "WD_Dalmatian" has a description beginning "Grand chien au pelage tacheté."
     And Dalmatians Renew the thing "WD_Dalmatian" has the attack labels "griffe gauche, griffe droite, tête"

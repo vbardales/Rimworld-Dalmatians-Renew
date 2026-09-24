@@ -97,6 +97,57 @@ namespace DalmatiansRenew.PickleSteps
                 $"the litter size curve of {defName} peaks at {peak.x} (weight {peak.y}), expected {size}");
         }
 
+        // ---- what Pickle's own def steps cannot say ----
+        // CCPDalmatian names both a ThingDef and a PawnKindDef, and so does WD_Dalmatian. Pickle's
+        // "def X field/is defined by mod/stat" refuses a name that two def types share, and offers no
+        // way to say which, so the steps below say it.
+
+        private static bool FromMod(ModContentPack pack, string packageId) =>
+            pack != null && (string.Equals(pack.PackageId, packageId, System.StringComparison.OrdinalIgnoreCase) ||
+                             string.Equals(pack.PackageIdPlayerFacing, packageId, System.StringComparison.OrdinalIgnoreCase));
+
+        [Then("Dalmatians Renew the thing {string} comes from the mod {string}")]
+        public void ThingFromMod(PickleContext ctx, string defName, string packageId)
+        {
+            var pack = Thing(ctx, defName).modContentPack;
+            ctx.Assert(FromMod(pack, packageId), $"the thing {defName} comes from '{pack?.PackageIdPlayerFacing}', expected {packageId}");
+        }
+
+        [Then("Dalmatians Renew the pawn kind {string} comes from the mod {string}")]
+        public void KindFromMod(PickleContext ctx, string defName, string packageId)
+        {
+            var pack = Kind(ctx, defName).modContentPack;
+            ctx.Assert(FromMod(pack, packageId), $"the pawn kind {defName} comes from '{pack?.PackageIdPlayerFacing}', expected {packageId}");
+        }
+
+        [Then("Dalmatians Renew the race of {string} reads {string} as {string}")]
+        public void RaceField(PickleContext ctx, string defName, string field, string expected)
+        {
+            var race = Thing(ctx, defName).race;
+            ctx.Require(race != null, $"{defName} has no race");
+            var info = typeof(RaceProperties).GetField(field, System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
+            ctx.Require(info != null, $"RaceProperties has no public field named '{field}' in this game build");
+            var actual = System.Convert.ToString(info.GetValue(race), System.Globalization.CultureInfo.InvariantCulture);
+            ctx.Assert(actual == expected, $"the race of {defName} reads {field} as '{actual}', expected '{expected}'");
+        }
+
+        [Then("Dalmatians Renew the market value of {string} is {int}")]
+        public void MarketValue(PickleContext ctx, string defName, int expected)
+        {
+            var actual = Thing(ctx, defName).GetStatValueAbstract(StatDefOf.MarketValue);
+            ctx.Assert(UnityEngine.Mathf.Approximately(actual, expected), $"{defName} has a market value of {actual}, expected {expected}");
+        }
+
+        // The language is chosen when the game starts, never during a run. This asserts the pass, so
+        // that one which silently fell back to English cannot pass as French.
+        [Then("Dalmatians Renew this pass runs in {word}")]
+        public void PassLanguage(PickleContext ctx, string language)
+        {
+            var actual = LanguageDatabase.activeLanguage?.folderName ?? "(none)";
+            ctx.Assert(actual.StartsWith(language, System.StringComparison.OrdinalIgnoreCase),
+                $"this pass runs in '{actual}', expected {language}");
+        }
+
         // ---- text, in the language this pass was launched in ----
 
         [Then("Dalmatians Renew the thing {string} is labelled {string}")]

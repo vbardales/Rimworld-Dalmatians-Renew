@@ -15,7 +15,10 @@
   What it does not prove: that a step does what its sentence says. That is the run's job.
 #>
 param(
-    [string]$Pickle = 'C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Pickle-local\Assemblies',
+    # The Workshop build is what the WSL stages (copy_steam rimworks.pickle). Pickle-local is a newer
+    # development build: checking against it accepted a step ("the language is ...") that the staged
+    # Pickle does not have, and the first run failed on it.
+    [string]$Pickle = 'C:\Program Files (x86)\Steam\steamapps\workshop\content\294100\3791648678\Assemblies',
     [string]$Managed = 'C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed'
 )
 
@@ -156,6 +159,31 @@ foreach ($feature in $features) {
 
 foreach ($c in ($compiled | Where-Object { $_.Origin -eq 'local' -and -not $_.Used })) {
     Write-Host "UNUSED local pattern: $($c.Pattern)" -ForegroundColor Yellow; $bad++
+}
+
+# A defName shared by two def types (CCPDalmatian and WD_Dalmatian are each a ThingDef and a
+# PawnKindDef) makes Pickle's own "def X field/stat/is defined by/was patched" steps refuse to run: the
+# first run failed three scenarios on exactly that. Say which type with a local step instead.
+$shared = @{}
+$defRoots = @((Join-Path $root 'DalmatiansRenew\Mod'), 'C:\Program Files (x86)\Steam\steamapps\workshop\content\294100\2274606936\1.6')
+foreach ($dr in $defRoots) {
+    foreach ($xf in Get-ChildItem $dr -Recurse -Filter *.xml -ErrorAction SilentlyContinue | Where-Object { $_.FullName -like '*\Defs\*' }) {
+        try { $doc = [xml](Get-Content $xf.FullName -Raw) } catch { continue }
+        foreach ($node in $doc.SelectNodes('/Defs/*[defName]')) {
+            if (-not $shared.ContainsKey($node.defName)) { $shared[$node.defName] = New-Object System.Collections.Generic.HashSet[string] }
+            [void]$shared[$node.defName].Add($node.LocalName)
+        }
+    }
+}
+foreach ($feature in $features) {
+    foreach ($raw in [IO.File]::ReadAllLines($feature.FullName)) {
+        if ($raw.Trim() -match '^(?:Given|When|Then|And|But)\s+def "([^"]+)" (field|stat|raw stat|is defined by|was patched|costs)\b') {
+            $name = $Matches[1]
+            if ($shared.ContainsKey($name) -and $shared[$name].Count -gt 1) {
+                Write-Host "SHARED NAME $($feature.Name): Pickle's def step on '$name', which is $($shared[$name] -join ' and ') - use a local step" -ForegroundColor Red; $bad++
+            }
+        }
+    }
 }
 
 # Requirements: every @requires:<packageId> must be a package some pass map stages.

@@ -7,9 +7,10 @@
 
 Feature: The dalmatian on its own
 
-  Scenario: the mod owns the animal and its leather, and the optional integrations are not loaded
+  Scenario: the mod owns the animal and its leather and no optional integration is loaded
     Then mod "nelim.dalmatiansrenew" is loaded
-    And def "CCPDalmatian" is defined by mod "nelim.dalmatiansrenew"
+    And Dalmatians Renew the thing "CCPDalmatian" comes from the mod "nelim.dalmatiansrenew"
+    And Dalmatians Renew the pawn kind "CCPDalmatian" comes from the mod "nelim.dalmatiansrenew"
     And def "Leather_Dalmatian" is defined by mod "nelim.dalmatiansrenew"
     And no def "WD_Dalmatian" exists
     And mod "Mlie.WhaleysDogs" is not loaded
@@ -18,15 +19,15 @@ Feature: The dalmatian on its own
   # The values cucumpear and lavie2k set, read from the defs the game kept. The offline suite
   # checks that every element maps to a real 1.6 field; it does not check these values.
   Scenario: the race carries the source mod's values
-    Then def "CCPDalmatian" field "race.trainability" is "Advanced"
-    And def "CCPDalmatian" field "race.nameOnTameChance" is "1"
-    And def "CCPDalmatian" field "race.nuzzleMtbHours" is "20"
-    And def "CCPDalmatian" field "race.manhunterOnDamageChance" is "0"
-    And def "CCPDalmatian" field "race.manhunterOnTameFailChance" is "0"
-    And def "CCPDalmatian" field "race.gestationPeriodDays" is "25"
-    And def "CCPDalmatian" field "race.lifeExpectancy" is "12"
-    And def "CCPDalmatian" field "race.animalType" is "Canine"
-    And def "CCPDalmatian" field "race.leatherDef" is "Leather_Dalmatian"
+    Then Dalmatians Renew the race of "CCPDalmatian" reads "trainability" as "Advanced"
+    And Dalmatians Renew the race of "CCPDalmatian" reads "nameOnTameChance" as "1"
+    And Dalmatians Renew the race of "CCPDalmatian" reads "nuzzleMtbHours" as "20"
+    And Dalmatians Renew the race of "CCPDalmatian" reads "manhunterOnDamageChance" as "0"
+    And Dalmatians Renew the race of "CCPDalmatian" reads "manhunterOnTameFailChance" as "0"
+    And Dalmatians Renew the race of "CCPDalmatian" reads "gestationPeriodDays" as "25"
+    And Dalmatians Renew the race of "CCPDalmatian" reads "lifeExpectancy" as "12"
+    And Dalmatians Renew the race of "CCPDalmatian" reads "animalType" as "Canine"
+    And Dalmatians Renew the race of "CCPDalmatian" reads "leatherDef" as "Leather_Dalmatian"
     And Dalmatians Renew the litter size curve of "CCPDalmatian" peaks at 2
 
   # A. The animal exists, spawns, and takes a name the moment it is tamed.
@@ -37,7 +38,7 @@ Feature: The dalmatian on its own
     Given the save "test-colony" is loaded
     And I close all dialogs
     And Dalmatians Renew spawns the wild animal "Rex" as "CCPDalmatian"
-    And Dalmatians Renew spawns the wild animal "Control" as "Husky"
+    And Dalmatians Renew spawns the wild animal "Control" as "Hare"
     Then Dalmatians Renew "Rex" has no name
     When Dalmatians Renew tames "Rex"
     Then Dalmatians Renew "Rex" belongs to the player
@@ -56,7 +57,7 @@ Feature: The dalmatian on its own
     Then Dalmatians Renew "CCPDalmatian" offers the same operations as "Rat"
 
   # F. The leather.
-  Scenario: butchering a dalmatian yields its own leather, colder than plain leather by two points
+  Scenario: butchering a dalmatian yields its own leather two points colder than plain leather
     Given the save "test-colony" is loaded
     And I close all dialogs
     And Dalmatians Renew spawns the wild animal "Rex" as "CCPDalmatian"
@@ -81,7 +82,7 @@ Feature: The dalmatian on its own
   Scenario: traders stock the dalmatian and the player can sell it
     Then Dalmatians Renew some trader kind stocks "CCPDalmatian"
     And Dalmatians Renew the player can sell "CCPDalmatian"
-    And def "CCPDalmatian" stat "MarketValue" is 250
+    And Dalmatians Renew the market value of "CCPDalmatian" is 250
 
   # I. The three rotations of the living animal, the puppy, and the dessicated corpse that ships
   #    its east texture only. West is not shipped: the game mirrors east. A person reads these.
@@ -131,8 +132,8 @@ Feature: The dalmatian on its own
   # M. Text, in the language of this pass. The language step is an assertion about the pass, not
   #    a switch: a pass that fell back to English silently would prove nothing about French.
   @english
-  Scenario: the animal, the puppy, the attacks and the leather read in English
-    Then the language is "English"
+  Scenario: the animal and its puppy and attacks and leather read in English
+    Then Dalmatians Renew this pass runs in English
     And Dalmatians Renew the thing "CCPDalmatian" is labelled "dalmatian"
     And Dalmatians Renew the thing "CCPDalmatian" has a description beginning "A very muscular, medium-sized dog."
     And Dalmatians Renew the thing "CCPDalmatian" has the attack labels "left claw, right claw, head"
@@ -142,8 +143,8 @@ Feature: The dalmatian on its own
     And Dalmatians Renew the material "Leather_Dalmatian" is called "dalmatian leather" when it names a garment
 
   @french
-  Scenario: the animal, the puppy, the attacks and the leather read in French
-    Then the language is "French"
+  Scenario: the animal and its puppy and attacks and leather read in French
+    Then Dalmatians Renew this pass runs in French
     And Dalmatians Renew the thing "CCPDalmatian" is labelled "dalmatien"
     And Dalmatians Renew the thing "CCPDalmatian" has a description beginning "Chien musculeux de taille moyenne."
     And Dalmatians Renew the thing "CCPDalmatian" has the attack labels "griffe gauche, griffe droite, tête"
