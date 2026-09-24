@@ -531,7 +531,9 @@ It 'the load order and the incompatibility are declared' {
 It 'About/PublishedFileId.txt names this port''s own Workshop item, not the original''s' {
     $p = Join-Path $modDir 'About\PublishedFileId.txt'
     if (-not (Test-Path $p)) { 'About/PublishedFileId.txt is missing: the next upload would create a second item'; return }
-    $id = (Get-Content $p -Raw).Trim()
+    $raw = Get-Content $p -Raw
+    if ([string]::IsNullOrWhiteSpace($raw)) { 'PublishedFileId.txt is empty; it must hold the numeric Workshop ID'; return }
+    $id = $raw.Trim()
     if ($id -notmatch '^\d+$') { "PublishedFileId.txt holds '$id', which is not a numeric Workshop ID"; return }
     if ($id -eq '1513691963') { 'PublishedFileId.txt names cucumpear''s and lavie2k''s item; it must name this port''s own' }
 }
