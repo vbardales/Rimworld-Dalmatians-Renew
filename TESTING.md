@@ -243,7 +243,8 @@ What proves something, and is kept:
 - **The verdict of each pass**: `summary.md` and `junit.xml`. Read `exitReason` before the
   numbers, and compare the scenarios played with the features discovered. A partial report that
   says "passed" is not a pass. The pass is named in the report (`-pickle-set-name`, the dependency
-  map used), because the passes below differ only by what is loaded.
+  map used), because passes differ only by what is loaded. TESTING.md does not declare the passes
+  yet; that comes with the Pickle suites.
 - **The captures a person has opened and read** for the scenarios that are only reviewable: the
   information card (B), the three rotations and the dessicated corpse's single east texture (I),
   the two coats and WhaleysDogs graphics (N), the operations tab with A Dog Said 2 (C). A green

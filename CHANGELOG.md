@@ -57,6 +57,8 @@ First release. Port of cucumpear's and lavie2k's **Dalmatians** to RimWorld 1.6,
 
 ### Changed
 
+- `ATTRIBUTION.md` and its copy in `Mod/`: the paragraph on `About/PublishedFileId.txt` now says the
+  file holds this port's own item ID, created by the 0.1.0 upload. The copy in `Mod/` ships.
 - `Patches/ADSPatch.xml`: the guard is now a `PatchOperationConditional` on `ADS_Cat1`, replacing
   the `PatchOperationSequence` + `PatchOperationTest` + `<success>Always</success>` form. That form
   was valid and was kept on purpose at first — the survey tool that flagged it only recognises

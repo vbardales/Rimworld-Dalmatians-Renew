@@ -32,9 +32,9 @@ desktop.ini
 # Local build and inspection artifacts, and temporary validation and decompilation evidence.
 .build/
 
-# DDS textures the game wrote next to the PNGs during the 0.1.0 upload (2026-09-23). Every upload is
-# expected to write them again, and Steam reads the folder on disk
-# rather than git, so ignoring them changes nothing that ships.
+# DDS textures the game wrote next to the PNGs during the 0.1.0 upload from the junction
+# (2026-09-23). They were never committed. An upload made from a git checkout, as the publishing CI
+# does, will not contain them: the game then loads the PNGs, so nothing is lost, only the DDS.
 *.dds
 
 # In-game test evidence (Pickle reports, captures, Player.log). Kept on disk only, never in git:

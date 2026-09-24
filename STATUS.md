@@ -18,7 +18,7 @@ licence_at:   LICENSE; Mod/LICENSE; ATTRIBUTION.md
 dependencies: none
 showcase:     complete
 settings_audit: not_applicable
-xml_tests:    passed
+xml_tests:    partial (4 skipped, A Dog Said 2 not installed; the rest passed on 2026-09-24)
 functional_tests: unverified
 pickle_tests: not_written
 audit_revision: 8b734cab75a0579ec33a19db19023c074628af1a (this card is committed on top of it)
