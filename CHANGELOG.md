@@ -2,15 +2,18 @@
 
 All notable changes to this mod are documented here.
 
-## Unreleased - 2026-09-13
+## [1.0.0] — unreleased
+
+The tag and the GitHub release come with the publication, from the publishing CI, not by hand.
+
+First release. Port of cucumpear's and lavie2k's **Dalmatians** to RimWorld 1.6, drafted on
+2026-09-05 and extended on 2026-09-13 with the optional WhaleysDogs integration.
+
+### WhaleysDogs integration (2026-09-13)
 
 - Add optional WhaleysDogs consolidation: keep WD_Dalmatian balance and add our coat variant, leather, French labels and ADS 2 membership.
 - Retain legacy saved dogs while retiring their ordinary random acquisition when WhaleysDogs is active.
 - Add nine integration tests using the installed Verse patch classes; in-game scenarios N-Q remain pending.
-
-## [1.0.0] — 2026-09-05
-
-First release. Port of cucumpear's and lavie2k's **Dalmatians** to RimWorld 1.6.
 
 ### Fixed
 
@@ -76,7 +79,8 @@ First release. Port of cucumpear's and lavie2k's **Dalmatians** to RimWorld 1.6.
   earlier form of the name, which said 1.6 where the repository said Renew, so this replaces it
   rather than succeeding it. The directory and the `packageId` follow the displayed name.
 - `<supportedVersions>` set to 1.6.
-- `About/PublishedFileId.txt` dropped: it names cucumpear's and lavie2k's Workshop item.
+- `About/PublishedFileId.txt` dropped: it names cucumpear's and lavie2k's Workshop item. The
+  0.1.0 prepublication has since created this port's own item and written its own ID there.
 
 ### Added
 
@@ -106,3 +110,16 @@ First release. Port of cucumpear's and lavie2k's **Dalmatians** to RimWorld 1.6.
 - The dessicated corpse still ships only its east texture. `Graphic_Multi` rotates that one for
   the other facings, as it has since 2018; supplying the missing two would be drawing art rather
   than porting a mod.
+
+## [0.1.0] — 2026-09-23
+
+Prepublication: the first upload to the Steam Workshop, made to create the item and obtain its `PublishedFileId.txt`. Steam creates every new item private, and RimWorld never changes that. This entry says nothing about the mod being public or tested.
+
+### Added
+
+- `Mod/About/PublishedFileId.txt`, holding the Workshop item ID `3806709979`, committed in `8c391e1` (`Add published Workshop file ID for 0.1.0`). Without it the next upload would create a second item.
+
+### Notes
+
+- The uploaded content is `Mod/` as it stood at `9838310`. The two commits since, `2aa2491` (`.gitignore`) and `8c391e1`, change nothing shipped apart from that file. The game also wrote a `.dds` beside each PNG texture during the upload; they are ignored by git and were never committed.
+- The features listed under 1.0.0 are still to come. The `tested` and `prepublished` states have not been reached: see `STATUS.md`.
