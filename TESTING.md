@@ -1,6 +1,7 @@
 # Test scenarios
 
-Three defs, four textures, one patch, no assembly. There is very little here to break, and the two
+Three defs, four textures, two patches (one guarded for A Dog Said 2, one loaded only beside
+WhaleysDogs), no assembly. There is very little here to break, and the two
 things that were broken in the 1.4 version both broke **silently**. That is the whole reason this
 mod needs the game rather than a checker.
 
@@ -227,6 +228,37 @@ the primary save to perform this check; use disposable copies.
 Record date, game build, load order, scenario ID, pass/fail and relevant log lines for N-Q.
 These four scenarios are documented but have not yet been executed in game.
 
+## What each scenario became
+
+Written 2026-09-24. The suite that plays what needs a game is in `Tests/Pickle/`, and its README
+lists the six passes and the commands: without optional mods (English and French), WhaleysDogs
+(English and French), A Dog Said 2 in the declared order, every optional mod together, A Dog Said 2 in
+the wrong order, and cucumpear's original. **None of it has been run.** The sections A to Q above stay
+as the plain-language statement of what each scenario means; this table says where each one is checked.
+
+| Scenario | Where it is checked | What is left out, and why |
+| --- | --- | --- |
+| A. the animal exists, and tames | Pickle `01`: defs owned by the mod, race values, naming on taming | That Obedience, Release, Rescue and Haul are offered: the game's reaction to `trainability`, whose value is asserted |
+| B. Wildness on the card | Pickle `01`: card lists Wildness at 0%, the husky at 75%, with a capture | The log search for `wildness`: warnings the game writes while it loads its defs may come before Pickle starts capturing the log, so `no warnings from mod` cannot be relied on for them. `_tools/Run-Tests.ps1` proves offline that no `<wildness>` is left under `<race>` |
+| C. A Dog Said 2, correct order | Pickle `03` and `04`: same operations as the husky, more than a plain animal | The look of the Health tab: vanilla's interface |
+| D. A Dog Said 2, wrong order | Pickle `05`, the symptom asserted as green | Nothing. It is the one supported-order exception, and it runs when A Dog Said 2 changes |
+| E. A Dog Said 2 absent | Pickle `01` and `02`: same operations as a rat, no error, no warning | |
+| F. the leather | Pickle `01`: butchering yields it, insulation 14 against 16, a capture beside plain leather and its information card | Making a duster: the garment's colour is vanilla's reaction to `stuffProps.color` |
+| G. the pet behaviours | Pickle `01`: nuzzle interval, both manhunter chances, gestation, litter curve and lifespan read from the live def | A dog seen nuzzling, shot or bred: the game's behaviour given those values, and random |
+| H. trade | Pickle `01`: a trader kind's generator handles it, the player can sell it, market value 250 | A trader actually rolling one: random |
+| I. the four textures | Pickle `01`: four rotations, puppy beside an adult, dessicated corpse, all captures a person reads | Nothing. West is mirrored from east, and the corpse's single texture is a documented gap |
+| J. the two collisions | Pickle `06`: the original loaded before this mod | Nelim's Animal Ark: not reproducible. It stopped shipping the dalmatian on 2026-09-11 and the current Ark carries neither identifier, which the 2026-09-13 audit checked |
+| K. an existing save | Not automated | Adding, swapping or removing a mod over a save is the game's handling of a changed mod list. What this mod answers for, that it keeps the original's `defName`s, is checked offline: the suite asserts that the three defs are there under the original's names, `CCPDalmatian` and `Leather_Dalmatian` |
+| L. the mod list entry | Not automated | The mod list's rendering is the game's. The name, the icon's and the preview's dimensions are checked offline by the About and image tests |
+| M. English and French | Pickle `01` and `02`, once per language: labels, plurals, puppy stage, attack labels, descriptions, the material name on a garment | Clipped text and layout, which are read on the captures |
+| N. WhaleysDogs, two coats | Pickle `02`: both coats among forty animals, coats kept through a save and reload, trader pool, corpses of both coats at three stages, both coats facing every way | Silhouette, clipping and shadows are read on the captures. The starting-pet pool is asserted offline through the legacy fields |
+| O. WhaleysDogs balance, leather, ADS | Pickle `02` and `04`: leather, French, operations. Balance unchanged: `_tools/WhaleysDogs.Tests.ps1`, offline, on the real patch operations | |
+| P. existing animals, legacy reproduction | Pickle `02`: a legacy dog kept, still the player's and still the same coat after a reload, still sellable | Loading a real old save under a changed mod list is the game's, as in K. Reproduction of an old dog is not asserted: it is random, and the compatibility patch does not touch the race's reproduction fields |
+| Q. optional content and load order | Pickle `01`: no integration loaded without WhaleysDogs. `02`, `03`, `04`: the declared order is the loaded order | A reversed order is covered by D. Removing WhaleysDogs from a save that holds `WD_Dalmatian` is the game's own refusal |
+
+"Not automated" is a justified non-applicability and not a scenario left to do: what each one would
+exercise is the game's own handling of a mod list, and what this mod answers for is asserted offline.
+
 ## Evidence to keep
 
 Written 2026-09-24, before any in-game run exists. It says which proofs are worth keeping once
@@ -243,8 +275,8 @@ What proves something, and is kept:
 - **The verdict of each pass**: `summary.md` and `junit.xml`. Read `exitReason` before the
   numbers, and compare the scenarios played with the features discovered. A partial report that
   says "passed" is not a pass. The pass is named in the report (`-pickle-set-name`, the dependency
-  map used), because passes differ only by what is loaded. TESTING.md does not declare the passes
-  yet; that comes with the Pickle suites.
+  map used), because passes differ only by what is loaded. The six passes are in
+  `Tests/Pickle/README.md` and the scenarios are in the table above.
 - **The captures a person has opened and read** for the scenarios that are only reviewable: the
   information card (B), the three rotations and the dessicated corpse's single east texture (I),
   the two coats and WhaleysDogs graphics (N), the operations tab with A Dog Said 2 (C). A green

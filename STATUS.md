@@ -20,19 +20,19 @@ showcase:     complete
 settings_audit: not_applicable
 xml_tests:    partial (4 skipped, A Dog Said 2 not installed; the rest passed on 2026-09-24)
 functional_tests: unverified
-pickle_tests: not_written
+pickle_tests: written 2026-09-24, 41 scenarios in 6 passes (8 launches); checked offline, never run
 audit_revision: 8b734cab75a0579ec33a19db19023c074628af1a (this card is committed on top of it)
 tested_on:
 automated:    33 ran, 0 failed, 4 skipped on 2026-09-24 (A Dog Said 2 not installed); 37 passed, 0 failed, 0 skipped on 2026-09-13
 manual:       17 scenarios documented in TESTING.md; execution pending
 workshop:     3806709979 (item created private by the 0.1.0 prepublication of 2026-09-23; not the prepublished state)
 remaining:
-  - unverified: no Pickle (Gherkin) suite is written, and TESTING.md does not yet declare the passes or justify what stays in Gherkin; preTest -> done
+  - unverified: the eight Pickle launches are written and checked offline but never run; done -> tested
   - unverified: four automated tests skipped for lack of A Dog Said 2 (Workshop 3238353862, not installed); reinstall it and rerun to get 37 of 37; preTest -> done
   - unverified: done -> tested needs no @wip scenario, every conditional scenario played (@requires Mlie.WhaleysDogs and SamBucher.ADogSaidAnimalProsthetics2, each on a map that mounts it), and no manual scenario left (A-Q automated and green, or listed not applicable with the reason)
   - unverified: English and French runtime translation checks, with and without WhaleysDogs; TESTING.md scenario M
   - unverified: ADS 2 surgery availability and load order, scenarios C and D
-  - defect: the description shipped by 0.1.0 has no IF I GO QUIET, AI-GENERATED or THANKS section and no final Source code on GitHub BBCode link, and names Claude but not Codex; SetItemDescription runs only at creation, so the Steam page is corrected by hand and About.xml aligned; required for prepublished, not for done or tested
+  - defect: the description shipped by 0.1.0 has no IF I GO QUIET, AI-GENERATED or THANKS section and no final Source code on GitHub BBCode link, names Claude but not Codex, and does not thank Pickle and PickleTools although passes now stage them; SetItemDescription runs only at creation, so the Steam page is corrected by hand and About.xml aligned; required for prepublished, not for done or tested
 session:      local_e7fdeacc-7649-4702-9f00-45be2663ced1
 updated:      2026-09-24
 ---
@@ -116,6 +116,54 @@ each of A-Q either automated and green or listed as not applicable with its reas
   are written.
 - The inherited standalone dessicated corpse still has only its east texture. Accepted and
   documented; its in-game fallback rendering is unverified.
+
+## Pickle suites written — 2026-09-24
+
+Written after the audit above, at the owner's request. They supersede the audit's first blocker
+(no Pickle suite) and leave the second one, the four skipped tests, as the only thing between the
+mod and `done`. **Nothing was run in a game.** No RimWorld was launched, and no run was queued.
+
+What exists, all under `Tests/Pickle/`:
+
+- A test companion, `Dalmatians Renew - Pickle tests`, six feature files with 41 scenarios to play
+  across eight launches, and a step assembly of 34 local steps, prefixed with the mod's name.
+- Six pass maps: no optional mod (English and French), WhaleysDogs (English and French), A Dog Said 2
+  in the declared order, every optional mod together, A Dog Said 2 in the wrong order, and the
+  original mod. Each map names `nelim.dalmatiansrenew` where the order matters, because the staging
+  script otherwise places the mod under test after every overlay mod.
+- `README.md` with the pass matrix and commands, and `Check-Steps.ps1`.
+- In `TESTING.md`: a table saying what each manual scenario A-Q became, and the evidence section
+  now points at the declared passes.
+
+Checked offline, on 2026-09-24:
+
+- `dotnet build`: 0 warnings, 0 errors, against RimWorld 1.6 and Pickle 4.
+- `Check-Steps.ps1`: every feature parses with Pickle's own Gherkin parser; each of the 185 step
+  lines matches exactly one pattern among this suite's, Pickle's 200-odd built-ins and the staged
+  tool's, with none ambiguous and no local pattern unused; every `@requires` names a package some
+  map stages; every map line points at a folder whose `About.xml` carries that packageId. The fixture
+  load and the save and reload are accepted as runner steps because Pickle's own features use them.
+
+Not established, and the reason the suites prove nothing yet:
+
+- That any step does what its sentence says. Three are worth reading first on a failing run: the
+  information card reading, which goes through `StatsReportUtility.StatsToDraw`; taming through
+  `InteractionWorker_RecruitAttempt.DoRecruit`, which should bring the name; and pass 6, which asserts
+  that the definition loaded last wins, a behaviour documented in TESTING.md J and not observed since.
+- That Pickle captures the log lines written while the game loads its defs. `no warnings from mod` is
+  used after a save loads; it is not relied on for startup warnings.
+- Passes 3, 4 and 5 cannot even stage: A Dog Said 2 is in neither the Windows Workshop folder nor the
+  WSL cache, and the staging script stops on a missing mod.
+
+Scenarios not automated, with the reason in `TESTING.md`: K (an existing save under a changed mod
+list), L (the mod list's rendering), and the emergent parts of G, H and P, which are the game's
+reaction to values the suites do assert. Scenario J's second half, an old build of Nelim's Animal Ark,
+cannot be reproduced. Each is a justified non-applicability and not a scenario left over.
+
+Next work for `done`: subscribe to A Dog Said 2 so that the four skipped tests run. Next work for
+`done -> tested`: play the eight launches under the machine lock, read every report (`exitReason`
+first, then the scenarios played against the 41 written), open the `@review` captures, and clear or
+justify each skipped scenario. Nothing in either list asks for more development.
 
 ## Workflow audit — 2026-09-13
 
