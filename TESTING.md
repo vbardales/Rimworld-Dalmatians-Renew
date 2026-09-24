@@ -226,3 +226,43 @@ the primary save to perform this check; use disposable copies.
 
 Record date, game build, load order, scenario ID, pass/fail and relevant log lines for N-Q.
 These four scenarios are documented but have not yet been executed in game.
+
+## Evidence to keep
+
+Written 2026-09-24, before any in-game run exists. It says which proofs are worth keeping once
+scenarios A-Q are played, so that nobody has to decide it again, and so that the folder stays small.
+
+Where it lives. In-game evidence is kept **on disk only**, under `Tests/Pickle/Evidence/<run>/`,
+and that folder is in `.gitignore`, like `evidence/`. Nothing in it is committed. The one thing
+that is versioned is a short text summary, one line per run, under `docs/runs/`, cited by
+`STATUS.md`. Never a folder of captures. The shared Pickle report folder holds every mod's
+screenshots: copy only the files of this mod's own scenarios, never the folder.
+
+What proves something, and is kept:
+
+- **The verdict of each pass**: `summary.md` and `junit.xml`. Read `exitReason` before the
+  numbers, and compare the scenarios played with the features discovered. A partial report that
+  says "passed" is not a pass. The pass is named in the report (`-pickle-set-name`, the dependency
+  map used), because the passes below differ only by what is loaded.
+- **The captures a person has opened and read** for the scenarios that are only reviewable: the
+  information card (B), the three rotations and the dessicated corpse's single east texture (I),
+  the two coats and WhaleysDogs graphics (N), the operations tab with A Dog Said 2 (C). A green
+  run says the path ran, not that the image shows the intended state.
+- **The log lines the table above asks for**, extracted, not the whole `Player.log`: the count of
+  `doesn't correspond to any field` naming this mod, texture errors, `Adding duplicate`, and the
+  load-order lines for the pass. A capture taken outside developer mode says nothing about missing
+  translation keys, so the English and French passes each keep their own developer-mode capture.
+
+What is not kept: every capture of a superseded run, a second report for the same scenario on the
+same revision, a whole `Player.log` when three lines carry the proof, and any report about an older
+build than the one now in the repository. Keep the latest report for the current revision, per pass
+and per scenario, plus an older one only if it is the sole proof of a check the latest did not repeat.
+Delete the rest as soon as a newer report replaces it, after listing what goes and what stays. Never
+delete a report that a field in `STATUS.md` still points to: repoint the field first.
+
+Minifying is allowed once a capture has been looked at: downscale it to the size that still shows
+the thing, and keep it as PNG. Do not touch it before it has been opened.
+
+The launcher's archive of the run (`pickle-reports-archive/`) is a full copy of the shared folder.
+Select from the archive of this mod's own run what is worth keeping above, then delete that archive.
+Leave every other archive alone.
