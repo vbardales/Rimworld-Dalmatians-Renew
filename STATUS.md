@@ -11,24 +11,23 @@ visibility:   public
 upstream_visibility: public (Steam API visibility=0; banned=0; checked 2026-09-12)
 detached:     yes
 maintainer:   Claude Code (the session named for this mod); Codex worked on it earlier
-stage:        preTest
+stage:        done
 licence:      silent
 licence_port: MIT, limited to the port contributions
 licence_at:   LICENSE; Mod/LICENSE; ATTRIBUTION.md
 dependencies: none
 showcase:     complete
 settings_audit: not_applicable
-xml_tests:    partial (4 skipped, A Dog Said 2 not installed; the rest passed on 2026-09-24)
+xml_tests:    passed
 functional_tests: unverified
 pickle_tests: written 2026-09-24, 41 scenarios in 6 passes (8 launches); checked offline, never run
 audit_revision: 8b734cab75a0579ec33a19db19023c074628af1a (this card is committed on top of it)
 tested_on:
-automated:    33 ran, 0 failed, 4 skipped on 2026-09-24 (A Dog Said 2 not installed); 37 passed, 0 failed, 0 skipped on 2026-09-13
+automated:    37 passed, 0 failed, 0 skipped on 2026-09-24, with A Dog Said 2 installed; 33 ran and 4 skipped earlier the same day, before it was
 manual:       17 scenarios documented in TESTING.md; execution pending
 workshop:     3806709979 (item created private by the 0.1.0 prepublication of 2026-09-23; not the prepublished state)
 remaining:
   - unverified: the eight Pickle launches are written and checked offline but never run; done -> tested
-  - unverified: four automated tests skipped for lack of A Dog Said 2 (Workshop 3238353862, not installed); reinstall it and rerun to get 37 of 37; preTest -> done
   - unverified: done -> tested needs no @wip scenario, every conditional scenario played (@requires Mlie.WhaleysDogs and SamBucher.ADogSaidAnimalProsthetics2, each on a map that mounts it), and no manual scenario left (A-Q automated and green, or listed not applicable with the reason)
   - unverified: English and French runtime translation checks, with and without WhaleysDogs; TESTING.md scenario M
   - unverified: ADS 2 surgery availability and load order, scenarios C and D
@@ -38,6 +37,23 @@ updated:      2026-09-24
 ---
 
 # Dalmatians Renew — status
+
+## Stage moves to done — 2026-09-24
+
+**Decision: preTest -> done.** A Dog Said 2 (Workshop 3238353862, packageId
+`SamBucher.ADogSaidAnimalProsthetics2`, declares 1.6) is now on disk. `_tools/Run-Tests.ps1` was rerun
+against revision `a3a1cd4` and reports **37 tests, 0 failed, 0 skipped**, where it had reported 33 run
+and 4 skipped. The last preTest -> done criterion that was open, an executed and green automated suite,
+is established. The others were already: scenarios A-Q written with preconditions, actions and expected
+results; the Pickle suites written, with their scope justified in TESTING.md; XML tests green; and
+the results describe the delivered `Mod/`, which has changed only in `ATTRIBUTION.md` since the upload.
+
+`done` means ready for the final validation in a game. It does not mean `tested`: nothing has run in
+RimWorld, the eight Pickle launches are still to play, and their passes 3 to 5 can now be staged.
+The session title follows the stage: `Dalmatians Renew / done`.
+
+The audit of the same day below, and the Pickle section, keep their text as history. Where they say the
+stage is preTest or that four tests are skipped, this section supersedes them.
 
 ## Workflow audit — 2026-09-24
 
