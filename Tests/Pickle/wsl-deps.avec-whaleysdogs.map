@@ -1,0 +1,6 @@
+# Pass 2: WhaleysDogs (Continued), then this mod. Overlay entries are staged in the order written
+# and the mod under test is placed where its own line stands, so the order here is the load order.
+# This mod declares loadAfter Mlie.WhaleysDogs, so WhaleysDogs comes first.
+Mlie.WhaleysDogs 2274606936
+nelim.dalmatiansrenew path:DalmatiansRenew/Mod
+nelim.pickletools.screenshotmode path:PickleTools/ScreenshotMode/Mod

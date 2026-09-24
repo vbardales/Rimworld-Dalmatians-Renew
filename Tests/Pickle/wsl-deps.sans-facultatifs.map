@@ -1,0 +1,4 @@
+# Pass 1: the mod and its hard dependencies, and nothing optional. The only extra is the
+# development tool that hides the HUD around a window for the review captures.
+# Selected with -DepMap wsl-deps.sans-facultatifs.map.
+nelim.pickletools.screenshotmode path:PickleTools/ScreenshotMode/Mod

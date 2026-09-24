@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Dalmatians Renew - Pickle tests</name>
+  <author>Nelim</author>
+  <packageId>nelim.dalmatiansrenew.pickletests</packageId>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <description>In-game acceptance tests for Dalmatians Renew. Development only; never published.</description>
+  <modDependencies>
+    <li>
+      <packageId>nelim.dalmatiansrenew</packageId>
+      <displayName>Dalmatians Renew (unofficial)</displayName>
+    </li>
+    <li>
+      <packageId>rimworks.pickle</packageId>
+      <displayName>Pickle</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/3791648678</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>nelim.dalmatiansrenew</li>
+    <li>rimworks.pickle</li>
+  </loadAfter>
+</ModMetaData>
