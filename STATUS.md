@@ -20,14 +20,14 @@ showcase:     complete
 settings_audit: not_applicable
 xml_tests:    passed
 functional_tests: unverified
-pickle_tests: written 2026-09-24, 41 scenarios in 6 passes (8 launches); checked offline, never run
+pickle_tests: written 2026-09-24, 41 scenarios in 6 passes (8 launches); pass 1 English played once, 9 of 14 passed, fixes committed, two fix tickets queued
 audit_revision: 8b734cab75a0579ec33a19db19023c074628af1a (this card is committed on top of it)
 tested_on:
 automated:    37 passed, 0 failed, 0 skipped on 2026-09-24, with A Dog Said 2 installed; 33 ran and 4 skipped earlier the same day, before it was
 manual:       17 scenarios documented in TESTING.md; execution pending
 workshop:     3806709979 (item created private by the 0.1.0 prepublication of 2026-09-23; not the prepublished state)
 remaining:
-  - unverified: the eight Pickle launches are written and checked offline but never run; done -> tested
+  - unverified: seven of the eight Pickle launches have never run, and pass 1 English is being fixed after its first run (docs/runs/2026-09-24-pass1-english.md); done -> tested
   - unverified: done -> tested needs no @wip scenario, every conditional scenario played (@requires Mlie.WhaleysDogs and SamBucher.ADogSaidAnimalProsthetics2, each on a map that mounts it), and no manual scenario left (A-Q automated and green, or listed not applicable with the reason)
   - unverified: English and French runtime translation checks, with and without WhaleysDogs; TESTING.md scenario M
   - unverified: ADS 2 surgery availability and load order, scenarios C and D
@@ -37,6 +37,34 @@ updated:      2026-09-24
 ---
 
 # Dalmatians Renew — status
+
+## First Pickle run — 2026-09-24
+
+Pass 1 in English, ticket `20260924-164450-054-c75d`, staged from `0262d74`, report read from
+`Tests/Pickle/Evidence/2026-09-24-p1-english` (gitignored). `exitReason` is `failed`, which is a run that
+went to the end: 14 scenarios played, 9 passed, 5 failed, 0 skipped, 0 flaky. It waited over 70 minutes to
+start because the disk was full; that has no bearing on the result.
+
+The five failures had three causes, all on the test side and none a fault of the mod:
+
+- Pickle's `def` steps refuse a defName shared by two def types, and `CCPDalmatian` is a ThingDef and a
+  PawnKindDef (three scenarios). Local steps say the type now.
+- The staged Pickle has no step for the language, which the offline check had accepted because it read a
+  newer development build (one scenario). The check reads the staged build now, and the language is
+  asserted by a local step.
+- The husky declares Wildness 0 in 1.6, so it was no control and its card correctly read 0% (one
+  scenario). A hare declares 0.75 and is the control. TESTING.md scenario B had the wrong value and is
+  corrected.
+
+Captures read: the adult facing east is a white dog with black spots facing right, and the leather beside
+plain leather shows the paler stack; both usable. The puppy scene did not show the adult and the animals
+were a few pixels wide, so the camera now goes closer and the adult is spawned beside the puppy. The other
+rotations and the corpse were not opened yet.
+
+Two small fix tickets are queued: the five failed scenarios, and the six capture scenarios. A full pass 1
+follows once they are green, as the initial validation, then the other passes, one ticket each. Nothing here
+moves the stage: it stays `done`. The two large redundant report files (`report.html`, `messages.ndjson`,
+67 MB) were removed from the evidence folder; the summary, the junit file, the log and the captures stay.
 
 ## Stage moves to done — 2026-09-24
 
