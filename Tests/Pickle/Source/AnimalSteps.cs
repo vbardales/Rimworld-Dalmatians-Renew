@@ -263,7 +263,11 @@ namespace DalmatiansRenew.PickleSteps
         {
             ctx.Require(Find.WindowStack.Windows.OfType<Dialog_InfoCard>().Any(), "no information card is open");
             StatsReportUtility.quickSearchWidget.filter.Text = text;
-            await ctx.WaitFrames(5);
+            // The search box dims the rows that do not match and hides none: the second run showed the
+            // top of the list with the box filled in, and the row it found out of view. The Animals
+            // category sits near the end, so the list is scrolled down as far as it goes.
+            StatsReportUtility.scrollPosition = new Vector2(0f, 100000f);
+            await ctx.WaitFrames(10);
         }
 
         [Then("Dalmatians Renew the information card of {string} lists the stat {string} at {string}")]
