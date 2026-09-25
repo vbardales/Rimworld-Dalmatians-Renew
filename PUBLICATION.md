@@ -21,10 +21,16 @@ Not restated from `AUDIT.md`; only what is specific to this mod.
 
 ## Description
 
-The publishing workflow reads the description from the fenced block under the first heading that matches
-`--description-heading`; for this file that is `'^## Description'`. `OPERATIONS.md` says the dry-run cannot
-compare with a private item's page, so the text is read by hand, and its printed SHA-256 identifies what
-would replace the page.
+**Standard announced on 2026-09-25 by the CI/CD session (Rimworld-Release-Admin `f196148`, `OPERATIONS.md`,
+"Changing where the Steam description comes from"; not adopted here yet, nothing forces it).** The description is
+written once, in Markdown, in a ```markdown block under `## Steam description`; the CI converts it to BBCode and
+generates the plain-text `<description>` of `About.xml` from it, and a dry-run or publish stops if they differ.
+The block holds no code fence and ends with `[Source code on GitHub](URL)`. The block below is still BBCode under
+`## Description`, as the manual path read it before; **at the first publication it is rewritten in Markdown under
+the new heading, `About.xml` is regenerated (the first `--write` changes its text, so the diff is read), and the
+SHA changes, so the dry-run is redone.** `OPERATIONS.md` says the dry-run cannot compare with a private item's
+page, so the text is read by hand, and its printed SHA-256 identifies what would replace the page. The change note
+must carry its version on the first line, `[b]1.0.0[/b]`, or the CI refuses it.
 
 `SetItemDescription` runs only when an item is created, so the page keeps what 0.1.0 sent. The shipped
 `About.xml` was aligned on 2026-09-25 (litter wording, the three closing sections, Codex, Pickle and
