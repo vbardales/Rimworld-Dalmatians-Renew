@@ -81,6 +81,11 @@ First release. Port of cucumpear's and lavie2k's **Dalmatians** to RimWorld 1.6,
   earlier form of the name, which said 1.6 where the repository said Renew, so this replaces it
   rather than succeeding it. The directory and the `packageId` follow the displayed name.
 - `<supportedVersions>` set to 1.6.
+- `About.xml` description: the closing sections (`IF I GO QUIET`, `AI-GENERATED`, `THANKS`), the Workshop
+  links on every mod named, Codex and the Pickle tools credited, the final `Source code on GitHub`
+  link, and the litter wording (the curve peaks at two puppies; the game's card writes its range as
+  `1~4`) replace "litters of one to three". The curve itself is unchanged. The Steam page only takes
+  the description at creation, so the page is edited by hand.
 - `About/PublishedFileId.txt` dropped: it names cucumpear's and lavie2k's Workshop item. The
   0.1.0 prepublication has since created this port's own item and written its own ID there.
 

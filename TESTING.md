@@ -119,7 +119,7 @@ what the animal is for, and because a `<race>` block that half-loads still produ
 - Shoot it, or fail a taming attempt on a wild one. It **never** turns manhunter: both chances are
   0. A dalmatian that turns on the colony means the `<race>` block did not load, and scenario A
   should already have caught that.
-- Gestation is 25 days and litters are one to three.
+- Gestation is 25 days and the litter curve peaks at two puppies (points 0.5 to 3.5, the original's, unchanged). The information card writes that range as `1~4`; the description states neither figure, only the peak.
 
 ## H — trade
 

@@ -28,13 +28,14 @@ manual:       17 scenarios documented in TESTING.md; execution pending
 workshop:     3806709979 (item created private by the 0.1.0 prepublication of 2026-09-23; not the prepublished state)
 remaining:
   - unverified: seven of the eight Pickle launches have never run, and pass 1 English still needs one full run at the current revision as its initial validation (docs/runs/2026-09-24-pass1-english.md); done -> tested
-  - unverified: the litter size reads 1~4 on the game's own card, and the README and the shipped description say one to three; the curve runs from 0.5 to 3.5; a decision is pending on which is right to state
   - unverified: done -> tested needs no @wip scenario, every conditional scenario played (@requires Mlie.WhaleysDogs and SamBucher.ADogSaidAnimalProsthetics2, each on a map that mounts it), and no manual scenario left (A-Q automated and green, or listed not applicable with the reason)
   - unverified: English and French runtime translation checks, with and without WhaleysDogs; TESTING.md scenario M
   - unverified: ADS 2 surgery availability and load order, scenarios C and D
-  - defect: the description shipped by 0.1.0 has no IF I GO QUIET, AI-GENERATED or THANKS section and no final Source code on GitHub BBCode link, names Claude but not Codex, and does not thank Pickle and PickleTools although passes now stage them; SetItemDescription runs only at creation, so the Steam page is corrected by hand and About.xml aligned; required for prepublished, not for done or tested
+  - defect: the description sent by 0.1.0 still lacks IF I GO QUIET, AI-GENERATED, THANKS, the final Source code on GitHub link, Codex and the Pickle thanks; About.xml was aligned on 2026-09-25 and PUBLICATION.md holds the BBCode to paste, but SetItemDescription runs only at creation, so the Steam page is corrected by hand (the owner); required for prepublished, not for done or tested
+  - owner: the delivered icon read at 32 px on 2026-09-25 (wink and smile read, spots blur to a speckle, outline merges with a dark ground); AUDIT puts a doubtful result to the owner, this session does not judge it (PUBLICATION.md, Images)
+  - unverified: prepublished also needs the gallery, the rollback target, the owner's manual validations, and the three drafted comments posted only once the item is public (PUBLICATION.md; WORKSHOP_COMMENTS.md rows added 2026-09-25, uncommitted in the protocols repository)
 session:      local_e7fdeacc-7649-4702-9f00-45be2663ced1
-updated:      2026-09-24
+updated:      2026-09-25
 ---
 
 # Dalmatians Renew — status
@@ -85,8 +86,10 @@ run's, one because `SetRootPosAndSize` takes a Vector3 and was given a Vector2, 
 zoom, 24, was mistaken for the first run's `SetRootSize(8)`. And a green run of six capture scenarios had shown
 the edge of the map: a green run says the path ran, not that the image shows anything.
 
-The card also shows a litter size of **1~4**, where the documents say one to three. Not corrected: which is
-right to state is a decision. The evidence folder went from 50 MB to 2.7 MB. Still to do for pass 1 English: one
+The card also shows a litter size of **1~4**, where the documents said one to three. Decided by the owner's
+delegation on 2026-09-25: the curve is the original's and is not touched, and the documents now state only what
+is verified, that it peaks at two puppies (a Pickle assertion), and that the card writes its range 1~4. The
+evidence folder went from 50 MB to 2.7 MB. Still to do for pass 1 English: one
 full run of all 14 at the current revision, then passes 1 French to 6.
 
 ## Stage moves to done — 2026-09-24

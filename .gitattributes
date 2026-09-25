@@ -10,6 +10,7 @@
 
 *.png binary
 *.psd binary
+*.dll binary
 
 # The pass maps are read by a bash script in the WSL: a carriage return would end up inside the
 # Workshop id or the path, and the staging would look for a mod that does not exist.

@@ -11,6 +11,10 @@ French. Credit goes to them; mistakes in the port are mine.
 Original mod: https://steamcommunity.com/sharedfiles/filedetails/?id=1513691963 — declares 1.0
 through 1.4 and nothing further. The page is still online; the mod is abandoned, not withdrawn.
 
+This port's own Workshop item is `3806709979`. It exists, private, since the 0.1.0 prepublication
+of 2026-09-23; nothing has been released publicly. [STATUS.md](STATUS.md) says where the work stands,
+[CHANGELOG.md](CHANGELOG.md) what each version holds.
+
 ## What the mod does
 
 One dog. Three defs, four textures, two optional patches — no assembly, no dependency, no DLC, no
@@ -24,7 +28,7 @@ research.
 | food | omnivore, and eats eggs |
 | trainability | Advanced |
 | wildness | 0 — tames easily and never reverts |
-| gestation | 25 days, litters of one to three |
+| gestation | 25 days, litter curve peaking at two puppies (the original's, unchanged; the information card writes its range as `1~4`) |
 | life expectancy | 12 years |
 | leather | `Leather_Dalmatian`, almost white, insulation 14 against plain leather's 16 |
 
@@ -166,7 +170,8 @@ Existing CCPDalmatian dogs are retained and remain sellable. Their ordinary trad
 starting-pet and wild generation is retired while WhaleysDogs is enabled. Explicit spawning
 and descendants of old dogs remain possible; there is no destructive save conversion.
 Without WhaleysDogs, this mod works as before. See [WHALEYSDOGS.md](WHALEYSDOGS.md) for exact
-ownership, save limitations and tests. Runtime verification is still pending.
+ownership, save limitations and tests. The WhaleysDogs pass of the in-game suite has not been run
+yet.
 
 ## Repository layout
 
@@ -175,6 +180,8 @@ DalmatiansRenew/
   Mod/     <- what goes on the Workshop; the NTFS junction into RimWorld/Mods points here
   Art/     <- the full-resolution sources of the two pictures, never published
   _tools/  <- the test suite and the page that engraves the showcase, never published
+  Tests/   <- the in-game Pickle suite: features, its steps and their source, the pass maps
+  docs/    <- one line per in-game run (docs/runs/), and which protocol documents were read
 ```
 
 `Art/` holds the full-resolution sources of the two pictures, `Preview-source.png` and
@@ -185,7 +192,7 @@ port's own work.
 
 ## Verification
 
-Two levels, neither of which needs the game.
+Two levels: the first needs no game, the second runs one.
 
 `_tools/Run-Tests.ps1` is the mod's own suite: 37 tests, a few seconds, no RimWorld. It reads the
 game's classes by reflection and A Dog Said 2 off disk, so the sentences these documents state as
@@ -201,11 +208,21 @@ The local suite includes XML field validation against RimWorld 1.6, parent and d
 What none of that can settle is in [TESTING.md](TESTING.md): the patch's effect lives in a list
 another mod builds at load time, and the failure mode is silence.
 
+The second level is a [Pickle](https://steamcommunity.com/sharedfiles/filedetails/?id=3791648678)
+suite under `Tests/Pickle/`: 41 scenarios in six passes (the mod alone, with WhaleysDogs, with A Dog
+Said 2 in and out of its declared order, with both, beside the original). It is for development
+only and is never part of the Workshop payload. Only pass 1 in English has been played so far;
+[Tests/Pickle/README.md](Tests/Pickle/README.md) says what each pass establishes and what has run,
+and `docs/runs/` keeps one line per run.
+
 ## Credits
 
 - **cucumpear** and **lavie2k** — the dalmatian, its artwork, its balance, the original mod.
+- **Mlie** and **Whaley** — WhaleysDogs (Continued), the mod this one steps aside for.
+- **SamBucher** — A Dog Said... Animal Prosthetics 2.
+- The authors of **Pickle** and **PickleTools**, which test the port in game; development only.
 
 See [ATTRIBUTION.md](ATTRIBUTION.md) for the licence position and what exactly was carried over.
 
-The port work was done with the help of an AI assistant (Claude, by Anthropic), under human
-direction and in-game testing.
+The port work was done with the help of AI assistants (Claude, by Anthropic, and Codex, by
+OpenAI), under human direction.
