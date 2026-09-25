@@ -46,6 +46,7 @@ Feature: The dalmatian on its own
     And Dalmatians Renew the information card of "Control" lists the stat "Wildness" at "75%"
     When Dalmatians Renew opens the information card of "Rex"
     Then Dalmatians Renew the information card of "Rex" lists the stat "Wildness" at "0%"
+    When Dalmatians Renew filters the open information card to "wildness"
     When Nelim's Pickle Tools: screenshot mode is enabled around the open windows
     Then I take a screenshot "dalmatian information card - Wildness listed at 0 percent"
     And no errors were logged

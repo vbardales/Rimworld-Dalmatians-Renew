@@ -251,6 +251,16 @@ namespace DalmatiansRenew.PickleSteps
             ctx.Assert(Find.WindowStack.Windows.OfType<Dialog_InfoCard>().Any(), "the information card did not open");
         }
 
+        // The card lists some forty stats and Wildness sits below the fold, so a capture of the open card
+        // does not show the line the scenario is about. The card's own search box narrows it to one.
+        [When("Dalmatians Renew filters the open information card to {string}", TimeoutSeconds = 15f)]
+        public async Task FilterCard(PickleContext ctx, string text)
+        {
+            ctx.Require(Find.WindowStack.Windows.OfType<Dialog_InfoCard>().Any(), "no information card is open");
+            StatsReportUtility.quickSearchWidget.filter.Text = text;
+            await ctx.WaitFrames(5);
+        }
+
         [Then("Dalmatians Renew the information card of {string} lists the stat {string} at {string}")]
         public void CardLists(PickleContext ctx, string alias, string statName, string value)
         {
