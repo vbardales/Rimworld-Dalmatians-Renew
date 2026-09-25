@@ -140,6 +140,26 @@ that mod's rule. Whether it applies here is not written anywhere; the captures s
 Pass 5 of the Pickle suite plays the wrong order on purpose, and pass 6 plays the original beside this
 mod, to check that what the documents say about them is still true. Neither has been run.
 
+## Manual validations of the owner
+
+`AUDIT.md` asks for none at `tested`: every scenario A-Q is automated and green, or listed in `TESTING.md` with the
+reason it is not. `AUDIT.md` also lists "the owner's manual validations" among the things a `publish` does not
+skip, without saying which. What follows is a proposal drawn from the "stays manual" column of `TESTING.md` and
+from `PUBLISHING.md` ("Juste après"); it is hers to change.
+
+| # | What to look at | Why a test cannot |
+|---|---|---|
+| 1 | Subscribe to item `3806709979`, start a game with the installed copy, tame a dalmatian: it takes a name, and the information card reads as the capture did | The installed copy is what players get; the suite plays the working tree |
+| 2 | With A Dog Said 2: the Health tab offers the animal surgeries a husky is offered (scenario C) | The look of the Health tab is vanilla's; the operations are asserted |
+| 3 | A duster made from the leather: the garment's colour (F) | Vanilla's reaction to `stuffProps.color` |
+| 4 | A real save with a dalmatian, then the mod removed and added back, or swapped with the original (K) | A changed mod list is the game's handling |
+| 5 | The mod list entry: name, icon and preview render (L). The icon is validated | The list's rendering is the game's |
+| 6 | The gallery: which captures, in which order, on which colony (see Screenshots) | A composition is a choice |
+| 7 | The description pasted on the page, read once more | It is sent only at creation, so the page is edited by hand |
+| 8 | Then, and only then, the visibility, the comments subscription and "Watch all activity" (`PUBLISHING.md`) | Steam, by hand, by the owner |
+
+A dog seen nuzzling, a litter born, a trader rolling one are random and are not asked of anyone.
+
 ## Mature content checkboxes
 
 **None of them.** The mod adds one dog and its leather. The two pictures it ships were opened: a
