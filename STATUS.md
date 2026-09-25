@@ -20,14 +20,15 @@ showcase:     complete
 settings_audit: not_applicable
 xml_tests:    passed
 functional_tests: unverified
-pickle_tests: written 2026-09-24, 41 scenarios in 6 passes (8 launches); pass 1 English played once, 9 of 14 passed, fixes committed, two fix tickets queued
+pickle_tests: written 2026-09-24, 41 scenarios in 6 passes (8 launches); pass 1 English: all 14 scenarios have passed across five small tickets, no single full run yet; the other seven launches never run
 audit_revision: 8b734cab75a0579ec33a19db19023c074628af1a (this card is committed on top of it)
 tested_on:
 automated:    37 passed, 0 failed, 0 skipped on 2026-09-24, with A Dog Said 2 installed; 33 ran and 4 skipped earlier the same day, before it was
 manual:       17 scenarios documented in TESTING.md; execution pending
 workshop:     3806709979 (item created private by the 0.1.0 prepublication of 2026-09-23; not the prepublished state)
 remaining:
-  - unverified: seven of the eight Pickle launches have never run, and pass 1 English is being fixed after its first run (docs/runs/2026-09-24-pass1-english.md); done -> tested
+  - unverified: seven of the eight Pickle launches have never run, and pass 1 English still needs one full run at the current revision as its initial validation (docs/runs/2026-09-24-pass1-english.md); done -> tested
+  - unverified: the litter size reads 1~4 on the game's own card, and the README and the shipped description say one to three; the curve runs from 0.5 to 3.5; a decision is pending on which is right to state
   - unverified: done -> tested needs no @wip scenario, every conditional scenario played (@requires Mlie.WhaleysDogs and SamBucher.ADogSaidAnimalProsthetics2, each on a map that mounts it), and no manual scenario left (A-Q automated and green, or listed not applicable with the reason)
   - unverified: English and French runtime translation checks, with and without WhaleysDogs; TESTING.md scenario M
   - unverified: ADS 2 surgery availability and load order, scenarios C and D
@@ -65,6 +66,28 @@ Two small fix tickets are queued: the five failed scenarios, and the six capture
 follows once they are green, as the initial validation, then the other passes, one ticket each. Nothing here
 moves the stage: it stays `done`. The two large redundant report files (`report.html`, `messages.ndjson`,
 67 MB) were removed from the evidence folder; the summary, the junit file, the log and the captures stay.
+
+## Pass 1 English, after the fixes — 2026-09-25
+
+Five small tickets in all. The first run failed 5 scenarios of 14; a fix run replayed those 5 and all passed
+(`exitReason: passed`, 5 played). Three capture scenarios were then replayed one at a time because their images
+were not readable: the information card, the puppy scene, and the corpse and rotations from the first run.
+
+Captures read, all eight kept, recompressed to JPEG: the four rotations (north seen from behind, south from
+the front, east facing right, west facing left, a white dog with black spots each time); the leather beside plain
+leather, paler; its information card; the dessicated corpse, a small skeleton labelled "Dalmatian 1 (dead)",
+drawn without a crash; the puppy beside an adult, smaller, from the same texture; and the information card
+scrolled to Wildness 0%, highlighted, next to Trainability Advanced, Nuzzle interval 20 hours, Gestation 25
+days and Source Dalmatians Renew (unofficial).
+
+What went wrong on the way, so it is not repeated: two attempts to improve the camera were worse than the first
+run's, one because `SetRootPosAndSize` takes a Vector3 and was given a Vector2, the other because the default
+zoom, 24, was mistaken for the first run's `SetRootSize(8)`. And a green run of six capture scenarios had shown
+the edge of the map: a green run says the path ran, not that the image shows anything.
+
+The card also shows a litter size of **1~4**, where the documents say one to three. Not corrected: which is
+right to state is a decision. The evidence folder went from 50 MB to 2.7 MB. Still to do for pass 1 English: one
+full run of all 14 at the current revision, then passes 1 French to 6.
 
 ## Stage moves to done — 2026-09-24
 
