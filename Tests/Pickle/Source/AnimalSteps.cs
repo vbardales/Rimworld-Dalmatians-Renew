@@ -174,11 +174,13 @@ namespace DalmatiansRenew.PickleSteps
             // Close enough for a person to judge a texture: the first run's captures showed a dog a few
             // pixels wide, because a plain SetRootSize only aims for the size and the camera had not
             // got there after three frames.
-            // Position only, through JumpToCurrentMapLoc, and the zoom is left alone. SetRootPosAndSize takes a
-            // Vector3 and was handed a Vector2, so it put the camera at the edge of the map; assigning a size
-            // by hand made the view farther, not closer. At the default zoom a dog is about sixty pixels wide,
-            // which is enough to read once the capture is cropped.
+            // JumpToCurrentMapLoc for the position and SetRootSize for the zoom: that pair is what the first run
+            // used, and it gave a dog about sixty pixels wide. The default size, 24, gives one about twenty.
+            // Two attempts to do better were worse: SetRootPosAndSize takes a Vector3 and was handed a
+            // Vector2, which put the camera at the edge of the map; and leaving the zoom alone was the
+            // default, which I had mistaken for what the first run showed.
             Find.CameraDriver.JumpToCurrentMapLoc(at);
+            Find.CameraDriver.SetRootSize(8f);
             await ctx.WaitFrames(5);
         }
 

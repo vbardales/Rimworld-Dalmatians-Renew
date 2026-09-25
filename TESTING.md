@@ -294,8 +294,13 @@ and per scenario, plus an older one only if it is the sole proof of a check the 
 Delete the rest as soon as a newer report replaces it, after listing what goes and what stays. Never
 delete a report that a field in `STATUS.md` still points to: repoint the field first.
 
-Minifying is allowed once a capture has been looked at: downscale it to the size that still shows
-the thing, and keep it as PNG. Do not touch it before it has been opened.
+Minifying is allowed once a capture has been looked at, and never before it has been opened. Keep
+the full frame and recompress it to JPEG at quality 85: a 1920 x 1080 capture goes from about 3 MB
+as PNG to about 250 KB, and stays legible, which the first three runs of this suite showed. Do not
+keep `report.html` (5 MB and up) or `messages.ndjson`: the summary, the junit file, the log and the
+captures carry the proof. Of two runs of the same scenario, keep the later, and delete a run whose
+captures showed nothing once its replacement does. The 2026-09-25 clean-up took the evidence folder
+from 50 MB to 2.5 MB this way.
 
 The launcher's archive of the run (`pickle-reports-archive/`) is a full copy of the shared folder.
 Select from the archive of this mod's own run what is worth keeping above, then delete that archive.
