@@ -123,9 +123,18 @@ looked at before it is listed here: a green capture scenario proves the journey 
 shows anything. The gallery is uploaded by hand (`OPERATIONS.md`), from a folder that holds only the
 images to upload, numbered `01-`, `02-`… in page order, no old version, no raw capture, no subfolder
 (`PUBLISHING.md`, Images). It will be `Art/Workshop/`, which is also the workflow's `--gallery-dir`; it does
-not exist yet. **Open question for the owner:** Work Studio's rule is that shots are taken on her showcase colony
-(`PickleTools/ScreenshotStudio`, `wsl-deps.studio.map`), never on the test fixture, and it says it is
-that mod's rule. Whether it applies here is not written anywhere; the captures so far are on the fixture.
+not exist yet. **The owner ruled on 2026-09-25 that Work Studio's rules apply here too**: the shots are taken
+on her showcase colony, the fixture `nelim-zen-meadow-studio` of `PickleTools/ScreenshotStudio`, staged by a
+pass map of its own (Work Studio's is `wsl-deps.studio.map`, with `clickdiagnostics`, `screenshotmode` and
+`screenshotstudio`), in English, by a feature that is skipped in every other pass. The rules that follow from it
+(Work Studio's `PUBLICATION.md`, "Workshop screenshots"): an option window is taken in screenshot mode and cropped
+tight with 16 px of margin; a game window the mod changes is taken with the full interface, uncropped; every
+upload under 2 MB, cropped and never resampled; named as a player would name it; each image opened and looked at;
+and on the map, an orange zone of the studio or the grass above the smiley emblem, with the subject circled in red.
+The captures already taken on the test fixture are `@review` evidence, not gallery images.
+
+The feature is not written: the mod under test is being played by a pass 1 ticket, and nothing under `Tests/`
+moves until it is done.
 
 ## Dependencies and DLCs
 
