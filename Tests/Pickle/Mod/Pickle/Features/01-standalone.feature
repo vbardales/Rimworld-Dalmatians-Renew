@@ -110,7 +110,7 @@ Feature: The dalmatian on its own
     And I close all dialogs
     And Dalmatians Renew spawns the player puppy "Pup" as "CCPDalmatian"
     And Dalmatians Renew spawns the player animal "Rex" as "CCPDalmatian" beside "Pup"
-    When Dalmatians Renew centres the camera on "Pup"
+    When Dalmatians Renew centres the camera two cells south of "Pup"
     And Dalmatians Renew shows "Pup" facing south
     And Dalmatians Renew shows "Rex" facing south
     Then I take a screenshot "dalmatian puppy beside an adult"

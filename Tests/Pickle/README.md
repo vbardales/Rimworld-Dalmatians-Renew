@@ -2,10 +2,10 @@
 
 Development only. Nothing under `Tests/` is part of the Workshop payload. The suite is written for the
 shared WSL runner. **Pass 1 in English has been played on 2026-09-24 and 25: 5 of its 14 scenarios failed at
-first** on causes the offline check could not see (see below), and all 14 have passed since, across five small
-tickets. That is not yet a validation run: no single run of all 14 exists at the current revision, and the eight
-captures were read one by one. Every other pass has never been run. Nothing here claims an in-game result that
-the reports do not show.
+first** on causes the offline check could not see (see below), and all 14 have passed since. One full run of all
+14, filed on 2026-09-25 with the tree unchanged, passed 14 of 14 with none skipped; its nine captures were read,
+and the puppy scene showed no adult, so that one scenario is replayed after a step fix. Every other pass has never
+been run. Nothing here claims an in-game result that the reports do not show.
 
 ## Scope
 

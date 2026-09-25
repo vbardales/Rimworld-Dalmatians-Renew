@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -184,6 +185,18 @@ namespace DalmatiansRenew.PickleSteps
             await ctx.WaitFrames(5);
         }
 
+        // The cursor sits at the centre of the screen, and whatever stands there gets a tooltip drawn over
+        // the picture. Centring two cells south of the animals puts them above it, on bare ground.
+        [When("Dalmatians Renew centres the camera two cells south of {string}", TimeoutSeconds = 15f)]
+        public async Task CentreCameraSouth(PickleContext ctx, string alias)
+        {
+            var animal = Scene.Named(ctx, alias);
+            Find.Selector.ClearSelection();
+            Find.CameraDriver.JumpToCurrentMapLoc(animal.Position + new IntVec3(0, 0, -2));
+            Find.CameraDriver.SetRootSize(8f);
+            await ctx.WaitFrames(5);
+        }
+
         [Given("Dalmatians Renew spawns the player animal {string} as {string} beside {string}")]
         public void SpawnBeside(PickleContext ctx, string alias, string kindName, string other)
         {
@@ -191,9 +204,16 @@ namespace DalmatiansRenew.PickleSteps
             ctx.Require(kind != null, $"no PawnKindDef named '{kindName}' is loaded in this pass");
             var neighbour = Scene.Named(ctx, other);
             var map = Scene.Map(ctx);
-            IntVec3 cell;
-            var found = CellFinder.TryFindRandomCellNear(neighbour.Position, map, 3,
-                c => c.Standable(map) && c.GetEdifice(map) == null && c.GetFirstPawn(map) == null, out cell);
+            Predicate<IntVec3> free = c => c.InBounds(map) && c.Standable(map) && c.GetEdifice(map) == null && c.GetFirstPawn(map) == null;
+            // Next to it, on the cell to the east if that is free, so that two animals photographed
+            // together are always in the same frame: the first full run drew a puppy with its adult
+            // nowhere to be seen, because the cell was random within three.
+            IntVec3 cell = IntVec3.Invalid;
+            foreach (var step in new[] { IntVec3.East, IntVec3.West, IntVec3.South, IntVec3.North })
+            {
+                if (free(neighbour.Position + step)) { cell = neighbour.Position + step; break; }
+            }
+            var found = cell.IsValid || CellFinder.TryFindRandomCellNear(neighbour.Position, map, 3, c => free(c), out cell);
             ctx.Require(found, $"no free standable cell was found beside {other} at {neighbour.Position}");
             var pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(
                 kind, Faction.OfPlayer, forceGenerateNewPawn: true, fixedBiologicalAge: 3f));
