@@ -174,13 +174,12 @@ namespace DalmatiansRenew.PickleSteps
             // Close enough for a person to judge a texture: the first run's captures showed a dog a few
             // pixels wide, because a plain SetRootSize only aims for the size and the camera had not
             // got there after three frames.
-            // The position goes through JumpToCurrentMapLoc, which the first run showed to work: setting it
-            // with SetRootPosAndSize put the camera at the edge of the map in the second run. Both the size
-            // the camera has and the size it aims for are set, since it eases toward the second one.
+            // Position only, through JumpToCurrentMapLoc, and the zoom is left alone. SetRootPosAndSize takes a
+            // Vector3 and was handed a Vector2, so it put the camera at the edge of the map; assigning a size
+            // by hand made the view farther, not closer. At the default zoom a dog is about sixty pixels wide,
+            // which is enough to read once the capture is cropped.
             Find.CameraDriver.JumpToCurrentMapLoc(at);
-            Find.CameraDriver.rootSize = 6f;
-            Find.CameraDriver.desiredSize = 6f;
-            await ctx.WaitFrames(10);
+            await ctx.WaitFrames(5);
         }
 
         [Given("Dalmatians Renew spawns the player animal {string} as {string} beside {string}")]
