@@ -32,7 +32,6 @@ remaining:
   - unverified: English and French runtime translation checks, with and without WhaleysDogs; TESTING.md scenario M
   - unverified: ADS 2 surgery availability and load order, scenarios C and D
   - defect: the description sent by 0.1.0 still lacks IF I GO QUIET, AI-GENERATED, THANKS, the final Source code on GitHub link, Codex and the Pickle thanks; About.xml was aligned on 2026-09-25 and PUBLICATION.md holds the BBCode to paste, but SetItemDescription runs only at creation, so the Steam page is corrected by hand (the owner); required for prepublished, not for done or tested
-  - owner: the delivered icon read at 32 px on 2026-09-25 (wink and smile read, spots blur to a speckle, outline merges with a dark ground); AUDIT puts a doubtful result to the owner, this session does not judge it (PUBLICATION.md, Images)
   - unverified: prepublished also needs the gallery, the rollback target, the owner's manual validations, and the three drafted comments posted only once the item is public (PUBLICATION.md; WORKSHOP_COMMENTS.md rows added 2026-09-25, uncommitted in the protocols repository)
 session:      local_e7fdeacc-7649-4702-9f00-45be2663ced1
 updated:      2026-09-25

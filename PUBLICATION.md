@@ -17,10 +17,14 @@ Not restated from `AUDIT.md`; only what is specific to this mod.
   frozen revision, then the other seven launches, still have to be filed.
 - The gallery does not exist (see below).
 - The rollback target is not chosen (see "Fail fast").
-- The 32 px icon check has been looked at by this session and is put to the owner (see "Images").
 - The description on the Steam page is the one 0.1.0 sent; it is corrected by hand (see "Description").
 
 ## Description
+
+The publishing workflow reads the description from the fenced block under the first heading that matches
+`--description-heading`; for this file that is `'^## Description'`. `OPERATIONS.md` says the dry-run cannot
+compare with a private item's page, so the text is read by hand, and its printed SHA-256 identifies what
+would replace the page.
 
 `SetItemDescription` runs only when an item is created, so the page keeps what 0.1.0 sent. The shipped
 `About.xml` was aligned on 2026-09-25 (litter wording, the three closing sections, Codex, Pickle and
@@ -98,7 +102,8 @@ seen live.
 - **ModIcon** (`Mod/About/ModIcon.png`, 128 px, opened): a winking spotted mascot with a sparkle. This
   session generates no icon. At **32 px**, looked at enlarged on a grey ground, the wink and the smile
   still read and the spots blur into a speckle; the sparkle is three pixels. It reads as a winking
-  spotted face, but the black outline merges with a dark background. **The judgement is the owner's.**
+  spotted face, but the black outline merges with a dark background. **The owner validated the icon on
+  2026-09-25**, after reading this note.
 
 ## Screenshots, in this order
 
@@ -115,7 +120,12 @@ would try them:
 
 None of these has been produced for the gallery, so no order is justified yet. Every image is opened and
 looked at before it is listed here: a green capture scenario proves the journey ran, not that the image
-shows anything. The gallery is uploaded by hand (`OPERATIONS.md`).
+shows anything. The gallery is uploaded by hand (`OPERATIONS.md`), from a folder that holds only the
+images to upload, numbered `01-`, `02-`… in page order, no old version, no raw capture, no subfolder
+(`PUBLISHING.md`, Images). It will be `Art/Workshop/`, which is also the workflow's `--gallery-dir`; it does
+not exist yet. **Open question for the owner:** Work Studio's rule is that shots are taken on her showcase colony
+(`PickleTools/ScreenshotStudio`, `wsl-deps.studio.map`), never on the test fixture, and it says it is
+that mod's rule. Whether it applies here is not written anywhere; the captures so far are on the fixture.
 
 ## Dependencies and DLCs
 
@@ -159,6 +169,11 @@ Nothing else was rebalanced.
 ```
 
 ## Fail fast: the rollback target
+
+A rollback is a **new publication**, not an unpublication: the workflow is dispatched with `ref` = the full SHA
+of the last good commit and the next patch number, and the change note reads "Rolls back to <what>, because
+<what failed>". The version numbers only go up and a tag that exists is refused. The item's visibility is not
+touched by the CI: making it private again is a manual act of the owner on Steam.
 
 `AUDIT.md`, `prepublished → published`: before the `publish`, every scenario that failed has a green
 replay, the gallery is done and the owner's manual validations are made. The regression pass may follow.
