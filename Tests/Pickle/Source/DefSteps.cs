@@ -44,6 +44,19 @@ namespace DalmatiansRenew.PickleSteps
                 $"only {other} offers [{string.Join(", ", missing)}]; only {thing} offers [{string.Join(", ", extra)}]");
         }
 
+        // Every vanilla animal sits in at least one of A Dog Said 2's categories, so no animal offers the
+        // plain base list to compare against. The husky is in all three and the rat in the first, hence
+        // what the husky offers and the rat does not comes from the second and third only.
+        [Then("Dalmatians Renew {string} offers none of the operations that {string} offers and {string} does not")]
+        public void NoneOfTheDifference(PickleContext ctx, string thing, string offering, string notOffering)
+        {
+            var mine = Operations(ctx, thing);
+            var difference = Operations(ctx, offering).Except(Operations(ctx, notOffering)).OrderBy(x => x).ToList();
+            ctx.Require(difference.Count > 0, $"{offering} offers nothing that {notOffering} does not: there is nothing to look for");
+            var found = difference.Where(mine.Contains).ToList();
+            ctx.Assert(found.Count == 0,
+                $"{thing} offers {found.Count} of the {difference.Count} operations only {offering} offers: [{string.Join(", ", found)}]");
+        }
         [Then("Dalmatians Renew {string} offers more operations than {string}")]
         public void MoreOperations(PickleContext ctx, string thing, string other)
         {
@@ -75,10 +88,18 @@ namespace DalmatiansRenew.PickleSteps
             ctx.Assert(found.Count == 0, $"{defName} is still stocked by [{string.Join(", ", found)}]");
         }
 
+        // "Stocks" means the trader can sell it to the player. HandlesThingDef is not that: it is true
+        // for any animal whose tradeability is not None and whose trade tags match, Sellable ones
+        // included, which the trader only buys. TradeabilityFor is the generator's own answer, and
+        // the first pass 2 run failed on this question asked the wrong way round (2026-09-25).
         private static IEnumerable<string> StockingTraders(ThingDef def) =>
             DefDatabase<TraderKindDef>.AllDefs
                 .Where(t => t.stockGenerators != null &&
-                            t.stockGenerators.OfType<StockGenerator_Animals>().Any(g => g.HandlesThingDef(def)))
+                            t.stockGenerators.OfType<StockGenerator_Animals>().Any(g =>
+                            {
+                                var sells = g.TradeabilityFor(def);
+                                return sells == Tradeability.All || sells == Tradeability.Buyable;
+                            }))
                 .Select(t => t.defName);
 
         [Then("Dalmatians Renew the player can sell {string}")]

@@ -6,6 +6,11 @@
 # taking each list as it stands at that moment. This mod's addition, made afterwards, goes into a
 # list nothing reads any more, and nothing is logged.
 #
+# Not compared with a plain animal: every vanilla animal sits in at least one of A Dog Said 2's categories,
+# the rat in the first (dentures and wooden limbs), so the rat is not a base list. The first run of this pass
+# (2026-09-25) failed on exactly that reading. The dalmatian must offer fewer than the rat and none of what
+# only the husky offers.
+#
 # The symptom is asserted as a green result, not awaited as a red one. If these steps fail, the
 # mechanism ATTRIBUTION.md and README.md describe is not what the game does, and the documents
 # need correcting.
@@ -23,4 +28,5 @@ Feature: The dalmatian beside A Dog Said 2, in the wrong load order
   Scenario: the husky keeps its operations and the dalmatian loses them
     Then Dalmatians Renew "Husky" offers more operations than "Rat"
     And Dalmatians Renew "CCPDalmatian" offers fewer operations than "Husky"
-    And Dalmatians Renew "CCPDalmatian" offers the same operations as "Rat"
+    And Dalmatians Renew "CCPDalmatian" offers fewer operations than "Rat"
+    And Dalmatians Renew "CCPDalmatian" offers none of the operations that "Husky" offers and "Rat" does not
