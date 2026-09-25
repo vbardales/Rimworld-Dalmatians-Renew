@@ -20,14 +20,14 @@ showcase:     complete
 settings_audit: not_applicable
 xml_tests:    passed
 functional_tests: unverified
-pickle_tests: written 2026-09-24, 41 scenarios in 6 passes (8 launches); pass 1 English: full run of all 14 on 2026-09-25 (label 42f0415), 14 passed, 0 skipped; the puppy capture of that run shows no adult, so one scenario is replayed after a step fix; the other seven launches never run
+pickle_tests: written 2026-09-24, 41 scenarios in 6 passes (8 launches); pass 1 English done on 2026-09-25: full run 14 of 14 (label 42f0415) plus a replay of its puppy scene (label ac2d979, capture read); the other seven launches never run
 audit_revision: 8b734cab75a0579ec33a19db19023c074628af1a (this card is committed on top of it)
 tested_on:
 automated:    37 passed, 0 failed, 0 skipped on 2026-09-24, with A Dog Said 2 installed; 33 ran and 4 skipped earlier the same day, before it was
 manual:       17 scenarios documented in TESTING.md; execution pending
 workshop:     3806709979 (item created private by the 0.1.0 prepublication of 2026-09-23; not the prepublished state)
 remaining:
-  - unverified: seven of the eight Pickle launches have never run (docs/runs/2026-09-24-pass1-english.md); the puppy-beside-an-adult capture of the pass 1 English full run has to be replayed after the step fix, then read; done -> tested
+  - unverified: seven of the eight Pickle launches have never run (docs/runs/2026-09-24-pass1-english.md): pass 1 French, then passes 2 to 6; done -> tested
   - unverified: done -> tested needs no @wip scenario, every conditional scenario played (@requires Mlie.WhaleysDogs and SamBucher.ADogSaidAnimalProsthetics2, each on a map that mounts it), and no manual scenario left (A-Q automated and green, or listed not applicable with the reason)
   - unverified: English and French runtime translation checks, with and without WhaleysDogs; TESTING.md scenario M
   - unverified: ADS 2 surgery availability and load order, scenarios C and D
