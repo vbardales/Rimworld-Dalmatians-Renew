@@ -20,7 +20,7 @@ showcase:     complete
 settings_audit: not_applicable
 xml_tests:    passed
 functional_tests: unverified
-pickle_tests: written 2026-09-24, 41 scenarios in 6 passes (8 launches); pass 1 English done on 2026-09-25: full run 14 of 14 (label 42f0415) plus a replay of its puppy scene (label ac2d979, capture read); the other seven launches never run
+pickle_tests: written 2026-09-24, 41 scenarios in 6 passes (8 launches); all eight launches played by 2026-09-26 and green at label d0dd719 (Mod/ unchanged since 42f0415): pass 1 English 14/14 and French 14/14; pass 2 English and French 14 plus a green trade replay each; passes 3, 4, 6 green; pass 5 green after its rewrite; captures read (docs/runs/2026-09-24-pass1-english.md)
 audit_revision: 8b734cab75a0579ec33a19db19023c074628af1a (this card is committed on top of it)
 tested_on:
 automated:    37 passed, 0 failed, 0 skipped on 2026-09-24, with A Dog Said 2 installed; 33 ran and 4 skipped earlier the same day, before it was
