@@ -15,23 +15,23 @@ namespace DalmatiansRenew.PickleSteps
         [BeforeScenario]
         public void ResetScene(PickleContext ctx) => Scene.Reset();
 
-        private static IntVec3 FreeCell(PickleContext ctx, int radius = 20)
+        private static IntVec3 FreeCell(PickleContext ctx, int radius = 20, IntVec3? centre = null)
         {
             var map = Scene.Map(ctx);
             IntVec3 cell;
-            var found = CellFinder.TryFindRandomCellNear(map.Center, map, radius,
+            var found = CellFinder.TryFindRandomCellNear(centre ?? map.Center, map, radius,
                 c => c.Standable(map) && c.GetEdifice(map) == null && c.GetFirstPawn(map) == null, out cell);
             ctx.Require(found, $"no free standable cell was found near {map.Center}");
             return cell;
         }
 
-        private static Pawn Spawn(PickleContext ctx, string kindName, Faction faction, float age)
+        private static Pawn Spawn(PickleContext ctx, string kindName, Faction faction, float age, IntVec3? centre = null)
         {
             var kind = DefDatabase<PawnKindDef>.GetNamedSilentFail(kindName);
             ctx.Require(kind != null, $"no PawnKindDef named '{kindName}' is loaded in this pass");
             var pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(
                 kind, faction, forceGenerateNewPawn: true, fixedBiologicalAge: age));
-            GenSpawn.Spawn(pawn, FreeCell(ctx), Scene.Map(ctx));
+            GenSpawn.Spawn(pawn, FreeCell(ctx, centre.HasValue ? 3 : 20, centre), Scene.Map(ctx));
             return pawn;
         }
 
@@ -48,6 +48,16 @@ namespace DalmatiansRenew.PickleSteps
         [Given("Dalmatians Renew spawns the player puppy {string} as {string}")]
         public void SpawnPuppy(PickleContext ctx, string alias, string kindName) =>
             Scene.Remember(alias, Spawn(ctx, kindName, Faction.OfPlayer, 0.1f));
+
+        // The Workshop images stand on the showcase colony, where the test map's centre is a building site.
+        // These two put an animal on a chosen cell (within three of it), and the next one frames it.
+        [Given("Dalmatians Renew spawns the player animal {string} as {string} near the cell {int} {int}")]
+        public void SpawnPlayerNear(PickleContext ctx, string alias, string kindName, int x, int z) =>
+            Scene.Remember(alias, Spawn(ctx, kindName, Faction.OfPlayer, 3f, new IntVec3(x, 0, z)));
+
+        [Given("Dalmatians Renew spawns the player puppy {string} as {string} near the cell {int} {int}")]
+        public void SpawnPuppyNear(PickleContext ctx, string alias, string kindName, int x, int z) =>
+            Scene.Remember(alias, Spawn(ctx, kindName, Faction.OfPlayer, 0.1f, new IntVec3(x, 0, z)));
 
         [Given("Dalmatians Renew spawns {int} wild animals as {string}")]
         public void SpawnBatch(PickleContext ctx, int count, string kindName)
