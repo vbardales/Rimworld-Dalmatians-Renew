@@ -12,6 +12,13 @@
 #   - A capture on the map aims at the glade, never at the black tiles. What is worth seeing is circled in red
 #     by hand afterwards, since the meadow is busy.
 #   - Each image is opened and looked at before it is called ready; its composition is the owner's call.
+#   - The owner's ruling of 2026-09-27: the dogs need to fill at least half the frame's height. RootSize 11
+#     is already the camera's own minimum (Verse.CameraMapConfig.sizeRange.min, off Steam Deck) — no
+#     Pickle step can zoom past it, that ceiling is the vanilla scroll-wheel's too. Getting there is a crop
+#     after capture, never a resample (WorkStudio's own rule): the dogs need to stand close together first,
+#     or a tight crop around one leaves the other out of frame. Spawning the puppy beside the adult, the
+#     same pattern 01-standalone.feature already uses for its own puppy capture, replaces two independent
+#     "near the cell" spawns that could land tens of cells apart.
 #
 # Raw captures land in Art/Workshop/studio-raw/ (ignored by git) and the finished images are copied into
 # Art/Workshop/ numbered 01-, 02-.
@@ -24,7 +31,7 @@ Feature: images for the Workshop page
 
   Scenario: a dalmatian and its puppy in the flower glade
     Given Dalmatians Renew spawns the player animal "Rex" as "CCPDalmatian" near the cell 154 98
-    And Dalmatians Renew spawns the player puppy "Pup" as "CCPDalmatian" near the cell 154 98
+    And Dalmatians Renew spawns the player puppy "Pup" as "CCPDalmatian" beside "Rex"
     When Dalmatians Renew centres the camera two cells south of "Rex"
     And Dalmatians Renew shows "Rex" facing south
     And Dalmatians Renew shows "Pup" facing south

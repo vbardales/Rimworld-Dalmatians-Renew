@@ -55,10 +55,6 @@ namespace DalmatiansRenew.PickleSteps
         public void SpawnPlayerNear(PickleContext ctx, string alias, string kindName, int x, int z) =>
             Scene.Remember(alias, Spawn(ctx, kindName, Faction.OfPlayer, 3f, new IntVec3(x, 0, z)));
 
-        [Given("Dalmatians Renew spawns the player puppy {string} as {string} near the cell {int} {int}")]
-        public void SpawnPuppyNear(PickleContext ctx, string alias, string kindName, int x, int z) =>
-            Scene.Remember(alias, Spawn(ctx, kindName, Faction.OfPlayer, 0.1f, new IntVec3(x, 0, z)));
-
         [Given("Dalmatians Renew spawns {int} wild animals as {string}")]
         public void SpawnBatch(PickleContext ctx, int count, string kindName)
         {
@@ -235,8 +231,7 @@ namespace DalmatiansRenew.PickleSteps
             ctx.Attach("camera root size after centring", Find.CameraDriver.RootSize.ToString("0.00"));
         }
 
-        [Given("Dalmatians Renew spawns the player animal {string} as {string} beside {string}")]
-        public void SpawnBeside(PickleContext ctx, string alias, string kindName, string other)
+        private static void SpawnBesideAt(PickleContext ctx, string alias, string kindName, string other, float age)
         {
             var kind = DefDatabase<PawnKindDef>.GetNamedSilentFail(kindName);
             ctx.Require(kind != null, $"no PawnKindDef named '{kindName}' is loaded in this pass");
@@ -254,10 +249,18 @@ namespace DalmatiansRenew.PickleSteps
             var found = cell.IsValid || CellFinder.TryFindRandomCellNear(neighbour.Position, map, 3, c => free(c), out cell);
             ctx.Require(found, $"no free standable cell was found beside {other} at {neighbour.Position}");
             var pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(
-                kind, Faction.OfPlayer, forceGenerateNewPawn: true, fixedBiologicalAge: 3f));
+                kind, Faction.OfPlayer, forceGenerateNewPawn: true, fixedBiologicalAge: age));
             GenSpawn.Spawn(pawn, cell, map);
             Scene.Remember(alias, pawn);
         }
+
+        [Given("Dalmatians Renew spawns the player animal {string} as {string} beside {string}")]
+        public void SpawnBeside(PickleContext ctx, string alias, string kindName, string other) =>
+            SpawnBesideAt(ctx, alias, kindName, other, 3f);
+
+        [Given("Dalmatians Renew spawns the player puppy {string} as {string} beside {string}")]
+        public void SpawnPuppyBeside(PickleContext ctx, string alias, string kindName, string other) =>
+            SpawnBesideAt(ctx, alias, kindName, other, 0.1f);
 
         // The coat is a function of thingIDNumber, so the only way to ask for one is to generate
         // until it comes up and throw the others away. At even odds sixty tries all missing has a
