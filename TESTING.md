@@ -242,7 +242,7 @@ as the plain-language statement of what each scenario means; this table says whe
 
 | Scenario | Where it is checked | What is left out, and why |
 | --- | --- | --- |
-| A. the animal exists, and tames | Pickle `01`: defs owned by the mod, race values, naming on taming | That Obedience, Release, Rescue and Haul are offered: the game's reaction to `trainability`, whose value is asserted |
+| A. the animal exists, and tames | Pickle `01`: defs owned by the mod, race values, naming on taming, and that Obedience, Release, Rescue and Haul are all offered on `pawn.training` (PickleTools, 2026-09-27: the same call the Training tab itself makes, not a copy of it) | Nothing |
 | B. Wildness on the card | Pickle `01`: card lists Wildness at 0%, a hare at 75%, with a capture | The log search for `wildness`: warnings the game writes while it loads its defs may come before Pickle starts capturing the log, so `no warnings from mod` cannot be relied on for them. `_tools/Run-Tests.ps1` proves offline that no `<wildness>` is left under `<race>` |
 | C. A Dog Said 2, correct order | Pickle `03` and `04`: same operations as the husky, more than a plain animal | The look of the Health tab: vanilla's interface |
 | D. A Dog Said 2, wrong order | Pickle `05`, the symptom asserted as green | Nothing. It is the one supported-order exception, and it runs when A Dog Said 2 changes |

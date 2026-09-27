@@ -76,6 +76,20 @@ namespace DalmatiansRenew.PickleSteps
             InteractionWorker_RecruitAttempt.DoRecruit(tamer, animal);
         }
 
+        // pawn.training is the same Pawn_TrainingTracker the Training tab itself reads, so this asks
+        // exactly what the tab would show without opening it or reading drawn rects (PickleTools,
+        // 2026-09-27: no shared step for it yet, and CanAssignToTrain is public API).
+        [Then("Dalmatians Renew {string} offers training {string}")]
+        public void OffersTraining(PickleContext ctx, string alias, string trainableName)
+        {
+            var animal = Scene.Named(ctx, alias);
+            var trainable = DefDatabase<TrainableDef>.GetNamedSilentFail(trainableName);
+            ctx.Require(trainable != null, $"no TrainableDef named '{trainableName}' is loaded in this pass");
+            var accepted = animal.training.CanAssignToTrain(trainable, out var visible);
+            ctx.Assert(visible, $"{alias}'s Training tab does not offer {trainableName}");
+            ctx.Assert(accepted.Accepted, $"{alias} cannot be assigned to {trainableName}: {accepted.Reason}");
+        }
+
         [Then("Dalmatians Renew {string} belongs to the player")]
         public void BelongsToPlayer(PickleContext ctx, string alias) =>
             ctx.Assert(Scene.Named(ctx, alias).Faction == Faction.OfPlayer, $"{alias} is not a player animal");

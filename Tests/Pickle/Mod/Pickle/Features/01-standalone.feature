@@ -43,6 +43,10 @@ Feature: The dalmatian on its own
     When Dalmatians Renew tames "Rex"
     Then Dalmatians Renew "Rex" belongs to the player
     And Dalmatians Renew "Rex" has a name
+    And Dalmatians Renew "Rex" offers training "Obedience"
+    And Dalmatians Renew "Rex" offers training "Release"
+    And Dalmatians Renew "Rex" offers training "Rescue"
+    And Dalmatians Renew "Rex" offers training "Haul"
     And Dalmatians Renew the information card of "Control" lists the stat "Wildness" at "75%"
     When Dalmatians Renew opens the information card of "Rex"
     Then Dalmatians Renew the information card of "Rex" lists the stat "Wildness" at "0%"
