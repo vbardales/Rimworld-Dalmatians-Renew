@@ -167,8 +167,8 @@ from `PUBLISHING.md` ("Juste après"); it is hers to change.
 | 1 | Subscribe to item `3806709979`, start a game with the installed copy, tame a dalmatian: it takes a name, and the information card reads as the capture did | The installed copy is what players get; the suite plays the working tree |
 | 2 | With A Dog Said 2: the Health tab offers the animal surgeries a husky is offered (scenario C) | The look of the Health tab is vanilla's; the operations are asserted |
 | 3 | A duster made from the leather: the garment's colour (F) | Vanilla's reaction to `stuffProps.color` |
-| 4 | A real save with a dalmatian, then the mod removed and added back, or swapped with the original (K) | A changed mod list is the game's handling |
-| 5 | The mod list entry: name, icon and preview render (L). The icon is validated | The list's rendering is the game's |
+| 4 | A real save with a dalmatian, then the mod removed: the dog is destroyed (K). Adding the mod to a save is not checked separately, every Pickle scenario already does it; swapping with the original, declined by the owner on 2026-09-27, stays an offline check that the `defName`s are unchanged | A changed mod list is the game's handling |
+| 5 | ~~The mod list entry: name, icon and preview render (L).~~ Not needed, the owner ruled on 2026-09-27: it is the game's rendering, already checked offline (name, icon and preview dimensions) | The list's rendering is the game's |
 | 6 | The gallery: which captures, in which order, on which colony (see Screenshots) | A composition is a choice |
 | 7 | The description pasted on the page, read once more | It is sent only at creation, so the page is edited by hand |
 | 8 | Then, and only then, the visibility, the comments subscription and "Watch all activity" (`PUBLISHING.md`) | Steam, by hand, by the owner |

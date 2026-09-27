@@ -151,12 +151,15 @@ Four files: three rotations of the living animal, one of the dessicated corpse.
 ## K — an existing save
 
 - Add the mod to a running colony. Dalmatians appear in later wildlife spawns and trader stock.
-  Nothing already in the save changes.
-- Swap cucumpear's original for this port in a save that has tamed dalmatians. The `defName` is
-  unchanged, so **every dog already tamed survives the swap**, keeping its name and its training.
-  That is the one claim the README makes about saves, and the only way to check it is this swap.
+  Nothing already in the save changes. Not a scenario of its own: every Pickle scenario already
+  loads a save with the mod present, so this is covered by the suite as a whole.
 - Remove the mod from a save that has a dalmatian in it. The dog is destroyed, as with any content
-  mod. Expected, and stated in the description.
+  mod. Expected, and stated in the description. The one part of K still worth a look in game.
+
+The claim that the `defName` is unchanged, so a dog already tamed under cucumpear's original would
+survive a swap to this port, is not checked in game (the owner declined it, 2026-09-27): it stays
+an offline check that the three defs carry the original's names, `CCPDalmatian` and
+`Leather_Dalmatian`.
 
 ## L — the mod list entry
 
@@ -249,7 +252,7 @@ as the plain-language statement of what each scenario means; this table says whe
 | H. trade | Pickle `01`: a trader kind's generator handles it, the player can sell it, market value 250 | A trader actually rolling one: random |
 | I. the four textures | Pickle `01`: four rotations, puppy beside an adult, dessicated corpse, all captures a person reads | Nothing. West is mirrored from east, and the corpse's single texture is a documented gap |
 | J. the two collisions | Pickle `06`: the original loaded before this mod | Nelim's Animal Ark: not reproducible. It stopped shipping the dalmatian on 2026-09-11 and the current Ark carries neither identifier, which the 2026-09-13 audit checked |
-| K. an existing save | Not automated | Adding, swapping or removing a mod over a save is the game's handling of a changed mod list. What this mod answers for, that it keeps the original's `defName`s, is checked offline: the suite asserts that the three defs are there under the original's names, `CCPDalmatian` and `Leather_Dalmatian` |
+| K. an existing save | Not automated, reduced to one check (owner, 2026-09-27): removing the mod from a save that has a dalmatian destroys it | Adding the mod is not a scenario of its own, every Pickle scenario already does it. Swapping with the original, to see an already-tamed dog survive, was in scope but the owner declined it: what it would have checked, that the `defName`s are unchanged, stays an offline check on the three defs |
 | L. the mod list entry | Not automated | The mod list's rendering is the game's. The name, the icon's and the preview's dimensions are checked offline by the About and image tests |
 | M. English and French | Pickle `01` and `02`, once per language: labels, plurals, puppy stage, attack labels, descriptions, the material name on a garment | Clipped text and layout, which are read on the captures |
 | N. WhaleysDogs, two coats | Pickle `02`: both coats among forty animals, coats kept through a save and reload, trader pool, corpses of both coats at three stages, both coats facing every way | Silhouette, clipping and shadows are read on the captures. The starting-pet pool is asserted offline through the legacy fields |
