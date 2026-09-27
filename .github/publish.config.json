@@ -1,0 +1,13 @@
+{
+  "templateStamp": "a8ca11cdd9a3",
+  "workshopId": "3806709979",
+  "packageId": "nelim.dalmatiansrenew",
+  "releaseTitle": "Dalmatians Renew (unofficial) {version}",
+  "requirePaths": [
+    "Defs"
+  ],
+  "forbidPaths": [
+    "Assemblies"
+  ],
+  "previewFile": "About/Preview.png"
+}
