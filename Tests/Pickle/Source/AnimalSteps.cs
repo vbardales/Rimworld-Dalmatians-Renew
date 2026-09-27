@@ -197,13 +197,24 @@ namespace DalmatiansRenew.PickleSteps
 
         // The cursor sits at the centre of the screen, and whatever stands there gets a tooltip drawn over
         // the picture. Centring two cells south of the animals puts them above it, on bare ground.
-        [When("Dalmatians Renew centres the camera two cells south of {string}", TimeoutSeconds = 15f)]
+        // SetRootSize sets a target the camera lerps towards over several frames, not an instant zoom:
+        // five frames was enough on the light test-colony fixture, but the showcase colony is heavier
+        // (WorkStudio's own note: its Work tab took 10 s to open there) and the first gallery run, on
+        // 2026-09-26, captured the map still at its default zoom, the lerp barely started. Waiting for
+        // the size itself, up to a budget, replaces a fixed frame count.
+        [When("Dalmatians Renew centres the camera two cells south of {string}", TimeoutSeconds = 30f)]
         public async Task CentreCameraSouth(PickleContext ctx, string alias)
         {
             var animal = Scene.Named(ctx, alias);
             Find.Selector.ClearSelection();
             Find.CameraDriver.JumpToCurrentMapLoc(animal.Position + new IntVec3(0, 0, -2));
             Find.CameraDriver.SetRootSize(8f);
+            var frames = 0;
+            while (Mathf.Abs(Find.CameraDriver.RootSize - 8f) > 0.5f && frames < 300)
+            {
+                await ctx.WaitFrames(1);
+                frames++;
+            }
             await ctx.WaitFrames(5);
         }
 
