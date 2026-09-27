@@ -24,16 +24,14 @@ pickle_tests: written 2026-09-24, 41 scenarios in 6 passes (8 launches); all eig
 audit_revision: 8b734cab75a0579ec33a19db19023c074628af1a (this card is committed on top of it)
 tested_on:
 automated:    37 passed, 0 failed, 0 skipped on 2026-09-24, with A Dog Said 2 installed; 33 ran and 4 skipped earlier the same day, before it was
-manual:       17 scenarios documented in TESTING.md; execution pending
+manual:       17 scenarios documented in TESTING.md; K reduced to one check (removal) and L dropped (owner, 2026-09-27), A automated in full (training tab) the same day; rows 1 and K-removal of PUBLICATION.md's table still pending in game
 workshop:     3806709979 (item created private by the 0.1.0 prepublication of 2026-09-23; not the prepublished state)
 remaining:
-  - unverified: done -> tested needs no @wip scenario, every conditional scenario played (@requires Mlie.WhaleysDogs and SamBucher.ADogSaidAnimalProsthetics2, each on a map that mounts it), and no manual scenario left (A-Q automated and green, or listed not applicable with the reason)
-  - unverified: English and French runtime translation checks, with and without WhaleysDogs; TESTING.md scenario M
-  - unverified: ADS 2 surgery availability and load order, scenarios C and D
-  - defect: the description sent by 0.1.0 still lacks IF I GO QUIET, AI-GENERATED, THANKS, the final Source code on GitHub link, Codex and the Pickle thanks; About.xml was aligned on 2026-09-25 and PUBLICATION.md holds the BBCode to paste, but SetItemDescription runs only at creation, so the Steam page is corrected by hand (the owner); required for prepublished, not for done or tested
-  - unverified: prepublished also needs the gallery, the rollback target, the owner's manual validations, and the three drafted comments posted only once the item is public (PUBLICATION.md; WORKSHOP_COMMENTS.md rows added 2026-09-25, uncommitted in the protocols repository)
+  - unverified: done -> tested's no-@wip and every-conditional-scenario-played conditions are met (all eight Pickle launches green, docs/runs/2026-09-24-pass1-english.md); "no manual scenario left" is not yet, pending the owner's rows 1 and 4 of PUBLICATION.md (subscribe and tame on the installed copy; remove the mod from a save with a dalmatian)
+  - unverified: prepublished also needs the gallery (ticket in flight, 2026-09-27), the rollback target (none possible before the first publish, confirmed by the CI/CD session), and the three drafted comments posted only once the item is public
+  - defect: the description sent by 0.1.0 still lacks IF I GO QUIET, AI-GENERATED, THANKS, the final Source code on GitHub link, Codex and the Pickle thanks; the CI/CD session confirmed on 2026-09-27 that it stays untouched (a Markdown rewrite under PUBLICATION.md's own "## Steam description" heading) until this mod's first publication; required for prepublished, not for done or tested
 session:      local_e7fdeacc-7649-4702-9f00-45be2663ced1
-updated:      2026-09-26
+updated:      2026-09-27
 ---
 
 # Dalmatians Renew — status
