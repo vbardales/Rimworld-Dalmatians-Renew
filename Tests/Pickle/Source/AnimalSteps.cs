@@ -211,25 +211,28 @@ namespace DalmatiansRenew.PickleSteps
 
         // The cursor sits at the centre of the screen, and whatever stands there gets a tooltip drawn over
         // the picture. Centring two cells south of the animals puts them above it, on bare ground.
-        // SetRootSize sets a target the camera lerps towards over several frames, not an instant zoom:
-        // five frames was enough on the light test-colony fixture, but the showcase colony is heavier
-        // (WorkStudio's own note: its Work tab took 10 s to open there) and the first gallery run, on
-        // 2026-09-26, captured the map still at its default zoom, the lerp barely started. Waiting for
-        // the size itself, up to a budget, replaces a fixed frame count.
-        [When("Dalmatians Renew centres the camera two cells south of {string}", TimeoutSeconds = 30f)]
+        //
+        // SetRootSize (decompiled Verse.CameraDriver, 2026-09-27) writes RootSize directly: it is not a
+        // lerp, so one call should be enough, and it was on the light test-colony fixture. On the showcase
+        // colony the first two gallery runs (2026-09-26 and -27) still captured the map at its default
+        // zoom regardless, which only fits something else writing RootSize again on a later frame — the
+        // camera driver's own Update() does exactly that while a pan animation from CameraPanner is still
+        // running (interpolant.Size overwrites RootSize every frame until the pan ends), and entering a
+        // heavier map is a plausible source of one. Reasserting the size for a few frames instead of once
+        // outlasts a short pan; the attachment records what the capture actually saw, so a run that is
+        // still wrong says why instead of leaving another guess.
+        [When("Dalmatians Renew centres the camera two cells south of {string}", TimeoutSeconds = 15f)]
         public async Task CentreCameraSouth(PickleContext ctx, string alias)
         {
             var animal = Scene.Named(ctx, alias);
             Find.Selector.ClearSelection();
             Find.CameraDriver.JumpToCurrentMapLoc(animal.Position + new IntVec3(0, 0, -2));
-            Find.CameraDriver.SetRootSize(8f);
-            var frames = 0;
-            while (Mathf.Abs(Find.CameraDriver.RootSize - 8f) > 0.5f && frames < 300)
+            for (var frame = 0; frame < 30; frame++)
             {
+                Find.CameraDriver.SetRootSize(8f);
                 await ctx.WaitFrames(1);
-                frames++;
             }
-            await ctx.WaitFrames(5);
+            ctx.Attach("camera root size after centring", Find.CameraDriver.RootSize.ToString("0.00"));
         }
 
         [Given("Dalmatians Renew spawns the player animal {string} as {string} beside {string}")]
