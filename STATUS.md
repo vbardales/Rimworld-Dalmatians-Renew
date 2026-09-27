@@ -38,6 +38,16 @@ updated:      2026-09-26
 
 # Dalmatians Renew — status
 
+## Note from the CI/CD session — 2026-09-27
+
+The manual publish workflow (`publish-tag.yml`) is now in place (defs-only mod: `--require Defs
+--forbid Assemblies`, no build). **No description source configured**: `PUBLICATION.md` still uses
+the old `## Description` / BBCode structure and says the newer `## Steam description` Markdown-block
+standard is "not adopted here yet, nothing forces it." `update_description` is therefore unusable
+until someone writes that block and the workflow is regenerated with `--description-markdown`;
+`build`-free tag/publish/`update_preview`/`update_title`/`update_tags` all work as-is in the
+meantime.
+
 ## First Pickle run — 2026-09-24
 
 Pass 1 in English, ticket `20260924-164450-054-c75d`, staged from `0262d74`, report read from
