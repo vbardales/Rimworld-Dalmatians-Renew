@@ -13,11 +13,14 @@ Nothing below has been posted or pasted anywhere. The stage is `done`, not `prep
 
 Not restated from `AUDIT.md`; only what is specific to this mod.
 
-- The Pickle suite has run pass 1 in English only, scenario by scenario. One full run of that pass at a
-  frozen revision, then the other seven launches, still have to be filed.
-- The gallery does not exist (see below).
-- The rollback target is not chosen (see "Fail fast").
-- The description on the Steam page is the one 0.1.0 sent; it is corrected by hand (see "Description").
+- The Pickle suite: all eight launches are green (`docs/runs/`); the seven smoke tickets that prove the
+  `packageId` rename of 2026-09-28 are in the queue.
+- The gallery is half made: the information card is validated, the dog shot is in the queue (see below).
+- The rollback target cannot exist before the first publish: the tag is created by the CI after a successful
+  upload, and no artificial tag is made (CI/CD session, 2026-09-27; see "Fail fast").
+- The description on the Steam page is the one 0.1.0 sent. The one-source Markdown standard is adopted at the
+  first publication (see "Description"); until then, no action.
+- The owner's manual validations: the installed copy (row 1) and removing the mod from a save (row 4).
 
 ## Description
 
@@ -113,34 +116,30 @@ seen live.
 
 ## Screenshots, in this order
 
-**Not settled.** No Workshop screenshot has been chosen. Pass 1 in English produced eight captures that
-were opened and read (kept under `Tests/Pickle/Evidence/`, gitignored). Steam shows the first one large
-under the Preview, so it must be the most demonstrative, not the prettiest. Candidates, in the order I
-would try them:
+Steam shows the first image large under the Preview, and the gallery is uploaded by hand (`OPERATIONS.md`)
+from `Art/Workshop/`, which is also the workflow's `--gallery-dir`. It holds only the images to upload,
+numbered `01-`, `02-`… in page order: no old version, no raw capture, no subfolder (`PUBLISHING.md`, Images).
 
-| Order | What it should show | Why there |
-|---|---|---|
-| 1 | The puppy beside the adult, from the rotations and coat scenarios | It is the animal itself, at a size where the spots read (the camera was set to about 60 px dogs) |
-| 2 | The information card scrolled to Wildness 0%, with the litter size and the source line | It shows what the mod says the animal is |
-| 3 | The card or the animal in French | Only if it adds something the English capture does not |
+**The owner ruled on 2026-09-25 that Work Studio's rules apply here too** (`WorkStudio/PUBLICATION.md`,
+"Workshop screenshots"): the shots are taken on her showcase colony, the fixture `nelim-zen-meadow-studio` of
+`PickleTools/ScreenshotStudio`, in English, by a feature skipped in every other pass. Ours is
+`Tests/Pickle/Mod/Pickle/Features/07-publication-shots.feature`, played with `wsl-deps.studio.map`. An option
+window is cropped tight with 16 px of margin; a game window the mod changes is the full interface. Every upload
+under 2 MB, cropped and never resampled, named as a player would name it, each opened and looked at; a green
+capture scenario proves the journey ran, not that the image shows anything.
 
-None of these has been produced for the gallery, so no order is justified yet. Every image is opened and
-looked at before it is listed here: a green capture scenario proves the journey ran, not that the image
-shows anything. The gallery is uploaded by hand (`OPERATIONS.md`), from a folder that holds only the
-images to upload, numbered `01-`, `02-`… in page order, no old version, no raw capture, no subfolder
-(`PUBLISHING.md`, Images). It will be `Art/Workshop/`, which is also the workflow's `--gallery-dir`; it does
-not exist yet. **The owner ruled on 2026-09-25 that Work Studio's rules apply here too**: the shots are taken
-on her showcase colony, the fixture `nelim-zen-meadow-studio` of `PickleTools/ScreenshotStudio`, staged by a
-pass map of its own (Work Studio's is `wsl-deps.studio.map`, with `clickdiagnostics`, `screenshotmode` and
-`screenshotstudio`), in English, by a feature that is skipped in every other pass. The rules that follow from it
-(Work Studio's `PUBLICATION.md`, "Workshop screenshots"): an option window is taken in screenshot mode and cropped
-tight with 16 px of margin; a game window the mod changes is taken with the full interface, uncropped; every
-upload under 2 MB, cropped and never resampled; named as a player would name it; each image opened and looked at;
-and on the map, an orange zone of the studio or the grass above the smiley emblem, with the subject circled in red.
-The captures already taken on the test fixture are `@review` evidence, not gallery images.
+**The owner's ruling of 2026-09-27**: the information card may be cropped; the dog shot must fill at least half
+the frame's height. The game's camera stops at `RootSize` 11 (`CameraMapConfig.sizeRange.min`, off Steam Deck),
+at which a dog is about 45 px, so the shot lowers that minimum in its own step and zooms to 0.9 on the pair,
+standing side by side.
 
-The feature is not written: the mod under test is being played by a pass 1 ticket, and nothing under `Tests/`
-moves until it is done.
+| Order | File | What it shows | State |
+|---|---|---|---|
+| 1 | `01-…` (not yet) | The dalmatian and its puppy side by side, in the flower glade, filling half the frame | Feature written, zoom step written; ticket in the queue on 2026-09-28. Not yet opened |
+| 2 | `02-the-information-card.png` | The card filtered to Wildness (0%), with the litter size and the source line, in the window and 16 px | Cropped to 980x787, 0.21 MB, **validated by the owner on 2026-09-27** |
+
+Whether the dog shot should come first (Steam shows the first one large) is the owner's call once it exists.
+The captures taken on the test fixture stay `@review` evidence, not gallery images.
 
 ## Dependencies and DLCs
 
