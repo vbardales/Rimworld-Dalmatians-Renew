@@ -32,9 +32,9 @@ Feature: images for the Workshop page
   Scenario: a dalmatian and its puppy in the flower glade
     Given Dalmatians Renew spawns the player animal "Rex" as "CCPDalmatian" near the cell 154 98
     And Dalmatians Renew spawns the player puppy "Pup" as "CCPDalmatian" beside "Rex"
-    When Dalmatians Renew centres the camera two cells south of "Rex"
-    And Dalmatians Renew shows "Rex" facing south
+    When Dalmatians Renew shows "Rex" facing south
     And Dalmatians Renew shows "Pup" facing south
+    And Dalmatians Renew zooms the camera in on "Rex" and "Pup"
     And Nelim's Pickle Tools: developer mode is turned off for the capture
     Then I take a screenshot "Workshop page, the dalmatian and its puppy"
 

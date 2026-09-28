@@ -231,6 +231,31 @@ namespace DalmatiansRenew.PickleSteps
             ctx.Attach("camera root size after centring", Find.CameraDriver.RootSize.ToString("0.00"));
         }
 
+        // The owner's ruling of 2026-09-27: for the gallery the animals fill at least half the frame's height.
+        // The camera will not go there by itself: CameraMapConfig.sizeRange.min is 11, off Steam Deck, and the
+        // per-frame zoom handler clamps to it (the first gallery runs read back 10.86 after asking for 8).
+        // The config is a public field, so this run lowers its minimum and then sets the size. A body is about
+        // 0.9 cell tall and a frame is 2 x RootSize cells: 0.9 puts each dog at half the 1080 px. The view
+        // is centred a cell south of the pair so that the mouse cursor, which sits at the screen's centre,
+        // rests on the ground below them and not on a dog.
+        [When("Dalmatians Renew zooms the camera in on {string} and {string}", TimeoutSeconds = 15f)]
+        public async Task ZoomInOnPair(PickleContext ctx, string first, string second)
+        {
+            var a = Scene.Named(ctx, first);
+            var b = Scene.Named(ctx, second);
+            Find.Selector.ClearSelection();
+            var driver = Find.CameraDriver;
+            driver.config.sizeRange = new FloatRange(0.5f, driver.config.sizeRange.max);
+            var middle = (a.DrawPos + b.DrawPos) / 2f;
+            for (var frame = 0; frame < 30; frame++)
+            {
+                driver.JumpToCurrentMapLoc(new Vector3(middle.x, 0f, middle.z - 0.9f));
+                driver.SetRootSize(0.9f);
+                await ctx.WaitFrames(1);
+            }
+            ctx.Attach("camera root size after zooming in", driver.RootSize.ToString("0.00"));
+        }
+
         private static void SpawnBesideAt(PickleContext ctx, string alias, string kindName, string other, float age)
         {
             var kind = DefDatabase<PawnKindDef>.GetNamedSilentFail(kindName);
