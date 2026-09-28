@@ -22,7 +22,7 @@
 Feature: The dalmatian beside A Dog Said 2, in the wrong load order
 
   Scenario: A Dog Said 2 really is loaded first
-    Then mod "SamBucher.ADogSaidAnimalProsthetics2" loads before "nelim.dalmatiansrenew"
+    Then mod "SamBucher.ADogSaidAnimalProsthetics2" loads before "nelim.dalmatians"
     And mod "Mlie.WhaleysDogs" is not loaded
 
   Scenario: the husky keeps its operations and the dalmatian loses them

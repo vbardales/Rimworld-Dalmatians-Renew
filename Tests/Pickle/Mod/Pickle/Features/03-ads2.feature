@@ -13,7 +13,7 @@ Feature: The dalmatian beside A Dog Said 2, in the declared load order
 
   Scenario: the load order is the one the mod declares and WhaleysDogs is absent
     Then mod "SamBucher.ADogSaidAnimalProsthetics2" is loaded
-    And mod "nelim.dalmatiansrenew" loads before "SamBucher.ADogSaidAnimalProsthetics2"
+    And mod "nelim.dalmatians" loads before "SamBucher.ADogSaidAnimalProsthetics2"
     And mod "Mlie.WhaleysDogs" is not loaded
 
   Scenario: the dalmatian is offered the same operations as the husky
@@ -25,4 +25,4 @@ Feature: The dalmatian beside A Dog Said 2, in the declared load order
     Given the save "test-colony" is loaded
     And I close all dialogs
     Then no errors were logged
-    And no warnings from mod "nelim.dalmatiansrenew"
+    And no warnings from mod "nelim.dalmatians"

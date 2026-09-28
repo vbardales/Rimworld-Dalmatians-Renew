@@ -501,7 +501,7 @@ It 'the identity is the one the repository and the Workshop know' {
     if (-not $aboutDoc) { 'About/About.xml does not parse'; return }
     $r = $aboutDoc.DocumentElement
     $want = @{
-        packageId = 'nelim.dalmatiansrenew'
+        packageId = 'nelim.dalmatians'
         name      = 'Dalmatians Renew (unofficial)'
         url       = 'https://github.com/vbardales/Rimworld-Dalmatians-Renew'
     }

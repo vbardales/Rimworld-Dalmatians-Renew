@@ -8,8 +8,8 @@
 Feature: The dalmatian beside WhaleysDogs and A Dog Said 2
 
   Scenario: the load order is WhaleysDogs then this mod then A Dog Said 2
-    Then mod "Mlie.WhaleysDogs" loads before "nelim.dalmatiansrenew"
-    And mod "nelim.dalmatiansrenew" loads before "SamBucher.ADogSaidAnimalProsthetics2"
+    Then mod "Mlie.WhaleysDogs" loads before "nelim.dalmatians"
+    And mod "nelim.dalmatians" loads before "SamBucher.ADogSaidAnimalProsthetics2"
 
   Scenario: both races are offered the same operations as the husky
     Then Dalmatians Renew "Husky" offers more operations than "Rat"
@@ -20,4 +20,4 @@ Feature: The dalmatian beside WhaleysDogs and A Dog Said 2
     Given the save "test-colony" is loaded
     And I close all dialogs
     Then no errors were logged
-    And no warnings from mod "nelim.dalmatiansrenew"
+    And no warnings from mod "nelim.dalmatians"

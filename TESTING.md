@@ -14,7 +14,7 @@ information card and the operations tab settle either of them.
 ## Load order
 
 ```
-nelim.dalmatiansrenew                 this mod                              before it
+nelim.dalmatians                 this mod                              before it
 SamBucher.ADogSaidAnimalProsthetics2  A Dog Said... Animal Prosthetics 2   3238353862   after this mod
 ```
 

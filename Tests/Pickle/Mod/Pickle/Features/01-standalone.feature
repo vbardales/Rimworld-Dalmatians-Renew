@@ -8,10 +8,10 @@
 Feature: The dalmatian on its own
 
   Scenario: the mod owns the animal and its leather and no optional integration is loaded
-    Then mod "nelim.dalmatiansrenew" is loaded
-    And Dalmatians Renew the thing "CCPDalmatian" comes from the mod "nelim.dalmatiansrenew"
-    And Dalmatians Renew the pawn kind "CCPDalmatian" comes from the mod "nelim.dalmatiansrenew"
-    And def "Leather_Dalmatian" is defined by mod "nelim.dalmatiansrenew"
+    Then mod "nelim.dalmatians" is loaded
+    And Dalmatians Renew the thing "CCPDalmatian" comes from the mod "nelim.dalmatians"
+    And Dalmatians Renew the pawn kind "CCPDalmatian" comes from the mod "nelim.dalmatians"
+    And def "Leather_Dalmatian" is defined by mod "nelim.dalmatians"
     And no def "WD_Dalmatian" exists
     And mod "Mlie.WhaleysDogs" is not loaded
     And mod "SamBucher.ADogSaidAnimalProsthetics2" is not loaded
@@ -54,7 +54,7 @@ Feature: The dalmatian on its own
     When Nelim's Pickle Tools: screenshot mode is enabled around the open windows
     Then I take a screenshot "dalmatian information card - Wildness listed at 0 percent"
     And no errors were logged
-    And no warnings from mod "nelim.dalmatiansrenew"
+    And no warnings from mod "nelim.dalmatians"
 
   # E. A Dog Said 2 absent: the guarded patch says nothing and adds nothing. Whatever a vanilla
   #    animal is offered, and no more.
@@ -132,7 +132,7 @@ Feature: The dalmatian on its own
     And Dalmatians Renew centres the camera on "Rex"
     Then I take a screenshot "dessicated dalmatian corpse"
     And no errors were logged
-    And no warnings from mod "nelim.dalmatiansrenew"
+    And no warnings from mod "nelim.dalmatians"
 
   # M. Text, in the language of this pass. The language step is an assertion about the pass, not
   #    a switch: a pass that fell back to English silently would prove nothing about French.

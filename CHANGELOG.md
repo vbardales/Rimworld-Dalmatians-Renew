@@ -9,6 +9,8 @@ The tag and the GitHub release come with the publication, from the publishing CI
 First release. Port of cucumpear's and lavie2k's **Dalmatians** to RimWorld 1.6, drafted on
 2026-09-05 and extended on 2026-09-13 with the optional WhaleysDogs integration.
 
+Before that release, the `packageId` was shortened from `nelim.dalmatiansrenew` to `nelim.dalmatians` (owner, 2026-09-28); nobody but the owner had installed the private 0.1.0 item.
+
 ### WhaleysDogs integration (2026-09-13)
 
 - Add optional WhaleysDogs consolidation: keep WD_Dalmatian balance and add our coat variant, leather, French labels and ADS 2 membership.

@@ -12,9 +12,9 @@ Feature: The dalmatian beside the original mod it replaces
 
   Scenario: both mods are loaded and the original first
     Then mod "cucumpear.dalmatians" is loaded
-    And mod "cucumpear.dalmatians" loads before "nelim.dalmatiansrenew"
+    And mod "cucumpear.dalmatians" loads before "nelim.dalmatians"
 
   Scenario: the definition loaded last wins
-    Then Dalmatians Renew the thing "CCPDalmatian" comes from the mod "nelim.dalmatiansrenew"
-    And Dalmatians Renew the pawn kind "CCPDalmatian" comes from the mod "nelim.dalmatiansrenew"
-    And def "Leather_Dalmatian" is defined by mod "nelim.dalmatiansrenew"
+    Then Dalmatians Renew the thing "CCPDalmatian" comes from the mod "nelim.dalmatians"
+    And Dalmatians Renew the pawn kind "CCPDalmatian" comes from the mod "nelim.dalmatians"
+    And def "Leather_Dalmatian" is defined by mod "nelim.dalmatians"

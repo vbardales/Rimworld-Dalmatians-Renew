@@ -26,7 +26,7 @@ why. Read it with this file.
 
 Six passes, eight launches. Optional mods are staged in the order the mod declares, and the order is the
 order of the lines in the map: the staging script places every overlay mod before the mod under test unless
-a line for the mod itself stands among them, which is why passes 2 to 6 name `nelim.dalmatiansrenew` in
+a line for the mod itself stands among them, which is why passes 2 to 6 name `nelim.dalmatians` in
 their map.
 
 | Pass | Map | Features | Language | What it establishes |

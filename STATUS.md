@@ -3,7 +3,7 @@ localization: complete
 translation_en: complete
 translation_fr: complete
 mod:          Dalmatians Renew (unofficial)
-packageId:    nelim.dalmatiansrenew
+packageId:    nelim.dalmatians
 repo:         Rimworld-Dalmatians-Renew
 remote:       https://github.com/vbardales/Rimworld-Dalmatians-Renew
 local_path:   C:\Users\nelim\Documents\rimworld\DalmatiansRenew
@@ -195,7 +195,7 @@ What exists, all under `Tests/Pickle/`:
   across eight launches, and a step assembly of 34 local steps, prefixed with the mod's name.
 - Six pass maps: no optional mod (English and French), WhaleysDogs (English and French), A Dog Said 2
   in the declared order, every optional mod together, A Dog Said 2 in the wrong order, and the
-  original mod. Each map names `nelim.dalmatiansrenew` where the order matters, because the staging
+  original mod. Each map names `nelim.dalmatians` where the order matters, because the staging
   script otherwise places the mod under test after every overlay mod.
 - `README.md` with the pass matrix and commands, and `Check-Steps.ps1`.
 - In `TESTING.md`: a table saying what each manual scenario A-Q became, and the evidence section
@@ -538,7 +538,7 @@ and dalmatien alongside CCPDalmatian and Leather_Dalmatian.
   WD_Dalmatian, and DustBunniesRenew mentions dalmatian leather in a translation comment;
   neither adds a duplicate of CCPDalmatian. Current AnimalArk contains neither exact identifier.
 
-The current ModsConfig.xml also does not enable nelim.dalmatiansrenew. Thus no active collision
+The current ModsConfig.xml also does not enable nelim.dalmatians. Thus no active collision
 was found. Enabling this port together with the original would introduce the known conflict;
 enabling it with WhaleysDogs would leave two distinct dalmatian definitions. This is a static
 installed-content audit, not an in-game compatibility test. No mod configuration was changed.

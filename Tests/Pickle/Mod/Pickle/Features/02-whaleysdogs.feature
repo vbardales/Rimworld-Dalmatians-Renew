@@ -10,7 +10,7 @@ Feature: The dalmatian beside WhaleysDogs
 
   Scenario: the integration loads after WhaleysDogs and patches its dalmatian
     Then mod "Mlie.WhaleysDogs" is loaded
-    And mod "Mlie.WhaleysDogs" loads before "nelim.dalmatiansrenew"
+    And mod "Mlie.WhaleysDogs" loads before "nelim.dalmatians"
     And mod "SamBucher.ADogSaidAnimalProsthetics2" is not loaded
     And Dalmatians Renew the race of "WD_Dalmatian" reads "leatherDef" as "Leather_Dalmatian"
     And Dalmatians Renew the race of "WD_Dalmatian" reads "animalType" as "Canine"
@@ -38,7 +38,7 @@ Feature: The dalmatian beside WhaleysDogs
     And Dalmatians Renew the coat of "Legacy" is the one recorded
     And Dalmatians Renew "Legacy" belongs to the player
     And no errors were logged
-    And no warnings from mod "nelim.dalmatiansrenew"
+    And no warnings from mod "nelim.dalmatians"
 
   # N. Only WD_Dalmatian is newly offered by traders. P. An old dog can still be sold to them.
   Scenario: traders stock only the canonical breed and the legacy breed stays sellable
