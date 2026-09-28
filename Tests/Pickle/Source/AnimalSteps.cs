@@ -236,8 +236,8 @@ namespace DalmatiansRenew.PickleSteps
         // per-frame zoom handler clamps to it (the first gallery runs read back 10.86 after asking for 8).
         // The config is a public field, so this run lowers its minimum and then sets the size. A body is about
         // 0.9 cell tall and a frame is 2 x RootSize cells: 0.9 puts each dog at half the 1080 px. The view
-        // is centred a cell south of the pair so that the mouse cursor, which sits at the screen's centre,
-        // rests on the ground below them and not on a dog.
+        // is centred a quarter cell south of the pair, between the two dogs, so that the mouse cursor, which sits at the screen's centre,
+        // rests on the ground between them and not on a dog. A first try centred a cell south and cut both dogs at the top edge.
         [When("Dalmatians Renew zooms the camera in on {string} and {string}", TimeoutSeconds = 15f)]
         public async Task ZoomInOnPair(PickleContext ctx, string first, string second)
         {
@@ -249,7 +249,7 @@ namespace DalmatiansRenew.PickleSteps
             var middle = (a.DrawPos + b.DrawPos) / 2f;
             for (var frame = 0; frame < 30; frame++)
             {
-                driver.JumpToCurrentMapLoc(new Vector3(middle.x, 0f, middle.z - 0.9f));
+                driver.JumpToCurrentMapLoc(new Vector3(middle.x, 0f, middle.z - 0.25f));
                 driver.SetRootSize(0.9f);
                 await ctx.WaitFrames(1);
             }
