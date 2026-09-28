@@ -12,13 +12,9 @@
 #   - A capture on the map aims at the glade, never at the black tiles. What is worth seeing is circled in red
 #     by hand afterwards, since the meadow is busy.
 #   - Each image is opened and looked at before it is called ready; its composition is the owner's call.
-#   - The owner's ruling of 2026-09-27: the dogs need to fill at least half the frame's height. RootSize 11
-#     is already the camera's own minimum (Verse.CameraMapConfig.sizeRange.min, off Steam Deck) — no
-#     Pickle step can zoom past it, that ceiling is the vanilla scroll-wheel's too. Getting there is a crop
-#     after capture, never a resample (WorkStudio's own rule): the dogs need to stand close together first,
-#     or a tight crop around one leaves the other out of frame. Spawning the puppy beside the adult, the
-#     same pattern 01-standalone.feature already uses for its own puppy capture, replaces two independent
-#     "near the cell" spawns that could land tens of cells apart.
+#   - The owner's ruling of 2026-09-27: the dogs fill at least half the frame's height. The camera stops at #     RootSize 11 (Verse.CameraMapConfig.sizeRange.min, off Steam Deck), which is a dog of about 45 px, so the #     zoom step lowers that minimum and zooms to 0.9. The puppy stands beside the adult, the same pattern #     01-standalone.feature uses, so that both are in frame.
+#   - At this zoom a cell is 600 px, so the mouse at the screen centre always lands in a dog's cell and draws its
+#     tooltip over the picture (2026-09-28). The pointer is moved to bare grass before the capture.
 #
 # Raw captures land in Art/Workshop/studio-raw/ (ignored by git) and the finished images are copied into
 # Art/Workshop/ numbered 01-, 02-.
@@ -35,6 +31,7 @@ Feature: images for the Workshop page
     When Dalmatians Renew shows "Rex" facing south
     And Dalmatians Renew shows "Pup" facing south
     And Dalmatians Renew zooms the camera in on "Rex" and "Pup"
+    And Nelim's Pickle Tools: I move the mouse to (960, 1000)
     And Nelim's Pickle Tools: developer mode is turned off for the capture
     Then I take a screenshot "Workshop page, the dalmatian and its puppy"
 
