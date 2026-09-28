@@ -15,6 +15,7 @@ stage:        done
 licence:      silent
 licence_port: MIT, limited to the port contributions
 licence_at:   LICENSE; Mod/LICENSE; ATTRIBUTION.md
+upstream_mod_remotes: N/A (source mod cucumpear/lavie2k's Dalmatians, 1513691963: no <url> in its About.xml, checked ATTRIBUTION.md "Status: public")
 dependencies: none
 showcase:     complete
 settings_audit: not_applicable
