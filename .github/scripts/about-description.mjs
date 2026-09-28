@@ -49,9 +49,11 @@ export function replaceAboutDescription(xml, text) {
   return xml.slice(0, start) + encode(text) + xml.slice(end);
 }
 
-// The Markdown of the description source of publish.config.json: the fenced block under the heading when there is
-// one, the whole file otherwise.
-export async function descriptionMarkdown(commitDir, description) {
+// The text of the description source named by publish.config.json (Markdown or BBCode alike): the
+// fenced block under the heading when there is one, the whole file otherwise. Shared by the writer
+// of About.xml's <description> and by steam-publish.mjs's own update_description, so the two read
+// the same text and cannot drift apart.
+export async function descriptionSource(commitDir, description) {
   const source = await readFile(join(commitDir, description.file), 'utf8');
   return description.heading
     ? fencedBlockUnder(source, new RegExp(description.heading), { label: `"${description.heading}"`, what: 'description' })
@@ -63,7 +65,7 @@ const ABOUT_PATH = join('Mod', 'About', 'About.xml');
 // Everything the check and the writer need: the expected text, the About.xml as it is, and what it would become.
 export async function aboutState(commitDir, config) {
   if (config.description?.format !== 'markdown') throw new Error('aboutFromDescription needs a Markdown description source (description.format "markdown")');
-  const expected = markdownToPlainText(await descriptionMarkdown(commitDir, config.description));
+  const expected = markdownToPlainText(await descriptionSource(commitDir, config.description));
   if (!expected) throw new Error(`${config.description.file}: the description is empty, so About.xml cannot be generated from it`);
   const xml = await readFile(join(commitDir, ABOUT_PATH), 'utf8');
   return { expected, xml, current: readAboutDescription(xml), path: ABOUT_PATH, next: replaceAboutDescription(xml, expected) };
