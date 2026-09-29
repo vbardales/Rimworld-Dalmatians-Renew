@@ -108,7 +108,8 @@ seen live.
 
 - **Preview** (`Mod/About/Preview.png`, opened 2026-09-25, regenerated 2026-09-29): a dalmatian asleep on straw
   in lamplight, the title and a `1.6` corner banner. **Owner's ruling of 2026-09-29**: the mascot (`ModIcon.png`,
-  cut out of its black background, `Art/ModIcon-cutout.png`) sits in a bottom corner, tilted toward it — `+15°`
+  cut out of its black background, `Art/ModIcon-cutout.png`) sits in a bottom corner, large enough to bleed off
+  the two edges it touches, tilted toward it — `+15°`
   in the left corner, `-15°` in the right one. Bottom-left was chosen (empty floor there; the crate occupies
   bottom-right). Done through the existing deterministic pipeline (`Art/Preview.html` + `Art/Render-Preview.cjs`,
   playwright + sharp via `NODE_PATH`), not a one-off edit: the mascot is a new `<img>` in the HTML composition,

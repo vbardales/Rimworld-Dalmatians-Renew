@@ -42,7 +42,9 @@ updated:      2026-09-29
 The owner set two new rules for the showcase, applied today. **Gallery order**: `Art/Workshop/00-preview.png`
 is a copy of the shipped `Mod/About/Preview.png`, ahead of `01` and `02`; the numbering was `01`/`02` only until
 now. **The Preview mascot**: `ModIcon.png`, cut out of its solid black background (`Art/ModIcon-cutout.png`,
-flood fill from the border, near-black threshold, the disconnected sparkle untouched), sits in a bottom corner
+flood fill from the border, near-black threshold, the disconnected sparkle untouched), sits in a bottom corner,
+large enough to bleed off the two edges it touches (owner's follow-up correction, still 2026-09-29: the first
+size stayed inside the frame)
 of `Preview.png`, tilted toward it — `+15°` left, `-15°` right. Bottom-left was chosen here (empty floor;
 the crate already sits bottom-right). Regenerated through the existing deterministic pipeline
 (`Art/Preview.html`'s new `.mascot` `<img>`, `Art/Render-Preview.cjs`, playwright + sharp reached via
