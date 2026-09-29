@@ -29,7 +29,7 @@ manual:       17 scenarios documented in TESTING.md; K reduced to one check (rem
 workshop:     3806709979 (item created private by the 0.1.0 prepublication of 2026-09-23; not the prepublished state)
 remaining:
   - unverified: done -> tested's no-@wip and every-conditional-scenario-played conditions are met (all eight Pickle launches green, docs/runs/2026-09-24-pass1-english.md); "no manual scenario left" is not yet, pending the owner's rows 1 and 4 of PUBLICATION.md (subscribe and tame on the installed copy; remove the mod from a save with a dalmatian)
-  - unverified: prepublished also needs the gallery (ticket in flight, 2026-09-27), the rollback target (none possible before the first publish, confirmed by the CI/CD session), and the three drafted comments posted only once the item is public
+  - unverified: prepublished also needs the gallery (both images committed to Art/Workshop/ 2026-09-29, image 1 pending the owner's look), the rollback target (none possible before the first publish, confirmed by the CI/CD session), and the three drafted comments posted only once the item is public
   - defect: the description sent by 0.1.0 still lacks IF I GO QUIET, AI-GENERATED, THANKS, the final Source code on GitHub link, Codex and the Pickle thanks; the CI/CD session confirmed on 2026-09-27 that it stays untouched (a Markdown rewrite under PUBLICATION.md's own "## Steam description" heading) until this mod's first publication; required for prepublished, not for done or tested
 session:      local_e7fdeacc-7649-4702-9f00-45be2663ced1
 updated:      2026-09-27

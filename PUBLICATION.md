@@ -135,10 +135,10 @@ standing side by side.
 
 | Order | File | What it shows | State |
 |---|---|---|---|
-| 1 | `01-…` (not yet) | The dalmatian and its puppy side by side, in the flower glade, filling half the frame | Feature written, zoom step written; ticket in the queue on 2026-09-28. Not yet opened |
+| 1 | `01-the-dalmatian-and-its-puppy.jpg` | The dalmatian and its puppy side by side, in the flower glade, filling about half the frame, no tooltip over them | Opened and read 2026-09-29; saved as JPEG q95 (the 1920x1080 PNG was 2.1 MB, over the 2 MB cap), 383 KB. **Pending the owner's look** |
 | 2 | `02-the-information-card.png` | The card filtered to Wildness (0%), with the litter size and the source line, in the window and 16 px | Cropped to 980x787, 0.21 MB, **validated by the owner on 2026-09-27** |
 
-Whether the dog shot should come first (Steam shows the first one large) is the owner's call once it exists.
+Whether the dog shot should come first (Steam shows the first one large) is the owner's call.
 The captures taken on the test fixture stay `@review` evidence, not gallery images.
 
 ## Dependencies and DLCs
