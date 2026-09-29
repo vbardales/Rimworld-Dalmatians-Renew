@@ -106,8 +106,14 @@ seen live.
 
 ## Images
 
-- **Preview** (`Mod/About/Preview.png`, opened 2026-09-25): a dalmatian asleep on straw in lamplight, the
-  title and a `1.6` corner banner. No text about anything that is not in the mod.
+- **Preview** (`Mod/About/Preview.png`, opened 2026-09-25, regenerated 2026-09-29): a dalmatian asleep on straw
+  in lamplight, the title and a `1.6` corner banner. **Owner's ruling of 2026-09-29**: the mascot (`ModIcon.png`,
+  cut out of its black background, `Art/ModIcon-cutout.png`) sits in a bottom corner, tilted toward it — `+15°`
+  in the left corner, `-15°` in the right one. Bottom-left was chosen (empty floor there; the crate occupies
+  bottom-right). Done through the existing deterministic pipeline (`Art/Preview.html` + `Art/Render-Preview.cjs`,
+  playwright + sharp via `NODE_PATH`), not a one-off edit: the mascot is a new `<img>` in the HTML composition,
+  rendered and checked (contrast, byte budget, fonts) the same way as every other element. 530 KB. No text about
+  anything that is not in the mod.
 - **ModIcon** (`Mod/About/ModIcon.png`, 128 px, opened): a winking spotted mascot with a sparkle. This
   session generates no icon. At **32 px**, looked at enlarged on a grey ground, the wink and the smile
   still read and the spots blur into a speckle; the sparkle is three pixels. It reads as a winking
@@ -133,12 +139,16 @@ the frame's height. The game's camera stops at `RootSize` 11 (`CameraMapConfig.s
 at which a dog is about 45 px, so the shot lowers that minimum in its own step and zooms to 0.9 on the pair,
 standing side by side.
 
+**The owner's ruling of 2026-09-29**: the gallery now opens on a copy of the Preview itself. `00-preview.png`
+is `Mod/About/Preview.png` as it ships (with the mascot, see Images above), so the first thing a visitor sees
+on the page and in the gallery is the same image.
+
 | Order | File | What it shows | State |
 |---|---|---|---|
+| 0 | `00-preview.png` | A copy of `Mod/About/Preview.png` (the mascot in the bottom-left corner) | Same file as the shipped Preview, 517.8 KB |
 | 1 | `01-the-dalmatian-and-its-puppy.jpg` | The dalmatian and its puppy side by side, in the flower glade, filling about half the frame, no tooltip over them | Opened and read 2026-09-29; saved as JPEG q95 (the 1920x1080 PNG was 2.1 MB, over the 2 MB cap), 383 KB. **Validated by the owner on 2026-09-29** |
 | 2 | `02-the-information-card.png` | The card filtered to Wildness (0%), with the litter size and the source line, in the window and 16 px | Cropped to 980x787, 0.21 MB, **validated by the owner on 2026-09-27** |
 
-Whether the dog shot should come first (Steam shows the first one large) is the owner's call.
 The captures taken on the test fixture stay `@review` evidence, not gallery images.
 
 ## Dependencies and DLCs

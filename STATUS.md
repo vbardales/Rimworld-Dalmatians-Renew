@@ -29,13 +29,26 @@ manual:       17 scenarios documented in TESTING.md; K reduced to one check (rem
 workshop:     3806709979 (item created private by the 0.1.0 prepublication of 2026-09-23; not the prepublished state)
 remaining:
   - unverified: done -> tested's no-@wip and every-conditional-scenario-played conditions are met (all eight Pickle launches green, docs/runs/2026-09-24-pass1-english.md); "no manual scenario left" is not yet, pending the owner's rows 1 and 4 of PUBLICATION.md (subscribe and tame on the installed copy; remove the mod from a save with a dalmatian)
-  - unverified: prepublished also needs the rollback target (none possible before the first publish, confirmed by the CI/CD session) and the three drafted comments posted only once the item is public. The gallery is done: both images committed to Art/Workshop/ and validated by the owner (2026-09-27, 2026-09-29)
+  - unverified: prepublished also needs the rollback target (none possible before the first publish, confirmed by the CI/CD session) and the three drafted comments posted only once the item is public. The gallery is done: Art/Workshop/ holds 00-preview.png, 01 and 02, in that order (owner's ruling, 2026-09-29: the gallery opens on a copy of Preview.png), both non-preview images validated by the owner (2026-09-27, 2026-09-29)
   - defect: the description sent by 0.1.0 still lacks IF I GO QUIET, AI-GENERATED, THANKS, the final Source code on GitHub link, Codex and the Pickle thanks; the CI/CD session confirmed on 2026-09-27 that it stays untouched (a Markdown rewrite under PUBLICATION.md's own "## Steam description" heading) until this mod's first publication; required for prepublished, not for done or tested
 session:      local_e7fdeacc-7649-4702-9f00-45be2663ced1
-updated:      2026-09-27
+updated:      2026-09-29
 ---
 
 # Dalmatians Renew — status
+
+## Gallery: showcase rulings — 2026-09-29
+
+The owner set two new rules for the showcase, applied today. **Gallery order**: `Art/Workshop/00-preview.png`
+is a copy of the shipped `Mod/About/Preview.png`, ahead of `01` and `02`; the numbering was `01`/`02` only until
+now. **The Preview mascot**: `ModIcon.png`, cut out of its solid black background (`Art/ModIcon-cutout.png`,
+flood fill from the border, near-black threshold, the disconnected sparkle untouched), sits in a bottom corner
+of `Preview.png`, tilted toward it — `+15°` left, `-15°` right. Bottom-left was chosen here (empty floor;
+the crate already sits bottom-right). Regenerated through the existing deterministic pipeline
+(`Art/Preview.html`'s new `.mascot` `<img>`, `Art/Render-Preview.cjs`, playwright + sharp reached via
+`NODE_PATH=$(npm root -g)`, Chrome at its default install path), not a manual edit of the shipped file: the
+same contrast, byte-budget (530 KB < 900 KB) and font checks ran and passed. This is compositing an already
+validated asset, not generating a new icon.
 
 ## Note from the CI/CD session — 2026-09-27
 
