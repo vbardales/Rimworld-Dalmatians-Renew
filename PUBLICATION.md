@@ -113,8 +113,8 @@ seen live.
   in the left corner, `-15°` in the right one. Bottom-left was chosen (empty floor there; the crate occupies
   bottom-right). Done through the existing deterministic pipeline (`Art/Preview.html` + `Art/Render-Preview.cjs`,
   playwright + sharp via `NODE_PATH`), not a one-off edit: the mascot is a new `<img>` in the HTML composition,
-  rendered and checked (contrast, byte budget, fonts) the same way as every other element. 530 KB. No text about
-  anything that is not in the mod.
+  rendered and checked (contrast, byte budget, fonts) the same way as every other element. 540 KB. No text about
+  anything that is not in the mod. **Validated by the owner on 2026-09-29**, after the size correction.
 - **ModIcon** (`Mod/About/ModIcon.png`, 128 px, opened): a winking spotted mascot with a sparkle. This
   session generates no icon. At **32 px**, looked at enlarged on a grey ground, the wink and the smile
   still read and the spots blur into a speckle; the sparkle is three pixels. It reads as a winking
