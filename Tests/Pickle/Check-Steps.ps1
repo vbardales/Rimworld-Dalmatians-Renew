@@ -18,7 +18,7 @@ param(
     # The Workshop build is what the WSL stages (copy_steam rimworks.pickle). Pickle-local is a newer
     # development build: checking against it accepted a step ("the language is ...") that the staged
     # Pickle does not have, and the first run failed on it.
-    [string]$Pickle = 'C:\Program Files (x86)\Steam\steamapps\workshop\content\294100\3791648678\Assemblies',
+    [string]$Pickle = 'C:\Program Files (x86)\Steam\steamapps\workshop\content\294100\3791648678\1.6\Assemblies',
     [string]$Managed = 'C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed'
 )
 
@@ -110,7 +110,7 @@ foreach ($g in ($patterns | Where-Object Origin -eq 'local' | Group-Object Patte
 function Normalize([string]$s) { ($s -replace '"[^"]*"', '{string}') -replace '\b\d+(\.\d+)?\b', '{int}' }
 $engine = New-Object System.Collections.Generic.HashSet[string]
 $engineUsed = @()
-$pickleRoot = Split-Path $Pickle -Parent
+$pickleRoot = Split-Path (Split-Path $Pickle -Parent) -Parent  # Pickle moved its DLLs to 1.6/Assemblies; its features stay at the root
 foreach ($f in Get-ChildItem (Join-Path $pickleRoot 'Pickle\Features') -Filter *.feature -ErrorAction SilentlyContinue) {
     foreach ($raw in [IO.File]::ReadAllLines($f.FullName)) {
         if ($raw.Trim() -match '^(Given|When|Then|And|But)\s+(.+)$') { [void]$engine.Add((Normalize $Matches[2].Trim())) }

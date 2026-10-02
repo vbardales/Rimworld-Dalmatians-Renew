@@ -24,7 +24,7 @@ why. Read it with this file.
 
 ## Passes
 
-Six passes, eight launches. Optional mods are staged in the order the mod declares, and the order is the
+Nine passes (1 to 6 as below, 7 to 9 added 2026-10-02), eleven launches. Optional mods are staged in the order the mod declares, and the order is the
 order of the lines in the map: the staging script places every overlay mod before the mod under test unless
 a line for the mod itself stands among them, which is why passes 2 to 6 name `nelim.dalmatians` in
 their map.
@@ -37,6 +37,9 @@ their map.
 | 4. Every optional mod | `wsl-deps.avec-whaleysdogs-ads2.map` | `04` | English | Both saved races are offered the husky's operations |
 | 5. A Dog Said 2, wrong order | `wsl-deps.ads2-ordre-inverse.map` | `05` | English | What happens in the order the metadata forbids |
 | 6. The original mod | `wsl-deps.incompatible-original.map` | `06` | English | What happens beside the mod declared incompatible |
+| 7. Dogs mate | `wsl-deps.avec-dogsmate.map` | `08` | English | The dalmatian is in the Dog group: it seeks, and is sought by, the three vanilla dogs |
+| 8. Better Crossbreeding | `wsl-deps.avec-bettercrossbreeding.map` | `09` | English | The two halves, list on the male and extension on the mother, both ways, Random |
+| 9. Both crossing mods | `wsl-deps.avec-croisements.map` | `08,09` | English | The two mods write the same list: nothing listed twice or replaced |
 
 WhaleysDogs and A Dog Said 2 do not exclude each other, so passes 2 to 4 cover them alone and together.
 Passes 5 and 6 step outside the supported configurations on purpose, to check that what is documented about
@@ -55,6 +58,8 @@ powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod Dalm
 powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod DalmatiansRenew -DepMap wsl-deps.ads2-ordre-inverse.map -Filter '05-ads2-wrong-order' -Language English
 powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod DalmatiansRenew -DepMap wsl-deps.incompatible-original.map -Filter '06-incompatible-original' -Language English
 ```
+
+Passes 7 to 9: `-DepMap wsl-deps.avec-dogsmate.map -Filter '08-dogsmate'`, `-DepMap wsl-deps.avec-bettercrossbreeding.map -Filter '09-bettercrossbreeding'`, `-DepMap wsl-deps.avec-croisements.map -Filter '08-dogsmate,09-bettercrossbreeding'`, all `-Language English`.
 
 Add `-EvidenceDir DalmatiansRenew/Tests/Pickle/Evidence/<date>-<pass>-<language>` to each, so the report is
 copied into the mod before the shared folder is overwritten. `TESTING.md` says what to keep afterwards.

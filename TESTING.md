@@ -312,3 +312,7 @@ from 50 MB to 2.5 MB this way.
 The launcher's archive of the run (`pickle-reports-archive/`) is a full copy of the shared folder.
 Select from the archive of this mod's own run what is worth keeping above, then delete that archive.
 Leave every other archive alone.
+
+## Crossing patches (2026-10-02)
+
+Dogs mate and Better Crossbreeding patches (`Mod/Patches/Compat_*.xml`): offline in `_tools/Crossbreeding.Tests.ps1` (real Verse operations); in game, passes 7 to 9 of `Tests/Pickle/README.md` (features `08`, `09`), which read the live `canCrossBreedWith` lists and the `DZY.CrossBreeding.Extension` of each mother kind. **Not automated:** a pregnancy played through to a birth with Better Crossbreeding (per-save father dictionary, needs a save and a reload) and the actual courtship in Dogs mate. Both are the mods' own behaviour once the lists are right, and stay out of this mod's tests. Keep per pass the verdict (`summary.md`, `junit.xml`) of the latest run only.
