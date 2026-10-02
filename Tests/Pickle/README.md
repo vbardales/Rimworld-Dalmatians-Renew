@@ -62,7 +62,7 @@ powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod Dalm
 
 Removal chain, ONE request: `-DepMap wsl-deps.removal.map -Filter '10-removal-write' -Then 'removal-check' -ThenWithout nelim.dalmatians,nelim.dalmatians.pickletests`. The animal being dropped is the game's own handling of a changed mod list and is not asserted.
 
-Passes 7 to 9: `-DepMap wsl-deps.avec-dogsmate.map -Filter '08-dogsmate'`, `-DepMap wsl-deps.avec-bettercrossbreeding.map -Filter '09-bettercrossbreeding'`, `-DepMap wsl-deps.avec-croisements.map -Filter '08-dogsmate,09-bettercrossbreeding'`, all `-Language English`.
+Passes 7 to 9: `-DepMap wsl-deps.avec-dogsmate.map -Filter '08-dogsmate'`, `-DepMap wsl-deps.avec-bettercrossbreeding.map -Filter '09-bettercrossbreeding'`, `-DepMap wsl-deps.avec-croisements.map -Filter '08-dogsmate,09-bettercrossbreeding,!@without-dogsmate'`, all `-Language English`.
 
 Add `-EvidenceDir DalmatiansRenew/Tests/Pickle/Evidence/<date>-<pass>-<language>` to each, so the report is
 copied into the mod before the shared folder is overwritten. `TESTING.md` says what to keep afterwards.

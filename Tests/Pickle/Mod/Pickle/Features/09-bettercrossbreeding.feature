@@ -31,10 +31,15 @@ Feature: The dalmatian beside Better Crossbreeding
     And Dalmatians Renew the mother kind "LabradorRetriever" has the outcome Random when the father kind is "CCPDalmatian"
     And Dalmatians Renew the mother kind "YorkshireTerrier" has the outcome Random when the father kind is "CCPDalmatian"
 
-  Scenario: no pairing between two vanilla animals was made
-    Then Dalmatians Renew the male "Husky" does not seek "LabradorRetriever" to mate with
-    And Dalmatians Renew the mother kind "Husky" has no outcome when the father kind is "LabradorRetriever"
+  Scenario: this patch made no pairing between two vanilla animals
+    Then Dalmatians Renew the mother kind "Husky" has no outcome when the father kind is "LabradorRetriever"
     And Dalmatians Renew the male "CCPDalmatian" does not seek "Wolf_Timber" to mate with
+
+  # Tagged: with Dogs mate loaded (pass 9) the three vanilla dogs DO seek each other, by that mod's Dog group,
+  # which is not this patch's doing. Pass 9 excludes this tag; pass 8 plays it. (Pass 9 failed on it on 2026-10-02.)
+  @without-dogsmate
+  Scenario: without Dogs mate the vanilla dogs do not seek each other
+    Then Dalmatians Renew the male "Husky" does not seek "LabradorRetriever" to mate with
 
   Scenario: loading the colony logs nothing from this mod
     Given the save "test-colony" is loaded
