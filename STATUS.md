@@ -11,8 +11,8 @@ visibility:   public
 upstream_visibility: public (Steam API visibility=0; banned=0; checked 2026-09-12)
 detached:     yes
 maintainer:   Claude Code (the session named for this mod); Codex worked on it earlier
-stage:        showcase
-workflow_stage: l10n
+stage:        preTest
+workflow_stage: preTest
 licence:      silent
 licence_port: MIT, limited to the port contributions
 licence_at:   LICENSE; Mod/LICENSE; ATTRIBUTION.md
@@ -38,6 +38,10 @@ updated:      2026-10-02
 ---
 
 # Dalmatians Renew — status
+
+## Stage moves to preTest — 2026-10-02
+
+**Decision: `showcase`/`l10n` -> `preTest`** (owner's order). Both blockers of the audit below are gone: the four animal integrations are settled (ADS 2, Nocturnal Animals by decision, Dogs mate and Better Crossbreeding patched, 44 offline tests green) and the three language fields are `complete` (French validated by Virginie). `l10n -> preTest` rests on the dependency, `loadAfter`/`loadBefore` and `LoadFolders` checks cited from 2026-09-24; the new patches need no load order and declare no dependency. For `preTest -> done`: add Pickle scenarios for the two new patches (or justify their absence), and replay the offline suite. Session title: `dalmatians / preTest`.
 
 ## Audit — 2026-10-02
 
