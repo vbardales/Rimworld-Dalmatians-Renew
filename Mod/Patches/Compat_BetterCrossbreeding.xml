@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Better Crossbreeding (DizzyEevee.BetterCrossbreeding, Workshop 3520675842).
+
+  Two halves, read from the mod and from the 1.6 assembly (see Funny Creatures Renew's patch of the same
+  name for the long form). Who may mate is decided by vanilla from the MALE's race alone: JobGiver_Mate
+  looks at <race><canCrossBreedWith> of the male. What is born is decided by the mod, from a
+  DZY.CrossBreeding.Extension on the MOTHER's PawnKindDef, keyed by the father's kind. So a pair needs the
+  list on the male's race AND the extension on the mother's kind, in both directions.
+
+  The class is DZY.CrossBreeding (capital B) in the assembly; the mod's own Example/ writes
+  DZY.Crossbreeding, a type that does not exist. This file uses the assembly's spelling.
+
+  What this file decides (owner, 2026-10-02): the dalmatian crosses with vanilla's three domestic dogs,
+  Husky, LabradorRetriever and YorkshireTerrier, each way, and the pup is either parent's kind on a coin
+  flip (Random). Every pair has one animal of this mod, so no pairing between two vanilla animals is made.
+  Dogs mate (Compat_DogsMate.xml) is the same decision seen from the other mod.
+
+  Each list is created if the race has none and appended to if another mod made one: a plain Add on <race>
+  would write a second <canCrossBreedWith> and silently replace the first. The extension is created only
+  when the kind does not carry one yet.
+
+  Everything sits in one PatchOperationFindMod on the display name, so without Better Crossbreeding this
+  file changes nothing and logs nothing. No load order is asked.
+-->
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Better Crossbreeding</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="CCPDalmatian"]/race/canCrossBreedWith</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="CCPDalmatian"]/race/canCrossBreedWith</xpath>
+						<value>
+							<li>Husky</li>
+							<li>LabradorRetriever</li>
+							<li>YorkshireTerrier</li>
+						</value>
+					</match>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="CCPDalmatian"]/race</xpath>
+						<value>
+							<canCrossBreedWith>
+								<li>Husky</li>
+								<li>LabradorRetriever</li>
+								<li>YorkshireTerrier</li>
+							</canCrossBreedWith>
+						</value>
+					</nomatch>
+				</li>
+
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="Husky"]/race/canCrossBreedWith</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="Husky"]/race/canCrossBreedWith</xpath>
+						<value>
+							<li>CCPDalmatian</li>
+						</value>
+					</match>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="Husky"]/race</xpath>
+						<value>
+							<canCrossBreedWith>
+								<li>CCPDalmatian</li>
+							</canCrossBreedWith>
+						</value>
+					</nomatch>
+				</li>
+
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="LabradorRetriever"]/race/canCrossBreedWith</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="LabradorRetriever"]/race/canCrossBreedWith</xpath>
+						<value>
+							<li>CCPDalmatian</li>
+						</value>
+					</match>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="LabradorRetriever"]/race</xpath>
+						<value>
+							<canCrossBreedWith>
+								<li>CCPDalmatian</li>
+							</canCrossBreedWith>
+						</value>
+					</nomatch>
+				</li>
+
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="YorkshireTerrier"]/race/canCrossBreedWith</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="YorkshireTerrier"]/race/canCrossBreedWith</xpath>
+						<value>
+							<li>CCPDalmatian</li>
+						</value>
+					</match>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="YorkshireTerrier"]/race</xpath>
+						<value>
+							<canCrossBreedWith>
+								<li>CCPDalmatian</li>
+							</canCrossBreedWith>
+						</value>
+					</nomatch>
+				</li>
+
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/PawnKindDef[defName="CCPDalmatian"]/modExtensions/li[@Class="DZY.CrossBreeding.Extension"]</xpath>
+					<nomatch Class="PatchOperationAddModExtension">
+						<xpath>Defs/PawnKindDef[defName="CCPDalmatian"]</xpath>
+						<value>
+							<li Class="DZY.CrossBreeding.Extension">
+								<outcomes></outcomes>
+							</li>
+						</value>
+					</nomatch>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/PawnKindDef[defName="CCPDalmatian"]/modExtensions/li[@Class="DZY.CrossBreeding.Extension"]/outcomes</xpath>
+					<value>
+						<Husky>
+							<Random />
+						</Husky>
+						<LabradorRetriever>
+							<Random />
+						</LabradorRetriever>
+						<YorkshireTerrier>
+							<Random />
+						</YorkshireTerrier>
+					</value>
+				</li>
+
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/PawnKindDef[defName="Husky"]/modExtensions/li[@Class="DZY.CrossBreeding.Extension"]</xpath>
+					<nomatch Class="PatchOperationAddModExtension">
+						<xpath>Defs/PawnKindDef[defName="Husky"]</xpath>
+						<value>
+							<li Class="DZY.CrossBreeding.Extension">
+								<outcomes></outcomes>
+							</li>
+						</value>
+					</nomatch>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/PawnKindDef[defName="Husky"]/modExtensions/li[@Class="DZY.CrossBreeding.Extension"]/outcomes</xpath>
+					<value>
+						<CCPDalmatian>
+							<Random />
+						</CCPDalmatian>
+					</value>
+				</li>
+
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/PawnKindDef[defName="LabradorRetriever"]/modExtensions/li[@Class="DZY.CrossBreeding.Extension"]</xpath>
+					<nomatch Class="PatchOperationAddModExtension">
+						<xpath>Defs/PawnKindDef[defName="LabradorRetriever"]</xpath>
+						<value>
+							<li Class="DZY.CrossBreeding.Extension">
+								<outcomes></outcomes>
+							</li>
+						</value>
+					</nomatch>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/PawnKindDef[defName="LabradorRetriever"]/modExtensions/li[@Class="DZY.CrossBreeding.Extension"]/outcomes</xpath>
+					<value>
+						<CCPDalmatian>
+							<Random />
+						</CCPDalmatian>
+					</value>
+				</li>
+
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/PawnKindDef[defName="YorkshireTerrier"]/modExtensions/li[@Class="DZY.CrossBreeding.Extension"]</xpath>
+					<nomatch Class="PatchOperationAddModExtension">
+						<xpath>Defs/PawnKindDef[defName="YorkshireTerrier"]</xpath>
+						<value>
+							<li Class="DZY.CrossBreeding.Extension">
+								<outcomes></outcomes>
+							</li>
+						</value>
+					</nomatch>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/PawnKindDef[defName="YorkshireTerrier"]/modExtensions/li[@Class="DZY.CrossBreeding.Extension"]/outcomes</xpath>
+					<value>
+						<CCPDalmatian>
+							<Random />
+						</CCPDalmatian>
+					</value>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>

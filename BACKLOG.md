@@ -64,3 +64,7 @@ A decision either way goes in `STATUS.md`.
 
 2026-10-02: none found. `github.com/cucumpear` (30 repositories) holds no Dalmatians mod, so the pull request
 `PUBLISHING.md` asks for has no target.
+
+## Decided 2026-10-02
+
+Owner: Nocturnal Animals, no patch. Better Crossbreeding and Dogs mate, patches written (`Mod/Patches/Compat_*.xml`). The two entries above are history; the Dogs mate entry is done. Still open: a Pickle scenario for each patch, and a pregnancy played through a save for Better Crossbreeding (see its cost above).

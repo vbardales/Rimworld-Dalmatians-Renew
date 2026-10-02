@@ -29,7 +29,7 @@ automated:    37 passed, 0 failed, 0 skipped on 2026-10-02, with A Dog Said 2 in
 manual:       17 scenarios documented in TESTING.md; K reduced to one check (removal) and L dropped (owner, 2026-09-27), A automated in full (training tab) the same day; rows 1 and K-removal of PUBLICATION.md's table still pending in game
 workshop:     3806709979 (item created private by the 0.1.0 prepublication of 2026-09-23; not the prepublished state)
 remaining:
-  - feature: PUBLISHING.md's four-integration rule for animal mods (2026-09-28, completed 2026-10-01) must be settled before preTest. ADS 2 done. Nocturnal Animals: BACKLOG.md finds the husky analogue unpatched (diurnal), so no patch is the likely decision, owner to confirm. Better Crossbreeding: decision open (BACKLOG.md). Dogs mate (Continued, Mlie.DogsMate): never examined; read it and decide (Dog group). A dalmatian that cannot cross is a decision written here, not an oversight
+  - unverified: the four-integration rule for animal mods is settled by decision (owner, 2026-10-02): ADS 2 patch (existing); Nocturnal Animals none (husky analogue unpatched, dalmatian stays diurnal); Dogs mate patch written (Patches/Compat_DogsMate.xml, CCPDalmatian into group Dog); Better Crossbreeding patch written (Patches/Compat_BetterCrossbreeding.xml, dalmatian x Husky/LabradorRetriever/YorkshireTerrier both ways, Random outcome). Offline tests green (44, _tools/Crossbreeding.Tests.ps1, real Verse operations). In game never run: no Pickle scenario yet, and the thanks to Mlie (Dogs mate) and DizzyEevee (Better Crossbreeding) are still to add to the description THANKS and WORKSHOP_COMMENTS.md
   - unverified: done -> tested's no-@wip and every-conditional-scenario-played conditions are met (all eight Pickle launches green, docs/runs/2026-09-24-pass1-english.md); "no manual scenario left" is not yet, pending the owner's rows 1 and 4 of PUBLICATION.md (subscribe and tame on the installed copy; remove the mod from a save with a dalmatian)
   - unverified: French corrections of Virginie's review (2026-10-02) applied, not yet replayed: leather "fourrure" -> "cuir" (label, stuffAdjective, description), CCPDalmatian kind label/labelPlural in the feminine (dalmatienne/dalmatiennes, labelMale/labelMalePlural unchanged), puppy stage "jeune dalmatienne/dalmatien" (plural jeunes ...). Pickle features 01 and 02 updated to match; the two French pass-1/pass-2 runs must be replayed on the new revision, and Virginie must re-read the changed rows
   - unverified: French review by Virginie (TRANSLATIONS.md ss3, 2026-09-30). FRENCH_REVIEW.md generated from the working tree; no gender-agreement text found in this mod's French (a session never marks its own French reviewed)
@@ -43,7 +43,7 @@ updated:      2026-10-02
 
 ## Audit — 2026-10-02
 
-Revision `9b28df7`, tree clean at the start. **`done` -> `showcase`, `workflow_stage: l10n`** (replaces the `done`
+Revision `9b28df7`, tree clean at the start. **`done` -> `showcase`, `workflow_stage: l10n`** (the animal-mod cause was settled later the same day, see `remaining`; the French review still blocks) (replaces the `done`
 decision of 2026-09-24, kept below as history). The first failing transition is `l10n -> preTest`:
 
 - PUBLISHING.md's animal-mod rule (four integrations settled before `preTest`) is not met: Dogs mate never examined,

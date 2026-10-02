@@ -964,5 +964,6 @@ It 'the translation covers the labels and descriptions the mod writes' {
 
 Write-Output ''
 . (Join-Path $PSScriptRoot 'WhaleysDogs.Tests.ps1')
+. (Join-Path $PSScriptRoot 'Crossbreeding.Tests.ps1')
 Write-Output ("{0} test(s), {1} failed, {2} skipped" -f $script:ran, $script:failed, $script:skipped)
 exit $(if ($script:failed -gt 0) { 1 } else { 0 })

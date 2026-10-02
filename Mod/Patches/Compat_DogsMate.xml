@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Dogs mate (Continued), Mlie.DogsMate, Workshop 2441132298.
+
+  What it reads: Defs/CompatibleSpecies/Canidae.xml declares the Revolus.DogsMate.AnimalGroupDef "Dog",
+  whose <pawnKinds> are Husky, LabradorRetriever and YorkshireTerrier. The mod only activates the crossings
+  between kinds that share a group. Its own compatibility patches for other dog mods (for example
+  Patches/akairo.ShibaWanko.xml) append their kinds to that same list, which is what this file does.
+
+  Why the dalmatian goes in "Dog": it is a domestic dog in this mod, with vanilla's husky as its analogue
+  (same body, same trade tags, same Advanced training), and the husky is in that group.
+
+  Guard: a PatchOperationConditional on the group def. Without Dogs mate the xpath selects nothing, no
+  <nomatch> is declared, and the operation reports success without logging. Not MayRequire: nothing reads
+  it on an <Operation> (see ADSPatch.xml). No load order is needed, patches run once every def is loaded.
+
+  Only the canonical CCPDalmatian is listed. WD_Dalmatian belongs to WhaleysDogs and is left alone.
+-->
+<Patch>
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/Revolus.DogsMate.AnimalGroupDef[defName="Dog"]/pawnKinds</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/Revolus.DogsMate.AnimalGroupDef[defName="Dog"]/pawnKinds</xpath>
+			<value>
+				<li>CCPDalmatian</li>
+			</value>
+		</match>
+	</Operation>
+</Patch>
