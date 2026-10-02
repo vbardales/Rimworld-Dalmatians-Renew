@@ -20,7 +20,7 @@ Not restated from `AUDIT.md`; only what is specific to this mod.
   upload, and no artificial tag is made (CI/CD session, 2026-09-27; see "Fail fast").
 - The description on the Steam page is the one 0.1.0 sent. The one-source Markdown standard is adopted at the
   first publication (see "Description"); until then, no action.
-- The owner's manual validations: the installed copy (row 1) and removing the mod from a save (row 4).
+- The owner's manual validations: none left (row 1 dropped 2026-10-02, row 4 automated as scenario K, ticket 2a30).
 
 ## Description
 
@@ -173,7 +173,7 @@ from `PUBLISHING.md` ("Juste après"); it is hers to change.
 
 | # | What to look at | Why a test cannot |
 |---|---|---|
-| 1 | Subscribe to item `3806709979`, start a game with the installed copy, tame a dalmatian: it takes a name, and the information card reads as the capture did | The installed copy is what players get; the suite plays the working tree |
+| 1 | ~~Subscribe to item `3806709979`, play the installed copy, tame a dalmatian.~~ Dropped, the owner ruled on 2026-10-02: Steam's download is Steam's job, with no difference from the working tree | The suite plays the working tree, which is what Steam delivers |
 | 2 | With A Dog Said 2: the Health tab offers the animal surgeries a husky is offered (scenario C) | The look of the Health tab is vanilla's; the operations are asserted |
 | 3 | A duster made from the leather: the garment's colour (F) | Vanilla's reaction to `stuffProps.color` |
 | 4 | A real save with a dalmatian, then the mod removed: the dog is destroyed (K). Adding the mod to a save is not checked separately, every Pickle scenario already does it; swapping with the original, declined by the owner on 2026-09-27, stays an offline check that the `defName`s are unchanged | A changed mod list is the game's handling |
