@@ -297,6 +297,10 @@ and per scenario, plus an older one only if it is the sole proof of a check the 
 Delete the rest as soon as a newer report replaces it, after listing what goes and what stays. Never
 delete a report that a field in `STATUS.md` still points to: repoint the field first.
 
+Current state (2026-10-02): kept the latest report per scenario (2026-09-27-p1-training for pass 1 English; p1-french,
+p2-english/french and the two p2 trade runs as sole proof for French pass 1 and pass 2; rename-p1..p5, p6b; gallery-6),
+the training captures recompressed to JPEG. Keep the same shape after each later run: replace, never accumulate.
+
 Minifying is allowed once a capture has been looked at, and never before it has been opened. Keep
 the full frame and recompress it to JPEG at quality 85: a 1920 x 1080 capture goes from about 3 MB
 as PNG to about 250 KB, and stays legible, which the first three runs of this suite showed. Do not

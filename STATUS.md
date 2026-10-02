@@ -11,23 +11,25 @@ visibility:   public
 upstream_visibility: public (Steam API visibility=0; banned=0; checked 2026-09-12)
 detached:     yes
 maintainer:   Claude Code (the session named for this mod); Codex worked on it earlier
-stage:        done
+stage:        showcase
+workflow_stage: l10n
 licence:      silent
 licence_port: MIT, limited to the port contributions
 licence_at:   LICENSE; Mod/LICENSE; ATTRIBUTION.md
-upstream_mod_remotes: N/A (source mod cucumpear/lavie2k's Dalmatians, 1513691963: no <url> in its About.xml, checked ATTRIBUTION.md "Status: public")
+upstream_mod_remotes: N/A (source mod cucumpear/lavie2k's Dalmatians, 1513691963: no <url> in its About.xml; rechecked 2026-10-02: github.com/cucumpear has 30 repositories, none holds this mod, and the nearest (All-The-Puppers for 0.17, AnimalCollabProject, Beasties) contain no Dalmatian def; a repository found later would still not be a licence)
 dependencies: none
 showcase:     complete
 settings_audit: not_applicable
 xml_tests:    passed
 functional_tests: unverified
 pickle_tests: written 2026-09-24, 41 scenarios in 6 passes (8 launches); all eight launches played by 2026-09-26 and green at label d0dd719 (Mod/ unchanged since 42f0415): pass 1 English 14/14 and French 14/14; pass 2 English and French 14 plus a green trade replay each; passes 3, 4, 6 green; pass 5 green after its rewrite; captures read (docs/runs/2026-09-24-pass1-english.md)
-audit_revision: 8b734cab75a0579ec33a19db19023c074628af1a (this card is committed on top of it)
+audit_revision: 9b28df7419b84d62e7341e8d94f646539fed0515 (2026-10-02 audit; this card is committed on top of it)
 tested_on:
 automated:    37 passed, 0 failed, 0 skipped on 2026-10-02, with A Dog Said 2 installed; 33 ran and 4 skipped earlier on 2026-09-24, before it was
 manual:       17 scenarios documented in TESTING.md; K reduced to one check (removal) and L dropped (owner, 2026-09-27), A automated in full (training tab) the same day; rows 1 and K-removal of PUBLICATION.md's table still pending in game
 workshop:     3806709979 (item created private by the 0.1.0 prepublication of 2026-09-23; not the prepublished state)
 remaining:
+  - feature: PUBLISHING.md's four-integration rule for animal mods (2026-09-28, completed 2026-10-01) must be settled before preTest. ADS 2 done. Nocturnal Animals: BACKLOG.md finds the husky analogue unpatched (diurnal), so no patch is the likely decision, owner to confirm. Better Crossbreeding: decision open (BACKLOG.md). Dogs mate (Continued, Mlie.DogsMate): never examined; read it and decide (Dog group). A dalmatian that cannot cross is a decision written here, not an oversight
   - unverified: done -> tested's no-@wip and every-conditional-scenario-played conditions are met (all eight Pickle launches green, docs/runs/2026-09-24-pass1-english.md); "no manual scenario left" is not yet, pending the owner's rows 1 and 4 of PUBLICATION.md (subscribe and tame on the installed copy; remove the mod from a save with a dalmatian)
   - unverified: French review by Virginie (TRANSLATIONS.md ss3, 2026-09-30). FRENCH_REVIEW.md generated from the working tree; no gender-agreement text found in this mod's French (a session never marks its own French reviewed)
   - unverified: prepublished also needs the rollback target (none possible before the first publish, confirmed by the CI/CD session) and the three drafted comments posted only once the item is public. The gallery is done: Art/Gallery/ holds 0-preview.png, 1 and 2, in that order (owner's ruling, 2026-09-29: the gallery opens on a byte-identical copy of Preview.png), both non-preview images validated by the owner (2026-09-27, 2026-09-29)
@@ -37,6 +39,29 @@ updated:      2026-10-02
 ---
 
 # Dalmatians Renew — status
+
+## Audit — 2026-10-02
+
+Revision `9b28df7`, tree clean at the start. **`done` -> `showcase`, `workflow_stage: l10n`** (replaces the `done`
+decision of 2026-09-24, kept below as history). The first failing transition is `l10n -> preTest`:
+
+- PUBLISHING.md's animal-mod rule (four integrations settled before `preTest`) is not met: Dogs mate never examined,
+  Better Crossbreeding an open backlog decision. Recorded as `feature` in `remaining`; nothing was built.
+- TRANSLATIONS.md lets `preTest` start only with all three language fields `complete`; `translation_fr` stays
+  `partial` until Virginie reads `FRENCH_REVIEW.md`. Unverified, not a defect.
+
+Kept: the `options` gate (`settings_audit: not_applicable`), ModIcon and Preview, the automated result of the card,
+the Pickle results (eight launches green at `d0dd719`, then the rename, training and gallery replays). This audit
+launched no game and reran no test. New `done -> tested` conditions (no `@wip`: none in `Tests/Pickle/Mod`; every
+conditional scenario played: met; no manual test left: not met, owner rows 1 and K-removal of PUBLICATION.md).
+
+Housekeeping: `*.dds` and `Tests/Pickle/Evidence/` were already out of git and in `.gitignore`. `Mod/About/PublishedFileId.txt`
+(3806709979) is committed and `CHANGELOG.md` already holds `## [0.1.0]`. Evidence on disk cut to the latest report per
+scenario: removed 2026-09-25 p1-english-full, p1-english-puppy4, p3, p4, p6, 2026-09-26 p1-trade, p5, and the empty
+2026-09-28 rename-p6; the nine training captures recompressed to JPEG q85 (29 MB -> 2.7 MB). No field points at a removed
+report. Kept: p1-french and p2-english/french (sole proof of French pass 1 and pass 2), the two p2 trade runs,
+2026-09-27-p1-training (latest full English pass 1), rename-p1..p5, p6b, gallery-6. No `pickle-reports-archive` entry is this mod's.
+Original repository: none found (`upstream_mod_remotes`), so no pull request is possible.
 
 ## Translation audit — 2026-09-30
 
@@ -138,7 +163,7 @@ is verified, that it peaks at two puppies (a Pickle assertion), and that the car
 evidence folder went from 50 MB to 2.7 MB. Still to do for pass 1 English: one
 full run of all 14 at the current revision, then passes 1 French to 6.
 
-## Stage moves to done — 2026-09-24
+## Stage moves to done — 2026-09-24 (replaced on 2026-10-02, see the audit above)
 
 **Decision: preTest -> done.** A Dog Said 2 (Workshop 3238353862, packageId
 `SamBucher.ADogSaidAnimalProsthetics2`, declares 1.6) is now on disk. `_tools/Run-Tests.ps1` was rerun

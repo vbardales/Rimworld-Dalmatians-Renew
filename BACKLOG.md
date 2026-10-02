@@ -52,3 +52,15 @@ one more animal. Neither field is set on a dog.
 
 Neither is a dependency, neither would be declared in `loadAfter` unless a patch is written, and each would be
 credited on its Workshop page and in `WORKSHOP_COMMENTS.md` before anything ships (`PUBLISHING.md`, Mentions).
+
+## Dogs mate (Continued)
+
+**Where it stands, 2026-10-02: never examined.** `Mlie.DogsMate` (2441132298) lists breedable `PawnKindDef`s per
+`Revolus.DogsMate.AnimalGroupDef`; `PUBLISHING.md` (animal mods, 2026-10-01) asks every animal mod to settle it before
+`preTest`. To read from the installed copy: the `Dog` group and whether the dalmatian belongs there beside the husky.
+A decision either way goes in `STATUS.md`.
+
+## Original repository
+
+2026-10-02: none found. `github.com/cucumpear` (30 repositories) holds no Dalmatians mod, so the pull request
+`PUBLISHING.md` asks for has no target.

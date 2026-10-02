@@ -78,6 +78,22 @@ Found by comparing the documents with what this session did:
 - **Deleting long-named reports:** `Remove-Item` fails on capture names past `MAX_PATH`; a `rmdir` with the `\\?\`
   prefix worked here, and `robocopy /MIR` from an empty folder is the documented way.
 
+## Read on 2026-10-02 (audit session, "dalmatians / l10n")
+
+Protocols repository: `PUBLISHING.md` and `STYLE_RIMWORLD.md` have uncommitted edits in its work tree. SHA-256 is the first eight hex digits of the file as read.
+
+| Document | Version | SHA-256 | Read | Useful to this mod? |
+| --- | --- | --- | --- | --- |
+| `AGENTS.md` | `7fd7475` (2026-09-29) | `7a236f03` | whole | Yes: evidence rule, CI rules. |
+| `AUDIT.md` | `7fd7475` (2026-09-29) | `0fb60fdf` | whole (274 lines) | Yes, every session: stage codes, step 12 fallback, title format, new `tested` conditions. |
+| `TRANSLATIONS.md` | `af8427f` (2026-10-02) | `e381086a` | whole | Yes: gender rule, French review by Virginie, `FRENCH_REVIEW.md`. Reread if a French file changes. |
+| `PUBLISHING.md` | `02394c0` (2026-10-01), modified | `ba43a4d2` | sections: origin repository, Dépôt, the four animal integrations; headings of the rest | Yes: the animal-mod rule changed the stage today. Reread the rest before `prepublished`. |
+| `WELCOME.md` | dispatcher repo | `08b440a0` | whole | Yes: filing, no SHA, evidence cleanup. |
+| `MOD_SETTINGS.md` | `b83933b` (2026-09-23) | `404916bc` | not reread: `settings_audit: not_applicable` stands | Not useful now. |
+| `STYLE_RIMWORLD.md`, `WORKSHOP_COMMENTS.md`, `SEARCHING.md`, `PickleTools/*`, `SUBMIT.md`, `OPERATIONS.md` | `c105a43`, `7fd7475`, `50de695`, -, -, - | `08cd5fa2`, `3fb37586`, `013075b0`, `40e44a5d`/`2310bb97`/`6cb87154`, `eaca3969`, `23fcf642` | not reread (no run filed, no image or comment work today) | Reread when filing a run, writing thanks, or before `prepublished`. |
+
+What changed since 2026-09-25: the animal-mod integration rule (Dogs mate added 2026-10-01), the gender-agreement and French review rules (2026-09-30), the `published` clean-up rules, and `tested` now requires no `@wip`, every conditional scenario played and no manual test left.
+
 ## When to reread
 
 At the start of a session and after every compaction: `AGENTS.md`, `AUDIT.md`, `WELCOME.md`. Before filing a run:
