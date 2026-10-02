@@ -39,6 +39,10 @@ updated:      2026-10-02
 
 # Dalmatians Renew — status
 
+## Pickle tickets filed — 2026-10-02
+
+Scenarios `08-dogsmate` and `09-bettercrossbreeding` written (steps in `Tests/Pickle/Source/CrossingSteps.cs`, maps for passes 7 to 9, `Check-Steps.ps1` green, README and TESTING updated). Five requests filed at `b7f8a28`, tree frozen until `RUN_DONE`: 20261002-182319-628-152b (pass 7), -182320-206-30e3 (pass 8), -182320-668-729d (pass 9), -182321-138-3b31 (pass 1 French), -182321-627-64d3 (pass 2 French). Evidence under `Tests/Pickle/Evidence/2026-10-02-*`. The two French passes replay the features edited for the reviewed labels; they belong to `done -> tested`, so they are not a `done` condition. TicketDispatcher was not reachable for REGISTER; the label carries the `local_` id.
+
 ## Stage moves to preTest — 2026-10-02
 
 **Decision: `showcase`/`l10n` -> `preTest`** (owner's order). Both blockers of the audit below are gone: the four animal integrations are settled (ADS 2, Nocturnal Animals by decision, Dogs mate and Better Crossbreeding patched, 44 offline tests green) and the three language fields are `complete` (French validated by Virginie). `l10n -> preTest` rests on the dependency, `loadAfter`/`loadBefore` and `LoadFolders` checks cited from 2026-09-24; the new patches need no load order and declare no dependency. For `preTest -> done`: add Pickle scenarios for the two new patches (or justify their absence), and replay the offline suite. Session title: `dalmatians / preTest`.
