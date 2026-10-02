@@ -39,6 +39,7 @@ their map.
 | 6. The original mod | `wsl-deps.incompatible-original.map` | `06` | English | What happens beside the mod declared incompatible |
 | 7. Dogs mate | `wsl-deps.avec-dogsmate.map` | `08` | English | The dalmatian is in the Dog group: it seeks, and is sought by, the three vanilla dogs |
 | 8. Better Crossbreeding | `wsl-deps.avec-bettercrossbreeding.map` | `09` | English | The two halves, list on the male and extension on the mother, both ways, Random |
+| Removal chain | `wsl-deps.removal.map` | `10`, then `removal-check` | English | Scenario K: a save with an adult, a puppy and leather loads and runs without the mod (no errors, engine alive, resave) |
 | 9. Both crossing mods | `wsl-deps.avec-croisements.map` | `08,09` | English | The two mods write the same list: nothing listed twice or replaced |
 
 WhaleysDogs and A Dog Said 2 do not exclude each other, so passes 2 to 4 cover them alone and together.
@@ -58,6 +59,8 @@ powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod Dalm
 powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod DalmatiansRenew -DepMap wsl-deps.ads2-ordre-inverse.map -Filter '05-ads2-wrong-order' -Language English
 powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod DalmatiansRenew -DepMap wsl-deps.incompatible-original.map -Filter '06-incompatible-original' -Language English
 ```
+
+Removal chain, ONE request: `-DepMap wsl-deps.removal.map -Filter '10-removal-write' -Then 'removal-check' -ThenWithout nelim.dalmatians,nelim.dalmatians.pickletests`. The animal being dropped is the game's own handling of a changed mod list and is not asserted.
 
 Passes 7 to 9: `-DepMap wsl-deps.avec-dogsmate.map -Filter '08-dogsmate'`, `-DepMap wsl-deps.avec-bettercrossbreeding.map -Filter '09-bettercrossbreeding'`, `-DepMap wsl-deps.avec-croisements.map -Filter '08-dogsmate,09-bettercrossbreeding'`, all `-Language English`.
 
