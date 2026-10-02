@@ -153,7 +153,7 @@ Feature: The dalmatian on its own
     And Dalmatians Renew the thing "CCPDalmatian" is labelled "dalmatien"
     And Dalmatians Renew the thing "CCPDalmatian" has a description beginning "Chien musculeux de taille moyenne."
     And Dalmatians Renew the thing "CCPDalmatian" has the attack labels "griffe gauche, griffe droite, tête"
-    And Dalmatians Renew the pawn kind "CCPDalmatian" is labelled "dalmatien" and pluralised "dalmatiens"
-    And Dalmatians Renew the first life stage of pawn kind "CCPDalmatian" is labelled "chiot dalmatien" and pluralised "chiots dalmatiens"
-    And Dalmatians Renew the thing "Leather_Dalmatian" is labelled "fourrure de dalmatien"
-    And Dalmatians Renew the material "Leather_Dalmatian" is called "fourrure de dalmatien" when it names a garment
+    And Dalmatians Renew the pawn kind "CCPDalmatian" is labelled "dalmatienne" and pluralised "dalmatiennes"
+    And Dalmatians Renew the first life stage of pawn kind "CCPDalmatian" is labelled "jeune dalmatienne" and pluralised "jeunes dalmatiennes"
+    And Dalmatians Renew the thing "Leather_Dalmatian" is labelled "cuir de dalmatien"
+    And Dalmatians Renew the material "Leather_Dalmatian" is called "cuir de dalmatien" when it names a garment

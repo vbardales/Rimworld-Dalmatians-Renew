@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
+  <!-- EN: Dalmatian -->
   <WD_Dalmatian.label>dalmatien</WD_Dalmatian.label>
+  <!-- EN: A larger dog covered in spots. -->
   <WD_Dalmatian.description>Grand chien au pelage tacheté.</WD_Dalmatian.description>
   <WD_Dalmatian.tools.left_claw.label>griffe gauche</WD_Dalmatian.tools.left_claw.label>
   <WD_Dalmatian.tools.right_claw.label>griffe droite</WD_Dalmatian.tools.right_claw.label>

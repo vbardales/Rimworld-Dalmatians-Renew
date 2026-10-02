@@ -119,6 +119,6 @@ Feature: The dalmatian beside WhaleysDogs
     And Dalmatians Renew the thing "WD_Dalmatian" has the attack labels "griffe gauche, griffe droite, tête"
     And Dalmatians Renew the pawn kind "WD_Dalmatian" is labelled "dalmatien" and pluralised "dalmatiens"
     And Dalmatians Renew the first life stage of pawn kind "WD_Dalmatian" is labelled "chiot dalmatien" and pluralised "chiots dalmatiens"
-    And Dalmatians Renew the material "Leather_Dalmatian" is called "fourrure de dalmatien" when it names a garment
+    And Dalmatians Renew the material "Leather_Dalmatian" is called "cuir de dalmatien" when it names a garment
     And Dalmatians Renew the thing "CCPDalmatian" is labelled "dalmatien"
-    And Dalmatians Renew the first life stage of pawn kind "CCPDalmatian" is labelled "chiot dalmatien" and pluralised "chiots dalmatiens"
+    And Dalmatians Renew the first life stage of pawn kind "CCPDalmatian" is labelled "jeune dalmatienne" and pluralised "jeunes dalmatiennes"

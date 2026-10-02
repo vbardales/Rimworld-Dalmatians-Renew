@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
+  <!-- EN: Dalmatian -->
   <WD_Dalmatian.label>dalmatien</WD_Dalmatian.label>
+  <!-- EN: (none: WhaleysDogs declares no labelPlural on its kind; added by this mod) -->
   <WD_Dalmatian.labelPlural>dalmatiens</WD_Dalmatian.labelPlural>
+  <!-- EN: Young Dalmation (sic, WhaleysDogs) -->
   <WD_Dalmatian.lifeStages.Young_Dalmation.label>chiot dalmatien</WD_Dalmatian.lifeStages.Young_Dalmation.label>
+  <!-- EN: Young Dalmatians -->
   <WD_Dalmatian.lifeStages.Young_Dalmation.labelPlural>chiots dalmatiens</WD_Dalmatian.lifeStages.Young_Dalmation.labelPlural>
 </LanguageData>
