@@ -54,7 +54,7 @@ $out = New-Object System.Text.StringBuilder
 [void]$out.AppendLine("read from there rather than resolved against `` Mod/Defs``, since that comment is this repository's")
 [void]$out.AppendLine("own record of the source text at the time the French was written.")
 [void]$out.AppendLine()
-[void]$out.AppendLine("Generated $(Get-Date -Format 'yyyy-MM-dd'), revision: working tree, gender-agreement rule of 2026-09-30.")
+[void]$out.AppendLine("Generated $(Get-Date -Format 'yyyy-MM-dd'), revision: $(git -C $Root rev-parse --short HEAD) (tree clean when generated), gender-agreement rule of 2026-09-30.")
 [void]$out.AppendLine()
 
 $totalRows = 0
@@ -71,7 +71,10 @@ foreach ($ff in $frenchFiles) {
     foreach ($key in $entries.Keys) {
         $row = $entries[$key]
         $fr = $row.French
-        $en = if ($row.English) { $row.English } else { '*(no EN: comment above this key -- check by hand)*' }
+        # A tool label carries its English in its own id (tools.left_claw.label -> left claw): derived, not guessed.
+        $en = '*(no EN: comment above this key -- check by hand)*'
+        if ($row.English) { $en = $row.English }
+        elseif ($key -match '\.tools\.([A-Za-z0-9]+(?:_[A-Za-z0-9]+)*)\.label$') { $en = ($Matches[1] -replace '_', ' ') + ' *(derived from the id)*' }
         $orig = $en
         $isTwoSegmentSwitch = ($fr -match '\{[A-Za-z_]+_gender\s*\?') -and ($fr -notmatch '\{[A-Za-z_]+_gender\s*\?[^:{}]*:[^:{}]*:[^:{}]*\}')
         $flag = if ($isTwoSegmentSwitch -or $fr -match '\?\?\?|TODO') { $script:flagged++; ' | ?' } else { '' }
