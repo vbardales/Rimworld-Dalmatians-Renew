@@ -233,6 +233,8 @@ post **only after item 3806709979 is public**. Under 1000 characters each, a bar
 | WhaleysDogs (Continued) | 2274606936 | drafted | Integration declared, patched and played by passes 2 and 4 |
 | A Dog Said... Animal Prosthetics 2 | 3238353862 | drafted | Integration declared, patched and played by passes 3, 4 and 5 |
 | Dalmatians (original) | 1513691963 | drafted | The mod this one is a port of; factual, not a compatibility claim |
+| Dogs mate (Continued) | 2441132298 | drafted | Patch joins its Dog group; played by passes 7 and 9 |
+| Better Crossbreeding | 3520675842 | drafted | Patch crosses with the three vanilla dogs; played by passes 8 and 9 |
 | Pickle | 3791648678 | already `posted` | Only `Covers` changes: add `Dalmatians Renew` |
 | PickleTools | 3806142401 | `not_applicable` | Same author, private page; no comment to oneself |
 | Harmony, RimLogging | | not concerned | Neither is used by this mod or staged by its suite |
@@ -259,6 +261,30 @@ I ported an old dalmatian mod to 1.6 (Dalmatians Renew, unofficial) and its surg
 Thanks for making the categories so easy to hook into 💛
 
 https://steamcommunity.com/sharedfiles/filedetails/?id=3806709979
+```
+
+### Dogs mate (Continued), 2441132298
+
+```
+Hello Mlie, and thank you for keeping Dogs mate going! 🐶
+
+I brought an old dalmatian mod up to 1.6 (Dalmatians Renew, unofficial) and read how your own compatibility patches work, so mine does the same: it appends the dalmatian to your Dog group when your mod is there and does nothing otherwise. The husky, labrador and Yorkshire terrier now seek it and it seeks them.
+
+Your patch files made it very easy to do it the way you intended. Thank you 💛 If I put it in the wrong group, tell me.
+
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806709979]Dalmatians Renew[/url]
+```
+
+### Better Crossbreeding, 3520675842
+
+```
+Hello DizzyEevee, and thank you for Better Crossbreeding! 🐕
+
+In Dalmatians Renew (unofficial, an old dalmatian mod brought to 1.6) the dalmatian can now cross with the husky, labrador and Yorkshire terrier, each way, and the pup is either parent's breed. I found that the game reads the male's canCrossBreedWith and your mod reads the mother's extension, so the patch writes both halves, and I used your class name as compiled (CrossBreeding) rather than the one in the Example folder.
+
+Thanks for a mod that left the choice of outcome to the other mods 💛
+
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806709979]Dalmatians Renew[/url]
 ```
 
 ### Dalmatians (original), 1513691963

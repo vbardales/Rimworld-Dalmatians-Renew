@@ -173,6 +173,15 @@ Without WhaleysDogs, this mod works as before. See [WHALEYSDOGS.md](WHALEYSDOGS.
 ownership, save limitations and tests. The WhaleysDogs pass of the in-game suite has not been run
 yet.
 
+## Crossing with other dogs (optional)
+
+Two optional patches, inert when the other mod is absent, written on 2026-10-02:
+
+- **Dogs mate (Continued)** (`Mlie.DogsMate`): `Patches/Compat_DogsMate.xml` adds the dalmatian to its `Dog` group, beside the husky, the labrador retriever and the Yorkshire terrier. It then seeks them, and they seek it.
+- **Better Crossbreeding** (`DizzyEevee.BetterCrossbreeding`): `Patches/Compat_BetterCrossbreeding.xml` lets the dalmatian cross with those same three dogs, each way, and the pup is either parent's breed on a coin flip. No pairing between two vanilla animals is made.
+
+No load order is needed and neither is a dependency. [Nocturnal Animals](https://steamcommunity.com/sharedfiles/filedetails/?id=2269731409) is deliberately not patched: it does not patch vanilla's dogs either, so the dalmatian stays diurnal like them. Offline tests in `_tools/Crossbreeding.Tests.ps1`; in game, passes 7 to 9 of the Pickle suite.
+
 ## Repository layout
 
 ```

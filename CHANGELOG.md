@@ -11,6 +11,12 @@ First release. Port of cucumpear's and lavie2k's **Dalmatians** to RimWorld 1.6,
 
 Before that release, the `packageId` was shortened from `nelim.dalmatiansrenew` to `nelim.dalmatians` (owner, 2026-09-28); nobody but the owner had installed the private 0.1.0 item.
 
+### Crossing with other dogs (2026-10-02)
+
+- Add optional Dogs mate (Continued) support: the dalmatian joins its `Dog` group.
+- Add optional Better Crossbreeding support: the dalmatian crosses with the husky, labrador retriever and Yorkshire terrier, each way, with a coin-flip pup.
+- French review by the owner applied: leather is "cuir", the kind label has a feminine form, and the puppy stage reads "jeune dalmatien(ne)".
+
 ### WhaleysDogs integration (2026-09-13)
 
 - Add optional WhaleysDogs consolidation: keep WD_Dalmatian balance and add our coat variant, leather, French labels and ADS 2 membership.
