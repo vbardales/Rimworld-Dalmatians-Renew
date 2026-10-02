@@ -19,30 +19,15 @@ Not restated from `AUDIT.md`; only what is specific to this mod.
 - The rollback target cannot exist before the first publish: the tag is created by the CI after a successful
   upload, and no artificial tag is made (CI/CD session, 2026-09-27; see "Fail fast").
 - The description on the Steam page is the one 0.1.0 sent. The one-source Markdown standard is adopted at the
-  first publication (see "Description"); until then, no action.
+  first publication (see "Steam description"); until then, no action.
 - The owner's manual validations: none left (row 1 dropped 2026-10-02, row 4 automated as scenario K, ticket 2a30).
 
-## Description
+## Steam description
 
-**Standard announced on 2026-09-25 by the CI/CD session (Rimworld-Release-Admin `f196148`, `OPERATIONS.md`,
-"Changing where the Steam description comes from"; not adopted here yet, nothing forces it).** The description is
-written once, in Markdown, in a ```markdown block under `## Steam description`; the CI converts it to BBCode and
-generates the plain-text `<description>` of `About.xml` from it, and a dry-run or publish stops if they differ.
-The block holds no code fence and ends with `[Source code on GitHub](URL)`. The block below is still BBCode under
-`## Description`, as the manual path read it before; **at the first publication it is rewritten in Markdown under
-the new heading, `About.xml` is regenerated (the first `--write` changes its text, so the diff is read), and the
-SHA changes, so the dry-run is redone.** `OPERATIONS.md` says the dry-run cannot compare with a private item's
-page, so the text is read by hand, and its printed SHA-256 identifies what would replace the page. The change note
-must carry its version on the first line, `[b]1.0.0[/b]`, or the CI refuses it.
+The one-source Markdown standard (owner, 2026-09-25; `Rimworld-Release-Admin/docs/OPERATIONS.md`): the CI converts the block below to Steam BBCode and generates the plain-text `<description>` of `About.xml` from it, and a dry-run or publish stops when they differ. The block holds no code fence and ends with `[Source code on GitHub](URL)`. It is the page as the 0.1.0 upload left it plus the sections 0.1.0 lacked (IF I GO QUIET, AI-GENERATED, THANKS, the GitHub link) and the 2026-10-02 crossing support. The BBCode form it replaces is in git. `OPERATIONS.md` says the dry-run cannot compare with a private item's page, so the text is read by hand. **Read it once more before the publish**, and refresh the sentence on what the automated runs cover to what `docs/runs/` shows that day.
 
-`SetItemDescription` runs only when an item is created, so the page keeps what 0.1.0 sent. The shipped
-`About.xml` was aligned on 2026-09-25 (litter wording, the three closing sections, Codex, Pickle and
-PickleTools, Workshop links, the final GitHub link). The same text, as it should read on the page, in
-Steam BBCode. **Read it once more before pasting**, and refresh the sentence that says what the
-automated runs cover to whatever `docs/runs/` shows that day.
-
-```
-[b]UNOFFICIAL.[/b] This mod is published without the original author's explicit consent. If the original author contacts me to request its removal, I undertake to take it down promptly.
+```markdown
+**UNOFFICIAL.** This mod is published without the original author's explicit consent. If the original author contacts me to request its removal, I undertake to take it down promptly.
 
 One dog. A dalmatian: a medium-sized, spotted, sweet-natured pet that nuzzles, trains to Advanced, tames easily, and is bought and sold like a husky.
 
@@ -50,23 +35,21 @@ No DLC, no dependencies, no assembly. Three defs, four textures and four optiona
 
 I am not the author of this mod. The animal, its artwork and its stats are cucumpear's and lavie2k's - all I did was bring it forward to 1.6, repair what the port turned up, and write the French. Credit goes to them; mistakes in the port are mine.
 
-Original mod: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1513691963]Dalmatians[/url] - declares 1.0 to 1.4 and nothing further.
+Original mod: [Dalmatians](https://steamcommunity.com/sharedfiles/filedetails/?id=1513691963) - declares 1.0 to 1.4 and nothing further.
 
-[h2]What's in it[/h2]
-[list]
-[*]The dalmatian. Body size 0.70, market value 250, comfortable down to -30C, omnivore, Advanced trainability, wildness 0, gestation 25 days, litters peaking at two puppies, lives about 12 years. It nuzzles, it takes a name the moment it is tamed, and it never turns manhunter.
-[*]Dalmatian leather, an almost white leather of its own. It insulates a little less against cold than plain leather does, 14 against 16, and is worth a shade less.
-[*]Support for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862]A Dog Said... Animal Prosthetics 2[/url], if you use it: the dalmatian is offered the same animal surgeries as vanilla's huskies and labradors. Inert if the mod is absent. It must load before A Dog Said 2, which the mod's metadata declares.
-[*]Support for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2441132298]Dogs mate (Continued)[/url], if you use it: the dalmatian joins its Dog group and courts the husky, the labrador retriever and the Yorkshire terrier, and they court it. Inert if the mod is absent.
-[*]Support for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3520675842]Better Crossbreeding[/url], if you use it: the same three dogs cross with the dalmatian, each way, and the pup is either parent's breed. Inert if the mod is absent.
-[/list]
+## What's in it
+- The dalmatian. Body size 0.70, market value 250, comfortable down to -30C, omnivore, Advanced trainability, wildness 0, gestation 25 days, litters peaking at two puppies, lives about 12 years. It nuzzles, it takes a name the moment it is tamed, and it never turns manhunter.
+- Dalmatian leather, an almost white leather of its own. It insulates a little less against cold than plain leather does, 14 against 16, and is worth a shade less.
+- Support for [A Dog Said... Animal Prosthetics 2](https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862), if you use it: the dalmatian is offered the same animal surgeries as vanilla's huskies and labradors. Inert if the mod is absent. It must load before A Dog Said 2, which the mod's metadata declares.
+- Support for [Dogs mate (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2441132298), if you use it: the dalmatian joins its Dog group and courts the husky, the labrador retriever and the Yorkshire terrier, and they court it. Inert if the mod is absent.
+- Support for [Better Crossbreeding](https://steamcommunity.com/sharedfiles/filedetails/?id=3520675842), if you use it: the same three dogs cross with the dalmatian, each way, and the pup is either parent's breed. Inert if the mod is absent.
 
-[h2]With WhaleysDogs (Continued)[/h2]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2274606936]WhaleysDogs (Continued)[/url] supplies the main dalmatian and its balance when both mods are enabled. This port adds an alternate spotted coat, French labels, dedicated leather and ADS 2 support. Its original coat and complete corpse graphics remain. Load WhaleysDogs first, this mod next, then ADS 2 if used.
+## With WhaleysDogs (Continued)
+[WhaleysDogs (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2274606936) supplies the main dalmatian and its balance when both mods are enabled. This port adds an alternate spotted coat, French labels, dedicated leather and ADS 2 support. Its original coat and complete corpse graphics remain. Load WhaleysDogs first, this mod next, then ADS 2 if used.
 
 Existing dogs from this port remain and can still be sold; their ordinary random acquisition is disabled while WhaleysDogs is active. Old dogs can still reproduce, and explicit spawning remains possible. No saved animal is converted or deleted. Without WhaleysDogs, standalone behaviour is unchanged.
 
-[h2]What changed[/h2]
+## What changed
 Two things, and the second is the one that was actually broken.
 
 Wildness stopped being a property of the animal and became a stat. The def declared it the old way; in 1.6 that element matches no field, so the game logs one line and loads the animal without it. It is now a stat, written the way vanilla's own dogs write it.
@@ -75,37 +58,30 @@ The A Dog Said patch had stopped working: it looked for recipe names that A Dog 
 
 Otherwise nothing moved: the stats, the tools, the litter curve, the sounds, the trade tags, the leather and the four textures are as cucumpear and lavie2k left them. French was added. The defName is unchanged, so a save moves between the two mods without losing a dog.
 
-[h2]Credit and removal[/h2]
+## Credit and removal
 cucumpear and lavie2k declared no licence: no file in the mod, nothing in its About.xml, no linked repository, and nothing in the body of the description on its Steam page. It is republished here under the usual convention for abandoned mods - full credit, a link to the original, and removal on request. If either author would rather this port did not exist, say so and it comes down: no argument, no delay.
 
 The two mods cannot run together - the original is declared incompatible. Run one or the other.
 
 Content mod: removing it mid-save destroys any dalmatian already in the colony.
 
-[h2]If I go quiet[/h2]
+## If I go quiet
 If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.
 
-[h2]AI-generated[/h2]
+## AI-generated
 The port work (the XML, the patches, the tests and the documentation) was done with the help of AI assistants, Claude (Anthropic) and Codex (OpenAI), under human direction. Automated in-game runs cover the mod on its own, in English; the other configurations are still being run.
 
-[h2]Thanks[/h2]
-[list]
-[*]cucumpear and lavie2k, for the dog, its artwork and its balance.
-[*]Mlie, who maintains [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2274606936]WhaleysDogs (Continued)[/url], and Whaley, its original author: this mod is arranged around theirs when both are enabled.
-[*]SamBucher, for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862]A Dog Said... Animal Prosthetics 2[/url], whose surgery categories the dalmatian joins.
-[*]Mlie, who maintains [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2441132298]Dogs mate (Continued)[/url] (original by Revolus), and DizzyEevee, for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3520675842]Better Crossbreeding[/url]: the dalmatian crosses with the vanilla dogs through their lists.
-[*]The authors of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3791648678]Pickle[/url] and of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806142401]PickleTools[/url], used to test the port in game. They are for development only and never a dependency of this mod.
-[/list]
+## Thanks
+- cucumpear and lavie2k, for the dog, its artwork and its balance.
+- Mlie, who maintains [WhaleysDogs (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2274606936), and Whaley, its original author: this mod is arranged around theirs when both are enabled.
+- SamBucher, for [A Dog Said... Animal Prosthetics 2](https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862), whose surgery categories the dalmatian joins.
+- Mlie, who maintains [Dogs mate (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2441132298) (original by Revolus), and DizzyEevee, for [Better Crossbreeding](https://steamcommunity.com/sharedfiles/filedetails/?id=3520675842): the dalmatian crosses with the vanilla dogs through their lists.
+- The authors of [Pickle](https://steamcommunity.com/sharedfiles/filedetails/?id=3791648678) and of [PickleTools](https://steamcommunity.com/sharedfiles/filedetails/?id=3806142401), used to test the port in game. They are for development only and never a dependency of this mod.
 
 Licence and what was carried over: see ATTRIBUTION.md in the source repository.
 
-[url=https://github.com/vbardales/Rimworld-Dalmatians-Renew]Source code on GitHub[/url]
+[Source code on GitHub](https://github.com/vbardales/Rimworld-Dalmatians-Renew)
 ```
-
-Checked against `About.xml` on 2026-09-25: every Workshop name carries its link, the closing sections come
-in the order the protocol gives, and the last line is the GitHub link. The GitHub page itself was not
-opened from this session, so the link's target is coherent with the remote and the `<url>` field but not
-seen live.
 
 ## Images
 
@@ -206,6 +182,7 @@ First release. Port of cucumpear's and lavie2k's Dalmatians to RimWorld 1.6.
 [*]Wildness is a stat now, as in 1.6, so it shows on the information card.
 [*]The A Dog Said... Animal Prosthetics 2 patch works again: the dalmatian is offered the animal surgeries.
 [*]With WhaleysDogs (Continued): its dalmatian stays the main one, this mod adds an alternate coat, French labels and its own leather. Saved dogs are kept.
+[*]Optional crossing support: with Dogs mate (Continued) the dalmatian joins its Dog group, and with Better Crossbreeding it crosses with the husky, labrador retriever and Yorkshire terrier, each way.
 [*]English and French.
 [/list]
 
