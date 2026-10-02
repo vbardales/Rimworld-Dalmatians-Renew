@@ -1,7 +1,7 @@
 ---
 localization: complete
 translation_en: complete
-translation_fr: partial
+translation_fr: complete
 mod:          Dalmatians Renew (unofficial)
 packageId:    nelim.dalmatians
 repo:         Rimworld-Dalmatians-Renew
@@ -31,8 +31,6 @@ workshop:     3806709979 (item created private by the 0.1.0 prepublication of 20
 remaining:
   - unverified: the four-integration rule for animal mods is settled by decision (owner, 2026-10-02): ADS 2 patch (existing); Nocturnal Animals none (husky analogue unpatched, dalmatian stays diurnal); Dogs mate patch written (Patches/Compat_DogsMate.xml, CCPDalmatian into group Dog); Better Crossbreeding patch written (Patches/Compat_BetterCrossbreeding.xml, dalmatian x Husky/LabradorRetriever/YorkshireTerrier both ways, Random outcome). Offline tests green (44, _tools/Crossbreeding.Tests.ps1, real Verse operations). In game never run: no Pickle scenario yet, and the thanks to Mlie (Dogs mate) and DizzyEevee (Better Crossbreeding) are still to add to the description THANKS and WORKSHOP_COMMENTS.md
   - unverified: done -> tested's no-@wip and every-conditional-scenario-played conditions are met (all eight Pickle launches green, docs/runs/2026-09-24-pass1-english.md); "no manual scenario left" is not yet, pending the owner's rows 1 and 4 of PUBLICATION.md (subscribe and tame on the installed copy; remove the mod from a save with a dalmatian)
-  - unverified: French corrections of Virginie's review (2026-10-02) applied, not yet replayed: leather "fourrure" -> "cuir" (label, stuffAdjective, description), CCPDalmatian kind label/labelPlural in the feminine (dalmatienne/dalmatiennes, labelMale/labelMalePlural unchanged), puppy stage "jeune dalmatienne/dalmatien" (plural jeunes ...). Pickle features 01 and 02 updated to match; the two French pass-1/pass-2 runs must be replayed on the new revision, and Virginie must re-read the changed rows
-  - unverified: French review by Virginie (TRANSLATIONS.md ss3, 2026-09-30). FRENCH_REVIEW.md generated from the working tree; no gender-agreement text found in this mod's French (a session never marks its own French reviewed)
   - unverified: prepublished also needs the rollback target (none possible before the first publish, confirmed by the CI/CD session) and the three drafted comments posted only once the item is public. The gallery is done: Art/Gallery/ holds 0-preview.png, 1 and 2, in that order (owner's ruling, 2026-09-29: the gallery opens on a byte-identical copy of Preview.png), both non-preview images validated by the owner (2026-09-27, 2026-09-29)
   - defect: the description sent by 0.1.0 still lacks IF I GO QUIET, AI-GENERATED, THANKS, the final Source code on GitHub link, Codex and the Pickle thanks; the CI/CD session confirmed on 2026-09-27 that it stays untouched (a Markdown rewrite under PUBLICATION.md's own "## Steam description" heading) until this mod's first publication; required for prepublished, not for done or tested
 session:      local_e7fdeacc-7649-4702-9f00-45be2663ced1
@@ -56,7 +54,7 @@ the Pickle results (eight launches green at `d0dd719`, then the rename, training
 launched no game and reran no test. New `done -> tested` conditions (no `@wip`: none in `Tests/Pickle/Mod`; every
 conditional scenario played: met; no manual test left: not met, owner rows 1 and K-removal of PUBLICATION.md).
 
-French review, first reading (Virginie, 2026-10-02): not validated. Corrections applied the same day (see `remaining`). The WD_* rows were checked against WhaleysDogs 1.6 (Workshop 2274606936): kind label `Dalmatian`, stage `Young Dalmation` / `Young Dalmatians` (sic), no sexed labels and no kind `labelPlural` there; EN comments added to the WD files and `FRENCH_REVIEW.md` regenerated (25 rows). `_tools/Run-Tests.ps1`: 37 passed, 0 failed.
+French review (Virginie): first reading 2026-10-02 not validated; corrections applied; second reading 2026-10-02 **validated**, with two proof requests: the report regenerated clean and committed (done, revision named in `FRENCH_REVIEW.md`), and the three `WD_Dalmatian.tools.*` labels classed `derived` from their ids instead of "check by hand" (done in `_tools/Generate-FrenchReview.ps1`). `translation_fr: complete`. The changed rows were not replayed in game: the French Pickle passes 1 and 2 stay to run on the new revision. Corrections applied the same day (see `remaining`). The WD_* rows were checked against WhaleysDogs 1.6 (Workshop 2274606936): kind label `Dalmatian`, stage `Young Dalmation` / `Young Dalmatians` (sic), no sexed labels and no kind `labelPlural` there; EN comments added to the WD files and `FRENCH_REVIEW.md` regenerated (25 rows). `_tools/Run-Tests.ps1`: 37 passed, 0 failed.
 
 Housekeeping: `*.dds` and `Tests/Pickle/Evidence/` were already out of git and in `.gitignore`. `Mod/About/PublishedFileId.txt`
 (3806709979) is committed and `CHANGELOG.md` already holds `## [0.1.0]`. Evidence on disk cut to the latest report per

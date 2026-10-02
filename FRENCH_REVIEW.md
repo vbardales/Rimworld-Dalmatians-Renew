@@ -7,7 +7,7 @@ English is what this repository carries as every entry's own ` <!-- EN: ... --> 
 read from there rather than resolved against ` Mod/Defs`, since that comment is this repository's
 own record of the source text at the time the French was written.
 
-Generated 2026-10-02, revision: working tree, gender-agreement rule of 2026-09-30.
+Generated 2026-10-02, revision: 555ba85 (tree clean when generated), gender-agreement rule of 2026-09-30.
 
 ## Mod/Compatibility/WhaleysDogs/Languages/French/DefInjected/PawnKindDef/Dalmatian.xml
 
@@ -24,9 +24,9 @@ Generated 2026-10-02, revision: working tree, gender-agreement rule of 2026-09-3
 |---|---|---|---|
 | WD_Dalmatian.label | Dalmatian | Dalmatian | dalmatien |
 | WD_Dalmatian.description | A larger dog covered in spots. | A larger dog covered in spots. | Grand chien au pelage tacheté. |
-| WD_Dalmatian.tools.left_claw.label | *(no EN: comment above this key -- check by hand)* | *(no EN: comment above this key -- check by hand)* | griffe gauche |
-| WD_Dalmatian.tools.right_claw.label | *(no EN: comment above this key -- check by hand)* | *(no EN: comment above this key -- check by hand)* | griffe droite |
-| WD_Dalmatian.tools.head.label | *(no EN: comment above this key -- check by hand)* | *(no EN: comment above this key -- check by hand)* | tête |
+| WD_Dalmatian.tools.left_claw.label | left claw *(derived from the id)* | left claw *(derived from the id)* | griffe gauche |
+| WD_Dalmatian.tools.right_claw.label | right claw *(derived from the id)* | right claw *(derived from the id)* | griffe droite |
+| WD_Dalmatian.tools.head.label | head *(derived from the id)* | head *(derived from the id)* | tête |
 
 ## Mod/Languages/French/DefInjected/PawnKindDef/Races_Animal_Dalmatian.xml
 
