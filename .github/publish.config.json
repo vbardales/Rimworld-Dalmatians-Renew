@@ -9,5 +9,6 @@
   "forbidPaths": [
     "Assemblies"
   ],
-  "previewFile": "About/Preview.png"
+  "previewFile": "About/Preview.png",
+  "galleryDir": "Art/Gallery"
 }

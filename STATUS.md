@@ -24,16 +24,16 @@ functional_tests: unverified
 pickle_tests: written 2026-09-24, 41 scenarios in 6 passes (8 launches); all eight launches played by 2026-09-26 and green at label d0dd719 (Mod/ unchanged since 42f0415): pass 1 English 14/14 and French 14/14; pass 2 English and French 14 plus a green trade replay each; passes 3, 4, 6 green; pass 5 green after its rewrite; captures read (docs/runs/2026-09-24-pass1-english.md)
 audit_revision: 8b734cab75a0579ec33a19db19023c074628af1a (this card is committed on top of it)
 tested_on:
-automated:    37 passed, 0 failed, 0 skipped on 2026-09-24, with A Dog Said 2 installed; 33 ran and 4 skipped earlier the same day, before it was
+automated:    37 passed, 0 failed, 0 skipped on 2026-10-02, with A Dog Said 2 installed; 33 ran and 4 skipped earlier on 2026-09-24, before it was
 manual:       17 scenarios documented in TESTING.md; K reduced to one check (removal) and L dropped (owner, 2026-09-27), A automated in full (training tab) the same day; rows 1 and K-removal of PUBLICATION.md's table still pending in game
 workshop:     3806709979 (item created private by the 0.1.0 prepublication of 2026-09-23; not the prepublished state)
 remaining:
   - unverified: done -> tested's no-@wip and every-conditional-scenario-played conditions are met (all eight Pickle launches green, docs/runs/2026-09-24-pass1-english.md); "no manual scenario left" is not yet, pending the owner's rows 1 and 4 of PUBLICATION.md (subscribe and tame on the installed copy; remove the mod from a save with a dalmatian)
   - unverified: French review by Virginie (TRANSLATIONS.md ss3, 2026-09-30). FRENCH_REVIEW.md generated from the working tree; no gender-agreement text found in this mod's French (a session never marks its own French reviewed)
-  - unverified: prepublished also needs the rollback target (none possible before the first publish, confirmed by the CI/CD session) and the three drafted comments posted only once the item is public. The gallery is done: Art/Workshop/ holds 00-preview.png, 01 and 02, in that order (owner's ruling, 2026-09-29: the gallery opens on a copy of Preview.png), both non-preview images validated by the owner (2026-09-27, 2026-09-29)
+  - unverified: prepublished also needs the rollback target (none possible before the first publish, confirmed by the CI/CD session) and the three drafted comments posted only once the item is public. The gallery is done: Art/Gallery/ holds 0-preview.png, 1 and 2, in that order (owner's ruling, 2026-09-29: the gallery opens on a byte-identical copy of Preview.png), both non-preview images validated by the owner (2026-09-27, 2026-09-29)
   - defect: the description sent by 0.1.0 still lacks IF I GO QUIET, AI-GENERATED, THANKS, the final Source code on GitHub link, Codex and the Pickle thanks; the CI/CD session confirmed on 2026-09-27 that it stays untouched (a Markdown rewrite under PUBLICATION.md's own "## Steam description" heading) until this mod's first publication; required for prepublished, not for done or tested
 session:      local_e7fdeacc-7649-4702-9f00-45be2663ced1
-updated:      2026-09-30
+updated:      2026-10-02
 ---
 
 # Dalmatians Renew — status
@@ -69,18 +69,12 @@ review. `translation_fr: partial`, not `complete`: only Virginie's own reading o
 
 ## Gallery: showcase rulings — 2026-09-29
 
-The owner set two new rules for the showcase, applied today. **Gallery order**: `Art/Workshop/00-preview.png`
-is a copy of the shipped `Mod/About/Preview.png`, ahead of `01` and `02`; the numbering was `01`/`02` only until
-now. **The Preview mascot**: `ModIcon.png`, cut out of its solid black background (`Art/ModIcon-cutout.png`,
-flood fill from the border, near-black threshold, the disconnected sparkle untouched), sits in a bottom corner,
-large enough to bleed off the two edges it touches (owner's follow-up correction, still 2026-09-29: the first
-size stayed inside the frame)
-of `Preview.png`, tilted toward it — `+15°` left, `-15°` right. Bottom-left was chosen here (empty floor;
-the crate already sits bottom-right). Regenerated through the existing deterministic pipeline
-(`Art/Preview.html`'s new `.mascot` `<img>`, `Art/Render-Preview.cjs`, playwright + sharp reached via
-`NODE_PATH=$(npm root -g)`, Chrome at its default install path), not a manual edit of the shipped file: the
-same contrast, byte-budget (530 KB < 900 KB) and font checks ran and passed. This is compositing an already
-validated asset, not generating a new icon.
+The owner set two new rules for the showcase, applied today. **Gallery order**: `Art/Gallery/0-preview.png`
+is a byte-identical copy of the shipped `Mod/About/Preview.png`, ahead of `1` and `2`. **The Preview mascot**:
+the true-alpha `Art/ModIcon-cutout.png` sits bottom-left, large enough to bleed off both touched edges, at
+`+15°`, without outline and over a local radial veil. The shared renderer consumes the final pre-sized
+`Art/echo.png` unchanged, colours it with the accent, flips it horizontally, and limits it to less than half
+the panel. `Art/preview-copy.json` records the explicit placement and title treatment.
 
 ## Note from the CI/CD session — 2026-09-27
 

@@ -1,0 +1,42 @@
+{
+  "title": "Dalmatians Renew (unofficial)",
+  "titleSize": 52,
+  "titleParts": [
+    { "text": "Dalmatians", "scale": 1 },
+    { "text": "Renew", "scale": 0.65, "font": "ui", "color": "secondary", "breakBefore": true },
+    { "text": "(unofficial)", "scale": 0.65, "font": "ui", "color": "secondary" }
+  ],
+  "suffix": "",
+  "tag": "",
+  "copyLines": [
+    "One dog, spotted and sweet-natured, brought forward."
+  ],
+  "layout": "panel",
+  "panelAnchor": "top-left",
+  "backgroundFile": "Preview.png",
+  "backgroundPosition": "center",
+  "backgroundSize": "cover",
+  "echo": {
+    "file": "echo.png",
+    "preSized": true,
+    "color": "var(--accent)",
+    "width": 210,
+    "height": 260,
+    "opacity": 1,
+    "veil": false,
+    "panelTop": 1,
+    "panelRight": 0,
+    "panelWidth": 42,
+    "flipX": true
+  },
+  "iconBadge": {
+    "file": "ModIcon-cutout.png",
+    "corner": "bottom-left",
+    "width": 180,
+    "outline": false,
+    "veil": "radial",
+    "veilSize": 275,
+    "veilLeft": -55,
+    "veilBottom": -61
+  }
+}

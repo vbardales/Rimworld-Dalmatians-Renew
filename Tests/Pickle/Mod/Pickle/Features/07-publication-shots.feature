@@ -16,8 +16,8 @@
 #   - At this zoom a cell is 600 px, so the mouse at the screen centre always lands in a dog's cell and draws its
 #     tooltip over the picture (2026-09-28). The pointer is moved to bare grass before the capture.
 #
-# Raw captures land in Art/Workshop/studio-raw/ (ignored by git) and the finished images are copied into
-# Art/Workshop/ numbered 01-, 02-.
+# Raw captures land outside the committed gallery and the finished images are copied into
+# Art/Gallery/ numbered 1-, 2-; 0-preview.png is the rendered showcase.
 @review @requires:nelim.pickletools.screenshotmode @requires:nelim.pickletools.screenshotstudio
 Feature: images for the Workshop page
 

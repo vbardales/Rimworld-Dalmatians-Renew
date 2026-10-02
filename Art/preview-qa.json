@@ -1,85 +1,98 @@
 {
   "version": "1.6",
-  "fonts": {
-    "h1": [
-      {
-        "familyName": "Segoe UI Semibold",
-        "postScriptName": "SegoeUI-Semibold",
-        "isCustomFont": false,
-        "glyphCount": 16
-      }
-    ],
-    "h1 span": [
-      {
-        "familyName": "Segoe UI Semibold",
-        "postScriptName": "SegoeUI-Semibold",
-        "isCustomFont": false,
-        "glyphCount": 5
-      }
-    ],
-    ".tag": [
-      {
-        "familyName": "Segoe UI",
-        "postScriptName": "SegoeUI",
-        "isCustomFont": false,
-        "glyphCount": 12
-      }
-    ],
-    ".summary": [
-      {
-        "familyName": "Segoe UI",
-        "postScriptName": "SegoeUI",
-        "isCustomFont": false,
-        "glyphCount": 51
-      }
-    ],
-    ".version": [
-      {
-        "familyName": "Segoe UI",
-        "postScriptName": "SegoeUI-Bold",
-        "isCustomFont": false,
-        "glyphCount": 3
-      }
-    ]
-  },
-  "contrast": {
-    "h1": 12.467,
-    "h1 span": 8.387,
-    ".tag": 8.07,
-    ".summary": 11.267,
-    "badge": 9.766
-  },
-  "bounds": {
-    "h1": {
-      "x": 50,
-      "y": 54,
-      "width": 430,
-      "height": 50.59375
+  "paletteSource": "Art/preview-palette.json",
+  "copySource": "Art/preview-copy.json",
+  "iconBadgeCorner": "bottom-left",
+  "elements": {
+    ".title-main": {
+      "bounds": {
+        "x": 48,
+        "y": 30,
+        "width": 377.875,
+        "height": 114.375
+      },
+      "fonts": [
+        {
+          "familyName": "Segoe UI Semibold",
+          "postScriptName": "SegoeUI-Semibold",
+          "isCustomFont": false,
+          "glyphCount": 17
+        },
+        {
+          "familyName": "RimWordFont",
+          "postScriptName": "RimWordFont",
+          "isCustomFont": true,
+          "glyphCount": 11
+        }
+      ]
     },
-    "h1 span": {
-      "x": 295.75,
-      "y": 66,
-      "width": 89.65625,
-      "height": 40
+    ".suffix": {
+      "bounds": null,
+      "fonts": []
     },
     ".tag": {
-      "x": 50,
-      "y": 112.59375,
-      "width": 430,
-      "height": 26.390625
+      "bounds": null,
+      "fonts": []
     },
-    ".summary": {
-      "x": 50,
-      "y": 177.984375,
-      "width": 430,
-      "height": 60.875
+    "p": {
+      "bounds": {
+        "x": 48,
+        "y": 180.96875,
+        "width": 362.25,
+        "height": 60.875
+      },
+      "fonts": [
+        {
+          "familyName": "Segoe UI",
+          "postScriptName": "SegoeUI",
+          "isCustomFont": false,
+          "glyphCount": 51
+        }
+      ]
     },
     ".version": {
-      "x": 846.7371826171875,
-      "y": 4.737185001373291,
-      "width": 44.525634765625,
-      "height": 44.52562856674194
+      "bounds": {
+        "x": 846.7371826171875,
+        "y": 4.737185001373291,
+        "width": 44.525634765625,
+        "height": 44.52562856674194
+      },
+      "fonts": [
+        {
+          "familyName": "Segoe UI",
+          "postScriptName": "SegoeUI-Bold",
+          "isCustomFont": false,
+          "glyphCount": 3
+        }
+      ]
     }
   },
-  "bytes": 539934
+  "layout": {
+    "panel": {
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 519.671875,
+        "height": 262.84375
+      }
+    },
+    "copy": {
+      "bounds": {
+        "x": 48,
+        "y": 30,
+        "width": 430,
+        "height": 211.84375
+      }
+    }
+  },
+  "iconBadgeAlpha": {
+    "width": 1109,
+    "height": 1032,
+    "bounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1109,
+      "height": 1032
+    }
+  }
 }
