@@ -42,3 +42,6 @@ desktop.ini
 # docs/runs/, one line per run. TESTING.md says which files are worth keeping.
 Tests/Pickle/Evidence/
 evidence/
+
+# Reproducible Preview diagnostics generated locally by the shared renderer.
+Art/.render/

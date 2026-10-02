@@ -656,3 +656,8 @@ stats, retained saved identifiers, legacy acquisition fields, coat variants, rep
 third-party variants, ADS targeting, field validity and conditional French keys. All runtime
 save/graphics/selection checks remain pending in TESTING.md N-Q; no in-game pass is claimed.
 Integration prepared for the requested Git commit and push on 2026-09-13. All 37 tests passed again before commit. Workshop publication remains pending.
+
+
+## Preview source migration — 2026-10-02
+
+Copy, typography, layout and palette are consolidated in `Art/Preview.config.json`. The canonical inputs are `Art/Preview-source.png`, `Art/echo.png` and `Art/ModIcon-source.png`; the shared renderer writes temporary diagnostics under ignored `Art/.render/`. Existing distributed Preview, gallery and ICO outputs were preserved because they were present and coherent; no render was run for this migration. Superseded JSON files and generated QA intermediates were removed. Nothing published.

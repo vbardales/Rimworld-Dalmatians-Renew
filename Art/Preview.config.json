@@ -2,9 +2,23 @@
   "title": "Dalmatians Renew (unofficial)",
   "titleSize": 52,
   "titleParts": [
-    { "text": "Dalmatians", "scale": 1 },
-    { "text": "Renew", "scale": 0.65, "font": "ui", "color": "secondary", "breakBefore": true },
-    { "text": "(unofficial)", "scale": 0.65, "font": "ui", "color": "secondary" }
+    {
+      "text": "Dalmatians",
+      "scale": 1
+    },
+    {
+      "text": "Renew",
+      "scale": 0.65,
+      "font": "ui",
+      "color": "secondary",
+      "breakBefore": true
+    },
+    {
+      "text": "(unofficial)",
+      "scale": 0.65,
+      "font": "ui",
+      "color": "secondary"
+    }
   ],
   "suffix": "",
   "tag": "",
@@ -13,7 +27,7 @@
   ],
   "layout": "panel",
   "panelAnchor": "top-left",
-  "backgroundFile": "Preview.png",
+  "backgroundFile": "Preview-source.png",
   "backgroundPosition": "center",
   "backgroundSize": "cover",
   "echo": {
@@ -30,7 +44,7 @@
     "flipX": true
   },
   "iconBadge": {
-    "file": "ModIcon-cutout.png",
+    "file": "ModIcon-source.png",
     "corner": "bottom-left",
     "width": 180,
     "outline": false,
@@ -39,5 +53,12 @@
     "veilLeft": -55,
     "veilBottom": -61,
     "translate": "-5%, 5%"
+  },
+  "palette": {
+    "veil": "#202832",
+    "inkPrimary": "#F2ECE1",
+    "inkSecondary": "#A9C7E2",
+    "accent": "#F3AF45",
+    "badgeInk": "#17120E"
   }
 }
