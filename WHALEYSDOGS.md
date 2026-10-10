@@ -76,7 +76,7 @@ legacy race: neither mod should be removed casually from a save using its conten
 
 ## Validation
 
-Run _tools/Run-Tests.ps1. Nine integration tests extend the original 28. The integration tests
+Run scripts/Run-Tests.ps1. Nine integration tests extend the original 28. The integration tests
 instantiate the installed Verse patch classes and call Apply on fixture documents; only the
 Unity profiler is disabled in the offline process. They verify the absent-mod guard, metadata,
 unchanged canonical stats, saved identities, acquisition gates, coat variants, repeated patch

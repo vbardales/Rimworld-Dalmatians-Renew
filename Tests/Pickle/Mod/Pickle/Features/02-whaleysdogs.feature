@@ -1,7 +1,7 @@
 # Pass 2: WhaleysDogs (Mlie.WhaleysDogs) loaded before this mod, no A Dog Said 2. Run once in English
 # and once in French. WD_Dalmatian is the canonical breed here; CCPDalmatian stays for saves.
 #
-# Offline, _tools/WhaleysDogs.Tests.ps1 runs the real Verse patch operations on the installed
+# Offline, scripts/WhaleysDogs.Tests.ps1 runs the real Verse patch operations on the installed
 # WhaleysDogs data and proves that its balance is unchanged and that saved identities survive.
 # These scenarios read what the game kept after loading the whole mod list.
 

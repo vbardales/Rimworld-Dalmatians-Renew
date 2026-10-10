@@ -88,7 +88,7 @@ $toolDirs = $mapLines | Where-Object { $_.Target -like 'path:PickleTools/*' } |
     ForEach-Object { (Join-Path $root ($_.Target.Substring(5) -replace '/', '\')) -replace '\\Mod$', '' } | Sort-Object -Unique
 foreach ($dir in $toolDirs) {
     $sources = Get-ChildItem $dir -Recurse -Filter *.cs -ErrorAction SilentlyContinue |
-        Where-Object { $_.FullName -notmatch '\\(obj|bin|\.build)\\' } | ForEach-Object FullName
+        Where-Object { $_.FullName -notmatch '\\(obj|bin|build)\\' } | ForEach-Object FullName
     $patterns += Get-Declared $sources 'tool'
 }
 

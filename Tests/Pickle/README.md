@@ -9,7 +9,7 @@ been run. Nothing here claims an in-game result that the reports do not show.
 
 ## Scope
 
-The offline suite, `_tools/Run-Tests.ps1` and `_tools/WhaleysDogs.Tests.ps1`, owns everything that can
+The offline suite, `scripts/Run-Tests.ps1` and `scripts/WhaleysDogs.Tests.ps1`, owns everything that can
 be proved without a game: the XML, the field mapping, the parent and reference resolution, the patch
 structure and predicates, the real Verse patch operations run on isolated fixtures, WhaleysDogs' balance
 being unchanged, the saved identities, the images' dimensions, the metadata and the French keys.

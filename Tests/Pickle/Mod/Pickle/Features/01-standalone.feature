@@ -3,7 +3,7 @@
 # written against the language their pass was launched in; the language is never switched here.
 #
 # Only what a running game can show is kept in Gherkin. The XML, the field mapping, the patch
-# structure and the shipped images are checked offline by _tools/Run-Tests.ps1.
+# structure and the shipped images are checked offline by scripts/Run-Tests.ps1.
 
 Feature: The dalmatian on its own
 
