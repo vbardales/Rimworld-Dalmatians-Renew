@@ -33,7 +33,7 @@ Feature: The dalmatian on its own
   # A. The animal exists, spawns, and takes a name the moment it is tamed.
   # B. The first repair: Wildness is listed on the information card, at 0 percent. The old form of
   #    the def did not print a wrong number, it printed no line at all. The husky is the control.
-  @review @requires:nelim.pickletools.screenshotmode
+  @requires:nelim.pickletools.screenshotmode @review
   Scenario: a tamed dalmatian is named on the spot and its information card lists Wildness at zero
     Given the save "test-colony" is loaded
     And I close all dialogs

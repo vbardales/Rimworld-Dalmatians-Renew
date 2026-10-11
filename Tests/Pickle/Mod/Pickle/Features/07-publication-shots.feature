@@ -18,7 +18,7 @@
 #
 # Raw captures land outside the committed gallery and the finished images are copied into
 # Art/Gallery/ numbered 1-, 2-; 0-preview.png is the rendered showcase.
-@review @requires:nelim.pickletools.screenshotmode @requires:nelim.pickletools.screenshotstudio
+@requires:nelim.pickletools.screenshotmode @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.clickdiagnostics @review
 Feature: images for the Workshop page
 
   Background:
