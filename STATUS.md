@@ -21,7 +21,7 @@ showcase:     complete
 settings_audit: not_applicable
 xml_tests:    passed
 functional_tests: unverified
-pickle_tests: 10 features, 52 scenarios, 9 passes plus the removal chain; passes 1 to 6 green (2026-09-24 to 26, French replays 2026-10-02), passes 7 and 8 green 2026-10-02; pass 9 red once on 2026-10-02 (the vanilla-dogs assertion needs Dogs mate absent, fixed by tag @without-dogsmate in 29088f0), replayed green 2026-10-10 (7 of 7, ticket 20261010-225052-995-f244, exitReason passed); removal chain green 2026-10-10 (2 sequences, 1 of 1 each, ticket 20261010-225054-111-21e8, exitReason passed); evidence in DalmatiansRenew/DalmatiansRenew/Tests/Pickle/Evidence/2026-10-10-p9 and 2026-10-10-removal (nested path, launcher quirk)
+pickle_tests: 10 features, 52 scenarios, 9 passes plus the removal chain; passes 1 to 6 green (2026-09-24 to 26, French replays 2026-10-02), passes 7 and 8 green 2026-10-02; pass 9 red once on 2026-10-02 (the vanilla-dogs assertion needs Dogs mate absent, fixed by tag @without-dogsmate in 29088f0), replayed green 2026-10-10 (7 of 7, ticket 20261010-225052-995-f244, exitReason passed); removal chain green 2026-10-10 (2 sequences, 1 of 1 each, ticket 20261010-225054-111-21e8, exitReason passed); evidence in Tests/Pickle/Evidence/2026-10-10-p9 and 2026-10-10-removal (moved from a doubled DalmatiansRenew/ path: the -EvidenceDir is relative to the mod, no mod name in front)
 audit_revision: 06648bd4c28c0a5e0a53855c82025c02eeceaea2 (2026-10-10 audit, working tree not yet committed)
 tested_on:
 automated:    44 passed, 0 failed, 0 skipped on 2026-10-10 (scripts/Run-Tests.ps1, was _tools/), tree = 06648bd plus the 2026-10-10 closing pass
