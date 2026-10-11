@@ -90,7 +90,7 @@ Do not run the Windows game, do not stage by hand, and do not switch language in
 
 ```powershell
 dotnet build Tests/Pickle/Source/DalmatiansRenew.PickleSteps.csproj -c Release
-powershell -NoProfile -ExecutionPolicy Bypass -File Tests/Pickle/Check-Steps.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/Check-Steps.ps1 -ModRoot DalmatiansRenew
 ```
 
 The build writes `Tests/Pickle/Mod/Pickle/Assemblies/DalmatiansRenew.PickleSteps.dll`, against RimWorld 1.6
