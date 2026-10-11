@@ -93,38 +93,33 @@ param(
 $ErrorActionPreference = 'Stop'
 
 # ---------------------------------------------------------------------------------------------
-# Harness
+# Harness: the protocols repository's shared libraries (owner rule 2026-10-11); the tests stay here
 # ---------------------------------------------------------------------------------------------
 
-$script:ran     = 0
-$script:failed  = 0
-$script:skipped = 0
+$protocols = Split-Path -Parent $ModRoot
+. (Join-Path $protocols 'scripts\lib\TestRunner.ps1')
+. (Join-Path $protocols 'scripts\lib\GameReflection.ps1')
 
 # A test body writes its problems to the pipeline and stays silent when it has none. No assertion
 # vocabulary: one test that lists every offending element beats ten that stop at the first.
-function It([string]$name, [scriptblock]$body) {
-    $script:ran++
-    $problems = @()
-    try   { $problems = @(& $body | Where-Object { $_ }) }
-    catch { $problems = @("threw: $($_.Exception.Message)") }
-
-    if ($problems.Count -eq 0) {
-        Write-Output "  ok    $name"
-    } else {
-        $script:failed++
-        Write-Output "  FAIL  $name"
-        foreach ($p in $problems) { Write-Output "          $p" }
-    }
+# Glue between that shape and the library's Test-That (a boolean): the problems go under the line.
+function It([string]$name, [scriptblock]$testBody) {
+    Test-That $name {
+        $problems = @()
+        try   { $problems = @(& $testBody | Where-Object { $_ }) }
+        catch { $problems = @("threw: $($_.Exception.Message)") }
+        foreach ($p in $problems) { Note $p }
+        $problems.Count -eq 0
+    }.GetNewClosure()
 }
 
 # A test that cannot run here is not a passing test. It is counted apart and says why.
 function ItSkip([string]$name, [string]$why) {
-    $script:skipped++
-    Write-Output "  skip  $name"
-    Write-Output "          $why"
+    Test-That $name { Note $why; 'skip' }.GetNewClosure()
 }
 
-function Section([string]$name) { Write-Output ''; Write-Output $name }
+function Section([string]$name) { Write-Host ''; Write-Host $name }
+
 
 # ---------------------------------------------------------------------------------------------
 # What the mod ships
@@ -191,74 +186,23 @@ if (Test-Path $aboutFile) {
 }
 
 # ---------------------------------------------------------------------------------------------
-# The game's classes, by reflection
+# The game's classes, by reflection (scripts\lib\GameReflection.ps1)
 # ---------------------------------------------------------------------------------------------
 #
-# Assembly-CSharp is resolvable but not fully loadable outside RimWorld - it references Unity
-# assemblies that are not all there - so GetTypes() always throws. The exception still carries
-# every type it did resolve. The guard against asking twice for the same name is the one from the
-# monorepo's Check-XmlFields.ps1: an unresolvable name asked twice recurses to a stack overflow
-# instead of erroring.
+# Assembly-CSharp is resolvable but not fully loadable outside RimWorld: the library resolves
+# the Unity assemblies from Managed and reads the types the failed GetTypes() still carries.
 
-$script:probed = @{}
-$script:asmResolver = [System.ResolveEventHandler]{
-    param($sender, $e)
-    if ($null -eq $script:probed) { return $null }
-    $short = $e.Name.Split(',')[0]
-    if ($script:probed.ContainsKey($short)) { return $null }
-    $script:probed[$short] = $true
-    $p = Join-Path $Managed "$short.dll"
-    if (Test-Path $p) { return [System.Reflection.Assembly]::LoadFrom($p) }
-    return $null
-}
-[System.AppDomain]::CurrentDomain.add_AssemblyResolve($script:asmResolver)
-
-function Get-AssemblyTypes([string]$path) {
-    $a = [System.Reflection.Assembly]::LoadFrom($path)
-    try     { return $a.GetTypes() }
-    catch [System.Reflection.ReflectionTypeLoadException] { return $_.Exception.Types | Where-Object { $_ } }
-    catch   { return $_.Exception.InnerException.Types | Where-Object { $_ } }
-}
+Initialize-GameReflection -Managed $Managed
 
 $byName  = @{}
 $asmPath = Join-Path $Managed 'Assembly-CSharp.dll'
-if (Test-Path $asmPath) {
-    foreach ($t in @(Get-AssemblyTypes $asmPath)) {
-        if (-not $byName.ContainsKey($t.Name)) { $byName[$t.Name] = $t }
-        if ($t.FullName -and -not $byName.ContainsKey($t.FullName)) { $byName[$t.FullName] = $t }
-    }
-}
+if (Test-Path $asmPath) { $byName = New-TypeIndex (Get-AssemblyTypes $asmPath) }
 $defType = $byName['Verse.Def']
 
 $BF = [System.Reflection.BindingFlags]::Public    -bor `
       [System.Reflection.BindingFlags]::NonPublic -bor `
       [System.Reflection.BindingFlags]::Instance  -bor `
       [System.Reflection.BindingFlags]::DeclaredOnly
-
-# GetFields on a derived type does not return private fields of its base types, and RimWorld has
-# plenty. Walk the chain by hand, and index a renamed field under its [LoadAlias] too: the loader
-# looks the aliases up, so such an element is honoured, not dropped.
-$fieldCache = @{}
-function Get-FieldsRecursive([Type]$t) {
-    if ($fieldCache.ContainsKey($t)) { return $fieldCache[$t] }
-    $d = @{}
-    $cur = $t
-    while ($cur -and $cur.FullName -ne 'System.Object') {
-        foreach ($f in $cur.GetFields($BF)) {
-            if (-not $d.ContainsKey($f.Name)) { $d[$f.Name] = $f }
-            foreach ($a in $f.CustomAttributes) {
-                if ($a.AttributeType.Name -ne 'LoadAliasAttribute') { continue }
-                foreach ($arg in $a.ConstructorArguments) {
-                    $alias = [string]$arg.Value
-                    if ($alias -and -not $d.ContainsKey($alias)) { $d[$alias] = $f }
-                }
-            }
-        }
-        $cur = $cur.BaseType
-    }
-    $fieldCache[$t] = $d
-    return $d
-}
 
 # A type that implements LoadDataFromXmlCustom is invisible to field reflection: RimWorld hands it
 # the raw node and it reads whatever it likes. StatModifier and SimpleCurve, the two this mod
@@ -962,8 +906,7 @@ It 'the translation covers the labels and descriptions the mod writes' {
 
 # ---------------------------------------------------------------------------------------------
 
-Write-Output ''
+Write-Host ''
 . (Join-Path $PSScriptRoot 'WhaleysDogs.Tests.ps1')
 . (Join-Path $PSScriptRoot 'Crossbreeding.Tests.ps1')
-Write-Output ("{0} test(s), {1} failed, {2} skipped" -f $script:ran, $script:failed, $script:skipped)
-exit $(if ($script:failed -gt 0) { 1 } else { 0 })
+Complete-Tests
