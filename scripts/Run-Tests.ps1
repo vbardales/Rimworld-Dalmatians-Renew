@@ -84,6 +84,7 @@
 
 param(
     [string]$ModRoot  = (Split-Path -Parent $PSScriptRoot),
+    [string]$Protocols = $(if ($env:RIMWORLD_PROTOCOLS) { $env:RIMWORLD_PROTOCOLS } else { Split-Path -Parent $ModRoot }),
     [string]$GameData = 'C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Data',
     [string]$Managed  = 'C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed',
     [string]$AdsRoot  = 'C:\Program Files (x86)\Steam\steamapps\workshop\content\294100\3238353862',
@@ -96,7 +97,11 @@ $ErrorActionPreference = 'Stop'
 # Harness: the protocols repository's shared libraries (owner rule 2026-10-11); the tests stay here
 # ---------------------------------------------------------------------------------------------
 
-$protocols = Split-Path -Parent $ModRoot
+$protocols = $Protocols
+$libDir = Join-Path $protocols 'scripts/lib'
+if (-not (Test-Path (Join-Path $libDir 'TestRunner.ps1'))) {
+    throw "The shared test libraries are not at $libDir. Clone the protocols repository (vbardales/Rimworld-protocols) next to this mod, or pass -Protocols <its path> (or set RIMWORLD_PROTOCOLS)."
+}
 . (Join-Path $protocols 'scripts\lib\TestRunner.ps1')
 . (Join-Path $protocols 'scripts\lib\GameReflection.ps1')
 # It "name" { problems... } comes from the library: nothing returned passes, each problem is printed under the failing line.
