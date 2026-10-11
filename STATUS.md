@@ -29,7 +29,7 @@ manual:       17 scenarios documented in TESTING.md; K reduced to one check (rem
 workshop:     3806709979 (item created private by the 0.1.0 prepublication of 2026-09-23; not the prepublished state)
 remaining:
   - unverified: AUDIT.md 8.m code review (`code_review_sha` absent: review from the first commit, no tag exists yet); the two replays are green
-  - unverified: AUDIT.md 8.d the `@review` captures of the passes played since 2026-10-02 opened and looked at
+  - partial: AUDIT.md 8.d the `@review` captures: the 24 of 2026-10-02 (p1-french 9, p2-french 14, p9 1) opened 2026-10-11, all read as expected (French labels and tooltips, four facings, leather card, Wildness 0%, puppy beside adult, corpses). Two notes: the p9 capture (2026-10-02-p9) shows a map without any dalmatian in frame, weak evidence for its scenario; under Whaleys Dogs the tooltips read "Dalmatien 1 (femelle dalmatien)" while standalone reads "Dalmatienne 1 (femelle dalmatienne)" (Whaleys kind label, French validated by the owner 2026-10-02). The 2026-10-10 replays wrote no screenshots; the 2026-09 captures are older than the cutoff.
   - unverified: social preview image (public repository): Mod/About/Preview.png was re-rendered on 2026-10-10 after the owner changed Art/ModIcon-source.png (2026-10-04); upload it (Settings, Social preview) and record `social_preview_sha256` after the commit
   - unverified: workshop item 3806709979 still carries the description sent by 0.1.0 (lacks IF I GO QUIET, AI-GENERATED, THANKS, Source code on GitHub link); the Markdown block in PUBLICATION.md is complete, the CI sends it at the first publication (2026-09-27 ruling)
   - unverified: rollback target (none before the first publish) and the drafted thank-you comments, posted only once the item is public
@@ -44,7 +44,7 @@ protocols_read_sha: a5c7cf48b349ae00e7d28fd643e852dc860dfaf2
 
 Stage retained: **`playTests[1.0.0]`**. Everything up to `writeTests` holds: offline suite re-run today (44 green), translations `complete` (French validated by the owner 2026-10-02), Pickle suites written, the four animal integrations settled (ADS 2 patch, Nocturnal Animals none by decision, Dogs mate patch, Better Crossbreeding patch). No `Source/`: no build, no code review of C# to do beyond `Mod/` XML.
 
-The two replays (pass 9, removal chain) came back green on 2026-10-10. What keeps it at `playTests`: 8.m and 8.d (reading the `@review` captures). No manual test is left for the owner (row 1 dropped, row 4 automated as K, owner 2026-10-02).
+The two replays (pass 9, removal chain) came back green on 2026-10-10. What keeps it at `playTests`: 8.m (code review: `Mod/` XML read in part on 2026-10-11, no finding, `code_review_sha` not recorded) and the social preview upload. No manual test is left for the owner (row 1 dropped, row 4 automated as K, owner 2026-10-02).
 
 Closing pass done in the working tree on 2026-10-10, not committed yet: `_tools/` renamed `scripts/` and the stale `_tools/preview/Preview.html` removed (AGENTS.md rule); `.build/` renamed `build/` (Directory.Build.props, .gitignore, Check-Steps.ps1); `Mod/About/ModIcon.png` regenerated (Lanczos, 128 px, 20435 bytes) and the Preview chain re-rendered (`Mod/About/Preview.png`, `Art/Gallery/0-preview.png` byte copy, `Art/Preview.ico`) because the owner's `Art/ModIcon-source.png` is newer than its derivatives. The three `Art/` files she changed were left as she made them.
 
