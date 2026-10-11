@@ -99,19 +99,7 @@ $ErrorActionPreference = 'Stop'
 $protocols = Split-Path -Parent $ModRoot
 . (Join-Path $protocols 'scripts\lib\TestRunner.ps1')
 . (Join-Path $protocols 'scripts\lib\GameReflection.ps1')
-
-# A test body writes its problems to the pipeline and stays silent when it has none. No assertion
-# vocabulary: one test that lists every offending element beats ten that stop at the first.
-# Glue between that shape and the library's Test-That (a boolean): the problems go under the line.
-function It([string]$name, [scriptblock]$testBody) {
-    Test-That $name {
-        $problems = @()
-        try   { $problems = @(& $testBody | Where-Object { $_ }) }
-        catch { $problems = @("threw: $($_.Exception.Message)") }
-        foreach ($p in $problems) { Note $p }
-        $problems.Count -eq 0
-    }.GetNewClosure()
-}
+# It "name" { problems... } comes from the library: nothing returned passes, each problem is printed under the failing line.
 
 # A test that cannot run here is not a passing test. It is counted apart and says why.
 function ItSkip([string]$name, [string]$why) {
