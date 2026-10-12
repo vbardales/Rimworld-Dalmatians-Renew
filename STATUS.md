@@ -11,7 +11,7 @@ visibility:   public
 upstream_visibility: public (Steam API visibility=0; banned=0; checked 2026-09-12)
 detached:     yes
 maintainer:   Claude Code (the session named for this mod); Codex worked on it earlier
-workflow_stage: mountPreview[1.0.0]
+workflow_stage: shootGallery[1.0.0]
 licence:      silent
 licence_port: MIT, limited to the port contributions
 licence_at:   LICENSE; Mod/LICENSE; ATTRIBUTION.md
@@ -42,7 +42,7 @@ protocols_read_sha: 8c994dd5dd3d812d3c117029a445eafb4814182a
 
 ## Current state (2026-10-10 audit)
 
-Stage: **`mountPreview[1.0.0]`** since 2026-10-12 (shootGallery done: three contiguous images, all validated by the owner; before it, 8.n: replays green, 8.d captures read, 8.m recorded). The audit text below was written at `playTests[1.0.0]` on 2026-10-10. Everything up to `writeTests` holds: offline suite re-run today (44 green), translations `complete` (French validated by the owner 2026-10-02), Pickle suites written, the four animal integrations settled (ADS 2 patch, Nocturnal Animals none by decision, Dogs mate patch, Better Crossbreeding patch). No `Source/`: no build, no code review of C# to do beyond `Mod/` XML.
+Stage: **`shootGallery[1.0.0]`**, back from mountPreview on 2026-10-12: the director (this session) judged picture 1 and 2 too weak and is reshooting the series on the Sanctuary (07-publication-shots.feature rewritten, wsl-deps.sanctuary.map). Before: 8.n done (replays green, 8.d captures read, 8.m recorded). The audit text below was written at `playTests[1.0.0]` on 2026-10-10. Everything up to `writeTests` holds: offline suite re-run today (44 green), translations `complete` (French validated by the owner 2026-10-02), Pickle suites written, the four animal integrations settled (ADS 2 patch, Nocturnal Animals none by decision, Dogs mate patch, Better Crossbreeding patch). No `Source/`: no build, no code review of C# to do beyond `Mod/` XML.
 
 The two replays (pass 9, removal chain) came back green on 2026-10-10. What keeps it at `playTests`: the social preview upload and the reread of the protocols changed since a5c7cf48. 8.m done 2026-10-11 (no C#; every patch file of `Mod/` read, one finding on scripts/Run-Tests.ps1 fixed in 103690a), `code_review_sha` recorded. No manual test is left for the owner (row 1 dropped, row 4 automated as K, owner 2026-10-02).
 

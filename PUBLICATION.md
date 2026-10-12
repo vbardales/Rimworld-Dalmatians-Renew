@@ -109,7 +109,7 @@ numbered `0-`, `1-`, `2-` in page order: no old version, no raw capture, no subf
 **The owner ruled on 2026-09-25 that Work Studio's rules apply here too** (`WorkStudio/PUBLICATION.md`,
 "Workshop screenshots"): the shots are taken on her showcase colony, the fixture `nelim-zen-meadow-studio` of
 `PickleTools/ScreenshotStudio`, in English, by a feature skipped in every other pass. Ours is
-`Tests/Pickle/Mod/Pickle/Features/07-publication-shots.feature`, played with `wsl-deps.studio.map`. An option
+`Tests/Pickle/Mod/Pickle/Features/07-publication-shots.feature`, played with `wsl-deps.sanctuary.map`. An option
 window is cropped tight with 16 px of margin; a game window the mod changes is the full interface. Every upload
 under 2 MB, cropped and never resampled, named as a player would name it, each opened and looked at; a green
 capture scenario proves the journey ran, not that the image shows anything.

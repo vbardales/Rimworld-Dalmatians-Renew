@@ -1,0 +1,11 @@
+# The Workshop gallery pass: the captures, taken on the sanctuary save "Nelims-tribe" carried by Sanctuary Backlot.
+#   Submit-PickleRun.ps1 -Mod DalmatiansRenew -DepMap wsl-deps.sanctuary.map -Filter 07-publication-shots -Language English
+# Only 07-publication-shots.feature asks for it; it is skipped in every other pass. Run it in English: the Workshop page is English.
+# Sanctuary Backlot carries the fixture and the steps of the named places ("Nelim's Sanctuary:"). The fixture must come from the
+# Backlot only: two fixtures of that name fail Pickle. Nelim is the one colonist (Virginie).
+nelim.sanctuarybacklot path:SanctuaryBacklot/Mod
+nelim.pickletools.screenshotstudio path:PickleTools/ScreenshotStudio/Mod
+nelim.pickletools.clearscreen path:PickleTools/ClearScreen/Mod
+nelim.pickletools.screenshotmode path:PickleTools/ScreenshotMode/Mod
+nelim.pickletools.clickdiagnostics path:PickleTools/ClickDiagnostics/Mod
+nelim.pickletools.colonistrace path:PickleTools/ColonistRace/Mod
