@@ -9,8 +9,9 @@ nelim.pickletools.clearscreen path:PickleTools/ClearScreen/Mod
 nelim.pickletools.screenshotmode path:PickleTools/ScreenshotMode/Mod
 nelim.pickletools.clickdiagnostics path:PickleTools/ClickDiagnostics/Mod
 nelim.pickletools.colonistrace path:PickleTools/ColonistRace/Mod
-# Nelim's face ("Nelim has her own face" needs Nals): base, EyeGenes3, and the two fixes that redraw spawned and loaded pawns (list: SanctuaryBacklot/Tests/Pickle/wsl-deps.sanctuary.map).
+# Nelim's face ("Nelim has her own face" needs Nals and the mouth type MouthSmirkSmile, which only Vanilla Textures Expanded: Facial Animations defines; EyeGenes3 and the two fixes redraw spawned and loaded pawns; list: SanctuaryBacklot/Tests/Pickle/wsl-deps.sanctuary.map).
 Nals.FacialAnimation 1635901197
+VanillaExpanded.VTEXE.FacialAnims 2816938779
 lucius.eyegenes3 3745223213
 Moshii.NLFA.InitFix 3609895011
 ccj.nlfaloadfix 3721489042

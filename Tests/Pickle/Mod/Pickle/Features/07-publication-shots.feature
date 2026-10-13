@@ -51,7 +51,7 @@ Feature: images for the Workshop page
 
   Scenario: the information card of the dalmatian, with Wildness at zero
     Given Nelim's Sanctuary: the animals are removed from the sanctuary "window-backdrop-for-height"
-    And Dalmatians Renew spawns the player animal "Rex" as "CCPDalmatian" near the cell 90 140
+    And Dalmatians Renew spawns the player animal "Rex" as "CCPDalmatian" near the cell 154 105
     When Nelim's Sanctuary: I frame the sanctuary "window-backdrop-for-height"
     And Dalmatians Renew opens the information card of "Rex"
     Then Dalmatians Renew the information card of "Rex" lists the stat "Wildness" at "0%"
