@@ -33,7 +33,7 @@ One dog. A dalmatian: a medium-sized, spotted, sweet-natured pet that nuzzles, t
 
 No DLC, no dependencies, no assembly. Three defs, four textures and four optional patches.
 
-I am not the author of this mod. The animal, its artwork and its stats are cucumpear's and lavie2k's - all I did was bring it forward to 1.6, repair what the port turned up, and write the French. Credit goes to them; mistakes in the port are mine.
+I am not the author of this mod. The animal, its artwork and its stats are cucumpear's and lavie2k's - all I did was bring it forward to the latest RimWorld version, repair what the port turned up, and write the French. Credit goes to them; mistakes in the port are mine.
 
 Original mod: [Dalmatians](https://steamcommunity.com/sharedfiles/filedetails/?id=1513691963) - declares 1.0 to 1.4 and nothing further.
 
@@ -52,13 +52,13 @@ Existing dogs from this port remain and can still be sold; their ordinary random
 ## What changed
 Two things, and the second is the one that was actually broken.
 
-Wildness stopped being a property of the animal and became a stat. The def declared it the old way; in 1.6 that element matches no field, so the game logs one line and loads the animal without it. Here the damage is small, because a dalmatian's wildness was zero to begin with and the stat's floor is zero too - but the value was gone from the animal's information card, and any animal in the same position with a wildness that was not zero would have quietly become as tame as a rat. It is now a stat, written the way vanilla's own dogs write it.
+Wildness stopped being a property of the animal and became a stat. The def declared it the old way; in the latest RimWorld version that element matches no field, so the game logs one line and loads the animal without it. Here the damage is small, because a dalmatian's wildness was zero to begin with and the stat's floor is zero too - but the value was gone from the animal's information card, and any animal in the same position with a wildness that was not zero would have quietly become as tame as a rat. It is now a stat, written the way vanilla's own dogs write it.
 
 The A Dog Said patch had stopped working. It looked for recipes called "OldWoundsAnimal", "InstallBionicLegAnimal" and so on - the names A Dog Said used up to 2023. A Dog Said... Animal Prosthetics 2 replaced all of them with three categories, ADS_Cat1 to ADS_Cat3, so the patch found nothing and did nothing: no prosthetics, no old-wound treatment, and no error to say so. It now adds the dalmatian to the three categories, which is where vanilla's huskies, labradors and yorkshire terriers already are.
 
 The patch also had a fault of its own that was worth fixing before it could ever fire. Its condition was written [@Name = "A" or "B" or "C"], which is not the test it looks like: in XPath a bare non-empty string is simply true, so the condition matched every recipe in the game. Had the old names still existed, the dalmatian would have been added as a user of every recipe in every mod loaded. Each name is now compared properly.
 
-Otherwise nothing moved: the stats, the tools, the litter curve, the sounds, the trade tags, the leather and the four textures are as cucumpear and lavie2k left them. One field was added, animalType, which every dog in 1.6 carries and which did not exist when this mod was written.
+Otherwise nothing moved: the stats, the tools, the litter curve, the sounds, the trade tags, the leather and the four textures are as cucumpear and lavie2k left them. One field was added, animalType, which every dog in the latest RimWorld version carries and which did not exist when this mod was written.
 
 French was added. The defName is unchanged, so a save moves between the two mods without losing a dog.
 
@@ -180,10 +180,10 @@ update. The version stands alone on the first line.
 ```
 [b]1.0.0[/b]
 
-First release. Port of cucumpear's and lavie2k's Dalmatians to RimWorld 1.6.
+First release. Port of cucumpear's and lavie2k's Dalmatians to the latest RimWorld version.
 
 [list]
-[*]Wildness is a stat now, as in 1.6, so it shows on the information card.
+[*]Wildness is a stat now, as in vanilla, so it shows on the information card.
 [*]The A Dog Said... Animal Prosthetics 2 patch works again: the dalmatian is offered the animal surgeries.
 [*]With WhaleysDogs (Continued): its dalmatian stays the main one, this mod adds an alternate coat, French labels and its own leather. Saved dogs are kept.
 [*]Optional crossing support: with Dogs mate (Continued) the dalmatian joins its Dog group, and with Better Crossbreeding it crosses with the husky, labrador retriever and Yorkshire terrier, each way.
