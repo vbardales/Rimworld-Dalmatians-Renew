@@ -14,7 +14,7 @@
 #   - What a capture shows that comes from the scene or the shared tools (a pile counter, a name left on screen, a zone painted on
 #     the floor) is not worked around here: it goes to NPT with the capture, and the picture is not kept.
 #   - The runner starts the game with developer mode on: it is turned off before each capture.
-@requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.screenshotmode @requires:nelim.pickletools.clickdiagnostics @requires:nelim.pickletools.colonistrace @review
+@requires:nelim.pickletools.camerazoom @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.screenshotmode @requires:nelim.pickletools.clickdiagnostics @requires:nelim.pickletools.colonistrace @review
 Feature: images for the Workshop page
 
   Background:
@@ -28,7 +28,9 @@ Feature: images for the Workshop page
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: "Nelim" stands at (152, 105) facing East
     And Nelim's Pickle Tools: the other colonists are out of frame
+    And Nelim's Pickle Tools: the item and name labels are hidden
     When Nelim's Sanctuary: I frame the sanctuary "flower-garden"
+    And Nelim's Pickle Tools: the camera root size is set to 6
     And Nelim's Pickle Tools: I move the mouse to (960, 1000)
     And Nelim's Pickle Tools: developer mode is turned off for the capture
     And Nelim's Pickle Tools: the map is shown alone for a capture
@@ -42,7 +44,9 @@ Feature: images for the Workshop page
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: "Nelim" stands at (185, 124) facing East
     And Nelim's Pickle Tools: the other colonists are out of frame
+    And Nelim's Pickle Tools: the item and name labels are hidden
     When Nelim's Sanctuary: I frame the sanctuary "sofa-corner"
+    And Nelim's Pickle Tools: the camera root size is set to 6
     And Nelim's Pickle Tools: I move the mouse to (960, 1000)
     And Nelim's Pickle Tools: developer mode is turned off for the capture
     And Nelim's Pickle Tools: the map is shown alone for a capture
