@@ -254,6 +254,15 @@ namespace DalmatiansRenew.PickleSteps
             Scene.Remember(alias, pawn);
         }
 
+        // The gallery wants the animals seen from the front (GALLERY.md, "Les animaux de face"): South is the side the camera sees.
+        [Given("Dalmatians Renew turns {string} to face {word}")]
+        public void TurnTo(PickleContext ctx, string alias, string direction)
+        {
+            var rot = direction switch { "North" => Rot4.North, "East" => Rot4.East, "South" => Rot4.South, "West" => Rot4.West, _ => Rot4.Invalid };
+            ctx.Require(rot.IsValid, $"'{direction}' is not North, East, South or West");
+            Scene.Named(ctx, alias).Rotation = rot;
+        }
+
         [Given("Dalmatians Renew spawns the player animal {string} as {string} beside {string}")]
         public void SpawnBeside(PickleContext ctx, string alias, string kindName, string other) =>
             SpawnBesideAt(ctx, alias, kindName, other, 3f);

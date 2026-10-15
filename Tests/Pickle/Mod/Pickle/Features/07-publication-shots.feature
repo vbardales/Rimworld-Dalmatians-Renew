@@ -26,8 +26,11 @@ Feature: images for the Workshop page
     And Dalmatians Renew spawns the player animal "Rex" as "CCPDalmatian" near the cell 154 105
     And Dalmatians Renew spawns the player puppy "Pup" as "CCPDalmatian" beside "Rex"
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: "Nelim" stands at (152, 105) facing East
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (58, 74, 112)
+    And Nelim's Pickle Tools: "Nelim" stands at (152, 105) facing South
     And Nelim's Pickle Tools: the other colonists are out of frame
+    And Dalmatians Renew turns "Rex" to face South
+    And Dalmatians Renew turns "Pup" to face South
     And Nelim's Pickle Tools: the item and name labels are hidden
     When Nelim's Sanctuary: I frame the sanctuary "flower-garden"
     And Nelim's Pickle Tools: the camera root size is set to 4
@@ -39,11 +42,14 @@ Feature: images for the Workshop page
 
   Scenario: the dalmatians by the fire in the salon
     Given Nelim's Sanctuary: the animals are removed from the sanctuary "sofa-corner"
-    And Dalmatians Renew spawns the player animal "Rex" as "CCPDalmatian" near the cell 187 122
+    And Dalmatians Renew spawns the player animal "Rex" as "CCPDalmatian" near the cell 188 123
     And Dalmatians Renew spawns the player puppy "Pup" as "CCPDalmatian" beside "Rex"
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: "Nelim" stands at (185, 124) facing East
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (58, 74, 112)
+    And Nelim's Pickle Tools: "Nelim" stands at (186, 123) facing South
     And Nelim's Pickle Tools: the other colonists are out of frame
+    And Dalmatians Renew turns "Rex" to face South
+    And Dalmatians Renew turns "Pup" to face South
     And Nelim's Pickle Tools: the item and name labels are hidden
     When Nelim's Sanctuary: I frame the sanctuary "sofa-corner"
     And Nelim's Pickle Tools: the camera root size is set to 2.8
