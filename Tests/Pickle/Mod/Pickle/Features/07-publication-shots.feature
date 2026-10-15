@@ -3,9 +3,13 @@
 # the director, one scenario is one picture, every picture is a staged photograph with something alive in it, and each one is
 # opened and judged before it reaches the owner.
 #
-# The story: Nelim and her dalmatians. A walk in the flower garden at noon, the puppy at her heels (1); the same pair indoors,
-# in the salon by the fire hall, the puppy asleep and the adult watching (2); then the species card, the plain proof of what the
-# mod adds (3). The first picture is the one Steam shows large: the animal, its coat, its puppy, and a person who gives scale.
+# The story: Nelim brings her dalmatians home. Shooting plan, one line per picture (GALLERY.md):
+#   1. Flower garden, noon (the fixture hour), wide-ish frame at root size 4: Nelim in dyed trousers, the adult and the puppy side by
+#      side facing the camera; says what the mod adds: an animal, its spotted coat and its two life stages. Steam shows it large.
+#   2. Sofa corner of the salon, same day, root size 2.8: they followed her indoors; a campfire is lit on the carpet beside them
+#      and the two dogs face the camera; says that the animal is a household companion, not a wild thing.
+#   3. Species card on the bamboo backdrop: Wildness 0 % and the source line, the plain proof (cropped sideways by hand).
+#   The puppy is not asleep and time does not advance between the pictures: no step exists for either, so the story does not claim them.
 #
 #   - Staged only by wsl-deps.sanctuary.map. Every other pass skips this feature. Run it in English.
 #   - Pictures 1 and 2 show the map alone (the game's own screenshot mode): the mod adds an animal, not an interface.
@@ -14,7 +18,7 @@
 #   - What a capture shows that comes from the scene or the shared tools (a pile counter, a name left on screen, a zone painted on
 #     the floor) is not worked around here: it goes to NPT with the capture, and the picture is not kept.
 #   - The runner starts the game with developer mode on: it is turned off before each capture.
-@requires:nelim.pickletools.camerazoom @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.screenshotmode @requires:nelim.pickletools.clickdiagnostics @requires:nelim.pickletools.colonistrace @review
+@requires:nelim.pickletools.stagedecor @requires:nelim.pickletools.camerazoom @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.screenshotmode @requires:nelim.pickletools.clickdiagnostics @requires:nelim.pickletools.colonistrace @review
 Feature: images for the Workshop page
 
   Background:
@@ -50,6 +54,8 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: the other colonists are out of frame
     And Dalmatians Renew turns "Rex" to face South
     And Dalmatians Renew turns "Pup" to face South
+    And Nelim's Pickle Tools: I place the decor "Campfire" at (189, 122)
+    And Nelim's Pickle Tools: the decor "Campfire" at (189, 122) is lit
     And Nelim's Pickle Tools: the item and name labels are hidden
     When Nelim's Sanctuary: I frame the sanctuary "sofa-corner"
     And Nelim's Pickle Tools: the camera root size is set to 2.8
@@ -58,6 +64,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: the map is shown alone for a capture
     Then I take a screenshot "Workshop page, the dalmatians by the fire"
     And Nelim's Pickle Tools: the interface is shown again
+    When Nelim's Pickle Tools: the decor is removed
 
   Scenario: the information card of the dalmatian, with Wildness at zero
     Given Nelim's Sanctuary: the animals are removed from the sanctuary "window-backdrop-for-height"
