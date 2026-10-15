@@ -11,7 +11,7 @@ visibility:   public
 upstream_visibility: public (Steam API visibility=0; banned=0; checked 2026-09-12)
 detached:     yes
 maintainer:   Claude Code (the session named for this mod); Codex worked on it earlier
-workflow_stage: shootGallery[1.0.0]
+workflow_stage:  shootGallery[1.0.0]
 licence:      silent
 licence_port: MIT, limited to the port contributions
 licence_at:   LICENSE; Mod/LICENSE; ATTRIBUTION.md
@@ -35,7 +35,7 @@ remaining:
 session:      local_e7fdeacc-7649-4702-9f00-45be2663ced1
 updated:      2026-10-12
 code_review_sha: 103690ac09387031cbffd0d1327e1903bd17acd1
-protocols_read_sha: 4e44da0d65a7d47fb599f755200e9d6d10ce2015
+protocols_read_sha: 6eeb289af92096fa3a7ee40825e3b5221030873d
 ---
 
 # Dalmatians Renew: status
