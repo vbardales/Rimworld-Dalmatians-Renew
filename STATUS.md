@@ -29,13 +29,13 @@ manual:       17 scenarios documented in TESTING.md; K reduced to one check (rem
 workshop:     3806709979 (item created private by the 0.1.0 prepublication of 2026-09-23; not the prepublished state)
 remaining:
   - partial: AUDIT.md 8.d the `@review` captures: the 24 of 2026-10-02 (p1-french 9, p2-french 14, p9 1) opened 2026-10-11, all read as expected (French labels and tooltips, four facings, leather card, Wildness 0%, puppy beside adult, corpses). Two notes: the p9 capture (2026-10-02-p9) shows a map without any dalmatian in frame, weak evidence for its scenario; under Whaleys Dogs the tooltips read "Dalmatien 1 (femelle dalmatien)" while standalone reads "Dalmatienne 1 (femelle dalmatienne)" (Whaleys kind label, French validated by the owner 2026-10-02). The 2026-10-10 replays wrote no screenshots; the 2026-09 captures are older than the cutoff.
-  - unverified: social preview image (public repository): Mod/About/Preview.png was re-rendered on 2026-10-10 after the owner changed Art/ModIcon-source.png (2026-10-04); upload it (Settings, Social preview) and record `social_preview_sha256` after the commit
   - unverified: workshop item 3806709979 still carries the description sent by 0.1.0 (lacks IF I GO QUIET, AI-GENERATED, THANKS, Source code on GitHub link); the Markdown block in PUBLICATION.md is complete, the CI sends it at the first publication (2026-09-27 ruling)
   - unverified: rollback target (none before the first publish) and the drafted thank-you comments, posted only once the item is public
 session:      local_e7fdeacc-7649-4702-9f00-45be2663ced1
-updated:      2026-10-12
+updated:      2026-10-15
 code_review_sha: 103690ac09387031cbffd0d1327e1903bd17acd1
 protocols_read_sha: 6eeb289af92096fa3a7ee40825e3b5221030873d
+social_preview_sha256: 2dbfb607196485fa1538fe924c9b203762a143faea416e3e98ebbcf7f90d6bbf
 ---
 
 # Dalmatians Renew: status
