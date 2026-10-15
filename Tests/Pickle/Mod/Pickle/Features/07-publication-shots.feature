@@ -30,7 +30,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: the other colonists are out of frame
     And Nelim's Pickle Tools: the item and name labels are hidden
     When Nelim's Sanctuary: I frame the sanctuary "flower-garden"
-    And Nelim's Pickle Tools: the camera root size is set to 6
+    And Nelim's Pickle Tools: the camera root size is set to 4
     And Nelim's Pickle Tools: I move the mouse to (960, 1000)
     And Nelim's Pickle Tools: developer mode is turned off for the capture
     And Nelim's Pickle Tools: the map is shown alone for a capture
@@ -46,7 +46,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: the other colonists are out of frame
     And Nelim's Pickle Tools: the item and name labels are hidden
     When Nelim's Sanctuary: I frame the sanctuary "sofa-corner"
-    And Nelim's Pickle Tools: the camera root size is set to 6
+    And Nelim's Pickle Tools: the camera root size is set to 2.8
     And Nelim's Pickle Tools: I move the mouse to (960, 1000)
     And Nelim's Pickle Tools: developer mode is turned off for the capture
     And Nelim's Pickle Tools: the map is shown alone for a capture
