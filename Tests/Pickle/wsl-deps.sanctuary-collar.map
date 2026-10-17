@@ -1,5 +1,5 @@
 # Probe: a dalmatian in a collar (08-collar-probe), on the gallery pass: the captures, taken on the sanctuary save "Nelims-tribe" carried by Sanctuary Backlot.
-# Same map as wsl-deps.sanctuary.map plus Animal Apparel: Collars and Kit Renew, its framework and its Pickle steps (2026-10-18).
+# Same map as wsl-deps.sanctuary.map plus Animal Apparel: Collars and Kit Renew, and its framework (the dressing steps come from ScreenshotStudio) (2026-10-18).
 #   Submit-PickleRun.ps1 -Mod DalmatiansRenew -DepMap wsl-deps.sanctuary-collar.map -Filter 08-collar-probe -Language English
 nelim.sanctuarybacklot path:SanctuaryBacklot/Mod
 nelim.pickletools.screenshotmode path:PickleTools/ScreenshotMode/Mod
@@ -40,7 +40,6 @@ Moshii.NLFA.InitFix 3609895011
 ccj.nlfaloadfix 3721489042
 # Show Hair Under Stuff (Raccoon Cuddler): hair stays visible under hats and helmets; only hard dependency is Harmony (owner, 2026-10-08).
 RaccoonCuddler.ShowHair 3255379190
-# Collars: the framework first, then the mod, then its Pickle steps (they find an animal by name, as the mod's own 12-gallery does).
+# Collars: the framework first, then the mod.
 Ingendum.AnimalApparelFramework 3513825850
 nelim.animalapparelcollarsandkit path:AnimalApparelCollarsAndKitRenew/Mod
-nelim.animalapparelcollarsandkit.pickletests path:AnimalApparelCollarsAndKitRenew/Tests/Pickle/Mod
