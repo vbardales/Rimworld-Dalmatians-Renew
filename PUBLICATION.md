@@ -131,6 +131,19 @@ on the page and in the gallery is the same image.
 
 The captures taken on the test fixture stay `@review` evidence, not gallery images.
 
+## Gallery subtitles
+
+One English line at the bottom of each scene without an interface window (`GALLERY.md`, "Sous-titres"). The story is the one of
+`07-publication-shots.feature`: Nelim brings her dalmatians home. The card is a window capture and carries no line; neither does `0-`.
+The files below are the planned names after the reshoot and the reindex; a row stays unapplied until its capture is accepted and
+`Art/Gallery-clean/` holds the unsubtitled original (`scripts/Add-Subtitle.ps1`).
+
+| index | file | line |
+|---|---|---|
+| 1 | `1-the-dalmatian-and-its-puppy.jpg` | Nelim brings her dalmatians home: an adult and its puppy. |
+| 2 | `2-the-dalmatians-by-the-fire.jpg` | By the fire they are family, not wild things. |
+| 3 | `3-the-information-card.png` | none (window capture) |
+
 ## Dependencies and DLCs
 
 **No DLC is required, and no mod.** `supportedVersions` declares 1.6 only.
