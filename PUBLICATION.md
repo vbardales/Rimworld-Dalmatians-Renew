@@ -30,7 +30,7 @@ The one-source Markdown standard (owner, 2026-09-25; `Rimworld-Release-Admin/doc
 ```markdown
 **UNOFFICIAL.** This mod is published without the original author's explicit consent. If the original author contacts me to request its removal, I undertake to take it down promptly.
 
-One dog. A dalmatian: a medium-sized, spotted, sweet-natured pet that nuzzles, trains to Advanced, tames easily, and is bought and sold like a husky.
+One dog. A dalmatian: a medium-sized, spotted, sweet-natured pet that nuzzles, can be trained to Advanced, tames easily, and is bought and sold like a husky.
 
 No DLC, no dependencies, no assembly. Three defs, four textures and four optional patches.
 
