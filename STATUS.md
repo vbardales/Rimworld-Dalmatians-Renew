@@ -37,18 +37,17 @@ code_review_sha: 103690ac09387031cbffd0d1327e1903bd17acd1
 protocols_read_sha: c25ae06225bd8489c501cf0fa400deac97b54192
 social_preview_sha256: 2dbfb607196485fa1538fe924c9b203762a143faea416e3e98ebbcf7f90d6bbf
 ---
-
 # Dalmatians Renew: status
 
 ## Current state (2026-10-10 audit)
 
-Stage: **`shootGallery[1.0.0]`**, back from mountPreview on 2026-10-12: the director (this session) judged picture 1 and 2 too weak and is reshooting the series on the Sanctuary (07-publication-shots.feature rewritten, wsl-deps.sanctuary.map). Before: 8.n done (replays green, 8.d captures read, 8.m recorded). The audit text below was written at `playTests[1.0.0]` on 2026-10-10. Everything up to `writeTests` holds: offline suite re-run today (44 green), translations `complete` (French validated by the owner 2026-10-02), Pickle suites written, the four animal integrations settled (ADS 2 patch, Nocturnal Animals none by decision, Dogs mate patch, Better Crossbreeding patch). No `Source/`: no build, no code review of C# to do beyond `Mod/` XML.
+Stage: **`shootGallery[1.0.0]`**, back from mountPreview 2026-10-12: director (this session) judged picture 1 and 2 too weak, reshooting series on Sanctuary (07-publication-shots.feature rewritten, wsl-deps.sanctuary.map). Before: 8.n done (replays green, 8.d captures read, 8.m recorded). Audit text below written at `playTests[1.0.0]` 2026-10-10. Everything up to `writeTests` holds: offline suite re-run today (44 green), translations `complete` (French validated by owner 2026-10-02), Pickle suites written, four animal integrations settled (ADS 2 patch, Nocturnal Animals none by decision, Dogs mate patch, Better Crossbreeding patch). No `Source/`: no build, no C# code review beyond `Mod/` XML.
 
-The two replays (pass 9, removal chain) came back green on 2026-10-10. What keeps it at `playTests`: the social preview upload and the reread of the protocols changed since a5c7cf48. 8.m done 2026-10-11 (no C#; every patch file of `Mod/` read, one finding on scripts/Run-Tests.ps1 fixed in 103690a), `code_review_sha` recorded. No manual test is left for the owner (row 1 dropped, row 4 automated as K, owner 2026-10-02).
+Two replays (pass 9, removal chain) green 2026-10-10. Keeping it at `playTests`: social preview upload and reread of protocols changed since a5c7cf48. 8.m done 2026-10-11 (no C#; every patch file of `Mod/` read, one finding on scripts/Run-Tests.ps1 fixed in 103690a), `code_review_sha` recorded. No manual test left for owner (row 1 dropped, row 4 automated as K, owner 2026-10-02).
 
-Closing pass done in the working tree on 2026-10-10, not committed yet: `_tools/` renamed `scripts/` and the stale `_tools/preview/Preview.html` removed (AGENTS.md rule); `.build/` renamed `build/` (Directory.Build.props, .gitignore, Check-Steps.ps1); `Mod/About/ModIcon.png` regenerated (Lanczos, 128 px, 20435 bytes) and the Preview chain re-rendered (`Mod/About/Preview.png`, `Art/Gallery/0-preview.png` byte copy, `Art/Preview.ico`) because the owner's `Art/ModIcon-source.png` is newer than its derivatives. The three `Art/` files she changed were left as she made them.
+Closing pass done in working tree 2026-10-10, not committed: `_tools/` renamed `scripts/`, stale `_tools/preview/Preview.html` removed (AGENTS.md rule); `.build/` renamed `build/` (Directory.Build.props, .gitignore, Check-Steps.ps1); `Mod/About/ModIcon.png` regenerated (Lanczos, 128 px, 20435 bytes), Preview chain re-rendered (`Mod/About/Preview.png`, `Art/Gallery/0-preview.png` byte copy, `Art/Preview.ico`) because owner's `Art/ModIcon-source.png` newer than derivatives. Three `Art/` files she changed left as she made them.
 
-Replays of 2026-10-10: `docs/runs/2026-10-10-replays.md`. Journal up to 2026-10-10: `docs/runs/status-journal-2026-10-10.md` (the former dated sections, text unchanged).
+Replays of 2026-10-10: `docs/runs/2026-10-10-replays.md`. Journal up to 2026-10-10: `docs/runs/status-journal-2026-10-10.md` (former dated sections, text unchanged).
 
 ## Gallery
 
@@ -57,17 +56,17 @@ Replays of 2026-10-10: `docs/runs/2026-10-10-replays.md`. Journal up to 2026-10-
 | 0 | `0-preview.png` (byte copy of `Mod/About/Preview.png`, re-rendered 2026-10-10) | copy of the Preview |
 | 1 | `1-the-dalmatian-and-its-puppy.jpg` | owner, 2026-09-27 |
 | 2 | `2-the-information-card.png` | owner, 2026-09-29 |
-Order (9.c, 2026-10-12): index 0 is the Preview; Steam shows 1 large, so the most demonstrative image goes there: the adult and its puppy side by side (the animal, its colouring and its life stages in one frame), then 2, the information card, which proves the species data (Wildness 0%, source line). Indexes 0 to 2 are contiguous. Every image was opened and looked at by the owner on the dates above; `cmp` confirms `0-preview.png` equals `Mod/About/Preview.png`.
+Order (9.c, 2026-10-12): index 0 is Preview; Steam shows 1 large, so most demonstrative image goes there: adult and puppy side by side (animal, colouring, life stages in one frame), then 2, information card, proves species data (Wildness 0%, source line). Indexes 0 to 2 contiguous. Owner opened and looked at every image on dates above; `cmp` confirms `0-preview.png` equals `Mod/About/Preview.png`.
 
 ## Pickle tickets
 
-Filed 2026-10-10, both RUN_DONE green (exit 0): 20261010-225052-995-f244 (pass 9 replay, 7 of 7), 20261010-225054-111-21e8 (removal chain K, seq1 and seq2, 1 of 1 each). Tree no longer frozen. Registered with the Ticket Manager on 2026-10-10 as `local_58ad495b-63fb-4c70-ac11-4bf0c025db07`.
+Filed 2026-10-10, both RUN_DONE green (exit 0): 20261010-225052-995-f244 (pass 9 replay, 7 of 7), 20261010-225054-111-21e8 (removal chain K, seq1 and seq2, 1 of 1 each). Tree no longer frozen. Registered with Ticket Manager 2026-10-10 as `local_58ad495b-63fb-4c70-ac11-4bf0c025db07`.
 
 ## Audit coverage, 2026-10-10 (revision 06648bd + closing pass)
 
 - Dependencies (4): none hard. `loadAfter` Mlie.WhaleysDogs (LoadFolders `IfModActive` Compatibility/WhaleysDogs), `loadBefore` SamBucher.ADogSaidAnimalProsthetics2, `incompatibleWith` cucumpear.dalmatians. Optional guarded patches: ADS 2, Dogs mate (2441132298), Better Crossbreeding (3520675842); Nocturnal Animals none by decision. DLC: none; `supportedVersions` 1.6.
 - Settings (5): `not_applicable`, no C#, no page, no shortcut.
-- Translations (6): `scripts/Check-DefInjected.ps1 -TransMod DalmatiansRenew/Mod`: 25 keys, 0 errors, the `WD_Dalmatian` keys UNVERIFIED (target created by a patch); `FRENCH_REVIEW.md` regenerated at 06648bd; French validated by the owner 2026-10-02.
-- Distributed root: `Mod/ATTRIBUTION.md` and `Mod/LICENSE` byte-identical to the root copies; `Mod/desktop.ini` is gitignored; `*.dds` untracked.
-- Em dash: `Mod/About/About.xml` and PUBLICATION.md clean; README.md and CHANGELOG.md (append-only) carry older ones, left as they are.
+- Translations (6): `scripts/Check-DefInjected.ps1 -TransMod DalmatiansRenew/Mod`: 25 keys, 0 errors, `WD_Dalmatian` keys UNVERIFIED (target created by patch); `FRENCH_REVIEW.md` regenerated at 06648bd; French validated by owner 2026-10-02.
+- Distributed root: `Mod/ATTRIBUTION.md` and `Mod/LICENSE` byte-identical to root copies; `Mod/desktop.ini` gitignored; `*.dds` untracked.
+- Em dash: `Mod/About/About.xml` and PUBLICATION.md clean; README.md and CHANGELOG.md (append-only) carry older ones, left as is.
 - Protocols read: AGENTS, PICKLE, PUBLISHING, TRANSLATIONS, MOD_SETTINGS, STYLE_RIMWORLD, WORKSHOP_COMMENTS (section Writing a comment); `protocols_read_sha` written, `Check-Status.ps1`: 0 error, 0 warning.
