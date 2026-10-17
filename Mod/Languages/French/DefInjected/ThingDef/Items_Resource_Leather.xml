@@ -6,7 +6,7 @@
        "fourrure de chien" is not followed. -->
   <Leather_Dalmatian.label>cuir de dalmatien</Leather_Dalmatian.label>
   <!-- EN: Leather from cute dalmatians. You monster. -->
-  <Leather_Dalmatian.description>Cuir de mignons dalmatiens. Tu es un monstre.</Leather_Dalmatian.description>
+  <Leather_Dalmatian.description>Cuir de mignons dalmatiens. Monstrueux !</Leather_Dalmatian.description>
   <!-- The English def declares no stuffAdjective and falls back to the label, which reads
        correctly there. French needs the short form, exactly as vanilla injects one for every
        leather it ships. -->

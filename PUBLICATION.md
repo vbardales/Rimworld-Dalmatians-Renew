@@ -15,7 +15,8 @@ Not restated from `AUDIT.md`; only what is specific to this mod.
 
 - The Pickle suite: all eight launches are green (`docs/runs/`); the seven smoke tickets that prove the
   `packageId` rename of 2026-09-28 are in the queue.
-- The gallery is half made: the information card is validated, the dog shot is in the queue (see below).
+- The gallery is being reshot as one story on the Sanctuary (three scenes, see "Gallery subtitles"): the previous
+  garden picture and the information card are the accepted ones until the new captures are read and accepted.
 - The rollback target cannot exist before the first publish: the tag is created by the CI after a successful
   upload, and no artificial tag is made (CI/CD session, 2026-09-27; see "Fail fast").
 - The description on the Steam page is the one 0.1.0 sent. The one-source Markdown standard is adopted at the
