@@ -4,10 +4,12 @@
 # opened and judged before it reaches the owner.
 #
 # The story: Nelim brings her dalmatians home. Shooting plan, one line per picture (GALLERY.md):
-#   1. Flower garden, noon (the fixture hour), wide-ish frame at root size 4: Nelim in dyed trousers, the adult and the puppy side by
-#      side facing the camera; says what the mod adds: an animal, its spotted coat and its two life stages. Steam shows it large.
-#   2. Sofa corner of the salon, same day, root size 2.8: they followed her indoors; a campfire is lit on the carpet beside them
-#      and the two dogs face the camera; says that the animal is a household companion, not a wild thing.
+#   1. Flower garden, mid-morning (hour 10), root size 3.6: the two dogs face the camera, the puppy has picked up a log as if it
+#      had been playing fetch, and Nelim, a step to their west, turns toward them and not toward the lens: she is not posing, she is
+#      with them. Says what the mod adds: an animal, its spotted coat and its two life stages. Steam shows it large.
+#   2. Sofa corner of the salon, the same day at dusk (hour 19), root size 2.8: they followed her indoors; the fire is lit beside
+#      the couches, the light is warm and low, the two dogs face the camera and Nelim, standing, looks down at them; says that the
+#      animal is a household companion, not a wild thing. Different light, setting and mood from picture 1: it is not a repeat.
 #   3. Species card on the bamboo backdrop: Wildness 0 % and the source line, the plain proof (cropped sideways by hand).
 #   Nelim's look, the same in 1 and 2 (the story is one day): hair pulled back in a short ponytail so the face shows; a cheerful, smiling
 #   face held neutral so no job or mood frowns it; a deep teal collar shirt and dark brown trousers, the two colours the white dogs, the
@@ -29,7 +31,9 @@ Feature: images for the Workshop page
     And game speed is paused
 
   Scenario: Nelim and her dalmatians in the flower garden
-    Given Nelim's Sanctuary: the animals are removed from the sanctuary "flower-garden"
+    Given I set the weather to "Clear"
+    And I set the hour to 10
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "flower-garden"
     And Dalmatians Renew spawns the player animal "Rex" as "CCPDalmatian" near the cell 154 105
     And Dalmatians Renew spawns the player puppy "Pup" as "CCPDalmatian" beside "Rex"
     And Nelim's Sanctuary: Nelim has her own face
@@ -39,13 +43,14 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: "Nelim" face is held neutral
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (22, 110, 115)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (74, 58, 50)
-    And Nelim's Pickle Tools: "Nelim" stands at (152, 105) facing South
+    And Nelim's Pickle Tools: "Nelim" stands at (152, 105) facing East
     And Nelim's Pickle Tools: the other colonists are out of frame
     And Dalmatians Renew turns "Rex" to face South
     And Dalmatians Renew turns "Pup" to face South
+    And Nelim's Pickle Tools: "Pup" carries the item "WoodLog"
     And Nelim's Pickle Tools: the item and name labels are hidden
     When Nelim's Sanctuary: I frame the sanctuary "flower-garden"
-    And Nelim's Pickle Tools: the camera root size is set to 4
+    And Nelim's Pickle Tools: the camera root size is set to 3.6
     And Nelim's Pickle Tools: I move the mouse to (960, 1000)
     And Nelim's Pickle Tools: developer mode is turned off for the capture
     And Nelim's Pickle Tools: the map is shown alone for a capture
@@ -53,7 +58,9 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: the interface is shown again
 
   Scenario: the dalmatians by the fire in the salon
-    Given Nelim's Sanctuary: the animals are removed from the sanctuary "sofa-corner"
+    Given I set the weather to "Clear"
+    And I set the hour to 19
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "sofa-corner"
     And Dalmatians Renew spawns the player animal "Rex" as "CCPDalmatian" near the cell 188 123
     And Dalmatians Renew spawns the player puppy "Pup" as "CCPDalmatian" beside "Rex"
     And Nelim's Sanctuary: Nelim has her own face
@@ -63,7 +70,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: "Nelim" face is held neutral
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (22, 110, 115)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (74, 58, 50)
-    And Nelim's Pickle Tools: "Nelim" stands at (186, 123) facing South
+    And Nelim's Pickle Tools: "Nelim" stands at (186, 123) facing East
     And Nelim's Pickle Tools: the other colonists are out of frame
     And Dalmatians Renew turns "Rex" to face South
     And Dalmatians Renew turns "Pup" to face South
