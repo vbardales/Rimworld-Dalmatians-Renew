@@ -71,7 +71,7 @@ Full plan per scene (place, hour, decor, living things, outfit, hair, expression
 | 4 | Species card, window-backdrop-for-height | n/a | n/a | n/a | interface window, set aside, not scored | crop keeps the Wildness row |
 | (opt) | Collar on the dogs in 1 to 3 (probe ticket 20261018-012737-764-10c0) | | | | n/a | dalmatian may not be fitted; mod never run in game |
 
-Lowest note 4. The skill `write-shotlist` is not in this session's list, so the table is by hand.
+Criterion k (one written story, who, where, which day, rhythm of time, episodes that advance): written in the feature header. Lowest note 4. The skill `write-shotlist` is not in this session's list, so the table is by hand.
 ## Pickle tickets
 
 Filed 2026-10-10, both RUN_DONE green (exit 0): 20261010-225052-995-f244 (pass 9 replay, 7 of 7), 20261010-225054-111-21e8 (removal chain K, seq1 and seq2, 1 of 1 each). Tree no longer frozen. Registered with Ticket Manager 2026-10-10 as `local_58ad495b-63fb-4c70-ac11-4bf0c025db07`.

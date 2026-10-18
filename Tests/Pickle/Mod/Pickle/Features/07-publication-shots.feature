@@ -4,8 +4,11 @@
 # picture is opened and judged before it reaches the owner. The card (scenario 4) is an interface window taken on the bamboo backdrop:
 # it is not scored and takes no subtitle; the three photographs are scored a to j below.
 #
-# THE STORY (one day, hours move on purpose): Nelim brings her dalmatians home. Morning, she feeds them in the flower garden; in the
-# afternoon she dries them by the pond after a swim; at dusk they come in and settle by the fire. Weather clear all day.
+# THE STORY. WHO: Nelim (Virginie) and her two new dalmatians, Rex the adult and Pup the puppy, who have just come to live with her.
+# WHERE: the Sanctuary, from the flower garden to the pond to the salon. WHEN: one day, the day they arrive, with the rhythm 09:00,
+# 15:00, 19:00 (six hours, then four; the game is paused at each shot, the hour is set), clear weather. EPISODES, each one moving on:
+# (1) morning, the newcomers are fed and she welcomes them; (2) afternoon, trust is made over a swim and a towel; (3) dusk, they have
+# settled in and follow her by the fire. Nelim changes clothes and hair between episodes, because the hours do.
 #
 # SHOT PLAN (a: place, hour, time that passes; b: decor placed then removed; c: living things; d: Nelim; e: action; f: composition;
 # g: what it says; h: risk and plan; j: what the mod brings)
