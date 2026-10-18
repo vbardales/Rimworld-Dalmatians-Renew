@@ -46,5 +46,6 @@ evidence/
 # Reproducible Preview diagnostics generated locally by the shared renderer.
 Art/.render/
 
-# Pickle proofs kept on disk only (latest green per scenario, minified); Evidence/ is the inbox of runs.
-Tests/Pickle/Kept/
+# Pickle proofs on disk only: Evidence/ keeps the latest minified greens (and is where the launcher writes), Inbox/ is the triage of fresh runs, Parked/ holds red ones until green.
+Tests/Pickle/Inbox/
+Tests/Pickle/Parked/
