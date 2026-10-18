@@ -59,17 +59,19 @@ Replays of 2026-10-10: `docs/runs/2026-10-10-replays.md`. Journal up to 2026-10-
 | 2 | `2-the-information-card.png` | owner, 2026-09-29 |
 Order (9.c, 2026-10-12): index 0 is Preview; Steam shows 1 large, so most demonstrative image goes there: adult and puppy side by side (animal, colouring, life stages in one frame), then 2, information card, proves species data (Wildness 0%, source line). Indexes 0 to 2 contiguous. Owner opened and looked at every image on dates above; `cmp` confirms `0-preview.png` equals `Mod/About/Preview.png`.
 
-## Gallery shotlist (estimates before play, 2026-10-18; owner rule: 4 or more before a scene is played)
+## Gallery shotlist (scored against GALLERY.md "Shotlist : critères d'une scène à 4/5", a to j, 2026-10-18; nothing is played under 4)
 
-| # | Scene | Note | Main risk |
-| --- | --- | --- | --- |
-| 1 | Flower garden, hour 10: adult and puppy face the camera, puppy carries a log, Nelim turned toward them | 4 | The white dogs get lost among the flowers, or the carried log does not read at root size 3.6 |
-| 2 | Salon south of the couches, hour 19: dogs by a lit campfire, Nelim standing beside them | 4 | The cells (188,120), (189,121), (190,120), (185,121) were read from a 2026-10-06 cell list and never seen on a photo; dusk may be too dark |
-| 3 | Species card on the bamboo backdrop: Wildness 0% | 4 | Dry by nature; the crop must keep the filtered Wildness row in view |
-| (opt) | Collar on the dogs (probe ticket 20261018-012737-764-10c0, Animal Apparel Collars and Kit) | n/a | Dalmatian may not be fitted by that mod; the mod itself has never run in game; its steps are NPT's new, unplayed ones |
+Full plan per scene (place, hour, decor, living things, outfit, hair, expression, action, framing, sentence, risk and plan) is in the header of `Tests/Pickle/Mod/Pickle/Features/07-publication-shots.feature`. Hours 09, 15, 19, clear weather; the game is paused for each shot, so the passing of time is the hour set.
 
-Lowest note 4. No scene to redo before play. The skill `write-shotlist` is not available in this session, so the table is written by hand.
+| # | Scene | Nelim (outfit, hair, face) | Action | Decor placed then removed | Note | Main risk, plan |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | The feed: flower-garden, 09:00 | teal shirt (22,110,115), dark brown trousers (74,58,50), Ponytails, smile and cheerful lids | carries kibble to the dogs; puppy carries a log | two daylilies grown | 4 | dogs lost among the flowers: move to the bare path, root size 3.2 |
+| 2 | The towel: water-garden, 15:00 | terracotta shirt (200,90,60), slate trousers (60,60,80), Pigtails, small smile and cheerful lids | carries a towel to dry them | a stool | 4 | burrow hole at (149,173) and water cells: the stand steps fail on a non-standable cell, cells on the bank strip away from it |
+| 3 | The fire: sofa-corner, 19:00 | indigo shirt (60,70,140), cream trousers (225,215,190), FancyBun, small smile and normal lids | carries a log to the fire | a lit campfire | 4 | cells never seen on a photo, dusk too dark: failing steps name the cell, light the room torch lamp too |
+| 4 | Species card, window-backdrop-for-height | n/a | n/a | n/a | interface window, set aside, not scored | crop keeps the Wildness row |
+| (opt) | Collar on the dogs in 1 to 3 (probe ticket 20261018-012737-764-10c0) | | | | n/a | dalmatian may not be fitted; mod never run in game |
 
+Lowest note 4. The skill `write-shotlist` is not in this session's list, so the table is by hand.
 ## Pickle tickets
 
 Filed 2026-10-10, both RUN_DONE green (exit 0): 20261010-225052-995-f244 (pass 9 replay, 7 of 7), 20261010-225054-111-21e8 (removal chain K, seq1 and seq2, 1 of 1 each). Tree no longer frozen. Registered with Ticket Manager 2026-10-10 as `local_58ad495b-63fb-4c70-ac11-4bf0c025db07`.
