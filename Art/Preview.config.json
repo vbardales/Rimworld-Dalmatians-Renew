@@ -32,28 +32,13 @@
   "backgroundSize": "cover",
   "echo": {
     "file": "echo-source.png",
-    "preSized": true,
     "color": "var(--accent)",
     "width": 115,
-    "height": 240,
-    "opacity": 1,
-    "veil": false,
-    "panelTop": 1,
-    "panelRight": 3,
-    "panelWidth": 23,
-    "flipX": true
+    "height": 240
   },
   "modIconSource": "ModIcon-source.png",
   "iconBadge": {
-    "file": "ModIcon-source.png",
-    "corner": "bottom-left",
-    "width": 180,
-    "outline": false,
-    "veil": "radial",
-    "veilSize": 275,
-    "veilLeft": -55,
-    "veilBottom": -61,
-    "translate": "-12.5%, 12.5%"
+    "file": "ModIcon-source.png"
   },
   "palette": {
     "veil": "#202832",
