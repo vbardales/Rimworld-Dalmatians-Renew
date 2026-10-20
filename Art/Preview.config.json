@@ -25,9 +25,7 @@
   "copyLines": [
     "One dog, spotted and sweet-natured, brought forward."
   ],
-  "layout": "panel",
   "panelAnchor": "top-left",
-  "backgroundFile": "Preview-source.png",
   "backgroundPosition": "center",
   "backgroundSize": "cover",
   "echo": {
