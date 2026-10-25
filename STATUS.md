@@ -29,7 +29,7 @@ manual:       17 scenarios documented in TESTING.md; K reduced to one check (rem
 workshop:     3806709979 (item created private by the 0.1.0 prepublication of 2026-09-23; not the prepublished state)
 remaining:
   - open: gallery reshoot. Run a126 (Tests/Pickle/Inbox/2026-10-20-gallery) read 2026-10-25 by the director, 2 of 4 passed: feed REFUSED (capture shows only flowers and a campfire icon, no dog, no Nelim: the frame step centres away from (151..157, 103..105)); towel and fire FAILED at "I frame the cells ... filling 85 percent" (camera root size reads 11, wanted 5.29 and 3.64: zoom bounded or not finished). The card passed and is index 2 already. Shotlist (3 photos scored 4, card set aside) is in the 07 header and in the table above.
-  - queued 2026-10-25: ticket 20261025-143037-361-c5c5 (old three scenes, map with SimpleCameraSetting, commit acfb68a), evidence to Tests/Pickle/Inbox/2026-10-25-gallery. Shotlist v2 below (4 photographs, mid-gesture) is written; its scenarios wait for c5c5 and for NPT's ticket 1071 (gesture steps deployed 89a2970 and 8318f39, not yet played). Open: social preview upload of Mod/About/Preview.png then record social_preview_sha256 (owner).
+  - queued 2026-10-25: ticket 20261025-143037-361-c5c5 (old three scenes, map with SimpleCameraSetting, commit acfb68a), evidence to Tests/Pickle/Inbox/2026-10-25-gallery. Shotlist v2 below (4 photographs, mid-gesture) is written; its scenarios wait for c5c5 and for NPT's ticket 1071 (gesture steps deployed 89a2970 and 8318f39, not yet played). Social preview uploaded 2026-10-25 (Preview.png sha256 recorded).
   - open next (superseded by shotlist v2): fix the three scenarios (ask NPT for a step that centres and zooms on cells, or centre then "the camera root size is set to N"), refile as small tickets, open each capture against its plan line, then reindex, Art/Gallery-clean/, subtitles in PUBLICATION.md and Add-Subtitle.ps1 (card gets none), align tables, then mountPreview. Hair: Ponytails/Pigtails/FancyBun are Female hairstyles; no hat in any scene.
   - decided 2026-10-25, probe ebfe: failed ("Rex should wear 'Apparel_leatherdogcollar'; it wears " nothing), the dalmatian is not fitted: shots stay vanilla, no patch in this mod, no Animal Apparel Collars credit.
   - open: Inbox triage after each run: green minified into Evidence with a RELEASE.md, red studied then deleted or parked with a RELEASE.md naming the scenario; Evidence trims proposed 2026-10-19 (p8, rename-p3, rename-p4: drop "loading the colony logs nothing") not done.
@@ -40,7 +40,7 @@ session:      local_e07388d7-8c73-4619-af3d-44de8bbb400f
 updated:      2026-10-17
 code_review_sha: 103690ac09387031cbffd0d1327e1903bd17acd1
 protocols_read_sha: c94c7bd9c6954f001038a6202ae288fd8c078915
-social_preview_sha256: 2dbfb607196485fa1538fe924c9b203762a143faea416e3e98ebbcf7f90d6bbf
+social_preview_sha256: eed949dc392a63b2f56299ae1eeea7dc0d903cabe76da539748cf25557c5ae42
 ---
 # Dalmatians Renew: status
 
