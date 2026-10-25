@@ -18,7 +18,7 @@
 #      (157, 107), removed after the shot. c: the adult and the puppy facing the camera, the puppy with a log in its mouth, the
 #      garden's own flowers. d: teal collar shirt (22, 110, 115) and dark brown trousers (74, 58, 50), hairstyle Ponytails (the Female
 #      one), mouth MouthSmile and cheerful lids. e: Nelim carries a bowl of kibble to them, turned toward the dogs and not the lens.
-#      f: root size 3.6 on the garden, Nelim at the left edge, the adult centre-right and the puppy a little further and lower, so
+#      f: frame the cell (154, 104) at zoom 4 (the dogs stand on x 151-157, z 103-105; the garden frame missed them), Nelim at the left edge, the adult centre-right and the puppy a little further and lower, so
 #      the three are not in a row; daylilies in front, flowers behind; bright morning light. g: "Nelim has brought her dalmatians
 #      home": an animal, its spotted coat and its two life stages. j: the dalmatian, adult and puppy. Steam shows this one large.
 #      h: risk = the white dogs get lost among the flowers or the log does not read. Plan = read the capture; if the dogs sink, move
@@ -84,8 +84,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (150, 104) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (157, 107) fully grown
     And Nelim's Pickle Tools: the item and name labels are hidden
-    When Nelim's Sanctuary: I frame the sanctuary "flower-garden"
-    And Nelim's Pickle Tools: the camera root size is set to 3.6
+    When Nelim's Pickle Tools: I frame the cell (154, 104) at zoom 4
     And Nelim's Pickle Tools: I move the mouse to (960, 1000)
     And Nelim's Pickle Tools: developer mode is turned off for the capture
     And Nelim's Pickle Tools: the map is shown alone for a capture
