@@ -10,6 +10,12 @@
 # (1) morning, the newcomers are fed and she welcomes them; (2) afternoon, trust is made over a swim and a towel; (3) dusk, they have
 # settled in and follow her by the fire. Nelim changes clothes and hair between episodes, because the hours do.
 #
+# SHOTLIST v2 (2026-10-25) SUPERSEDES the shot plan below for the next run: four photographs (arrival 08:00 wide zoom 4, feed 09:00
+# zoom 3.2, towel 15:00 zoom 2.8, fire 19:00 close zoom 2) and the card; Nelim keeps the teal outfit and Ponytails in 1 to 3 and changes
+# in 4 because Pup soaked her in 3; no collar; every scene caught mid-gesture (forced walk or haul, pause, advance N ticks). The table
+# with every criterion a to k, the instant of each scene and its risk is in STATUS.md, "Gallery shotlist v2". The scenarios below are
+# the old three (ticket c5c5 still plays them) and are rewritten once NPT has deployed the gesture steps.
+#
 # SHOT PLAN (a: place, hour, time that passes; b: decor placed then removed; c: living things; d: Nelim; e: action; f: composition;
 # g: what it says; h: risk and plan; j: what the mod brings)
 #
