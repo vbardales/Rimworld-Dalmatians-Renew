@@ -180,7 +180,7 @@ Two optional patches, inert when the other mod is absent, written on 2026-10-02:
 - **Dogs mate (Continued)** (`Mlie.DogsMate`): `Patches/Compat_DogsMate.xml` adds the dalmatian to its `Dog` group, beside the husky, the labrador retriever and the Yorkshire terrier. It then seeks them, and they seek it.
 - **Better Crossbreeding** (`DizzyEevee.BetterCrossbreeding`): `Patches/Compat_BetterCrossbreeding.xml` lets the dalmatian cross with those same three dogs, each way, and the pup is either parent's breed on a coin flip. No pairing between two vanilla animals is made.
 
-No load order is needed and neither is a dependency. [Nocturnal Animals](https://steamcommunity.com/sharedfiles/filedetails/?id=2269731409) is deliberately not patched: it does not patch vanilla's dogs either, so the dalmatian stays diurnal like them. Offline tests in `scripts/Crossbreeding.Tests.ps1`; in game, passes 7 to 9 of the Pickle suite.
+No load order is needed and neither is a dependency. [Nocturnal Animals](https://steamcommunity.com/sharedfiles/filedetails/?id=2269731409) is deliberately not patched: it does not patch vanilla's dogs either, so the dalmatian stays diurnal like them. Offline tests in `Tests/Crossbreeding.Tests.ps1`; in game, passes 7 to 9 of the Pickle suite.
 
 ## Repository layout
 
@@ -203,13 +203,13 @@ port's own work.
 
 Two levels: the first needs no game, the second runs one.
 
-`scripts/Run-Tests.ps1` is the mod's own suite: 37 tests, a few seconds, no RimWorld. It reads the
+`Tests/Run-Tests.ps1` is the mod's own suite: 37 tests, a few seconds, no RimWorld. It reads the
 game's classes by reflection and A Dog Said 2 off disk, so the sentences these documents state as
 fact are computed rather than trusted - the XPath quirk is reproduced rather than described, the
 `Wildness` clamp is read off the stat, and the leather's margin is walked up `LeatherBase`.
 
 ```bash
-powershell -NoProfile -ExecutionPolicy Bypass -File scripts/Run-Tests.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File Tests/Run-Tests.ps1
 ```
 
 The local suite includes XML field validation against RimWorld 1.6, parent and def reference resolution, patch XPath checks, and French translation checks. It requires the installed game data and assemblies; the ADS checks also require A Dog Said 2. Paths can be supplied through the script parameters. No monorepo checkout is required.
