@@ -41,7 +41,7 @@ remaining:
 session:      local_e07388d7-8c73-4619-af3d-44de8bbb400f
 updated:      2026-10-17
 code_review_sha: 103690ac09387031cbffd0d1327e1903bd17acd1
-protocols_read_sha: b48ecc4cf0af35ec316379c537490a7c025a8c06
+protocols_read_sha: 095806c1833eb1c63ead36dc4f8e7c625af6b293
 social_preview_sha256: eed949dc392a63b2f56299ae1eeea7dc0d903cabe76da539748cf25557c5ae42
 ---
 # Dalmatians Renew: status
