@@ -189,7 +189,7 @@ Record each language/configuration result separately; offline checks do not pass
 
 Scenarios C and D are the pair that matters, neither settled without game: patch's
 effect lives in list built at load time by another mod, failure mode of both is
-silence. Everything else here has counterpart in `scripts/Run-Tests.ps1`, why
+silence. Everything else here has counterpart in `Tests/Run-Tests.ps1`, why
 that suite exists.
 
 ## N — WhaleysDogs, two coats and one ordinary acquisition pool
@@ -241,7 +241,7 @@ as plain-language statement of what each scenario means; table says where each i
 | Scenario | Where it is checked | What is left out, and why |
 | --- | --- | --- |
 | A. the animal exists, and tames | Pickle `01`: defs owned by mod, race values, naming on taming, Obedience, Release, Rescue, Haul all offered on `pawn.training` (PickleTools, 2026-09-27: same call Training tab itself makes, not copy) | Nothing |
-| B. Wildness on the card | Pickle `01`: card lists Wildness at 0%, hare at 75%, with capture | Log search for `wildness`: warnings game writes while loading defs may come before Pickle starts capturing log, so `no warnings from mod` unreliable for them. `scripts/Run-Tests.ps1` proves offline no `<wildness>` left under `<race>` |
+| B. Wildness on the card | Pickle `01`: card lists Wildness at 0%, hare at 75%, with capture | Log search for `wildness`: warnings game writes while loading defs may come before Pickle starts capturing log, so `no warnings from mod` unreliable for them. `Tests/Run-Tests.ps1` proves offline no `<wildness>` left under `<race>` |
 | C. A Dog Said 2, correct order | Pickle `03` and `04`: same operations as husky, more than plain animal | Look of Health tab: vanilla's interface |
 | D. A Dog Said 2, wrong order | Pickle `05`, symptom asserted as green | Nothing. Only supported-order exception, runs when A Dog Said 2 changes |
 | E. A Dog Said 2 absent | Pickle `01` and `02`: same operations as rat, no error, no warning | |
@@ -254,7 +254,7 @@ as plain-language statement of what each scenario means; table says where each i
 | L. the mod list entry | Not automated | Mod list rendering is game's. Name, icon and preview dimensions checked offline by About and image tests |
 | M. English and French | Pickle `01` and `02`, once per language: labels, plurals, puppy stage, attack labels, descriptions, material name on garment | Clipped text and layout, read on captures |
 | N. WhaleysDogs, two coats | Pickle `02`: both coats among forty animals, coats kept through save and reload, trader pool, corpses of both coats at three stages, both coats facing every way | Silhouette, clipping, shadows read on captures. Starting-pet pool asserted offline through legacy fields |
-| O. WhaleysDogs balance, leather, ADS | Pickle `02` and `04`: leather, French, operations. Balance unchanged: `scripts/WhaleysDogs.Tests.ps1`, offline, on real patch operations | |
+| O. WhaleysDogs balance, leather, ADS | Pickle `02` and `04`: leather, French, operations. Balance unchanged: `Tests/WhaleysDogs.Tests.ps1`, offline, on real patch operations | |
 | P. existing animals, legacy reproduction | Pickle `02`: legacy dog kept, still player's and same coat after reload, still sellable | Loading real old save under changed mod list is game's, as in K. Reproduction of old dog not asserted: random, and compatibility patch does not touch race's reproduction fields |
 | Q. optional content and load order | Pickle `01`: no integration loaded without WhaleysDogs. `02`, `03`, `04`: declared order is loaded order | Reversed order covered by D. Removing WhaleysDogs from save holding `WD_Dalmatian` is game's own refusal |
 
@@ -313,4 +313,4 @@ Leave every other archive alone.
 
 ## Crossing patches (2026-10-02)
 
-Dogs mate and Better Crossbreeding patches (`Mod/Patches/Compat_*.xml`): offline in `scripts/Crossbreeding.Tests.ps1` (real Verse operations); in game, passes 7 to 9 of `Tests/Pickle/README.md` (features `08`, `09`), reading live `canCrossBreedWith` lists and `DZY.CrossBreeding.Extension` of each mother kind. **Not automated:** pregnancy played through to birth with Better Crossbreeding (per-save father dictionary, needs save and reload) and actual courtship in Dogs mate. Both are mods' own behaviour once lists right, stay out of this mod's tests. Keep per pass verdict (`summary.md`, `junit.xml`) of latest run only.
+Dogs mate and Better Crossbreeding patches (`Mod/Patches/Compat_*.xml`): offline in `Tests/Crossbreeding.Tests.ps1` (real Verse operations); in game, passes 7 to 9 of `Tests/Pickle/README.md` (features `08`, `09`), reading live `canCrossBreedWith` lists and `DZY.CrossBreeding.Extension` of each mother kind. **Not automated:** pregnancy played through to birth with Better Crossbreeding (per-save father dictionary, needs save and reload) and actual courtship in Dogs mate. Both are mods' own behaviour once lists right, stay out of this mod's tests. Keep per pass verdict (`summary.md`, `junit.xml`) of latest run only.
