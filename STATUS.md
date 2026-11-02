@@ -29,7 +29,7 @@ manual:       17 scenarios documented in TESTING.md; K reduced to one check (rem
 workshop:     3806709979 (item created private by the 0.1.0 prepublication of 2026-09-23; not the prepublished state)
 remaining:
   - open: gallery reshoot. Run a126 (Tests/Pickle/Inbox/2026-10-20-gallery) read 2026-10-25 by the director, 2 of 4 passed: feed REFUSED (capture shows only flowers and a campfire icon, no dog, no Nelim: the frame step centres away from (151..157, 103..105)); towel and fire FAILED at "I frame the cells ... filling 85 percent" (camera root size reads 11, wanted 5.29 and 3.64: zoom bounded or not finished). The card passed and is index 2 already. Shotlist (3 photos scored 4, card set aside) is in the 07 header and in the table above.
-  - queued 2026-10-25: ticket 20261025-143037-361-c5c5 (old three scenes, map with SimpleCameraSetting, commit acfb68a), evidence to Tests/Pickle/Inbox/2026-10-25-gallery. Shotlist v2 below (4 photographs, mid-gesture) is written; its scenarios wait for c5c5 and for NPT's ticket 1071 (gesture steps deployed 89a2970 and 8318f39, not yet played). Social preview uploaded 2026-10-25 (Preview.png sha256 recorded).
+  - RED infra 2026-10-29: ticket 20261025-143037-361-c5c5 (old three scenes, commit acfb68a) died at exit 11 in 12 s, WSL not answering (wsl --shutdown, then refile; no evidence written). Replaced by small tickets of 07 once WSL is back. Shotlist v2 below (4 photographs, mid-gesture) is written; its scenarios wait for c5c5 and for NPT's ticket 1071 (gesture steps deployed 89a2970 and 8318f39, not yet played). Social preview uploaded 2026-10-25 (Preview.png sha256 recorded).
   - open next (superseded by shotlist v2): fix the three scenarios (ask NPT for a step that centres and zooms on cells, or centre then "the camera root size is set to N"), refile as small tickets, open each capture against its plan line, then reindex, Art/Gallery-clean/, subtitles in PUBLICATION.md and Add-Subtitle.ps1 (card gets none), align tables, then mountPreview. Hair: Ponytails/Pigtails/FancyBun are Female hairstyles; no hat in any scene.
   - 2026-10-25: gesture recipe PROVEN by NPT ticket 531b (fix 6c8ba9d): forced walk or haul, pause, advance 20 ticks = about one cell. Scenarios of 07-publication-shots.feature rewritten on it (4 photographs + card, cells and 20 ticks are first guesses, not played). Next: after c5c5 is read, file small tickets one scenario at a time, open each capture against its shotlist v2 line, adjust cells and ticks. Not proven by NPT: jar ingestion (35f9), collar diagnostic.
   - ruled 2026-10-25 by owner: clothes and expressions of shotlist v2 are suggestions, default expression smiling; colonists other than NSB's need special authorization; special requests go to NPT first, owner arbitrates if NPT refuses.
@@ -39,9 +39,9 @@ remaining:
   - unverified: workshop item 3806709979 still carries the description sent by 0.1.0 (lacks IF I GO QUIET, AI-GENERATED, THANKS, Source code on GitHub link); the Markdown block in PUBLICATION.md is complete, the CI sends it at the first publication (2026-09-27 ruling)
   - unverified: rollback target (none before the first publish) and the drafted thank-you comments, posted only once the item is public
 session:      local_e07388d7-8c73-4619-af3d-44de8bbb400f
-updated:      2026-10-17
+updated:      2026-11-02
 code_review_sha: 103690ac09387031cbffd0d1327e1903bd17acd1
-protocols_read_sha: 095806c1833eb1c63ead36dc4f8e7c625af6b293
+protocols_read_sha: 47cfa97171c35b40d0a18a345684d896172c6c7a
 social_preview_sha256: eed949dc392a63b2f56299ae1eeea7dc0d903cabe76da539748cf25557c5ae42
 ---
 # Dalmatians Renew: status
