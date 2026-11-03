@@ -34,6 +34,7 @@ remaining:
   - 2026-10-25: gesture recipe PROVEN by NPT ticket 531b (fix 6c8ba9d): forced walk or haul, pause, advance 20 ticks = about one cell. Scenarios of 07-publication-shots.feature rewritten on it (4 photographs + card, cells and 20 ticks are first guesses, not played). Next: after c5c5 is read, file small tickets one scenario at a time, open each capture against its shotlist v2 line, adjust cells and ticks. Not proven by NPT: jar ingestion (35f9), collar diagnostic.
   - ruled 2026-10-25 by owner: clothes and expressions of shotlist v2 are suggestions, default expression smiling; colonists other than NSB's need special authorization; special requests go to NPT first, owner arbitrates if NPT refuses.
   - decided 2026-10-25, probe ebfe: failed ("Rex should wear 'Apparel_leatherdogcollar'; it wears " nothing), the dalmatian is not fitted: shots stay vanilla, no patch in this mod, no Animal Apparel Collars credit.
+  - done 2026-11-03: Preview re-rendered after echo.width/height and echo.color left the config (echo fitted in its max box, right of the panel, no clipping or overlap; badge now bottom-right by renderer default); resume-mod 7b.
   - open: Inbox triage after each run: green minified into Evidence with a RELEASE.md, red studied then deleted or parked with a RELEASE.md naming the scenario; Evidence trims proposed 2026-10-19 (p8, rename-p3, rename-p4: drop "loading the colony logs nothing") not done.
   - partial: AUDIT.md 8.d the `@review` captures: the 24 of 2026-10-02 (p1-french 9, p2-french 14, p9 1) opened 2026-10-11, all read as expected (trimmed 2026-10-18 to 4 JPEG in Tests/Pickle/Evidence, the weak p9 capture deleted after the green replay of 2026-10-10; replay the scenario if one more is needed) (French labels and tooltips, four facings, leather card, Wildness 0%, puppy beside adult, corpses). Two notes: the p9 capture (2026-10-02-p9) shows a map without any dalmatian in frame, weak evidence for its scenario; under Whaleys Dogs the tooltips read "Dalmatien 1 (femelle dalmatien)" while standalone reads "Dalmatienne 1 (femelle dalmatienne)" (Whaleys kind label, French validated by the owner 2026-10-02). The 2026-10-10 replays wrote no screenshots; the 2026-09 captures are older than the cutoff.
   - done 2026-11-02 (Audit ruling): 7.b offline suite restored under Tests/ (deleted by d69dacf, 10.e moves scripts to Tests/), cut to 36 mod-specific tests, 36 green; LOCAL_SCRIPTS rows relisted, Audit to validate. Next: replay-audit --force.
@@ -42,7 +43,7 @@ remaining:
 session:      local_e07388d7-8c73-4619-af3d-44de8bbb400f
 updated:      2026-11-02
 code_review_sha: 103690ac09387031cbffd0d1327e1903bd17acd1
-protocols_read_sha: 47cfa97171c35b40d0a18a345684d896172c6c7a
+protocols_read_sha: 41d262941096aae0bf063c8599109ddf0165c55d
 social_preview_sha256: eed949dc392a63b2f56299ae1eeea7dc0d903cabe76da539748cf25557c5ae42
 ---
 # Dalmatians Renew: status
