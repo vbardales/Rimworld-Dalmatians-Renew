@@ -6,9 +6,10 @@
 #
 # THE STORY. WHO: Nelim (Virginie) and her two new dalmatians, Rex the adult and Pup the puppy. WHERE: the Sanctuary, flower garden,
 # water garden, salon. WHEN: the day they arrive, 08:00, 09:00, 15:00, 19:00, clear weather, the game paused at each shot.
-# (1) arrival, they walk into the garden; (2) breakfast; (3) a swim and a towel; (4) dusk, settled by the fire. Nelim keeps the teal
-# shirt, brown trousers and Ponytails in 1 to 3; she changes for the evening in 4 because Pup soaked her in 3 (indigo shirt, cream
-# trousers, FancyBun). Clothes and expressions are suggestions (owner, 2026-10-25): default expression smiling. No apparel on the
+# (1) arrival, she brings them to their new bed; (2) breakfast; (3) Pup out of the pond and a towel; (4) dusk, all three by the fire
+# (shotlist v3, STATUS.md, 2026-11-08). Nelim keeps the teal shirt, brown trousers and Ponytails all day (continuity). Her face
+# steps come last, after the tick advance; a walk toward the camera ends on a LOWER z (north is higher z). Clothes and expressions
+# are suggestions (owner, 2026-10-25): default expression smiling. No apparel on the
 # animals (collar probe ebfe failed, 2026-10-25): the dalmatians stay vanilla.
 #
 # GESTURE RECIPE (NPT ticket 531b, proven 2026-10-25, fix 6c8ba9d): force the walk or the haul, then
