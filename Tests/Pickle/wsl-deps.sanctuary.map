@@ -47,3 +47,5 @@ Moshii.NLFA.InitFix 3609895011
 ccj.nlfaloadfix 3721489042
 # Show Hair Under Stuff (Raccoon Cuddler): hair stays visible under hats and helmets; only hard dependency is Harmony (owner, 2026-10-08).
 RaccoonCuddler.ShowHair 3255379190
+# More animal beds (Animal.BedsNew): the dog bed GSAnimalBedBig of the gallery shots 1, 2 and 4 (shotlist v3, 2026-11-08)
+Animal.BedsNew 3107972819
