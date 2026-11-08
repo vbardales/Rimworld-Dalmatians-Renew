@@ -85,19 +85,43 @@ Series k: ok. One story at the top, opening (1, wide) and closing (4, close), va
 
 ## Gallery shotlist v3 (2026-11-08, supersedes the v2 table above; Opus director pass kept in part)
 
-Lessons of capture db7c (scene 1, REDO): face steps ran before the tick advance (Nelim frowned: the face is the LAST step before the screenshot); the forced walk went from z 103 to 106 and a higher z is NORTH, away from the camera (walk toward the camera means a LOWER target z); flowers filled the frame, no light, no props. Opus remarks kept: a hauled item reads as play in progress (Hay in 1, Kibble in 2, Cloth in 3, WoodLog in 4); Pup on a diagonal, not in Rex's column; no Bedroll (reads human); bed placement consistent (south end of the path, lower z, foreground in 2); Nelim never shown from behind; Rex not "lifts his head" (a lying sprite has one pose): Rex stands at the fire, Pup on the bed. Dropped: outfit change in 4 (fails d continuity): teal shirt, brown trousers, Ponytails all day. Bed = More animal beds `Animal.BedsNew` (3107972819) `GSAnimalBedBig`, added to the scenario's own DepMap (not in the Sanctuary map; not yet played).
+Lessons of capture db7c (scene 1, REDO): face steps ran before the tick advance (Nelim frowned: the face is the LAST step before the screenshot); the forced walk went from z 103 to 106 and a higher z is NORTH, away from the camera (walk toward the camera means a LOWER target z); flowers filled the frame, no light, no props. Opus remarks kept: a hauled item reads as play in progress (Hay in 1, Kibble in 2, Cloth in 3, WoodLog in 4); Pup on a diagonal, not in Rex's column; no Bedroll (reads human); bed placement consistent (south end of the path, lower z, foreground in 2); Nelim never shown from behind; Rex not "lifts his head" (a lying sprite has one pose): Rex stands at the fire, Pup on the bed. Dropped: outfit change in 4 (fails d continuity): teal shirt, brown trousers all day. Bed = More animal beds `Animal.BedsNew` (3107972819) `GSAnimalBedBig`, added to the scenario's own DepMap (not in the Sanctuary map; not yet played).
 
-Story: the day Nelim's two new dalmatians, Rex (adult) and Pup (puppy), arrive and settle: 08:00 she brings them to their new bed, 09:00 breakfast, 15:00 Pup out of the pond, 19:00 all three at the fire, the bed now slept on. Clear weather, game paused at each shot. Nelim: teal shirt (22,110,115), brown trousers (74,58,50), Ponytails, MouthSmile, LidCheerful in every scene; her face steps come last.
+Story: the day Nelim's two new dalmatians, Rex (adult) and Pup (puppy), arrive and settle: 08:00 she brings them to their new bed, 09:00 breakfast, 15:00 Pup out of the pond, 19:00 all three at the fire, the bed now slept on. Clear weather, game paused at each shot. Nelim: teal shirt (22,110,115), brown trousers (74,58,50), her own NSB hairstyle (Roo_HD_Hair_Highpony, a colonist property: no override without owner validation), MouthSmile, LidCheerful in every scene; her face steps come last.
 
 | # | a time frame | b decor | c living | d pawns | e action, instant, how | f composition | g subject | j mod | est. |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 arrival | flower-garden path, 08:00, clear, +40 ticks | TorchLamp lit (152,101); GSAnimalBedBig (154,99) with Hay on it; Plant_Daylily fully grown (150,100) (153,98) (157,100); 4 Plant_YellowTallGrass clumps (no PlantPot); flower beds behind | Rex facing the camera, Pup on the diagonal (155,105) | Nelim teal, brown, Ponytails, smile | Nelim hauls Hay toward the bed, Rex at her heel; instant: they just stepped onto the path, the bed waits; Nelim, Rex, Pup spawned at z 104-105, forced to walk to z 101, advance 40 ticks | zoom 3.2 centred (154,102), bed in the lower frame, lamp left, beds behind, morning light | Nelim brings the dalmatians to their new bed (hay, bed, lamp say it) | Rex about 12 % of height | 5 |
+| 1 arrival | flower-garden path, 08:00, clear, +40 ticks | TorchLamp lit (152,101); GSAnimalBedBig (154,99) with Hay on it; Plant_Daylily fully grown (150,100) (153,98) (157,100); 4 Plant_YellowTallGrass clumps (no PlantPot); flower beds behind | Rex facing the camera, Pup on the diagonal (155,105) | Nelim teal, brown, smile | Nelim hauls Hay toward the bed, Rex at her heel; instant: they just stepped onto the path, the bed waits; Nelim, Rex, Pup spawned at z 104-105, forced to walk to z 101, advance 40 ticks | zoom 3.2 centred (154,102), bed in the lower frame, lamp left, beds behind, morning light | Nelim brings the dalmatians to their new bed (hay, bed, lamp say it) | Rex about 12 % of height | 5 |
 | 2 breakfast | same path, 09:00, clear | same lamp, pots, grass; the bed in the foreground (lower z); Kibble stack | Rex coming at the camera, Pup (153,101) nose to the kibble | same outfit, smile | Nelim carries Kibble from (156,103) to (156,101) facing South, instant just before the drop, Rex forced to walk from (154,104) toward it; advance 20 ticks | zoom 2.2 centred (154,101), Rex large, bed in front | breakfast for the dalmatians (Kibble in hand, dogs coming) | Rex about 20 % | 5 |
 | 3 towel | water-garden west bank x 143-158 z 168-176, 15:00, clear | willows (171,162) (165,162), reeds (168,163), lily pads, ducks 4 or more cells off; daylily clumps at x 146-147 and tall yellow grass on the bank; Cloth in Nelim's hands | Pup walking out of the shallows onto the bank (150,170), ducks | same outfit, smile | Nelim walks south with Cloth toward Pup; instant: Pup just stepped out of the pond, the towel is about to reach him; forced walks, advance 30 ticks; burrow (149,173) avoided | zoom 2.8 centred (150,170), pond behind, reeds and daylilies at the sides | Pup out of the water, Nelim brings the towel (pond, ducks, cloth) | Pup about 20 %, spotted coat | 5 |
 | 4 fire | sofa corner of the salon, 19:00, clear | campfire (190,120) lit, torch lamp lit within 3 cells of the dogs, GSAnimalBedBig by the fire, couches | Rex standing, facing the fire and the camera, Pup on the bed | same outfit, small calm smile (MouthLipsSmallSmile, LidNormal) | Nelim from (190,123) walks south hauling a WoodLog to the fire; instant: the log is about to drop on the embers; forced walks, advance 20 ticks | zoom 2 on Nelim's head, Rex, the bed, warm low light | all three at the fire, the bed they were brought to is theirs now | Rex and Pup large | 5 |
 | card | interface, not scored | - | - | - | - | window-backdrop-for-height, cropped | species card, Wildness 0 % | - | - |
 
-Series k: ok (one story, opening 1 at 3.2, closing 4 at 2, variety 3.2 / 2.2 / 2.8 / 2, rhythm 08, 09, 15, 19, the bed opens and closes the day). Main risks, not scored: `GSAnimalBedBig` never played here; hauled Hay, Kibble, Cloth drawn in hand not proven; a campfire indoors may look staged; Pup lying on the bed is not forced (he stands on it).
+Series k: ok (one story, opening 1 at 3.2, closing 4 at 2, variety 3.2 / 2.2 / 2.8 / 2, rhythm 08, 09, 15, 19, the bed opens and closes the day). Main risks, not scored: `GSAnimalBedBig` never played here; hauled Hay, Kibble, Cloth drawn in hand not proven; a campfire indoors may look staged; Pup in scene 4 lies asleep in the bed by the NPT step "lies asleep in the bed" (2026-11-08, not played yet; the bed must sit exactly at (187,120)).
+
+## NSB (sync 2026-11-08)
+
+Places read: 2026-11-08. Tribe read: 2026-11-08. Steps read: 2026-11-08.
+
+Since the last read: NSB validated hearth-hall, fire-pit, sleeping-nook, sofa-corner and enclosure on 2026-11-08; NPT added the steps "lies asleep in the bed" and "the animal lies at ... facing", "put out", made-of placement. Updated: scene 4 Pup now lies asleep in the bed (NPT step, replaces "stands on the bed"); Nelim's hairstyle override Ponytails dropped from the four scenarios and the shotlist (hairstyle is a colonist property, canon Roo_HD_Hair_Highpony, no owner validation: rule 3). Left alone: campfire at (190,120) in scene 4 (the validated fire-pit hearth (181,115) could replace it, judge on the capture); outfit teal shirt and brown trousers (every outfit is free, rule 4). Open: scenario 4 must remove the thrumbos Atticus and Rain from the hall if they stand in frame (the scenario removes the animals of "sofa-corner" only).
+
+| Place | Shots | Changes for the gallery | Last read |
+| --- | --- | --- | --- |
+| flower-garden (154,110) | 1, 2 | TorchLamp, GSAnimalBedBig, Hay, daylilies, tall grass; animals removed | 2026-11-08 |
+| water-garden (167,173) | 3 | daylilies and tall grass on the west bank; ducks stay | 2026-11-08 |
+| sofa-corner (187,122), hearth-hall | 4 | Campfire (190,120), TorchLamp (189,123), GSAnimalBedBig; animals removed | 2026-11-08 |
+
+| Colonist | Shots | Outfit per shot | Last read | Exceptions |
+| --- | --- | --- | --- | --- |
+| Nelim | 1 to 4 | Apparel_CollarShirt (22,110,115) and Apparel_Pants (74,58,50) all day: free outfit, continuity; MouthSmile and LidCheerful, scene scenery freedom (smile); 4: MouthLipsSmallSmile, LidNormal | 2026-11-08 (VALIDE.md; profile not reopened) | none (hairstyle override removed) |
+
+| Animal | Shots | Outfit | Last read | Exceptions |
+| --- | --- | --- | --- | --- |
+| Rex, Pup (CCPDalmatian, the mod's animal) | 1 to 4 | none | n/a (mod animal, authorized by default 2026-11-07) | none |
+
+| Included animal | Shots |
+| --- | --- |
+| CCPDalmatian (adult Rex, puppy Pup) | 1, 2, 3, 4 |
 
 ## Pickle tickets
 

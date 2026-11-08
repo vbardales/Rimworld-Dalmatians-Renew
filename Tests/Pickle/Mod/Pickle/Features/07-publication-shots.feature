@@ -7,7 +7,7 @@
 # THE STORY. WHO: Nelim (Virginie) and her two new dalmatians, Rex the adult and Pup the puppy. WHERE: the Sanctuary, flower garden,
 # water garden, salon. WHEN: the day they arrive, 8h, 9h, 15h, 19h, clear weather, the game paused at each shot.
 # (1) arrival, she brings them to their new bed; (2) breakfast; (3) Pup out of the pond and a towel; (4) dusk, all three by the fire
-# (shotlist v3, STATUS.md, 2026-11-08). Nelim keeps the teal shirt, brown trousers and Ponytails all day (continuity). Clothes and
+# (shotlist v3, STATUS.md, 2026-11-08). Nelim keeps the teal shirt, brown trousers all day (continuity) and her own NSB hairstyle (no change: a colonist property). Clothes and
 # expressions are suggestions (owner, 2026-10-25): default expression smiling. No apparel on the animals (collar probe ebfe failed,
 # 2026-10-25): the dalmatians stay vanilla. The dog bed is More animal beds (Animal.BedsNew, 3107972819), in the DepMap of this pass.
 #
@@ -16,7 +16,7 @@
 #   1. arrival: flower-garden path at 8h, clear, +40 ticks. The dirt path along the south edge, a new dog bed at its end.
 #         Decor: TorchLamp lit (152, 101), the bed GSAnimalBedBig (154, 99) with Hay on it, Plant_Daylily fully grown at (150, 100),
 #         (153, 98) and (157, 100), Plant_YellowTallGrass at (150, 102), (157, 102), (158, 100) and (149, 101), flower beds behind.
-#         Nelim Apparel_CollarShirt rgb (22, 110, 115), Apparel_Pants rgb (74, 58, 50), Ponytails, MouthSmile, LidCheerful.
+#         Nelim Apparel_CollarShirt rgb (22, 110, 115), Apparel_Pants rgb (74, 58, 50), MouthSmile, LidCheerful.
 #         Action: Nelim hauls Hay to (153, 101) toward the bed, Rex at her heel walks to (154, 101) facing the camera, Pup on the diagonal
 #         walks to (155, 102). The instant: they have just stepped onto the path, the bed waits. Zoom 3.2 on (154, 102).
 #         Says: Nelim brings the dalmatians to their new bed. THUMBNAIL: Rex about 12 percent of the height.
@@ -33,9 +33,9 @@
 #         Says: Pup out of the water, Nelim brings the towel. THUMBNAIL: Pup about 20 percent of the height.
 #   4. fire: sofa corner of the salon at 19h, clear. Campfire at (190, 120) lit, TorchLamp lit at (189, 123), the bed GSAnimalBedBig
 #         near (187, 120) by the fire, the couches. Nelim same outfit Apparel_CollarShirt rgb (22, 110, 115), Apparel_Pants rgb (74, 58, 50),
-#         Ponytails, a small calm smile MouthLipsSmallSmile, LidNormal. Action: Nelim walks south from (190, 123) hauling a WoodLog to
-#         (190, 121), just before it drops on the embers; Rex stands at (188, 121) facing South toward the camera, Pup stands on the
-#         bed at (187, 120). Zoom 2 on (188, 121), warm low light. Says: all three at the fire, the bed is theirs now.
+#         a small calm smile MouthLipsSmallSmile, LidNormal. Action: Nelim walks south from (190, 123) hauling a WoodLog to
+#         (190, 121), just before it drops on the embers; Rex stands at (188, 121) facing South toward the camera, Pup lies asleep in the
+#         bed at (187, 120) (NPT step of 2026-11-08). Zoom 2 on (188, 121), warm low light. Says: all three at the fire, the bed is theirs now.
 #         THUMBNAIL: Rex and Pup large.
 #
 # GESTURE RECIPE (NPT ticket 531b, proven 2026-10-25, fix 6c8ba9d): force the walk or the haul, then
@@ -64,7 +64,6 @@ Feature: images for the Workshop page
     And Nelim's Sanctuary: the animals are removed from the sanctuary "flower-garden"
     And Nelim's Pickle Tools: an adult animal of kind "CCPDalmatian" named "Rex" is spawned at (154, 105)
     And Nelim's Pickle Tools: an animal of kind "CCPDalmatian" named "Pup" is spawned at (155, 106) at life stage 0
-    And Nelim's Pickle Tools: "Nelim" hairstyle is "Ponytails"
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (22, 110, 115)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (74, 58, 50)
     And Nelim's Pickle Tools: "Nelim" stands at (153, 104) facing South
@@ -105,7 +104,6 @@ Feature: images for the Workshop page
     And Nelim's Sanctuary: the animals are removed from the sanctuary "flower-garden"
     And Nelim's Pickle Tools: an adult animal of kind "CCPDalmatian" named "Rex" is spawned at (154, 104)
     And Nelim's Pickle Tools: an animal of kind "CCPDalmatian" named "Pup" is spawned at (153, 101) at life stage 0
-    And Nelim's Pickle Tools: "Nelim" hairstyle is "Ponytails"
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (22, 110, 115)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (74, 58, 50)
     And Nelim's Pickle Tools: "Nelim" stands at (156, 103) facing South
@@ -143,7 +141,6 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: the eclipse of the map is ended
     And Nelim's Pickle Tools: studio presentation mode is enabled
     And Nelim's Pickle Tools: an animal of kind "CCPDalmatian" named "Pup" is spawned at (154, 170) at life stage 0
-    And Nelim's Pickle Tools: "Nelim" hairstyle is "Ponytails"
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (22, 110, 115)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (74, 58, 50)
     And Nelim's Pickle Tools: "Nelim" stands at (151, 173) facing South
@@ -177,14 +174,13 @@ Feature: images for the Workshop page
     And Nelim's Sanctuary: the animals are removed from the sanctuary "sofa-corner"
     And Nelim's Pickle Tools: an adult animal of kind "CCPDalmatian" named "Rex" is spawned at (188, 121)
     And Nelim's Pickle Tools: an animal of kind "CCPDalmatian" named "Pup" is spawned at (187, 120) at life stage 0
-    And Nelim's Pickle Tools: "Nelim" hairstyle is "Ponytails"
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (22, 110, 115)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (74, 58, 50)
     And Nelim's Pickle Tools: "Nelim" stands at (190, 123) facing South
     And Nelim's Pickle Tools: the animal "Rex" stands at (188, 121) facing South
-    And Nelim's Pickle Tools: the animal "Pup" stands at (187, 120) facing South
     And Nelim's Pickle Tools: the other colonists are out of frame
     And Nelim's Pickle Tools: I place the decor "GSAnimalBedBig" near (187, 120)
+    And Nelim's Pickle Tools: "Pup" lies asleep in the bed "GSAnimalBedBig" at (187, 120)
     And Nelim's Pickle Tools: I place the decor "Campfire" at (190, 120)
     And Nelim's Pickle Tools: the decor "Campfire" at (190, 120) is lit
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (189, 123)
