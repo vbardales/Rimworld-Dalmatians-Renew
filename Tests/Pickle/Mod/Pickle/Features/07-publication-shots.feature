@@ -69,7 +69,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: "Nelim" stands at (153, 104) facing South
     And Nelim's Pickle Tools: the other colonists are out of frame
     And Nelim's Pickle Tools: I place the decor "GSAnimalBedBig" near (154, 99)
-    And Nelim's Pickle Tools: I place the decor "Hay" at (154, 99)
+    And Nelim's Pickle Tools: 3 of the item "Hay" are spawned at (154, 99)
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (152, 101)
     And Nelim's Pickle Tools: the decor "TorchLamp" at (152, 101) is lit
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (150, 100) fully grown
