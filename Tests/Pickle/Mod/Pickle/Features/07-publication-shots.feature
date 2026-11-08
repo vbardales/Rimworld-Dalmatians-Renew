@@ -18,7 +18,7 @@
 #         (153, 98) and (157, 100), Plant_YellowTallGrass at (150, 102), (157, 102), (158, 100) and (149, 101), flower beds behind.
 #         Nelim Apparel_CollarShirt rgb (22, 110, 115), Apparel_Pants rgb (74, 58, 50), MouthSmile, LidCheerful.
 #         Action: Nelim hauls Hay to (153, 101) toward the bed, Rex at her heel walks to (154, 101) facing the camera, Pup on the diagonal
-#         walks to (155, 102). The instant: they have just stepped onto the path, the bed waits. Zoom 3.2 on (154, 102).
+#         walks to (155, 102). The instant: they have just stepped onto the path, the bed waits. Zoom 4 (wide, the opening) on (154, 102).
 #         Says: Nelim brings the dalmatians to their new bed. THUMBNAIL: Rex about 12 percent of the height.
 #   2. breakfast: the same path at 9h, clear. The same lamp (152, 101), bed (154, 99) in the foreground (lower z), the same Plant_Daylily
 #         and Plant_YellowTallGrass, a Kibble stack. Nelim in the same outfit Apparel_CollarShirt rgb (22, 110, 115), Apparel_Pants
@@ -36,7 +36,7 @@
 #         a small calm smile MouthLipsSmallSmile, LidNormal. Action: Nelim walks south from (190, 123) hauling a WoodLog to
 #         (190, 121), just before it drops on the embers; Rex stands at (188, 121) facing South toward the camera, Pup lies asleep in the
 #         bed at (187, 120) (NPT step of 2026-11-08). Zoom 2 on (188, 121), warm low light. Says: all three at the fire, the bed is theirs now.
-#         THUMBNAIL: Rex and Pup large.
+#         THUMBNAIL: Rex about 25 percent, Pup about 15 percent of the height.
 #
 # GESTURE RECIPE (NPT ticket 531b, proven 2026-10-25, fix 6c8ba9d): force the walk or the haul, then
 # `I advance the paused game by exactly N ticks` (20 ticks is about one cell), then frame and shoot. The pawns are caught in stride.
@@ -84,7 +84,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: "Rex" is forced to walk to (154, 101)
     And Nelim's Pickle Tools: "Pup" is forced to walk to (155, 102)
     When Nelim's Pickle Tools: I advance the paused game by exactly 40 ticks
-    And Nelim's Pickle Tools: I frame the cell (154, 102) at zoom 3.2
+    And Nelim's Pickle Tools: I frame the cell (154, 102) at zoom 4
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
