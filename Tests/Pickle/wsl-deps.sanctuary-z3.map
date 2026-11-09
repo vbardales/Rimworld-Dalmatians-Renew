@@ -1,0 +1,81 @@
+# The Workshop gallery pass: the captures, taken on the sanctuary save "Nelims-tribe" carried by Sanctuary Backlot.
+#   Submit-PickleRun.ps1 -Mod DalmatiansRenew -DepMap wsl-deps.sanctuary-z3.map -Filter 07-publication-shots -Language English
+# Only 07-publication-shots.feature asks for it; it is skipped in every other pass. Run it in English: the Workshop page is English.
+# Copy of SanctuaryBacklot/Tests/Pickle/wsl-deps.sanctuary.map (2026-10-17, owner rule: every mod of that map, none questioned),
+# plus the Backlot itself (the fixture and the "Nelim's Sanctuary:" steps; the fixture must come from the Backlot only: two fixtures
+# of that name fail Pickle) and ScreenshotMode (the map shown alone). Seeds: Tests/Pickle/config/sanctuary/ (copied from the Backlot).
+# Nelim is the one colonist (Virginie).
+nelim.sanctuarybacklot path:SanctuaryBacklot/Mod
+nelim.pickletools.screenshotmode path:PickleTools/ScreenshotMode/Mod
+nelim.pickletools.screenshotstudio path:PickleTools/ScreenshotStudio/Mod
+nelim.pickletools.camerazoom path:PickleTools/CameraZoom/Mod
+nelim.pickletools.stagedecor path:PickleTools/StageDecor/Mod
+nelim.pickletools.coatsteps path:PickleTools/CoatSteps/Mod
+nelim.pickletools.clearscreen path:PickleTools/ClearScreen/Mod
+nelim.pickletools.colonistrace path:PickleTools/ColonistRace/Mod
+nelim.pickletools.clickdiagnostics path:PickleTools/ClickDiagnostics/Mod
+# Camera zoom (2026-10-25, NPT answer on ticket a126): the game bounds the camera root size at 11, so the framing steps read 11 and fail.
+# SimpleCameraSetting lifts the bound with its default settings and the root size stays the drawn size (CameraZoom/README.md, tickets 54d3 and 46b3).
+ray1203.SimpleCameraSetting 3232415388
+# The bundle is committed under PickleTools/Mod: this shell replaces it, so the tools above are the only copy of their steps (see StandaloneBase).
+nelim.pickletools   path:PickleTools/Tests/Pickle/StandaloneBase/Mod
+# Minimum list, 2026-10-07/08 (owner). The staging activates in file order, then sorts by loadAfter/dependencies.
+# Bodies and trousers, as proven by Venus Touch Waistlines' gallery pass WITHOUT TailorMade (VenusTouchWaistlines/docs/runs/2026-10-08_gallery-no-tailormade-1):
+# Female Body Variants and Female Apparel Variants load BEFORE WDI (else their Naked_*_Female textures shadow WDI's); AB's Visible Pants is indispensable (without it Venus does nothing).
+# Seeds: Tests/Pickle/config/sanctuary/ (AB's settings; Venus's, whose name must be Mod_local-<packageId>_<Class>.xml because it is staged by path:).
+# Not staged: TailorMade (not needed), Apparel Paper Pattern (not required: AB lists it in loadAfter only), THIGAPPE (does the same fitting as Venus, dropped), Reel's textures (owner: not added), Kas.GeneralCollection (optional, Workshop id 3789119336).
+tiagocc0.FemaleBodyVariants 3798082132
+tiagocc0.FemaleApparelVariants 3799726535
+wdi.realistic.bodies 3527486510
+ab.vplrf 2986402536
+nelim.venustouch.waistlines path:VenusTouchWaistlines/Mod
+# Facial animation: base (blinks included: its `blink` animation), experimentals, Vanilla Textures Expanded, Akeron Extras (needs VTE), EyeGenes3, the performance patch. Moving Vanilla Eyes (VEFA) is listed further down.
+Nals.FacialAnimation 1635901197
+nals.facialanimationexperimentals 2581693737
+VanillaExpanded.VTEXE.FacialAnims 2816938779
+Newton.AKNExtras.FacialAnimations 2889716301
+lucius.eyegenes3 3745223213
+astryl.FacialAnimationPerformancePatch 3790129900
+# Facial animation fixes (owner, 2026-10-08): Init Fix animates newly spawned pawns at once, Load Fix refreshes pawn graphics after a save loads (both after Nals.FacialAnimation). Cuter Kids (3807706870, children only) is added on the owner's word.
+# [VK] closed eyes: new eyelids for the Experimentals, 1.6. FAE (2890697696) is NOT used and Dynamic Eyebrows (3813572847) is NOT used (owner, 2026-10-08).
+vk.addeyes.EX 3694711465
+# VEFA = Vanilla Experimentals for Facial Animation (SunshineyDays, sd.fa.movingvanillaeyes): moving eyes, half-lidded tiredness, tears, hot and cold overlays, smiles; reads the VTE lids and mouths. Back 2026-10-08 on the owner's word, after its HasNegativeBlushThought exception (run d445) was a reason to remove it. Its seed (config/sanctuary) sets enableBlushLimiting to False to avoid that exception.
+sd.fa.movingvanillaeyes 3753978140
+SleepyFrieren.beautygenefa 3685072616
+ria.cuterkidsforfacialanimation 3807706870
+Moshii.NLFA.InitFix 3609895011
+ccj.nlfaloadfix 3721489042
+# Show Hair Under Stuff (Raccoon Cuddler): hair stays visible under hats and helmets; only hard dependency is Harmony (owner, 2026-10-08).
+RaccoonCuddler.ShowHair 3255379190
+# More animal beds (Animal.BedsNew): the dog bed GSAnimalBedBig of the gallery shots 1, 2 and 4 (shotlist v3, 2026-11-08)
+Animal.BedsNew 3107972819
+
+# z3 (2026-11-09): the final decorated Sanctuary, fixture Nelims-tribe-decor-mods-z3 (NPT answer PiT, 2026-11-09). Decor base and decorative mods copied from PickleTools/Tests/Pickle/wsl-deps.sanctuary-decor-mods.map (do not edit the shared one).
+nelim.pickletools.decorbase path:PickleTools/Tests/Pickle/DecorBase/Mod
+# dependencies of the decorative mods
+brrainz.harmony 2009463077
+adaptive.storage.framework 3033901359
+erdelf.HumanoidAlienRaces 839005762
+OskarPotocki.VanillaFactionsExpanded.Core 2023507013
+# the decorative mods (Workshop ids read from the Windows Workshop folder 2026-11-05)
+Caoyuanfei.YuranShrineJapaneseArchitecture 3671664434
+RooAndGloomy.YuranRaceMod 2844129100
+Erin.JapaneseFurniture 2354938860
+milple.KoreanStyleFurniture 3733695302
+erin.decorations 2463358089
+daylight.RimLifeExSTFMod 2289110791
+daylight.RimLifeExFurMod 2309537905
+kcb.pottingdeco 3575201181
+Mlie.SpidercampsDecorativePlants 2453107898
+Mlie.DecorativeTrees 2670019924
+hd.pashka.Mlie.DecorativeTrees 2729580051
+zal.wallvitalsmonitor 3283745385
+WallMounted.FunctionFurniture 3807382130
+mgatwood.housedecor 3535047810
+KindSeal.DecorativePainting 3587440566
+AKN.Decorations 2755025925
+mingtuwuxiang.FishingDecorative 2981211719
+draegon.FishingDecoRetex 3256420234
+
+# Little Playgrounds (owner choice, Virginie 2026-11-06, play area; needs only Biotech)
+choco.littleplaygrounds 3828953545
