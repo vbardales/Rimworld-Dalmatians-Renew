@@ -47,7 +47,7 @@ remaining:
 session:      local_e07388d7-8c73-4619-af3d-44de8bbb400f
 updated:      2026-11-02
 code_review_sha: 103690ac09387031cbffd0d1327e1903bd17acd1
-protocols_read_sha: 5300f94f4037eb8ae2de438dfb9f22ec530edfe3
+protocols_read_sha: 01ba2e9cfe0b307ec9f0aef7d1edfd39f2458666
 social_preview_sha256: eed949dc392a63b2f56299ae1eeea7dc0d903cabe76da539748cf25557c5ae42
 ---
 # Dalmatians Renew: status
@@ -105,9 +105,11 @@ Plan rated 2026-11-08 after the NSB/NPT sync (score-gallery, no capture yet): 1 
 
 ## NSB (sync 2026-11-08)
 
-Places read: 2026-11-08. Tribe read: 2026-11-08. Steps read: 2026-11-08.
+Places read: 2026-11-09. Tribe read: 2026-11-09. Steps read: 2026-11-09.
 
-Since the last read: NSB validated hearth-hall, fire-pit, sleeping-nook, sofa-corner and enclosure on 2026-11-08; NPT added the steps "lies asleep in the bed" and "the animal lies at ... facing", "put out", made-of placement. Updated: scene 4 Pup now lies asleep in the bed (NPT step, replaces "stands on the bed"); Nelim's hairstyle override Ponytails dropped from the four scenarios and the shotlist (hairstyle is a colonist property, canon Roo_HD_Hair_Highpony, no owner validation: rule 3). Left alone: campfire at (190,120) in scene 4 (the validated fire-pit hearth (181,115) could replace it, judge on the capture); outfit teal shirt and brown trousers (every outfit is free, rule 4). Open: scenario 4 must remove the thrumbos Atticus and Rain from the hall if they stand in frame (the scenario removes the animals of "sofa-corner" only).
+Sync 2026-11-09: NSB finished the redecoration, all places validated, final fixture `Nelims-tribe-decor-mods-z3.rws` copied to NSB `Mod/Pickle/Fixtures` (sha256 6bfb4a48...); `Nelims-tribe.rws` stays the OLD undecorated Sanctuary until scenarios are repointed. Scenario 07 still loads "Nelims-tribe" (old): OPEN, ask NPT how to load z3 for a gallery (DepMap, decor map) and which of the decor the scenarios add (TorchLamp, Hay, daylilies, campfire) z3 already holds (cell conflicts of tickets 121a, 9d54). Quill and Beauty2 mouth changes (cc61d17): no effect on Nelim. New NPT steps: "I frame the area centred on the point (x, z) at root size N" (compiled, played green on ACG 6e93; may fix the frame step that failed in a126/6ef6), "carries the item X made of Y", "the colonist does not flee from hostile pawns", "flecks of def are not thrown" (sleeping Z), "the drawing of the class is skipped". Left alone: shotlist and scenarios (no rewrite before z3 answer). Ticket 6ef6 ended exit 3 "guard stop (game silent or blocked)", no report: infrastructure, not the scenario; refile after the z3 answer.
+
+Earlier sync (2026-11-08): NSB validated hearth-hall, fire-pit, sleeping-nook, sofa-corner and enclosure on 2026-11-08; NPT added the steps "lies asleep in the bed" and "the animal lies at ... facing", "put out", made-of placement. Updated: scene 4 Pup now lies asleep in the bed (NPT step, replaces "stands on the bed"); Nelim's hairstyle override Ponytails dropped from the four scenarios and the shotlist (hairstyle is a colonist property, canon Roo_HD_Hair_Highpony, no owner validation: rule 3). Left alone: campfire at (190,120) in scene 4 (the validated fire-pit hearth (181,115) could replace it, judge on the capture); outfit teal shirt and brown trousers (every outfit is free, rule 4). Open: scenario 4 must remove the thrumbos Atticus and Rain from the hall if they stand in frame (the scenario removes the animals of "sofa-corner" only).
 
 | Place | Shots | Changes for the gallery | Last read |
 | --- | --- | --- | --- |
