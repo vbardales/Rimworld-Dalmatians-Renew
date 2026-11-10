@@ -14,14 +14,13 @@
 # THE SHOTLIST (one line per photograph, checked against the scenarios by scripts/Check-ShotlistVsScenario.ps1):
 #
 #   1. arrival: flower-garden path at 8h, clear, +40 ticks. The dirt path along the south edge, a new dog bed at its end.
-#         Decor: TorchLamp lit (152, 101), the bed GSAnimalBedBig (154, 99) with Hay on it, Plant_Daylily fully grown at (150, 100),
-#         (153, 98) and (157, 100), Plant_YellowTallGrass at (150, 102), (157, 102), (158, 100) and (149, 101), flower beds behind.
+#         Decor: the bed GSAnimalBedBig (154, 99) with Hay on it; the lamps, daylilies and tall grass are the ones the z3 fixture
+#         already holds (nothing else placed: a cell with a plant or a lamp fails the placement), flower beds behind.
 #         Nelim Apparel_CollarShirt rgb (22, 110, 115), Apparel_Pants rgb (74, 58, 50), MouthSmile, LidCheerful.
 #         Action: Nelim hauls Hay to (153, 101) toward the bed, Rex at her heel walks to (154, 101) facing the camera, Pup on the diagonal
 #         walks to (155, 102). The instant: they have just stepped onto the path, the bed waits. Zoom 4 (wide, the opening) on (154, 102).
 #         Says: Nelim brings the dalmatians to their new bed. THUMBNAIL: Rex about 12 percent of the height.
-#   2. breakfast: the same path at 9h, clear. The same lamp (152, 101), bed (154, 99) in the foreground (lower z), the same Plant_Daylily
-#         and Plant_YellowTallGrass, a Kibble stack. Nelim in the same outfit Apparel_CollarShirt rgb (22, 110, 115), Apparel_Pants
+#   2. breakfast: the same path at 9h, clear. The same z3 lamps and plants, bed (154, 99) in the foreground (lower z), a Kibble stack. Nelim in the same outfit Apparel_CollarShirt rgb (22, 110, 115), Apparel_Pants
 #         rgb (74, 58, 50), smile. Action: Nelim walks south from (156, 103) hauling Kibble to (155, 101), just before the drop; Rex
 #         walks from (154, 104) to (154, 101) toward her, facing the camera; Pup stands at (153, 101) nose to the kibble.
 #         Zoom 2.2 on (154, 101). Says: breakfast for the dalmatians. THUMBNAIL: Rex about 20 percent of the height.
@@ -53,7 +52,7 @@
 Feature: images for the Workshop page
 
   Background:
-    Given the save "Nelims-tribe" is loaded
+    Given the save "Nelims-tribe-decor-mods-z3" is loaded
     And game speed is paused
 
   Scenario: the arrival, Nelim brings the new dalmatians to their bed in the flower garden
@@ -70,15 +69,6 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: the other colonists are out of frame
     And Nelim's Pickle Tools: I place the decor "GSAnimalBedBig" near (154, 99)
     And Nelim's Pickle Tools: 3 of the item "Hay" are spawned at (154, 99)
-    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (152, 101)
-    And Nelim's Pickle Tools: the decor "TorchLamp" at (152, 101) is lit
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (150, 100) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (153, 98) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (157, 100) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (150, 102) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (157, 102) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (158, 100) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (149, 101) fully grown
     And Nelim's Pickle Tools: the item and name labels are hidden
     And Nelim's Pickle Tools: "Nelim" is forced to haul 3 of the item "Hay" to (153, 101)
     And Nelim's Pickle Tools: "Rex" is forced to walk to (154, 101)
@@ -110,15 +100,6 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: the animal "Pup" stands at (153, 101) facing East
     And Nelim's Pickle Tools: the other colonists are out of frame
     And Nelim's Pickle Tools: I place the decor "GSAnimalBedBig" near (154, 99)
-    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (152, 101)
-    And Nelim's Pickle Tools: the decor "TorchLamp" at (152, 101) is lit
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (150, 100) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (153, 98) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (157, 100) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (150, 102) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (157, 102) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (158, 100) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (149, 101) fully grown
     And Nelim's Pickle Tools: the item and name labels are hidden
     And Nelim's Pickle Tools: "Nelim" is forced to haul 5 of the item "Kibble" to (155, 101)
     And Nelim's Pickle Tools: "Rex" is forced to walk to (154, 101)
