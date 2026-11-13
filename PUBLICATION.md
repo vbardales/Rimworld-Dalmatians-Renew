@@ -19,7 +19,7 @@ Not restated from `AUDIT.md`; only what is specific to this mod.
   garden picture and the information card are the accepted ones until the new captures are read and accepted.
 - The rollback target cannot exist before the first publish: the tag is created by the CI after a successful
   upload, and no artificial tag is made (CI/CD session, 2026-09-27; see "Fail fast").
-- The description on the Steam page is the one 0.1.0 sent. The one-source Markdown standard is adopted at the
+- The description on the Steam page is the one sent with 0.1.0. The one-source Markdown standard is adopted at the
   first publication (see "Steam description"); until then, no action.
 - The owner's manual validations: none left (row 1 dropped 2026-10-02, row 4 automated as scenario K, ticket 2a30).
 
@@ -34,7 +34,7 @@ One dog. A dalmatian: a medium-sized, spotted, sweet-natured pet that nuzzles, c
 
 No DLC, no dependencies, no assembly. Three defs, four textures and four optional patches.
 
-I am not the author of this mod. The animal, its artwork and its stats are cucumpear's and lavie2k's - all I did was bring it forward to the latest RimWorld version, repair what the port turned up, and write the French. Credit goes to them; mistakes in the port are mine.
+I am not the author of this mod. The animal, its artwork and its stats are cucumpear's and lavie2k's - all I did was bring it forward to the latest RimWorld version, repair what the port turned up, and translate it into French. Credit goes to them; mistakes in the port are mine.
 
 Original mod: [Dalmatians](https://steamcommunity.com/sharedfiles/filedetails/?id=1513691963) - declares 1.0 to 1.4 and nothing further.
 
@@ -59,7 +59,7 @@ The A Dog Said patch had stopped working. It looked for recipes called "OldWound
 
 The patch also had a fault of its own that was worth fixing before it could ever fire. Its condition was written [@Name = "A" or "B" or "C"], which is not the test it looks like: in XPath a bare non-empty string is simply true, so the condition matched every recipe in the game. Had the old names still existed, the dalmatian would have been added as a user of every recipe in every mod loaded. Each name is now compared properly.
 
-Otherwise nothing moved: the stats, the tools, the litter curve, the sounds, the trade tags, the leather and the four textures are as cucumpear and lavie2k left them. One field was added, animalType, which every dog in the latest RimWorld version carries and which did not exist when this mod was written.
+Otherwise nothing moved: the stats, the tools, the litter curve, the sounds, the trade tags, the leather and the four textures are as cucumpear and lavie2k left them. One field was added, animalType, which every dog in the latest RimWorld version has and which did not exist when this mod was written.
 
 French was added. The defName is unchanged, so a save moves between the two mods without losing a dog.
 
