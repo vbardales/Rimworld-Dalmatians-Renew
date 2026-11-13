@@ -4,7 +4,7 @@
   <ThingDef ParentName="AnimalThingBase">
     <defName>CCPDalmatian</defName>
     <label>dalmatian</label>
-    <description>A very muscular, medium-sized dog. Originally bred to retrieve prey, guard carriages and aid firefighters, the dalmatian is famous for its distinct spotty pattern and a well-loved domestic companion with a sweet nature.</description>
+    <description>A very muscular, medium-sized dog. Originally bred to retrieve prey, guard carriages and aid firefighters, the dalmatian is famous for its distinctive spotted coat and is a well-loved companion animal with a gentle temperament.</description>
     <statBases>
       <MoveSpeed>5.0</MoveSpeed>
       <MarketValue>250</MarketValue>
