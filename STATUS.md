@@ -107,7 +107,9 @@ Plan rated 2026-11-08 after the NSB/NPT sync (score-gallery, no capture yet): 1 
 
 ## NSB (sync 2026-11-08)
 
-Places read: 2026-11-09. Tribe read: 2026-11-09. Steps read: 2026-11-10.
+Places read: 2026-11-13 (no content change since 2026-11-09: only the docs/ to Docs/ rename, 18abf53). Tribe read: 2026-11-13 (same: no roster, look or animal change; the 2026-11-12 NSB commits touch NSB own tests and About only). Steps read: 2026-11-13.
+
+Sync 2026-11-13: NPT steps since 2026-11-10 that serve the gallery: "the animal X stands at (x, z) facing {word}" (Rex facing South toward the camera), "the colonist X is removed from the map", "the loose things within N cells of X are removed", filth removal, ScreenshotStudio step hiding the tab bar and speed controls (the capture of 6d59 shows none, kept as is). No step removes a building by cell: the green crate in the lower left of ticket 6d59 stays out of frame by the centre cell or goes to NPT. Left alone: shotlist v3, no cell change yet (rework of scenario 1 follows the 6d59 capture read).
 
 Sync 2026-11-09: NSB finished the redecoration, all places validated, final fixture `Nelims-tribe-decor-mods-z3.rws` copied to NSB `Mod/Pickle/Fixtures` (sha256 6bfb4a48...); `Nelims-tribe.rws` stays the OLD undecorated Sanctuary until scenarios are repointed. Scenario 07 still loads "Nelims-tribe" (old): OPEN, ask NPT how to load z3 for a gallery (DepMap, decor map) and which of the decor the scenarios add (TorchLamp, Hay, daylilies, campfire) z3 already holds (cell conflicts of tickets 121a, 9d54). Quill and Beauty2 mouth changes (cc61d17): no effect on Nelim. New NPT steps: "I frame the area centred on the point (x, z) at root size N" (compiled, played green on ACG 6e93; may fix the frame step that failed in a126/6ef6), "carries the item X made of Y", "the colonist does not flee from hostile pawns", "flecks of def are not thrown" (sleeping Z), "the drawing of the class is skipped". Left alone: shotlist and scenarios (no rewrite before z3 answer). Ticket 6ef6 ended exit 3 "guard stop (game silent or blocked)", no report: infrastructure, not the scenario; refile after the z3 answer.
 
