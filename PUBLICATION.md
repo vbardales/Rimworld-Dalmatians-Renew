@@ -74,7 +74,7 @@ Content mod: removing it mid-save destroys any dalmatian already in the colony.
 If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.
 
 ## AI-generated
-The port work (the XML, the patches, the tests and the documentation) was done with the help of AI assistants, Claude (Anthropic) and Codex (OpenAI), under human direction. Automated in-game runs cover the mod on its own, in English; the other configurations are still being run.
+The port work (the XML, the patches, the tests and the documentation) was done with the help of AI assistants, Claude (Anthropic) and Codex (OpenAI), under human direction. Automated in-game runs cover the mod on its own and with each supported compatibility mod, in English and in French.
 
 ## Thanks
 - cucumpear and lavie2k, for the dog, its artwork and its balance.
