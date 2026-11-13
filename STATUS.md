@@ -105,6 +105,21 @@ Series k: ok (one story, opening 1 at 4, closing 4 at 2, variety wide 4 / 2.2 / 
 
 Plan rated 2026-11-08 after the NSB/NPT sync (score-gallery, no capture yet): 1 = 5, 2 = 5, 3 = 5, 4 = 5; series k ok; mean 5. Fixed before rating: scene 1 zoom 3.2 became 4 (a wide opening, variety), scene 2 "pots" became daylilies and tall grass (scene 1 has no PlantPot), scene 4 thumbnail "large" became Rex about 25 %, Pup about 15 %, Nelim hairstyle override dropped (rule 3). No new Opus pass: v3 of today keeps the Opus director remarks. Capture verdicts: none yet (db7c REDO is v2/v1 era).
 
+## Gallery shotlist v4 (2026-11-13, amends v3 after the capture of ticket 6d59; Opus director pass kept in part)
+
+Lessons of 6d59 (scene 1 on z3, REDO): a carried item hides Nelim's face when she faces the camera; Rex seen from behind; Pup tiny at the top; an unidentified solid green rectangle in the lower left (asked of NPT 2026-11-13); two beds in frame (z3 own wooden bed at the right, our GSAnimalBedBig). The daylily field, torches and light were good (b ok).
+
+Rules added: P1 Nelim carrying an item walks in profile (East or West), never facing the camera; facing the camera only empty-handed. P2 at most one animal faces the camera per scene (Opus: a second one posed for the photo breaks criterion e), by the NPT step `the animal X stands at (x, z) facing South` as the last gesture, only on the animal meant to stand still; to be proven on the capture (it may cancel the stride). P3 Pup within 2 cells of Rex, lower half of the frame. P4 hay is the thread: in her arms in 1, on the bed in 2, under the sleeping Pup in 4 (no hay pre-placed on the bed in 1).
+
+| # | change from v3 | status |
+|---|---|---|
+| 1 arrival | played as scenario: Hay stack (152,102) hauled East to (157,102), Nelim from (151,102) facing East, 60 ticks; Rex walks to (155,101) then stands facing South; Pup walks (154,104) to (153,100); bed GSAnimalBedBig (154,99) empty; zoom 3.2 on (155,101) (Rex 15 percent: j ok at 268 px). Frame may move once NPT names the green object | scenario and header rewritten 2026-11-13, Check-ShotlistVsScenario OK, not played |
+| 2 breakfast | Nelim walks West (not South) with the Kibble toward the dogs; Pup nose to the kibble, not facing the camera; Rex the one facing the camera; hay still on the bed | header and scenario to rewrite after capture 1 is read |
+| 3 towel | Nelim walks East or West with the Cloth, not South; Pup facing the camera, dripping, in stride | same |
+| 4 fire | instant just AFTER the log drops: Nelim empty-handed facing the camera, her face clear (series closes on it); Rex faces the fire and Nelim; Pup asleep on the hay in the bed | same |
+
+Plan rated 2026-11-13 (score-gallery, no capture yet: rating the plan): scene 1 = 5 (j was weak at zoom 4, Rex 12 percent at 268 px = 18 px, fixed by zoom 3.2 on (155,101)); scenes 2 to 4 keep their v3 text (5) until their header and scenario are rewritten with the amendments above after capture 1 is read; series k ok (one story, opening 1 wide, closing 4 close, hay thread); mean 5. Not verified: stride kept after the facing step (P2), the green object (NPT).
+
 ## NSB (sync 2026-11-08)
 
 Places read: 2026-11-13 (no content change since 2026-11-09: only the docs/ to Docs/ rename, 18abf53). Tribe read: 2026-11-13 (same: no roster, look or animal change; the 2026-11-12 NSB commits touch NSB own tests and About only). Steps read: 2026-11-13.

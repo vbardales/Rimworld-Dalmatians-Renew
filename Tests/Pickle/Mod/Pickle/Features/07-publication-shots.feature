@@ -13,12 +13,13 @@
 #
 # THE SHOTLIST (one line per photograph, checked against the scenarios by scripts/Check-ShotlistVsScenario.ps1):
 #
-#   1. arrival: flower-garden path at 8h, clear, +40 ticks. The dirt path along the south edge, a new dog bed at its end.
-#         Decor: the bed GSAnimalBedBig (154, 99) with Hay on it; the lamps, daylilies and tall grass are the ones the z3 fixture
+#   1. arrival: flower-garden path at 8h, clear, +60 ticks. The dirt path along the south edge, the bed GSAnimalBedBig (154, 99) south of it.
+#         Decor: the bed alone (no hay on it: the hay is in her arms); the lamps, daylilies and tall grass are the ones the z3 fixture
 #         already holds (nothing else placed: a cell with a plant or a lamp fails the placement), flower beds behind.
 #         Nelim Apparel_CollarShirt rgb (22, 110, 115), Apparel_Pants rgb (74, 58, 50), MouthSmile, LidCheerful.
-#         Action: Nelim hauls Hay to (153, 101) toward the bed, Rex at her heel walks to (154, 101) facing the camera, Pup on the diagonal
-#         walks to (155, 102). The instant: they have just stepped onto the path, the bed waits. Zoom 4 (wide, the opening) on (154, 102).
+#         Action: Nelim, in profile (a carried item hides her face when she faces the camera), hauls 3 Hay East along the path from (151, 102)
+#         to (157, 102); Rex walks to (155, 101) then stands facing South toward the camera; Pup walks from (154, 104) to (153, 100), lower half of the frame
+#         beside Rex. The instant: the bed waits empty, the hay arrives in her arms. Zoom 3.2 on (155, 101): Rex about 15 percent of the height, readable at 268 px.
 #         Says: Nelim brings the dalmatians to their new bed. THUMBNAIL: Rex about 12 percent of the height.
 #   2. breakfast: the same path at 9h, clear. The same z3 lamps and plants, bed (154, 99) in the foreground (lower z), a Kibble stack. Nelim in the same outfit Apparel_CollarShirt rgb (22, 110, 115), Apparel_Pants
 #         rgb (74, 58, 50), smile. Action: Nelim walks south from (156, 103) hauling Kibble to (155, 101), just before the drop; Rex
@@ -61,20 +62,21 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: the eclipse of the map is ended
     And Nelim's Pickle Tools: studio presentation mode is enabled
     And Nelim's Sanctuary: the animals are removed from the sanctuary "flower-garden"
-    And Nelim's Pickle Tools: an adult animal of kind "CCPDalmatian" named "Rex" is spawned at (154, 105)
-    And Nelim's Pickle Tools: an animal of kind "CCPDalmatian" named "Pup" is spawned at (155, 106) at life stage 0
+    And Nelim's Pickle Tools: an adult animal of kind "CCPDalmatian" named "Rex" is spawned at (155, 104)
+    And Nelim's Pickle Tools: an animal of kind "CCPDalmatian" named "Pup" is spawned at (154, 104) at life stage 0
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (22, 110, 115)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (74, 58, 50)
-    And Nelim's Pickle Tools: "Nelim" stands at (153, 104) facing South
+    And Nelim's Pickle Tools: "Nelim" stands at (151, 102) facing East
     And Nelim's Pickle Tools: the other colonists are out of frame
     And Nelim's Pickle Tools: I place the decor "GSAnimalBedBig" near (154, 99)
-    And Nelim's Pickle Tools: 3 of the item "Hay" are spawned at (154, 99)
+    And Nelim's Pickle Tools: 3 of the item "Hay" are spawned at (152, 102)
     And Nelim's Pickle Tools: the item and name labels are hidden
-    And Nelim's Pickle Tools: "Nelim" is forced to haul 3 of the item "Hay" to (153, 101)
-    And Nelim's Pickle Tools: "Rex" is forced to walk to (154, 101)
-    And Nelim's Pickle Tools: "Pup" is forced to walk to (155, 102)
-    When Nelim's Pickle Tools: I advance the paused game by exactly 40 ticks
-    And Nelim's Pickle Tools: I frame the cell (154, 102) at zoom 4
+    And Nelim's Pickle Tools: "Nelim" is forced to haul 3 of the item "Hay" to (157, 102)
+    And Nelim's Pickle Tools: "Rex" is forced to walk to (155, 101)
+    And Nelim's Pickle Tools: "Pup" is forced to walk to (153, 100)
+    When Nelim's Pickle Tools: I advance the paused game by exactly 60 ticks
+    And Nelim's Pickle Tools: the animal "Rex" stands at (155, 101) facing South
+    And Nelim's Pickle Tools: I frame the cell (155, 101) at zoom 3.2
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
