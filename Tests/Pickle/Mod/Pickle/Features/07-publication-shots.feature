@@ -71,16 +71,19 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: I place the decor "GSAnimalBedBig" near (154, 99)
     And Nelim's Pickle Tools: 3 of the item "Hay" are spawned at (152, 102)
     And Nelim's Pickle Tools: the item and name labels are hidden
+    And Nelim's Pickle Tools: the things within 4 cells of (151, 99) are listed
+    And Nelim's Pickle Tools: the things "SculptureGrand" within 2 cells of (151, 100) are hidden
+    And Nelim's Pickle Tools: the painted zones are hidden
     And Nelim's Pickle Tools: "Nelim" is forced to haul 3 of the item "Hay" to (156, 102)
     And Nelim's Pickle Tools: "Rex" is forced to walk to (155, 101)
     And Nelim's Pickle Tools: "Pup" is forced to walk to (153, 100)
     When Nelim's Pickle Tools: I advance the paused game by exactly 60 ticks
-    And Nelim's Pickle Tools: the animal "Rex" stands at (155, 101) facing South
     And Nelim's Pickle Tools: I frame the cell (155, 101) at zoom 3.2
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
     And Nelim's Pickle Tools: "Nelim" face is held neutral
+    And Nelim's Pickle Tools: the animal "Rex" stands at (155, 101) facing South
     And Nelim's Pickle Tools: I move the mouse to (960, 1000)
     And Nelim's Pickle Tools: developer mode is turned off for the capture
     And Nelim's Pickle Tools: the map is shown alone for a capture
