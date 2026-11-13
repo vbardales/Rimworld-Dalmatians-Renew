@@ -3,18 +3,18 @@
 What the Workshop page needs and the rest of the repository does not hold. It serves twice: for the
 first release, and for whoever takes the mod over.
 
-**Status: drafted, 2026-09-25.** Workshop item `3806709979` was created private by the 0.1.0
+**Status: drafted, 2026-09-25.** Workshop item `3806709979` was created privately by the 0.1.0
 prepublication of 2026-09-23 and its `PublishedFileId.txt` is committed and pushed. No Git tag and no
 GitHub release exist, and none is made by hand: the CI creates them after a successful upload.
-Nothing below has been posted or pasted anywhere. The stage is `done`, not `prepublished`
+Nothing below has been posted or pasted anywhere. The stage is `shootGallery[1.0.0]`, not `prepublished`
 (see `STATUS.md`).
 
 ## What blocks the publication
 
 Not restated from `AUDIT.md`; only what is specific to this mod.
 
-- The Pickle suite: all eight launches are green (`docs/runs/`); the seven smoke tickets that prove the
-  `packageId` rename of 2026-09-28 are in the queue.
+- The Pickle suite: passes 1 to 9 and the removal chain are green (`docs/runs/`, `STATUS.md`); the `packageId`
+  rename of 2026-09-28 is covered by them.
 - The gallery is being reshot as one story on the Sanctuary (three scenes, see "Gallery subtitles"): the previous
   garden picture and the information card are the accepted ones until the new captures are read and accepted.
 - The rollback target cannot exist before the first publish: the tag is created by the CI after a successful
@@ -41,9 +41,9 @@ Original mod: [Dalmatians](https://steamcommunity.com/sharedfiles/filedetails/?i
 ## What's in it
 - The dalmatian. Body size 0.70, market value 250, comfortable down to -30C, omnivore, Advanced trainability, wildness 0, gestation 25 days, litters peaking at two puppies, lives about 12 years. It nuzzles, it takes a name the moment it is tamed, and it never turns manhunter.
 - Dalmatian leather, an almost white leather of its own. It insulates a little less against cold than plain leather does, 14 against 16, and is worth a shade less.
-- Support for [A Dog Said... Animal Prosthetics 2](https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862), if you use it: the dalmatian is offered the same animal surgeries as vanilla's huskies and labradors. Inert if the mod is absent. It must load before A Dog Said 2, which the mod's metadata declares - A Dog Said 2 copies its three animal categories onto the real surgery recipes with its own last patch, so an animal added to those categories afterwards lands in a list nothing reads any more.
+- Support for [A Dog Said... Animal Prosthetics 2](https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862), if you use it: the dalmatian is offered the same animal surgeries as vanilla's huskies and labradors. Inert if the mod is absent. It must load before A Dog Said 2, as declared in this mod's metadata - A Dog Said 2 copies its three animal categories onto the real surgery recipes with its own last patch, so an animal added to those categories afterwards lands in a list nothing reads any more.
 - Support for [Dogs mate (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2441132298), if you use it: the dalmatian joins its Dog group and courts the husky, the labrador retriever and the Yorkshire terrier, and they court it. Inert if the mod is absent.
-- Support for [Better Crossbreeding](https://steamcommunity.com/sharedfiles/filedetails/?id=3520675842), if you use it: the same three dogs cross with the dalmatian, each way, and the pup is either parent's breed. Inert if the mod is absent.
+- Support for [Better Crossbreeding](https://steamcommunity.com/sharedfiles/filedetails/?id=3520675842), if you use it: the dalmatian crosses with the same three dogs, each way, and the pup is either parent's breed. Inert if the mod is absent.
 
 ## With WhaleysDogs (Continued)
 [WhaleysDogs (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2274606936) supplies the main dalmatian and its balance when both mods are enabled. This port adds an alternate spotted coat, French labels, dedicated leather and ADS 2 support. Its original coat and complete corpse graphics remain. Load WhaleysDogs first, this mod next, then ADS 2 if used.
@@ -156,7 +156,7 @@ The files below are the planned names after the reshoot and the reindex; a row s
 | `incompatibleWith` | `cucumpear.dalmatians` | Same `defName`s as the original; run one or the other |
 
 Pass 5 of the Pickle suite plays the wrong order on purpose, and pass 6 plays the original beside this
-mod, to check that what the documents say about them is still true. Neither has been run.
+mod, to check that what the documents say about them is still true. Both are green (`STATUS.md`).
 
 ## Manual validations of the owner
 
