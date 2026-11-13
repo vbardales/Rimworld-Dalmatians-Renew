@@ -18,7 +18,7 @@
 #         already holds (nothing else placed: a cell with a plant or a lamp fails the placement), flower beds behind.
 #         Nelim Apparel_CollarShirt rgb (22, 110, 115), Apparel_Pants rgb (74, 58, 50), MouthSmile, LidCheerful.
 #         Action: Nelim, in profile (a carried item hides her face when she faces the camera), hauls 3 Hay East along the path from (151, 102)
-#         to (157, 102); Rex walks to (155, 101) then stands facing South toward the camera; Pup walks from (154, 104) to (153, 100), lower half of the frame
+#         to (156, 102); Rex walks to (155, 101) then stands facing South toward the camera; Pup walks from (154, 104) to (153, 100), lower half of the frame
 #         beside Rex. The instant: the bed waits empty, the hay arrives in her arms. Zoom 3.2 on (155, 101): Rex about 15 percent of the height, readable at 268 px.
 #         Says: Nelim brings the dalmatians to their new bed. THUMBNAIL: Rex about 12 percent of the height.
 #   2. breakfast: the same path at 9h, clear. The same z3 lamps and plants, bed (154, 99) in the foreground (lower z), a Kibble stack. Nelim in the same outfit Apparel_CollarShirt rgb (22, 110, 115), Apparel_Pants
@@ -71,7 +71,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: I place the decor "GSAnimalBedBig" near (154, 99)
     And Nelim's Pickle Tools: 3 of the item "Hay" are spawned at (152, 102)
     And Nelim's Pickle Tools: the item and name labels are hidden
-    And Nelim's Pickle Tools: "Nelim" is forced to haul 3 of the item "Hay" to (157, 102)
+    And Nelim's Pickle Tools: "Nelim" is forced to haul 3 of the item "Hay" to (156, 102)
     And Nelim's Pickle Tools: "Rex" is forced to walk to (155, 101)
     And Nelim's Pickle Tools: "Pup" is forced to walk to (153, 100)
     When Nelim's Pickle Tools: I advance the paused game by exactly 60 ticks
