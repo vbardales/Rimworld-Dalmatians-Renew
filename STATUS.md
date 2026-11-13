@@ -145,3 +145,7 @@ Filed 2026-10-10, both RUN_DONE green (exit 0): 20261010-225052-995-f244 (pass 9
 - Distributed root: `Mod/ATTRIBUTION.md` and `Mod/LICENSE` byte-identical to root copies; `Mod/desktop.ini` gitignored; `*.dds` untracked.
 - Em dash: `Mod/About/About.xml` and PUBLICATION.md clean; README.md and CHANGELOG.md (append-only) carry older ones, left as is.
 - Protocols read: AGENTS, PICKLE, PUBLISHING, TRANSLATIONS, MOD_SETTINGS, STYLE_RIMWORLD, WORKSHOP_COMMENTS (section Writing a comment); `protocols_read_sha` written, `Check-Status.ps1`: 0 error, 0 warning.
+
+## Ecosystem
+
+2026-11-13, PiI (`docs/inventory/ecosystem-steam/DalmatiansRenew.md` of the protocols repository): no duplicate, no fork. The original, Dalmatians 1513691963 (`cucumpear.dalmatians`), is tagged [Retired] since 2022-10, versions 1.0 to 1.4, dead for 1.6: this mod is the only 1.6 Dalmatian. Corpus scan of this mod's defNames: the original (2 shared, expected), WhaleysDogs and WhaleysDogs (Continued) 2274606936 as weak hits (0 shared defName). Optional patch targets are alive for 1.6: WhaleysDogs (Continued), A Dog Said Animal Prosthetics 2 3238353862, Dogs mate 2441132298. Note: Dog Retexture 3284798441 may recolour dog coats, a Pickle check is worth considering (not filed, needs the owner's call on installing it). Nothing subscribed.
