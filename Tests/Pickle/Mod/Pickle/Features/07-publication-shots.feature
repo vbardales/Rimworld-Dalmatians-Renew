@@ -22,8 +22,8 @@
 #         beside Rex. The instant: the bed waits empty, the hay is delivered beside it. Zoom 3.2 on (155, 101): Rex about 15 percent of the height, readable at 268 px.
 #         Says: Nelim brings the dalmatians to their new bed. THUMBNAIL: Rex about 12 percent of the height.
 #   2. breakfast: the same path at 9h, clear. The same z3 lamps and plants, bed (154, 99) in the foreground (lower z), a Kibble stack. Nelim in the same outfit Apparel_CollarShirt rgb (22, 110, 115), Apparel_Pants
-#         rgb (74, 58, 50), smile. Action: Nelim walks south from (156, 103) hauling Kibble to (155, 101), just before the drop; Rex
-#         walks from (154, 104) to (154, 101) toward her, facing the camera; Pup stands at (153, 101) nose to the kibble.
+#         rgb (74, 58, 50), smile. Action (v5, as scenario 1): Nelim STANDS at (156, 102) facing South, smiling, set again after the ticks, no haul; 5 Kibble lie at (154, 100); Rex
+#         walks from (154, 104) to (154, 101) toward the camera, facing it; Pup stands at (153, 101) nose to the kibble. The fixture IncenseShrine within 1 cells of (158, 102), SculptureGrand and SculptureLarge within 2 cells of (153, 100) are hidden.
 #         Zoom 2.2 on (154, 101). Says: breakfast for the dalmatians. THUMBNAIL: Rex about 20 percent of the height.
 #   3. towel: water-garden west bank at 15h, clear. Willows, reeds, lily pads, the pond's ducks (not removed), Plant_Daylily at (146, 171)
 #         and (147, 169), Plant_YellowTallGrass at (146, 173), (148, 170) and (150, 168) so the bank is not bare, a Cloth in Nelim's hands.
@@ -107,10 +107,14 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: the other colonists are out of frame
     And Nelim's Pickle Tools: I place the decor "GSAnimalBedBig" near (154, 99)
     And Nelim's Pickle Tools: the item and name labels are hidden
-    And Nelim's Pickle Tools: "Nelim" is forced to haul 5 of the item "Kibble" to (155, 101)
+    And Nelim's Pickle Tools: 5 of the item "Kibble" are spawned at (154, 100)
+    And Nelim's Pickle Tools: the things "IncenseShrine" within 1 cells of (158, 102) are hidden
+    And Nelim's Pickle Tools: the things "SculptureGrand,SculptureLarge" within 2 cells of (153, 100) are hidden
+    And Nelim's Pickle Tools: the painted zones are hidden
     And Nelim's Pickle Tools: "Rex" is forced to walk to (154, 101)
-    When Nelim's Pickle Tools: I advance the paused game by exactly 20 ticks
+    When Nelim's Pickle Tools: I advance the paused game by exactly 100 ticks
     And Nelim's Pickle Tools: I frame the cell (154, 101) at zoom 2.2
+    And Nelim's Pickle Tools: "Nelim" stands at (156, 102) facing South
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
