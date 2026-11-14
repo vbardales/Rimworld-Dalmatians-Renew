@@ -14,12 +14,12 @@
 # THE SHOTLIST (one line per photograph, checked against the scenarios by scripts/Check-ShotlistVsScenario.ps1):
 #
 #   1. arrival: flower-garden path at 8h, clear, +60 ticks. The dirt path along the south edge, the bed GSAnimalBedBig (154, 99) south of it.
-#         Decor: the bed alone (no hay on it: the hay is in her arms); the lamps, daylilies and tall grass are the ones the z3 fixture
+#         Decor: the bed alone (no hay on it: the hay lies beside it); the fixture SculptureGrand and SculptureLarge within 2 cells of (153, 100) are hidden; the lamps, daylilies and tall grass are the ones the z3 fixture
 #         already holds (nothing else placed: a cell with a plant or a lamp fails the placement), flower beds behind.
 #         Nelim Apparel_CollarShirt rgb (22, 110, 115), Apparel_Pants rgb (74, 58, 50), MouthSmile, LidCheerful.
-#         Action: Nelim, in profile (a carried item hides her face when she faces the camera), hauls 3 Hay East along the path from (151, 102)
-#         to (156, 102); Rex walks to (155, 101) then stands facing South toward the camera; Pup walks from (154, 104) to (153, 100), lower half of the frame
-#         beside Rex. The instant: the bed waits empty, the hay arrives in her arms. Zoom 3.2 on (155, 101): Rex about 15 percent of the height, readable at 268 px.
+#         Action (v5): Nelim STANDS at (156, 101) facing South toward the camera, smiling, face clear (a carried item hid it in 6d59 and fe07, so no haul here);
+#         3 Hay lie on the path at (152, 101) beside the bed, delivered. Rex walks to (155, 101) then stands facing South toward the camera; Pup walks from (154, 104) to (153, 100), lower half of the frame
+#         beside Rex. The instant: the bed waits empty, the hay is delivered beside it. Zoom 3.2 on (155, 101): Rex about 15 percent of the height, readable at 268 px.
 #         Says: Nelim brings the dalmatians to their new bed. THUMBNAIL: Rex about 12 percent of the height.
 #   2. breakfast: the same path at 9h, clear. The same z3 lamps and plants, bed (154, 99) in the foreground (lower z), a Kibble stack. Nelim in the same outfit Apparel_CollarShirt rgb (22, 110, 115), Apparel_Pants
 #         rgb (74, 58, 50), smile. Action: Nelim walks south from (156, 103) hauling Kibble to (155, 101), just before the drop; Rex
@@ -66,15 +66,14 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: an animal of kind "CCPDalmatian" named "Pup" is spawned at (154, 104) at life stage 0
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (22, 110, 115)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (74, 58, 50)
-    And Nelim's Pickle Tools: "Nelim" stands at (151, 102) facing East
+    And Nelim's Pickle Tools: "Nelim" stands at (156, 101) facing South
     And Nelim's Pickle Tools: the other colonists are out of frame
     And Nelim's Pickle Tools: I place the decor "GSAnimalBedBig" near (154, 99)
-    And Nelim's Pickle Tools: 3 of the item "Hay" are spawned at (152, 102)
+    And Nelim's Pickle Tools: 3 of the item "Hay" are spawned at (152, 101)
     And Nelim's Pickle Tools: the item and name labels are hidden
-    And Nelim's Pickle Tools: the things within 4 cells of (151, 99) are listed
-    And Nelim's Pickle Tools: the things "SculptureGrand" within 2 cells of (151, 100) are hidden
+    And Nelim's Pickle Tools: the things within 4 cells of (158, 104) are listed
+    And Nelim's Pickle Tools: the things "SculptureGrand,SculptureLarge" within 2 cells of (153, 100) are hidden
     And Nelim's Pickle Tools: the painted zones are hidden
-    And Nelim's Pickle Tools: "Nelim" is forced to haul 3 of the item "Hay" to (156, 102)
     And Nelim's Pickle Tools: "Rex" is forced to walk to (155, 101)
     And Nelim's Pickle Tools: "Pup" is forced to walk to (153, 100)
     When Nelim's Pickle Tools: I advance the paused game by exactly 60 ticks
