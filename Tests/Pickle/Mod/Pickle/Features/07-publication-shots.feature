@@ -173,6 +173,8 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: an animal of kind "CCPDalmatian" named "Pup" is spawned at (187, 120) at life stage 0
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (22, 110, 115)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (74, 58, 50)
+    And Nelim's Pickle Tools: the free standable cells of the area from (184, 117) to (194, 125) are listed
+    And Nelim's Pickle Tools: the things within 7 cells of (189, 121) are listed
     And Nelim's Pickle Tools: "Nelim" stands at (190, 123) facing South
     And Nelim's Pickle Tools: the animal "Rex" stands at (188, 121) facing South
     And Nelim's Pickle Tools: the other colonists are out of frame
