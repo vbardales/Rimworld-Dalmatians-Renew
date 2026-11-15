@@ -145,6 +145,15 @@ The files below are the planned names after the reshoot and the reindex; a row s
 | 2 | `2-the-dalmatians-by-the-fire.jpg` | By the fire they are family, not wild things. |
 | 3 | `3-the-information-card.png` | none (window capture) |
 
+Candidates of the 2026-11-15 reshoot, burned in `Art/Gallery/` from `Art/Gallery-clean/` (files `c1` to `c4`, reindexed only after the owner accepts):
+
+| candidate | file | line |
+|---|---|---|
+| c1 | `c1-the-arrival.jpg` | Nelim brings Rex and Pup home to their new bed. |
+| c2 | `c2-breakfast.jpg` | Breakfast: kibble for Rex and Pup. |
+| c3 | `c3-the-towel.jpg` | Out of the pond, Pup gets a towel. |
+| c4 | `c4-the-fire.jpg` | Evening by the fire: the bed is theirs now. |
+
 ## Dependencies and DLCs
 
 **No DLC is required, and no mod.** `supportedVersions` declares 1.6 only.
