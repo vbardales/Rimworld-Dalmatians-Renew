@@ -19,12 +19,12 @@
 #         Nelim Apparel_CollarShirt rgb (22, 110, 115), Apparel_Pants rgb (74, 58, 50), MouthSmile, LidCheerful.
 #         Action (v5): Nelim STANDS at (156, 101) facing South (set again after the ticks: she drifted north in 1ddd) toward the camera, smiling, face clear (a carried item hid it in 6d59 and fe07, so no haul here);
 #         3 Hay lie on the path at (152, 101) beside the bed, delivered. Rex walks to (155, 101) then stands facing South toward the camera; Pup walks from (154, 104) to (153, 100), lower half of the frame
-#         beside Rex. The instant: the bed waits empty, the hay is delivered beside it. Zoom 3.2 on (155, 101): Rex about 15 percent of the height, readable at 268 px.
+#         beside Rex. The instant: the bed waits empty, the hay is delivered beside it. Zoom 3.2 on (155, 100), the bed in frame, Pup stands at (154, 100) facing South beside Rex: Rex about 15 percent of the height, readable at 268 px.
 #         Says: Nelim brings the dalmatians to their new bed. THUMBNAIL: Rex about 12 percent of the height.
 #   2. breakfast: the same path at 9h, clear. The same z3 lamps and plants, bed (154, 99) in the foreground (lower z), a Kibble stack. Nelim in the same outfit Apparel_CollarShirt rgb (22, 110, 115), Apparel_Pants
 #         rgb (74, 58, 50), smile. Action (v5, as scenario 1): Nelim STANDS at (155, 102) facing South, smiling, and both dogs are set again after the ticks (they walked past in a401); 5 Kibble lie at (154, 100); Rex
 #         walks from (154, 104) to (154, 101) toward the camera, facing it; Pup stands at (153, 100) facing East, nose to the kibble. The fixture IncenseShrine within 1 cells of (158, 102), SculptureGrand and SculptureLarge within 2 cells of (153, 100) are hidden.
-#         Zoom 2.2 on (154, 101). Says: breakfast for the dalmatians. THUMBNAIL: Rex about 20 percent of the height.
+#         Zoom 2.2 on (154, 100). Says: breakfast for the dalmatians. THUMBNAIL: Rex about 20 percent of the height.
 #   3. towel: water-garden west bank at 15h, clear. Willows, reeds, lily pads, the pond's ducks (not removed), Plant_Daylily at (146, 171)
 #         and (147, 169), Plant_YellowTallGrass at (146, 173), (148, 170) and (150, 168) so the bank is not bare, a Cloth lies at (151, 171) beside her, the fixture SteamGeyser within 1 cells of (149, 173) is hidden.
 #         Nelim same outfit Apparel_CollarShirt rgb (22, 110, 115), Apparel_Pants rgb (74, 58, 50), smile.
@@ -78,13 +78,14 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: "Rex" is forced to walk to (155, 101)
     And Nelim's Pickle Tools: "Pup" is forced to walk to (153, 100)
     When Nelim's Pickle Tools: I advance the paused game by exactly 100 ticks
-    And Nelim's Pickle Tools: I frame the cell (155, 101) at zoom 3.2
+    And Nelim's Pickle Tools: I frame the cell (155, 100) at zoom 3.2
     And Nelim's Pickle Tools: "Nelim" stands at (156, 101) facing South
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
     And Nelim's Pickle Tools: "Nelim" face is held neutral
     And Nelim's Pickle Tools: the animal "Rex" stands at (155, 101) facing South
+    And Nelim's Pickle Tools: the animal "Pup" stands at (154, 100) facing South
     And Nelim's Pickle Tools: I move the mouse to (960, 1000)
     And Nelim's Pickle Tools: developer mode is turned off for the capture
     And Nelim's Pickle Tools: the map is shown alone for a capture
@@ -113,7 +114,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: the painted zones are hidden
     And Nelim's Pickle Tools: "Rex" is forced to walk to (154, 101)
     When Nelim's Pickle Tools: I advance the paused game by exactly 100 ticks
-    And Nelim's Pickle Tools: I frame the cell (154, 101) at zoom 2.2
+    And Nelim's Pickle Tools: I frame the cell (154, 100) at zoom 2.2
     And Nelim's Pickle Tools: "Nelim" stands at (155, 102) facing South
     And Nelim's Pickle Tools: the animal "Pup" stands at (153, 100) facing East
     And Nelim's Pickle Tools: the animal "Rex" stands at (154, 101) facing South
