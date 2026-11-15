@@ -26,10 +26,10 @@
 #         walks from (154, 104) to (154, 101) toward the camera, facing it; Pup stands at (153, 100) facing East, nose to the kibble. The fixture IncenseShrine within 1 cells of (158, 102), SculptureGrand and SculptureLarge within 2 cells of (153, 100) are hidden.
 #         Zoom 2.2 on (154, 101). Says: breakfast for the dalmatians. THUMBNAIL: Rex about 20 percent of the height.
 #   3. towel: water-garden west bank at 15h, clear. Willows, reeds, lily pads, the pond's ducks (not removed), Plant_Daylily at (146, 171)
-#         and (147, 169), Plant_YellowTallGrass at (146, 173), (148, 170) and (150, 168) so the bank is not bare, a Cloth in Nelim's hands.
-#         Nelim same outfit Apparel_CollarShirt rgb (22, 110, 115), Apparel_Pants rgb (74, 58, 50), smile. Action: Nelim walks south
-#         from (151, 173) hauling Cloth to (151, 171); Pup walks out of the shallows from (154, 170) to (152, 170). The instant: Pup has just
-#         stepped out of the pond, the towel is about to reach him. Zoom 2.8 on (151, 171).
+#         and (147, 169), Plant_YellowTallGrass at (146, 173), (148, 170) and (150, 168) so the bank is not bare, a Cloth lies at (150, 171) beside her.
+#         Nelim same outfit Apparel_CollarShirt rgb (22, 110, 115), Apparel_Pants rgb (74, 58, 50), smile.
+#         Action (v5, as scenarios 1 and 2): Nelim STANDS at (151, 172) facing South, smiling, no haul, set again after 60 ticks; Pup walks out of the shallows from (154, 170) to (152, 170)
+#         and is set again there facing West. The instant: Pup has just stepped out of the pond, the towel lies ready. Zoom 2.8 on (151, 171).
 #         Says: Pup out of the water, Nelim brings the towel. THUMBNAIL: Pup about 20 percent of the height.
 #   4. fire: sofa corner of the salon at 19h, clear. Campfire at (190, 120) lit, TorchLamp lit at (189, 123), the bed GSAnimalBedBig
 #         near (187, 120) by the fire, the couches. Nelim same outfit Apparel_CollarShirt rgb (22, 110, 115), Apparel_Pants rgb (74, 58, 50),
@@ -144,10 +144,13 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (148, 170) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (150, 168) fully grown
     And Nelim's Pickle Tools: the item and name labels are hidden
-    And Nelim's Pickle Tools: "Nelim" is forced to haul 1 of the item "Cloth" to (151, 171)
+    And Nelim's Pickle Tools: 1 of the item "Cloth" are spawned at (150, 171)
+    And Nelim's Pickle Tools: the things within 5 cells of (151, 171) are listed
     And Nelim's Pickle Tools: "Pup" is forced to walk to (152, 170)
-    When Nelim's Pickle Tools: I advance the paused game by exactly 30 ticks
+    When Nelim's Pickle Tools: I advance the paused game by exactly 60 ticks
     And Nelim's Pickle Tools: I frame the cell (151, 171) at zoom 2.8
+    And Nelim's Pickle Tools: "Nelim" stands at (151, 172) facing South
+    And Nelim's Pickle Tools: the animal "Pup" stands at (152, 170) facing West
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
