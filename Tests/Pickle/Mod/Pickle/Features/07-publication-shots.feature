@@ -31,11 +31,11 @@
 #         Action (v5, as scenarios 1 and 2): Nelim STANDS at (151, 172) facing South, smiling, no haul, set again after 60 ticks; Pup walks out of the shallows from (154, 170) to (152, 170)
 #         and is set again at (152, 171) facing West. The instant: Pup has just stepped out of the pond, the towel lies ready. Zoom 2.8 on (151, 171).
 #         Says: Pup out of the water, Nelim brings the towel. THUMBNAIL: Pup about 20 percent of the height.
-#   4. fire: sofa corner of the salon at 19h, clear (v10, cells read in the 1cb4 free-cells listing; 4c put the bed indoors behind a wall, the story broke).#         The fixture Campfire at (194, 121) lit (no torch: the cells are taken), the bed GSAnimalBedBig near (193, 119) on the same stone floor.#         Nelim same outfit Apparel_CollarShirt rgb (22, 110, 115), Apparel_Pants rgb (74, 58, 50), a small calm smile MouthLipsSmallSmile, LidNormal.#         Action: Nelim STANDS at (193, 121) facing South, no haul, set again after 60 ticks; a WoodLog lies at (194, 122) by the fire; Rex stands at (194, 120)#         facing South toward the camera (set again after the ticks), Pup lies asleep in the bed at (193, 119) (NPT step of 2026-11-08). Zoom 1.8 on (193, 120), warm low light.#         Says: all three at the fire, the bed is theirs now. THUMBNAIL: Rex about 25 percent, Pup about 15 percent of the height.
+#   4. fire: sofa corner of the salon at 19h, clear (v11, cells read in the 1cb4 free-cells listing; 4c put the bed indoors behind a wall, the story broke).#         The fixture Campfire at (194, 121) lit (no torch: the cells are taken), the bed GSAnimalBedBig near (193, 119) on the same stone floor.#         Nelim same outfit Apparel_CollarShirt rgb (22, 110, 115), Apparel_Pants rgb (74, 58, 50), a small calm smile MouthLipsSmallSmile, LidNormal.#         Action: Nelim STANDS at (193, 121) facing South, no haul, set again after 60 ticks; a WoodLog lies at (194, 122) by the fire; Rex stands at (194, 120)#         facing South toward the camera (set again after the ticks), Pup stands at (193, 120) facing South, the bed (193, 119) behind them (4g: Pup asleep sat half out of the frame). Zoom 1.8 on (193, 120), warm low light.#         Says: all three at the fire, the bed is theirs now. THUMBNAIL: Rex about 25 percent, Pup about 15 percent of the height.
 #         The fixture Campfire at (194, 121) lit (no torch: the cells are taken), the bed GSAnimalBedBig near (193, 119) on the same stone floor.
 #         Nelim same outfit Apparel_CollarShirt rgb (22, 110, 115), Apparel_Pants rgb (74, 58, 50), a small calm smile MouthLipsSmallSmile, LidNormal.
 #         Action: Nelim STANDS at (193, 121) facing South, no haul, set again after 60 ticks; a WoodLog lies at (194, 122) by the fire; Rex stands at (194, 120)
-#         facing South toward the camera (set again after the ticks), Pup lies asleep in the bed at (193, 119) (NPT step of 2026-11-08). Zoom 1.8 on (193, 120), warm low light.
+#         facing South toward the camera (set again after the ticks), Pup stands at (193, 120) facing South, the bed (193, 119) behind them (4g: Pup asleep sat half out of the frame). Zoom 1.8 on (193, 120), warm low light.
 #         Says: all three at the fire, the bed is theirs now. THUMBNAIL: Rex about 25 percent, Pup about 15 percent of the height.
 #
 # GESTURE RECIPE (NPT ticket 531b, proven 2026-10-25, fix 6c8ba9d): force the walk or the haul, then
@@ -178,7 +178,6 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: the animal "Rex" stands at (194, 120) facing South
     And Nelim's Pickle Tools: the other colonists are out of frame
     And Nelim's Pickle Tools: I place the decor "GSAnimalBedBig" near (193, 119)
-    And Nelim's Pickle Tools: "Pup" lies asleep in the bed "GSAnimalBedBig" at (193, 119)
     And Nelim's Pickle Tools: the decor "Campfire" at (194, 121) is lit
     And Nelim's Pickle Tools: the item and name labels are hidden
     And Nelim's Pickle Tools: 1 of the item "WoodLog" are spawned at (194, 122)
@@ -186,6 +185,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: I frame the cell (193, 120) at zoom 1.8
     And Nelim's Pickle Tools: "Nelim" stands at (193, 121) facing South
     And Nelim's Pickle Tools: the animal "Rex" stands at (194, 120) facing South
+    And Nelim's Pickle Tools: the animal "Pup" stands at (193, 120) facing South
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: "Nelim" mouth is "MouthLipsSmallSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidNormal"
