@@ -33,8 +33,8 @@
 #         Says: Pup out of the water, Nelim brings the towel. THUMBNAIL: Pup about 20 percent of the height.
 #   4. fire: sofa corner of the salon at 19h, clear. Campfire at (190, 120) lit, TorchLamp lit at (189, 123), the bed GSAnimalBedBig
 #         near (187, 120) by the fire, the couches. Nelim same outfit Apparel_CollarShirt rgb (22, 110, 115), Apparel_Pants rgb (74, 58, 50),
-#         a small calm smile MouthLipsSmallSmile, LidNormal. Action: Nelim walks south from (190, 123) hauling a WoodLog to
-#         (190, 121), just before it drops on the embers; Rex stands at (188, 121) facing South toward the camera, Pup lies asleep in the
+#         a small calm smile MouthLipsSmallSmile, LidNormal. Action (v5): Nelim STANDS at (190, 122) facing South, no haul, set again after 60 ticks; a WoodLog lies at (191, 121) by the fire;
+#         Rex stands at (188, 121) facing South toward the camera (set again after the ticks), Pup lies asleep in the
 #         bed at (187, 120) (NPT step of 2026-11-08). Zoom 2 on (188, 121), warm low light. Says: all three at the fire, the bed is theirs now.
 #         THUMBNAIL: Rex about 25 percent, Pup about 15 percent of the height.
 #
@@ -183,9 +183,12 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (189, 123)
     And Nelim's Pickle Tools: the decor "TorchLamp" at (189, 123) is lit
     And Nelim's Pickle Tools: the item and name labels are hidden
-    And Nelim's Pickle Tools: "Nelim" is forced to haul 1 of the item "WoodLog" to (190, 121)
-    When Nelim's Pickle Tools: I advance the paused game by exactly 20 ticks
+    And Nelim's Pickle Tools: 1 of the item "WoodLog" are spawned at (191, 121)
+    And Nelim's Pickle Tools: the things within 5 cells of (189, 121) are listed
+    When Nelim's Pickle Tools: I advance the paused game by exactly 60 ticks
     And Nelim's Pickle Tools: I frame the cell (188, 121) at zoom 2
+    And Nelim's Pickle Tools: "Nelim" stands at (190, 122) facing South
+    And Nelim's Pickle Tools: the animal "Rex" stands at (188, 121) facing South
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: "Nelim" mouth is "MouthLipsSmallSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidNormal"
