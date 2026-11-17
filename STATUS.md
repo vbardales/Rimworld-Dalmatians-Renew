@@ -11,7 +11,7 @@ visibility:   public
 upstream_visibility: public (Steam API visibility=0; banned=0; checked 2026-09-12)
 detached:     yes
 maintainer:   Claude Code (the session named for this mod); Codex worked on it earlier
-workflow_stage:  shootGallery[1.0.0]
+workflow_stage:  playTests[1.0.0]
 licence:      silent
 licence_port: MIT, limited to the port contributions
 licence_at:   LICENSE; Mod/LICENSE; ATTRIBUTION.md
@@ -28,6 +28,7 @@ automated:    36 passed, 0 failed, 0 skipped on 2026-11-02 (Tests/Run-Tests.ps1,
 manual:       17 scenarios documented in TESTING.md; K reduced to one check (removal) and L dropped (owner, 2026-09-27), A automated in full (training tab) the same day; row 1 dropped (2026-10-02), K-removal automated and green 2026-10-10 (ticket 21e8): no manual validation left, as PUBLICATION.md says
 workshop:     3806709979 (item created private by the 0.1.0 prepublication of 2026-09-23; not the prepublished state)
 remaining:
+  - 2026-11-17 audit-replay (owner confirmed the move back from shootGallery): first open 8.a. Mod/ text commits of 2026-11-13 (f7f68a2 dalmatien invariable, 3bc56d4, 02a6507: Defs description and French DefInjected) are newer than the greens of 2026-10-10 (tree 06648bd) and than code_review_sha 103690ac. Open: 8.a tested sha, 8.c Pickle replay on the current build, 8.m code review of the diff 103690ac..HEAD (Defs and DefInjected text, About.xml). To confirm after the replay: 8.d, 8.f, 8.g, 8.i, 8.j, 8.k. 4.b and 4.e closed by OptionalCompat.xml (69b4005). Gallery work (scenes 1 and 2 v7 read, scene 2 head cut) is parked: no gallery capture at playTests.
   - open: gallery reshoot. Run a126 (Inbox folder 2026-10-20-gallery, deleted 2026-11-02 after study: red, superseded by shotlist v2) read 2026-10-25 by the director, 2 of 4 passed: feed REFUSED (capture shows only flowers and a campfire icon, no dog, no Nelim: the frame step centres away from (151..157, 103..105)); towel and fire FAILED at "I frame the cells ... filling 85 percent" (camera root size reads 11, wanted 5.29 and 3.64: zoom bounded or not finished). The card passed and is index 2 already. Shotlist (3 photos scored 4, card set aside) is in the 07 header and in the table above.
   - open next (2026-11-08): shotlist v3 plan 5 on every scene, scenarios 1 to 4 of 07-publication-shots.feature rewritten from it, Animal.BedsNew in wsl-deps.sanctuary.map, Check-ShotlistVsScenario OK (f58533e). Next: file scenario 1 alone as a small ticket (DepMap wsl-deps.sanctuary.map, English, Tests/Pickle/Inbox/2026-11-08-gallery-1), open the capture against v3 line 1, then 2 to 4 one at a time. Unproven: GSAnimalBedBig and Hay placement, hauled items drawn in hand, cells standable; 3 has no animal removal (ducks stay, an NSB pet may wander in).
   - 2026-11-09: PiT answer: load `Given the save "Nelims-tribe-decor-mods-z3" is loaded` with wsl-deps.sanctuary-z3.map (this mod; decor mods copied from the shared map). z3 holds TorchLamp (157,102) in flower-garden, Daylily rows at z103 (150..156) and (150,104), NO GSAnimalBedBig, NO campfire, sofa-corner has 2 Couches and milple_TorchLampR (184,120), water-garden west bank has lily pads, reeds, bamboo (143,175), no daylilies. Diag ticket 68f8 (99-diag-flower-garden, 3 places) filed 20261109-234520-126-68f8; then fix scenario cells and repoint 07 on z3, Check-ShotlistVsScenario, refile 1. Guard stop of 6ef6 was not from z3. 2026-11-10: diag 68f8 GREEN (3 of 3, Inbox 2026-11-09-diag-z3), captures read: flower-garden z3 is already a dense daylily field (orange, red patches) with a campfire (~151,105), a bed (~154,98), torches and a wolf-like animal in frame (remove it); water-garden is a wide pond, pads and reeds, no bare bank at (150,170) in the frame; sofa-corner has a purple rug, 2 couches, a lantern, a low table, no campfire and no bed. Next: re-plan cells and decor per scene on z3 (no daylily or TorchLamp placement where the fixture has them), repoint 07 to z3, Check-ShotlistVsScenario, refile scenario 1. 2026-11-10: scenarios 1 and 2 of 07 repointed to z3 (no lamp or plant placed, bed+Hay kept), Check-ShotlistVsScenario OK, scenario 1 filed alone as ticket 20261110-114725-979-6d59 (DepMap wsl-deps.sanctuary-z3.map, Inbox 2026-11-10-gallery-1; risk: z3 flower garden has its own bed, may show two beds); read the capture against v3 line 1, then rework 3 (water-garden bank, no daylily conflict check yet) and 4 (campfire cell (190,120) free?), delete 99-diag feature and Inbox 2026-11-09-diag-z3 when done. Resumed 2026-11-10: protocols_read_sha d58daf40; NPT part of sync-nsb-npt still due (NPT changed 2026-11-10).
@@ -50,9 +51,9 @@ remaining:
   - unverified: workshop item 3806709979 still carries the description sent by 0.1.0 (lacks IF I GO QUIET, AI-GENERATED, THANKS, Source code on GitHub link); the Markdown block in PUBLICATION.md is complete, the CI sends it at the first publication (2026-09-27 ruling)
   - unverified: rollback target (none before the first publish) and the drafted thank-you comments, posted only once the item is public
 session:      local_e07388d7-8c73-4619-af3d-44de8bbb400f
-updated:      2026-11-15
+updated:      2026-11-17
 code_review_sha: 103690ac09387031cbffd0d1327e1903bd17acd1
-protocols_read_sha: 74b3d18c1d3ee84a9316ffd70bab8dacd0a78105
+protocols_read_sha: 9ebf2b1b4d24bcaff85d6df40ffc4df751b24a48
 social_preview_sha256: eed949dc392a63b2f56299ae1eeea7dc0d903cabe76da539748cf25557c5ae42
 ---
 # Dalmatians Renew: status
