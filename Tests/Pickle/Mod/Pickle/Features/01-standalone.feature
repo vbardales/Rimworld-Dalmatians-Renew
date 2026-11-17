@@ -151,7 +151,7 @@ Feature: The dalmatian on its own
   Scenario: the animal and its puppy and attacks and leather read in French
     Then Dalmatians Renew this pass runs in French
     And Dalmatians Renew the thing "CCPDalmatian" is labelled "dalmatien"
-    And Dalmatians Renew the thing "CCPDalmatian" has a description beginning "Chien musculeux de taille moyenne."
+    And Dalmatians Renew the thing "CCPDalmatian" has a description beginning "Chien très musculeux de taille moyenne."
     And Dalmatians Renew the thing "CCPDalmatian" has the attack labels "griffe gauche, griffe droite, tête"
     And Dalmatians Renew the pawn kind "CCPDalmatian" is labelled "dalmatien" and pluralised "dalmatiens"
     And Dalmatians Renew the first life stage of pawn kind "CCPDalmatian" is labelled "jeune dalmatien" and pluralised "jeunes dalmatiens"
