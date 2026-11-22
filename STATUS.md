@@ -12,6 +12,7 @@ upstream_visibility: public (Steam API visibility=0; banned=0; checked 2026-09-1
 detached:     yes
 maintainer:   Claude Code (the session named for this mod); Codex worked on it earlier
 workflow_stage:  ecosystem
+ecosystem_line: 1.0   # PiI DELTA 2026-11-23 (docs/inventory/ecosystem-steam/DalmatiansRenew.md, commit 24c60ac); AUDIT 2.h
 licence:      silent
 licence_port: MIT, limited to the port contributions
 licence_at:   LICENSE; Mod/LICENSE; ATTRIBUTION.md
